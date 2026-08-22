@@ -77,21 +77,20 @@ No chatbot conversation has happened yet, in other words — but the foundation 
 ```
 ins_chatbot/
 ├── README.md                # you are here
-├── handoff.md                # detailed technical log of every decision/step, session to session
 ├── insurance_terms.json      # the glossary itself — the chatbot's entire knowledge base
 ├── requirements.txt          # pinned Python dependencies (spaCy, rapidfuzz, and their sub-dependencies)
-├── .gitignore
 ├── main.py                   # current entry point — a REPL to try out what's built so far
 ├── bot/                       # the actual chatbot package
 │   ├── __init__.py
 │   ├── data.py                # loads insurance_terms.json into memory, keyed for fast lookup
 │   ├── nlu.py                  # figures out which glossary term(s) a message is about
 │   ├── state.py                 # remembers context across a conversation (last term discussed, etc.)
-│   ├── intents.py               # defines what a user could be asking for (not implemented yet)
-│   ├── responses.py             # turns "this term + this intent" into an actual reply (not implemented yet)
+│   ├── intents.py               # defines what a user could be asking for
+│   ├── responses.py             # turns "this term + this intent" into an actual reply
 │   └── dispatcher.py            # ties everything above together into one conversation turn (not implemented yet)
 └── tests/                      # growing hand-written test suite
-    └── test_intents.py          # regression tests for bot/intents.py
+    ├── test_intents.py          # regression tests for bot/intents.py
+    └── test_responses.py        # regression tests for bot/responses.py
 ```
 
 ### File by file
@@ -106,13 +105,11 @@ ins_chatbot/
 
 **`bot/intents.py`** — Defines the fixed list of things a user can be trying to do (`ask_definition`, `ask_example`, `list_categories`, `compare_terms`, plus conversational basics like greeting/help/goodbye, and a fallback for "I don't know what you mean") and `recognize_intent()`, which classifies a raw message into one of them using priority-ordered regex patterns. A bare term with no question wrapped around it comes back as `fallback` on purpose — promoting that to `ask_definition` needs the entity-match result too, which only the dispatcher will have.
 
-**`bot/responses.py`** — Where reply wording will live: turning "this term, with this intent" into an actual sentence, with a few different phrasings so answers don't feel robotic. Stubbed out for now.
+**`bot/responses.py`** — Turns "this term, with this intent" into an actual reply sentence via `render()`, with 2-3 phrasings per intent (picked at random) so answers don't feel robotic. Also handles the two intents that need more than just a term: comparing two terms side by side, and listing categories.
 
 **`bot/dispatcher.py`** — The conductor. Once everything above exists, this is what a single incoming message actually flows through: figure out the intent, figure out the term (using conversation state to fill in gaps for follow-ups), build a reply, update the state for next time. Stubbed out for now.
 
-**`main.py`** — Right now, just a small command-line loop to manually try out the entity-matching layer and see what it resolves a typed phrase to. Once the dispatcher and intents are built, this will become the actual way to talk to the bot (or get replaced by a proper interface — see Open Decisions).
-
-**`handoff.md`** — A much more detailed, dated, technical log of the project — every dataset fix, every number, every decision and why it was made. Read the README for the shape of the project; read `handoff.md` when you need the specifics.
+**`main.py`** — Right now, just a small command-line loop to manually try out the entity-matching layer and see what it resolves a typed phrase to. Once the dispatcher is built, this will become the actual way to talk to the bot (or get replaced by a proper interface — see Open Decisions).
 
 ---
 

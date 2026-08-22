@@ -75,7 +75,7 @@ ins_chatbot/
 
 **`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time. Also resolves a line-of-business "domain" from free text (e.g. "life insurance" → the `Life` category) for `list_risks`/`list_terms`/quiz questions, since that's not something the term-focused entity matcher handles. Once a quiz starts, this is also what intercepts every message as an answer attempt instead of running normal intent recognition, until the user stops it.
 
-**`paco_chatbot.py`** — A command-line REPL that asks your name, shows a personalized welcome message, then talks to the real `Dispatcher` for the rest of the session — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's next").
+**`paco_chatbot.py`** — A command-line REPL that asks your name and whether you're new to insurance terminology, shows a personalized welcome message, then talks to the real `Dispatcher` for the rest of the session — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's next").
 
 ---
 
@@ -88,7 +88,7 @@ pip install -r requirements.txt
 python paco_chatbot.py
 ```
 
-It'll ask your name first. After that, ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit (you'll get a goodbye message too).
+It'll ask your name and whether you're new to insurance terminology first. After that, ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. If you said you're new, `list_terms`/`list_risks` will show you the Basic terms in a category before the Technical ones. Type `quit` to exit (you'll get a goodbye message too).
 
 ---
 
@@ -98,7 +98,7 @@ It'll ask your name first. After that, ask it something like `what's a premium?`
 2. **"v1.5" features**, once the basics work — the data already supports all of this via the `categories`/`difficulty` fields already in `insurance_terms.json`:
    - ~~**Browsing by category**~~ — done, both flavors: `list_risks` ("what risks does X cover?") and the more general `list_terms` ("show me all Auto terms"), which lists every term in a category, capping large ones (some run 300+ terms) while always showing the real total.
    - ~~**A quiz mode**~~ — done. `quiz me` (optionally scoped, e.g. `quiz me on Auto terms`) gives a definition and checks your guess through the same matcher used for every normal question, so typo'd answers still count.
-   - **Difficulty-aware onboarding** — using the `difficulty` field (Basic/Technical) to guide what a newcomer sees first, easiest terms before the dense ones.
+   - ~~**Difficulty-aware onboarding**~~ — done. A one-time session-start question ("are you new to insurance terminology?") is stored for the session and makes `list_terms`/`list_risks` show Basic-difficulty terms before Technical ones for newcomers (and makes `list_risks` alphabetical for everyone else, which it wasn't consistently before); quiz mode intentionally stays untouched by this.
 3. **Actually shipping it somewhere people can use it** — still an open question: a simple web/REST interface, or a Teams bot? Affects how replies should be shaped (plain text vs. something richer).
 4. **A Spanish translation of the dictionary.** English isn't everyone's first language on the team (mine included), so I plan to translate `insurance_terms.json` into Spanish as its own language variant, not just a machine-translated afterthought.
 5. **Asking the session's language up front.** Once a Spanish dictionary exists, the bot should ask at the start of a session which language to use, and answer consistently in that language for the rest of the conversation.

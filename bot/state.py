@@ -25,6 +25,12 @@ class ConversationState:
     # personal rather than like talking to an anonymous lookup tool.
     user_name: str | None = None
 
+    # Also set once at the start of a session, right after user_name — lets
+    # category-browsing (list_terms/list_risks) surface easier (Basic)
+    # terms before denser (Technical) ones for someone new to insurance
+    # vocabulary, without changing anything else about how the bot talks.
+    is_newcomer: bool = False
+
     # The last term the bot talked about. Lets a follow-up like "give me an
     # example" work without the user having to repeat the term name.
     last_term_id: str | None = None

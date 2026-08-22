@@ -18,7 +18,7 @@ Run with: python -m unittest tests.test_dispatcher
 import unittest
 
 from bot.data import TermStore
-from bot.dispatcher import Dispatcher
+from bot.dispatcher import _LIST_TERMS_CAP, Dispatcher, _difficulty_then_alpha_key
 from bot.intents import Intent
 from bot.state import ConversationState
 
@@ -165,6 +165,52 @@ class DispatcherTests(unittest.TestCase):
         reply = self._say("show me terms")
         for category in self.store.categories:
             self.assertIn(category, reply)
+
+    def test_conversation_state_defaults_to_not_newcomer(self):
+        # Backward-compatibility guarantee: every existing ConversationState()
+        # call site (including every other test in this file) must keep
+        # getting today's plain alphabetical sort unless it opts in.
+        self.assertFalse(ConversationState().is_newcomer)
+
+    def test_list_terms_newcomer_sorts_basic_before_technical(self):
+        # "Financial / Accounting" has few enough Basic terms (5 of 118)
+        # that the capped top-10 genuinely mixes both difficulties — Auto's
+        # 58 Basic terms would fill the whole cap on their own and not
+        # actually exercise the Technical side of the sort.
+        self.state.is_newcomer = True
+        reply = self._say("show me Financial / Accounting terms")
+        expected = sorted(
+            self.store.by_category("Financial / Accounting"), key=_difficulty_then_alpha_key
+        )[:_LIST_TERMS_CAP]
+        positions = [reply.index(t.term) for t in expected]
+        self.assertEqual(positions, sorted(positions))
+        difficulties_shown = [t.difficulty for t in expected]
+        self.assertIn("Basic", difficulties_shown)
+        self.assertIn("Technical", difficulties_shown)
+
+    def test_list_terms_non_newcomer_stays_alphabetical(self):
+        # Default state (is_newcomer=False) — regression lock for existing
+        # behavior, unchanged by adding the newcomer feature.
+        reply = self._say("show me Auto terms")
+        expected = sorted(self.store.by_category("Auto"), key=lambda t: t.term)[:_LIST_TERMS_CAP]
+        positions = [reply.index(t.term) for t in expected]
+        self.assertEqual(positions, sorted(positions))
+
+    def test_list_risks_newcomer_sorts_basic_before_technical(self):
+        self.state.is_newcomer = True
+        reply = self._say("what are the usual risks under health insurance")
+        expected = sorted(self.store.by_categories("Health", "Risk"), key=_difficulty_then_alpha_key)
+        positions = [reply.index(t.term) for t in expected]
+        self.assertEqual(positions, sorted(positions))
+        difficulties_shown = [t.difficulty for t in expected]
+        self.assertIn("Basic", difficulties_shown)
+        self.assertIn("Technical", difficulties_shown)
+
+    def test_list_risks_non_newcomer_is_alphabetical(self):
+        reply = self._say("what are the usual risks under health insurance")
+        expected = sorted(self.store.by_categories("Health", "Risk"), key=lambda t: t.term)
+        positions = [reply.index(t.term) for t in expected]
+        self.assertEqual(positions, sorted(positions))
 
     def test_quiz_start_asks_a_definition_based_question(self):
         reply = self._say("quiz me")

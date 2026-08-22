@@ -20,7 +20,14 @@ def main():
     # every later reply address the user personally instead of feeling like
     # an anonymous lookup tool.
     name = input("Before we start, what's your name? ").strip()
-    state = ConversationState(user_name=name)
+
+    # Difficulty-aware onboarding: asked once, right after the name, same
+    # forgiving no-validation posture as the name prompt itself — anything
+    # not starting with "y" is treated as "no."
+    newcomer_answer = input("Are you new to insurance terminology? (y/n) ").strip().lower()
+    is_newcomer = newcomer_answer.startswith("y")
+
+    state = ConversationState(user_name=name, is_newcomer=is_newcomer)
     print(render_welcome(name))
 
     while True:

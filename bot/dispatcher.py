@@ -56,6 +56,18 @@ _DOMAIN_ALIASES = {
 # silently misleading about how much more there is.
 _LIST_TERMS_CAP = 10
 
+# Difficulty-aware onboarding: for a newcomer session, list_terms/list_risks
+# sort Basic-difficulty terms before Technical ones instead of the plain
+# alphabetical order everyone else gets. An unexpected difficulty value
+# (the dataset is supposed to only ever have "Basic"/"Technical") degrades
+# to "sorted after Basic" via .get(..., 1) rather than raising, so a data
+# quirk can't break browsing entirely.
+_DIFFICULTY_ORDER = {"Basic": 0, "Technical": 1}
+
+
+def _difficulty_then_alpha_key(term: Term) -> tuple[int, str]:
+    return (_DIFFICULTY_ORDER.get(term.difficulty, 1), term.term)
+
 # How a user ends a quiz that's in progress — checked before anything else
 # whenever a quiz is active, so it never gets mistaken for a guess at the
 # current question.
@@ -193,7 +205,12 @@ class Dispatcher:
         if domain:
             risk_terms = self.store.by_categories(domain, "Risk")
             if risk_terms:
-                names = [t.term for t in risk_terms]
+                # Basic-before-Technical for a newcomer; otherwise
+                # alphabetical (this file has no other natural order to
+                # preserve — by_categories() returns dataset insertion
+                # order, which isn't meaningful to show as-is).
+                sort_key = _difficulty_then_alpha_key if state.is_newcomer else (lambda t: t.term)
+                names = [t.term for t in sorted(risk_terms, key=sort_key)]
                 reply = self._render(Intent.LIST_RISKS, state, domain=domain, risk_terms=names)
                 return self._respond(reply, Intent.LIST_RISKS, state)
 
@@ -210,7 +227,10 @@ class Dispatcher:
 
     def _handle_list_terms(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
         domain = self._resolve_domain(text)
-        terms = sorted(self.store.by_category(domain), key=lambda t: t.term) if domain else []
+        # Basic-before-Technical for a newcomer; alphabetical otherwise
+        # (today's existing behavior, unchanged for everyone else).
+        sort_key = _difficulty_then_alpha_key if state.is_newcomer else (lambda t: t.term)
+        terms = sorted(self.store.by_category(domain), key=sort_key) if domain else []
         if not terms:
             # No domain recognized, or (shouldn't normally happen, since
             # domain always comes from a real category) it had nothing in

@@ -171,47 +171,65 @@ _FALLBACK_DISAMBIGUATION_TEMPLATES = [
 # roughly the same length and shape across all ten so the experience feels
 # consistent regardless of which one gets picked, while the example query
 # and phrasing still vary session to session.
+#
+# Every variant also mentions Basic terms as a place to start (difficulty-
+# aware onboarding) — newcomer-agnostic wording rather than a conditional
+# branch, since it reads fine whether or not the session is actually a
+# newcomer, the same way the 'quit' hint is shown to everyone regardless of
+# whether they'll need it. The word "Basic" appears in every variant so a
+# test can assert on it as a stable anchor.
 _WELCOME_TEMPLATES = [
     "Welcome, {name}! I'm here to help you learn insurance terminology — ask me about any term "
     "and I'll explain it, give you an example, or compare it against another one. Try something "
-    "like \"what is a deductible?\" or \"compare ACV and replacement cost\". Type 'quit' anytime "
+    "like \"what is a deductible?\" or \"compare ACV and replacement cost\". New to this? Ask to "
+    "\"list Basic terms\" in a category to start with the easier ones. Type 'quit' anytime "
     "to leave. Let's get started, {name}!",
 
     "Hey {name}! Think of me as your insurance glossary — ask about any term and I'll explain it, "
     "show you an example, or compare it to another one. Try \"what's a premium?\" or \"compare "
-    "deductible and coinsurance\". Type 'quit' whenever you want to leave. Ready when you are, {name}!",
+    "deductible and coinsurance\". If insurance is new to you, ask me to show the Basic terms in a "
+    "category first. Type 'quit' whenever you want to leave. Ready when you are, {name}!",
 
     "Hi there, {name}! I'm here to help with insurance vocabulary — definitions, examples, and "
     "side-by-side comparisons, all on request. Try something like \"what is liability?\" or "
-    "\"compare ACV and replacement cost\". Type 'quit' to exit anytime. Let's dive in, {name}!",
+    "\"compare ACV and replacement cost\". Just starting out? \"Show me Basic Auto terms\" is a "
+    "good first question. Type 'quit' to exit anytime. Let's dive in, {name}!",
 
     "Glad you're here, {name}! I can explain any insurance term, give you an example sentence, or "
     "compare two terms for you. Try \"what's a deductible?\" or \"compare premium and coinsurance\". "
+    "New to insurance? Ask for the Basic terms in a category before the denser, Technical ones. "
     "Type 'quit' whenever you're done. Go ahead and ask me anything, {name}!",
 
     "Welcome aboard, {name}! Stuck on insurance jargon? Ask me for a definition, an example, or a "
     "comparison between two terms. Try \"what is subrogation?\" or \"compare loss ratio and combined "
-    "ratio\". Type 'quit' to leave whenever. Let's get you up to speed, {name}!",
+    "ratio\". If you're just getting started, the Basic terms in a category are the easiest place "
+    "to begin. Type 'quit' to leave whenever. Let's get you up to speed, {name}!",
 
     "Hey there, {name}! I'm your go-to for insurance terminology — definitions, examples, "
     "comparisons, just ask. Try \"what's coinsurance?\" or \"compare ACV and replacement cost\". "
-    "Type 'quit' anytime to step away. Fire away, {name}!",
+    "New to the field? Try \"list Basic Health terms\" to ease in. Type 'quit' anytime to step "
+    "away. Fire away, {name}!",
 
     "Hi {name}, welcome! Whenever an insurance term trips you up, just ask — I'll define it, give "
     "you an example, or compare it to something else. Try \"what is a premium?\" or \"compare "
-    "deductible and premium\". Type 'quit' to leave when you're ready. What would you like to know, {name}?",
+    "deductible and premium\". First time around? Ask to browse the Basic terms in a category "
+    "before the Technical ones. Type 'quit' to leave when you're ready. What would you like to "
+    "know, {name}?",
 
     "Good to have you, {name}! I can walk you through insurance terms — definitions, real examples, "
     "and comparisons between two terms. Try \"what's liability?\" or \"compare ACV and replacement "
-    "cost\". Type 'quit' anytime to wrap up. Take it away, {name}!",
+    "cost\". New here? Start with the Basic terms in whichever category interests you. Type 'quit' "
+    "anytime to wrap up. Take it away, {name}!",
 
     "Hello, {name}! Consider me your insurance dictionary that talks back — ask for a definition, "
     "an example, or a comparison. Try \"what is reinsurance?\" or \"compare premium and coinsurance\". "
+    "Brand new to this? Ask for the Basic terms in a category first, the Technical ones can wait. "
     "Type 'quit' whenever you'd like to stop. Let's get started, {name}!",
 
     "Welcome, {name}! New insurance term got you stuck? Ask me to define it, show an example, or "
     "compare it with another. Try \"what's a deductible?\" or \"compare loss ratio and combined "
-    "ratio\". Type 'quit' any time to leave. Over to you, {name}!",
+    "ratio\". Still finding your footing? Ask to see the Basic terms in a category before the "
+    "denser ones. Type 'quit' any time to leave. Over to you, {name}!",
 ]
 
 
@@ -298,8 +316,12 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
         domain: str | None = kwargs.get("domain")
         risk_terms: list[str] = kwargs.get("risk_terms") or []
         if domain and risk_terms:
+            # Order is the dispatcher's call, not this function's — same
+            # convention as LIST_TERMS's term_names below. Re-sorting here
+            # would silently discard the difficulty-aware ordering a
+            # newcomer session asked for.
             return random.choice(_LIST_RISKS_TEMPLATES).format(
-                domain=domain, risks=", ".join(sorted(risk_terms)), name=name
+                domain=domain, risks=", ".join(risk_terms), name=name
             )
         available: list[str] = kwargs.get("available_domains") or []
         return random.choice(_LIST_RISKS_CLARIFY_TEMPLATES).format(

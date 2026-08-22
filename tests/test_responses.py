@@ -181,6 +181,14 @@ class RenderTests(unittest.TestCase):
             reply = render_welcome("Paco")
             self.assertIn("Paco", reply)
 
+    def test_render_welcome_mentions_basic_terms(self):
+        # Difficulty-aware onboarding: every one of the ten welcome variants
+        # should point a newcomer toward Basic terms, so this needs to be
+        # true regardless of which one gets randomly picked.
+        for _ in range(20):
+            reply = render_welcome("Paco")
+            self.assertIn("Basic", reply)
+
     def test_render_quiz_start_includes_the_question(self):
         reply = render_quiz_start("Paco", self.acv)
         self.assertIn("Paco", reply)

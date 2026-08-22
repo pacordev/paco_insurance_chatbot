@@ -143,6 +143,25 @@ class DispatcherTests(unittest.TestCase):
         self.assertEqual(self.state.last_intent, Intent.ASK_DEFINITION)
         self.assertIn("Uncertainty", reply)
 
+    def test_list_terms_for_a_large_category_is_capped_with_total_shown(self):
+        reply = self._say("show me Auto terms")
+        self.assertEqual(self.state.last_intent, Intent.LIST_TERMS)
+        auto_term_count = len(self.store.by_category("Auto"))
+        self.assertGreater(auto_term_count, 10)  # confirms this actually exercises the cap
+        self.assertIn(str(auto_term_count), reply)
+
+    def test_list_terms_for_a_small_category_shows_everything(self):
+        reply = self._say("list Insurance Documentation terms")
+        doc_terms = self.store.by_category("Insurance Documentation")
+        self.assertLessEqual(len(doc_terms), 10)  # confirms this does NOT exercise the cap
+        for term in doc_terms:
+            self.assertIn(term.term, reply)
+
+    def test_list_terms_with_no_domain_falls_back_to_list_categories(self):
+        reply = self._say("show me terms")
+        for category in self.store.categories:
+            self.assertIn(category, reply)
+
 
 if __name__ == "__main__":
     unittest.main()

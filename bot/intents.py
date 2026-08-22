@@ -22,6 +22,7 @@ class Intent(str, Enum):
     ASK_EXAMPLE = "ask_example"            # "can you use X in a sentence?"
     LIST_CATEGORIES = "list_categories"    # "what topics/categories exist?"
     LIST_RISKS = "list_risks"              # "what risks does life insurance cover?"
+    LIST_TERMS = "list_terms"              # "show me the terms under Auto insurance"
     COMPARE_TERMS = "compare_terms"        # "what's the difference between X and Y?"
     GREET = "greet"                        # "hi" / "hello"
     HELP = "help"                          # "what can you do?"
@@ -122,6 +123,21 @@ _INTENT_PATTERNS: list[tuple[Intent, list[re.Pattern]]] = [
             re.compile(r"\blist (the )?risks\b", re.I),
             re.compile(r"\bcommon risks\b", re.I),
             re.compile(r"\brisks (in|for|of)\b", re.I),
+        ],
+    ),
+    (
+        # Checked before ASK_DEFINITION for the same reason as LIST_RISKS
+        # above, and requires plural "terms" for the same reason that one
+        # requires plural "risks" — "define this term" (singular) should
+        # stay a normal definition request, not a browsing one.
+        Intent.LIST_TERMS,
+        [
+            re.compile(r"\bshow me\b.*\bterms\b", re.I),
+            re.compile(r"\blist\b.*\bterms\b", re.I),
+            re.compile(r"\bbrowse\b.*\bterms\b", re.I),
+            re.compile(r"\bterms\b.*\bunder\b", re.I),
+            re.compile(r"\bwhat terms\b", re.I),
+            re.compile(r"\ball\b.*\bterms\b.*\b(under|in|for)\b", re.I),
         ],
     ),
     (

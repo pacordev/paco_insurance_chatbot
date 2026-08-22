@@ -99,6 +99,10 @@ Getting there also meant recognizing the question in the first place, which came
 
 One of the merged terms also caused a real regression, worth calling out because it's such a specific kind of mistake: the source data gave "Workers' Compensation Injury Risk" the lookup phrase "workers comp" — accurate, but *too* accurate, since that phrase already meant something more general in the existing glossary and was previously (correctly) ambiguous between a few different results. Registering it as an exact match for one narrow new term silently took away that ambiguity instead of adding a new option to it. Caught immediately because the existing test suite already covered that exact ambiguous case — a good example of why the regression suite pays for itself on features that have nothing to do with what it was originally written for.
 
+### Full category browsing, not just risks
+
+`list_risks` only ever answered a narrow slice of "browse by category" — risk-tagged terms within a line of business. Added `list_terms` alongside it for the general case ("show me all Auto terms"), reusing the same domain-resolution logic and the already-existing `by_category()` lookup. Large categories (some run past 300 terms) get capped in the reply with the real total always shown, rather than either dumping everything or silently hiding how much more there is.
+
 ---
 
 ## Current status
@@ -107,7 +111,7 @@ Data is done (for the moment). Architecture is decided. The core conversation lo
 
 - The dataset (`insurance_terms.json`) now holds **1,178 terms** across **16 categories**, each with 5 example sentences, validated and ready to build against.
 - The entity-matching layer (figuring out *which term* someone means) is built and tested, including preferring the longest match when phrases overlap.
-- The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, a list of risks for a line of business, etc.) is built and tested.
+- The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, browsing a category's risks or its full term list, etc.) is built and tested.
 - Response templates (turning a term + intent into actual reply text) are built and tested, with real phrasing variety and every reply personalized by name.
 - The dispatcher — the piece that ties all of the above into one real, multi-turn conversation, including follow-ups and "did you mean X or Y?" disambiguation — is built and tested against the real dataset.
 
@@ -135,7 +139,8 @@ ins_chatbot/
     ├── test_intents.py          # regression tests for bot/intents.py
     ├── test_responses.py        # regression tests for bot/responses.py
     ├── test_dispatcher.py        # multi-turn regression tests for bot/dispatcher.py
-    └── test_nlu.py               # regression tests for bot/nlu.py
+    ├── test_nlu.py               # regression tests for bot/nlu.py
+    └── test_data.py               # dataset-wide integrity checks for bot/data.py
 ```
 
 ### File by file
@@ -148,11 +153,11 @@ ins_chatbot/
 
 **`bot/state.py`** — A small object representing one user's ongoing conversation: their name (captured once at the start of the session), what term was last discussed, what the last thing they asked for was, and whether the bot is mid-way through asking "did you mean X or Y?" This is what makes both personalized replies and follow-up questions possible without the user repeating themselves.
 
-**`bot/intents.py`** — Defines the fixed list of things a user can be trying to do (`ask_definition`, `ask_example`, `list_categories`, `list_risks`, `compare_terms`, plus conversational basics like greeting/help/goodbye, and a fallback for "I don't know what you mean") and `recognize_intent()`, which classifies a raw message into one of them using priority-ordered regex patterns. A bare term with no question wrapped around it comes back as `fallback` on purpose — promoting that to `ask_definition` needs the entity-match result too, which only the dispatcher will have.
+**`bot/intents.py`** — Defines the fixed list of things a user can be trying to do (`ask_definition`, `ask_example`, `list_categories`, `list_risks`, `list_terms`, `compare_terms`, plus conversational basics like greeting/help/goodbye, and a fallback for "I don't know what you mean") and `recognize_intent()`, which classifies a raw message into one of them using priority-ordered regex patterns. A bare term with no question wrapped around it comes back as `fallback` on purpose — promoting that to `ask_definition` needs the entity-match result too, which only the dispatcher will have.
 
 **`bot/responses.py`** — Turns "this term, with this intent" into an actual reply sentence via `render()`, with 5-8 phrasings per intent (picked at random, with the user's name woven in at a different spot each time) so answers don't feel robotic. Also handles the two intents that need more than just a term (comparing two terms side by side, listing categories), and `render_welcome()` for the randomized session-opening greeting.
 
-**`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time. Also resolves a line-of-business "domain" from free text (e.g. "life insurance" → the `Life` category) for `list_risks` questions, since that's not something the term-focused entity matcher handles.
+**`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time. Also resolves a line-of-business "domain" from free text (e.g. "life insurance" → the `Life` category) for `list_risks`/`list_terms` questions, since that's not something the term-focused entity matcher handles.
 
 **`paco_chatbot.py`** — A command-line REPL that asks your name, shows a personalized welcome message, then talks to the real `Dispatcher` for the rest of the session — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's next").
 
@@ -175,7 +180,7 @@ It'll ask your name first. After that, ask it something like `what's a premium?`
 
 1. **More testing, as it grows** — keep extending `tests/` with misspelled and casually-worded questions as new intents/features get added, since the whole point is that the audience doesn't already know the "correct" insurance vocabulary to type.
 2. **"v1.5" features**, once the basics work — the data already supports all of this via the `categories`/`difficulty` fields already in `insurance_terms.json`:
-   - ~~**Browsing by category**~~ — done, as `list_risks` ("what risks does X cover?"), which turned out to be the first real use of category-intersection browsing. A more general "show me all Auto terms" (not just the risk-tagged ones) would reuse the same `by_categories()` machinery.
+   - ~~**Browsing by category**~~ — done, both flavors: `list_risks` ("what risks does X cover?") and the more general `list_terms` ("show me all Auto terms"), which lists every term in a category, capping large ones (some run 300+ terms) while always showing the real total.
    - **A quiz mode** — testing recall instead of just answering lookups.
    - **Difficulty-aware onboarding** — using the `difficulty` field (Basic/Technical) to guide what a newcomer sees first, easiest terms before the dense ones.
 3. **Actually shipping it somewhere people can use it** — still an open question: a simple web/REST interface, or a Teams bot? Affects how replies should be shaped (plain text vs. something richer).

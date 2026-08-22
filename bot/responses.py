@@ -80,6 +80,25 @@ _LIST_CATEGORIES_TEMPLATES = [
     "{categories}\n\nPick one and I'll walk you through it, {name}.",
 ]
 
+# Two variants depending on whether the list actually got capped — "here
+# are 12 of them" reads oddly when all 12 are shown, so a category small
+# enough to show in full gets its own, simpler phrasing instead of
+# pretending there's more hiding behind it.
+_LIST_TERMS_TRUNCATED_TEMPLATES = [
+    "{name}, there are {total} terms under {domain} — here are {shown} of them: {terms}. Ask about any one for the full definition.",
+    "{domain} has {total} terms on file, {name}. A few to start with: {terms}.",
+    "Good place to browse, {name} — {domain} covers {total} terms. Here are {shown}: {terms}.",
+    "{name}, {domain} has quite a few — {total} in total. Here's a sample: {terms}.",
+    "There's a lot under {domain}, {name} ({total} terms) — starting with: {terms}.",
+]
+
+_LIST_TERMS_FULL_TEMPLATES = [
+    "{name}, there are {total} terms under {domain}: {terms}.",
+    "{domain} has {total} terms, {name}: {terms}.",
+    "Here's everything under {domain}, {name}: {terms}.",
+    "{total} terms under {domain}, {name}: {terms}.",
+]
+
 _LIST_RISKS_TEMPLATES = [
     "{name}, here are the risks I know about under {domain}: {risks}.",
     "Under {domain}, the common risks are: {risks}. Want details on any of them, {name}?",
@@ -213,6 +232,10 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
     - LIST_RISKS needs either (`domain`, `risk_terms`) when a line of
       business was recognized and has risk-type entries, or
       `available_domains` when it wasn't/didn't, to ask which one instead.
+    - LIST_TERMS needs `domain`, `term_names` (already capped to what's being
+      shown), and `total_count` (the real count before capping, so a huge
+      category doesn't just silently show a truncated list with no hint
+      there's more).
     - FALLBACK optionally takes `candidates` (a list of term-name strings) —
       when the fuzzy matcher found a few close-but-uncertain guesses, this
       is what turns that into a real "did you mean X or Y?" question
@@ -258,6 +281,15 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
     if intent is Intent.LIST_CATEGORIES:
         categories: list[str] = kwargs.get("categories", [])
         return random.choice(_LIST_CATEGORIES_TEMPLATES).format(categories=", ".join(sorted(categories)), name=name)
+
+    if intent is Intent.LIST_TERMS:
+        domain: str = kwargs["domain"]
+        term_names: list[str] = kwargs["term_names"]
+        total: int = kwargs["total_count"]
+        templates = _LIST_TERMS_FULL_TEMPLATES if len(term_names) >= total else _LIST_TERMS_TRUNCATED_TEMPLATES
+        return random.choice(templates).format(
+            domain=domain, total=total, shown=len(term_names), terms=", ".join(term_names), name=name
+        )
 
     if intent is Intent.LIST_RISKS:
         domain: str | None = kwargs.get("domain")

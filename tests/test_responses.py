@@ -104,6 +104,21 @@ class RenderTests(unittest.TestCase):
         self.assertIn("Auto", reply)
         self.assertIn("Life", reply)
 
+    def test_list_terms_truncated_mentions_the_total_count(self):
+        # 5 shown out of a much bigger total — the reply should say so, not
+        # just silently show 5 as if that were everything.
+        reply = render(Intent.LIST_TERMS, domain="Auto", term_names=["A", "B", "C", "D", "E"], total_count=74)
+        self.assertIn("Auto", reply)
+        self.assertIn("74", reply)
+        self.assertIn("A", reply)
+
+    def test_list_terms_shown_in_full_does_not_claim_theres_more(self):
+        # All 4 terms shown, total is also 4 — should read as complete, not
+        # as "here are 4 of them" (which would sound like there's more).
+        reply = render(Intent.LIST_TERMS, domain="Insurance Documentation", term_names=["A", "B", "C", "D"], total_count=4)
+        self.assertIn("4", reply)
+        self.assertNotIn("of them", reply)
+
     def test_greet_help_goodbye_need_no_term(self):
         for intent in (Intent.GREET, Intent.HELP, Intent.GOODBYE):
             with self.subTest(intent=intent):
@@ -129,6 +144,8 @@ class RenderTests(unittest.TestCase):
             (Intent.LIST_CATEGORIES, {"categories": ["Auto"]}),
             (Intent.LIST_RISKS, {"domain": "Life", "risk_terms": ["Mortality Risk"]}),
             (Intent.LIST_RISKS, {"available_domains": ["Auto", "Life"]}),
+            (Intent.LIST_TERMS, {"domain": "Auto", "term_names": ["Collision"], "total_count": 74}),
+            (Intent.LIST_TERMS, {"domain": "Auto", "term_names": ["Collision"], "total_count": 1}),
             (Intent.GREET, {}),
             (Intent.HELP, {}),
             (Intent.GOODBYE, {}),

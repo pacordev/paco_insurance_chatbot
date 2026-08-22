@@ -25,11 +25,11 @@ _ORDINAL_WORDS = {
     "3": 2, "three": 2, "third": 2,
 }
 
-# For LIST_RISKS: maps how someone would naturally phrase a line of business
-# ("life insurance") onto the category name it's actually stored under
-# ("Life"). Categories themselves (lowercased) are also checked directly, so
-# this only needs to cover phrasings that *don't* already match a category
-# name verbatim.
+# For LIST_RISKS and LIST_TERMS: maps how someone would naturally phrase a
+# line of business ("life insurance") onto the category name it's actually
+# stored under ("Life"). Categories themselves (lowercased) are also checked
+# directly, so this only needs to cover phrasings that *don't* already match
+# a category name verbatim.
 _DOMAIN_ALIASES = {
     "life insurance": "Life",
     "auto insurance": "Auto",
@@ -47,6 +47,13 @@ _DOMAIN_ALIASES = {
     "workers compensation": "Workers Compensation",
     "workers comp": "Workers Compensation",
 }
+
+# LIST_TERMS caps how many term names get listed in one reply — some
+# categories (General Insurance Concepts, in particular) run into the
+# hundreds, and dumping all of them into one message would be unreadable.
+# The total count is always shown alongside the capped list, so it's never
+# silently misleading about how much more there is.
+_LIST_TERMS_CAP = 10
 
 
 class Dispatcher:
@@ -77,6 +84,9 @@ class Dispatcher:
             # text directly rather than through the entity matcher, which
             # only knows about glossary terms, not category names.
             return self._handle_list_risks(text, state)
+
+        if intent is Intent.LIST_TERMS:
+            return self._handle_list_terms(text, state)
 
         matches = self.matcher.extract(text)
 
@@ -172,6 +182,23 @@ class Dispatcher:
         )
         reply = self._render(Intent.LIST_RISKS, state, available_domains=available)
         return self._respond(reply, Intent.LIST_RISKS, state)
+
+    def _handle_list_terms(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
+        domain = self._resolve_domain(text)
+        terms = sorted(self.store.by_category(domain), key=lambda t: t.term) if domain else []
+        if not terms:
+            # No domain recognized, or (shouldn't normally happen, since
+            # domain always comes from a real category) it had nothing in
+            # it — either way, this is exactly what LIST_CATEGORIES already
+            # answers, so reuse it rather than inventing a near-duplicate
+            # "pick a category" prompt.
+            categories = list(self.store.categories.keys())
+            reply = self._render(Intent.LIST_CATEGORIES, state, categories=categories)
+            return self._respond(reply, Intent.LIST_TERMS, state)
+
+        shown = [t.term for t in terms[:_LIST_TERMS_CAP]]
+        reply = self._render(Intent.LIST_TERMS, state, domain=domain, term_names=shown, total_count=len(terms))
+        return self._respond(reply, Intent.LIST_TERMS, state)
 
     def _resolve_domain(self, text: str) -> str | None:
         """Find a line-of-business category name mentioned in free text —

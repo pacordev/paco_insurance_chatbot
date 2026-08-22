@@ -106,6 +106,19 @@ class RecognizeIntentTests(unittest.TestCase):
             ("what are the risks?", Intent.LIST_RISKS),
         ])
 
+    def test_list_terms_beats_ask_definition(self):
+        # Requires plural "terms" for the same reason LIST_RISKS requires
+        # plural "risks" — "define this term" (singular) is still a normal
+        # definition request, not a browsing one.
+        self._assert_all([
+            ("show me Auto terms", Intent.LIST_TERMS),
+            ("list Auto terms", Intent.LIST_TERMS),
+            ("browse Life terms", Intent.LIST_TERMS),
+            ("what terms are under Auto insurance", Intent.LIST_TERMS),
+            ("show me all Life insurance terms", Intent.LIST_TERMS),
+            ("define this term", Intent.ASK_DEFINITION),
+        ])
+
     def test_fallback_on_bare_term_or_gibberish(self):
         # A bare term with no question wrapped around it ("ACV" on its own)
         # deliberately comes back FALLBACK here — recognize_intent() only

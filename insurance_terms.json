@@ -29983,7 +29983,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "mortality",
-        "life risk"
+        "life risk",
+        "Mortality Risk"
       ]
     },
     {
@@ -30011,7 +30012,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "longevity",
-        "annuity risk"
+        "annuity risk",
+        "Longevity Risk"
       ]
     },
     {
@@ -30039,7 +30041,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "critical illness",
-        "ci risk"
+        "ci risk",
+        "Critical Illness Risk"
       ]
     },
     {
@@ -30067,7 +30070,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "accidental death",
-        "ad&d"
+        "ad&d",
+        "Accidental Death Risk"
       ]
     },
     {
@@ -30095,7 +30099,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "terminal illness",
-        "accelerated benefit"
+        "accelerated benefit",
+        "Terminal Illness Risk"
       ]
     },
     {
@@ -30118,7 +30123,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "medical expense",
-        "health risk"
+        "health risk",
+        "Medical Expense Risk"
       ]
     },
     {
@@ -30146,7 +30152,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "drug risk",
-        "pharmacy"
+        "pharmacy",
+        "Prescription Drug Risk"
       ]
     },
     {
@@ -30173,7 +30180,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "dental risk"
+        "dental risk",
+        "Dental Expense Risk"
       ]
     },
     {
@@ -30200,7 +30208,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "vision risk"
+        "vision risk",
+        "Vision Expense Risk"
       ]
     },
     {
@@ -30227,7 +30236,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "paramedical risk"
+        "paramedical risk",
+        "Paramedical Service Risk"
       ]
     },
     {
@@ -30254,7 +30264,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "catastrophic health"
+        "catastrophic health",
+        "Catastrophic Health Event Risk"
       ]
     },
     {
@@ -30281,7 +30292,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "collision risk"
+        "collision risk",
+        "Collision Damage Risk"
       ]
     },
     {
@@ -30308,7 +30320,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "comprehensive risk"
+        "comprehensive risk",
+        "Comprehensive Damage Risk"
       ]
     },
     {
@@ -30330,7 +30343,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "uninsured motorist"
+        "uninsured motorist",
+        "Uninsured Motorist Risk"
       ]
     },
     {
@@ -30374,7 +30388,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "liability risk"
+        "liability risk",
+        "Personal Liability Risk"
       ]
     },
     {
@@ -30396,7 +30411,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "ale risk"
+        "ale risk",
+        "Additional Living Expense Risk"
       ]
     },
     {
@@ -30418,7 +30434,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "general liability"
+        "general liability",
+        "General Liability Risk"
       ]
     },
     {
@@ -30445,7 +30462,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "professional liability"
+        "professional liability",
+        "Professional Liability Risk"
       ]
     },
     {
@@ -30472,7 +30490,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "d&o risk"
+        "d&o risk",
+        "Directors and Officers Risk"
       ]
     },
     {
@@ -30522,7 +30541,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "marine cargo"
+        "marine cargo",
+        "Marine Cargo Risk"
       ]
     },
     {
@@ -30544,7 +30564,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "aviation"
+        "aviation",
+        "Aviation Hull Risk"
       ]
     }
   ]

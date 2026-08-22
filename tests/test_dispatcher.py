@@ -109,6 +109,15 @@ class DispatcherTests(unittest.TestCase):
                 self.assertTrue(reply)
                 self.assertEqual(self.state.last_intent, expected_intent)
 
+    def test_user_name_is_threaded_through_every_reply(self):
+        # Set on the state up front, the way paco_chatbot.py does after
+        # asking for it at the start of a session — every reply for the
+        # rest of the conversation should address the user by it.
+        self.state.user_name = "Paco"
+        for text in ("hi", "what is a deductible", "give me an example", "compare deductible and premium"):
+            with self.subTest(text=text):
+                self.assertIn("Paco", self._say(text))
+
 
 if __name__ == "__main__":
     unittest.main()

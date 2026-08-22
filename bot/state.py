@@ -20,6 +20,11 @@ class ConversationState:
     meant to be shared across different conversations.
     """
 
+    # Set once at the start of a session (see paco_chatbot.py) so every
+    # reply can address the user by name, making the conversation feel
+    # personal rather than like talking to an anonymous lookup tool.
+    user_name: str | None = None
+
     # The last term the bot talked about. Lets a follow-up like "give me an
     # example" work without the user having to repeat the term name.
     last_term_id: str | None = None

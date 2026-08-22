@@ -40,11 +40,11 @@ class Dispatcher:
         # Conversational scaffolding never needs a term, so it's handled
         # before we bother asking the entity matcher anything.
         if intent in (Intent.GREET, Intent.HELP, Intent.GOODBYE):
-            return self._respond(render(intent), intent, state)
+            return self._respond(self._render(intent, state), intent, state)
 
         if intent is Intent.LIST_CATEGORIES:
             categories = list(self.store.categories.keys())
-            return self._respond(render(intent, categories=categories), intent, state)
+            return self._respond(self._render(intent, state, categories=categories), intent, state)
 
         matches = self.matcher.extract(text)
 
@@ -89,8 +89,8 @@ class Dispatcher:
                 names = [self.store.get(tid).term for tid in candidate_ids]
                 state.last_intent = intent
                 state.pending_disambiguation = candidate_ids
-                return render(Intent.FALLBACK, candidates=names), state
-            return self._respond(render(Intent.FALLBACK), Intent.FALLBACK, state)
+                return self._render(Intent.FALLBACK, state, candidates=names), state
+            return self._respond(self._render(Intent.FALLBACK, state), Intent.FALLBACK, state)
 
         # A bare term with no question wrapped around it comes back from
         # recognize_intent() as FALLBACK on purpose (see bot/intents.py) —
@@ -98,7 +98,7 @@ class Dispatcher:
         # manage to resolve a term, default to treating it as a definition
         # request, which is this bot's core, most common use case.
         effective_intent = Intent.ASK_DEFINITION if intent is Intent.FALLBACK else intent
-        reply = render(effective_intent, term=term)
+        reply = self._render(effective_intent, state, term=term)
         return self._respond(reply, effective_intent, state, term_id=term.id)
 
     def _handle_compare(self, matches: list[EntityMatch], state: ConversationState) -> tuple[str, ConversationState]:
@@ -114,11 +114,11 @@ class Dispatcher:
             # wording rather than a dedicated "I need two terms" message —
             # good enough for now, worth a nicer message later if it turns
             # out to come up a lot in practice.
-            return self._respond(render(Intent.FALLBACK), Intent.COMPARE_TERMS, state)
+            return self._respond(self._render(Intent.FALLBACK, state), Intent.COMPARE_TERMS, state)
 
         term_a = self.store.get(term_ids[0])
         term_b = self.store.get(term_ids[1])
-        reply = render(Intent.COMPARE_TERMS, term=term_a, other_term=term_b)
+        reply = self._render(Intent.COMPARE_TERMS, state, term=term_a, other_term=term_b)
         return self._respond(reply, Intent.COMPARE_TERMS, state, term_id=term_b.id)
 
     def _resolve_primary_term(self, matches: list[EntityMatch]) -> Term | None:
@@ -157,6 +157,13 @@ class Dispatcher:
             if word in words and index < len(candidate_ids):
                 return candidate_ids[index]
         return None
+
+    def _render(self, intent: Intent, state: ConversationState, term: Term | None = None, **kwargs) -> str:
+        """Thin wrapper around responses.render() that always supplies the
+        user's name from state, so every call site doesn't have to remember
+        to pass it individually.
+        """
+        return render(intent, term=term, name=state.user_name, **kwargs)
 
     def _respond(
         self, reply: str, intent: Intent, state: ConversationState, term_id: str | None = None

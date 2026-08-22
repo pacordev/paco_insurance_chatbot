@@ -15,7 +15,7 @@ import unittest
 
 from bot.data import RelatedTerm, Term
 from bot.intents import Intent
-from bot.responses import render
+from bot.responses import render, render_welcome
 
 
 def _make_term(id_: str, term: str, definition: str, examples: list[str] | None = None) -> Term:
@@ -47,11 +47,26 @@ class RenderTests(unittest.TestCase):
     def test_ask_definition_includes_term_and_definition(self):
         # Run several times since the wording is picked at random — every
         # draw should still contain the actual content, just phrased
-        # differently.
+        # differently. Checked without the definition's own trailing period
+        # since one template legitimately drops it in favor of a dash
+        # ("...depreciation — does that clear it up?") — that's a real
+        # stylistic choice, not missing content, so the check shouldn't
+        # demand the period back.
         for _ in range(10):
             reply = render(Intent.ASK_DEFINITION, term=self.acv)
             self.assertIn(self.acv.term, reply)
-            self.assertIn(self.acv.definition, reply)
+            self.assertIn(self.acv.definition.rstrip("."), reply)
+
+    def test_ask_definition_never_produces_a_doubled_period(self):
+        # Regression: a couple of templates continue the sentence right
+        # after {definition} with no line break ("...basis. Hope that
+        # helps, Paco.") — since ~98% of real definitions already end with
+        # their own period, doing that naively produced "..". self.acv's
+        # definition ends with a period on purpose, to catch this.
+        self.assertTrue(self.acv.definition.endswith("."))
+        for _ in range(30):
+            reply = render(Intent.ASK_DEFINITION, term=self.acv, name="Paco")
+            self.assertNotIn("..", reply)
 
     def test_ask_example_uses_the_example_sentence(self):
         reply = render(Intent.ASK_EXAMPLE, term=self.acv)
@@ -91,6 +106,45 @@ class RenderTests(unittest.TestCase):
         reply = render(Intent.FALLBACK, candidates=["Actual Cash Value", "Replacement Cost"])
         self.assertIn("Actual Cash Value", reply)
         self.assertIn("Replacement Cost", reply)
+
+    def test_every_intent_addresses_the_user_by_name_when_given(self):
+        # The whole point of threading a name through is that every single
+        # reply uses it, not just a greeting — check that directly for each
+        # intent rather than trusting it by inspection.
+        cases = [
+            (Intent.ASK_DEFINITION, {"term": self.acv}),
+            (Intent.ASK_EXAMPLE, {"term": self.acv}),
+            (Intent.COMPARE_TERMS, {"term": self.acv, "other_term": self.replacement_cost}),
+            (Intent.LIST_CATEGORIES, {"categories": ["Auto"]}),
+            (Intent.GREET, {}),
+            (Intent.HELP, {}),
+            (Intent.GOODBYE, {}),
+            (Intent.FALLBACK, {}),
+            (Intent.FALLBACK, {"candidates": ["Actual Cash Value", "Replacement Cost"]}),
+        ]
+        # Each template list now has 5-8+ hand-written variants — drawing
+        # only once per intent would leave most of them unchecked, so this
+        # loops enough times per case that, statistically, every variant in
+        # even the longest list gets a real chance to be exercised.
+        for intent, kwargs in cases:
+            with self.subTest(intent=intent, kwargs=kwargs):
+                for _ in range(30):
+                    reply = render(intent, name="Paco", **kwargs)
+                    self.assertIn("Paco", reply)
+
+    def test_missing_name_falls_back_to_a_generic_greeting_word(self):
+        # No name given (e.g. the user hit enter at the name prompt) should
+        # still read naturally, not leave a blank where the name should go.
+        reply = render(Intent.GREET)
+        self.assertIn("there", reply.lower())
+
+    def test_render_welcome_includes_the_name(self):
+        # Run several times since the welcome message is now picked at
+        # random from ten variants (like every other intent's templates) —
+        # every draw should still include the name.
+        for _ in range(20):
+            reply = render_welcome("Paco")
+            self.assertIn("Paco", reply)
 
 
 if __name__ == "__main__":

@@ -13,67 +13,182 @@ import random
 from bot.data import Term
 from bot.intents import Intent
 
-# A few phrasings per intent so the bot doesn't answer with the exact same
-# fill-in-the-blank sentence every single time. Picked at random rather than
-# round-robin through ConversationState — round-robin would need render()
-# to take the conversation state just to remember which template it used
-# last, which felt like the wrong module to carry that. Random keeps
-# render() a plain, stateless function: same inputs, no memory needed.
+# What to call the user if, for whatever reason, no name made it through
+# (e.g. they just hit enter at the "what's your name?" prompt). Keeps every
+# template grammatically fine without a special no-name branch everywhere.
+_DEFAULT_NAME = "there"
+
+# A good handful of phrasings per intent so the bot doesn't answer with the
+# exact same fill-in-the-blank sentence every single time — a first pass at
+# 2-3 templates each still felt repetitive in practice (the same "Here's the
+# definition of X" wrapper kept showing up), so these lists are longer, and
+# the name's position moves around too (opening address, closing aside, a
+# mid-message check-in) rather than sitting in the same spot every time.
+# Picked at random rather than round-robin through ConversationState —
+# round-robin would need render() to take the conversation state just to
+# remember which template it used last, which felt like the wrong module to
+# carry that. Random keeps render() a plain, stateless function: same
+# inputs, no memory needed.
+#
+# Every template includes {name} — the user asked for the bot to always
+# address them by name, to make the conversation feel personal rather than
+# like talking to an anonymous lookup tool.
+# Two of these ("Hope that helps" / "does that clear it up") continue the
+# sentence right after {definition} with no line break — since ~98% of
+# definitions already end with their own period, they use
+# {definition_clean} instead (definition with any trailing period
+# stripped) to avoid a doubled "..". Every other template either ends the
+# message at {definition} (its own period is correct there) or puts the
+# continuation on a new line, so they're unaffected and use {definition} as-is.
 _DEFINITION_TEMPLATES = [
-    "{term}: {definition}",
-    "Here's the definition of {term}: {definition}",
-    "{term} — {definition}",
+    "{name}, {term}: {definition}",
+    "{term} — {definition_clean}. Hope that helps, {name}.",
+    "Good question, {name}. {term}: {definition}",
+    "Here's what you're after, {name} — {term}: {definition}",
+    "{term}: {definition}\n\nLet me know if you want an example, {name}.",
+    "Straight to it, {name}: {term} — {definition}",
+    "{term}: {definition_clean} — does that clear it up, {name}?",
+    "Sure thing, {name}. {term}: {definition}",
 ]
 
 _EXAMPLE_TEMPLATES = [
-    "Here's an example: {example}",
-    "For example: {example}",
-    "Sure — here's {term} used in context: {example}",
+    "Here's an example for you, {name}: {example}",
+    "For example, {name}: {example}",
+    "Sure, {name} — here's {term} used in context: {example}",
+    "{example}\n\nThat's {term} in action, {name}.",
+    "Picture this, {name}: {example}",
+    "Good timing, {name} — here's how {term} plays out: {example}",
+    "{example}\n\nMakes more sense with a real scenario, right, {name}?",
+    "Here you go, {name}: {example}",
 ]
 
 _COMPARE_TEMPLATES = [
-    "{term}: {definition}\n{other_term}: {other_definition}",
-    "Here's how they compare:\n- {term}: {definition}\n- {other_term}: {other_definition}",
+    "{name}, here it is:\n{term}: {definition}\n{other_term}: {other_definition}",
+    "Here's how they compare, {name}:\n- {term}: {definition}\n- {other_term}: {other_definition}",
+    "Good comparison, {name}. Side by side:\n{term}: {definition}\n{other_term}: {other_definition}",
+    "{term}: {definition}\n{other_term}: {other_definition}\n\nHope that clears up the difference, {name}.",
+    "Let's break it down, {name}:\n{term} — {definition}\n{other_term} — {other_definition}",
+    "Here's the difference, {name}:\n{term}: {definition}\n{other_term}: {other_definition}",
 ]
 
 _LIST_CATEGORIES_TEMPLATES = [
-    "Here are the categories I know about: {categories}.",
-    "You can browse by any of these categories: {categories}.",
+    "Here are the categories I know about, {name}: {categories}.",
+    "{name}, you can browse by any of these categories: {categories}.",
+    "Good place to start, {name} — here's what's available: {categories}.",
+    "Plenty to explore, {name}: {categories}.",
+    "Here's the full list, {name}: {categories}.",
+    "{categories}\n\nPick one and I'll walk you through it, {name}.",
 ]
 
 _GREET_TEMPLATES = [
-    "Hi! Ask me about any insurance term and I'll explain it.",
-    "Hello! I'm here to help with insurance terminology — what would you like to know?",
-    "Hey there! Curious about a term? Just ask.",
+    "Hi {name}! Ask me about any insurance term and I'll explain it.",
+    "Hello {name}! I'm here to help with insurance terminology — what would you like to know?",
+    "Hey {name}! Curious about a term? Just ask.",
+    "Good to see you, {name}! What insurance term is on your mind?",
+    "Hey there, {name} — ready when you are.",
+    "Welcome back, {name}! What can I help you look up?",
+    "Hi {name}, what would you like to learn about today?",
 ]
 
 _HELP_TEMPLATES = [
-    "You can ask me to define a term, give an example, list categories, or compare two terms — "
-    "try \"what is a deductible?\" or \"compare ACV and replacement cost\".",
+    "{name}, you can ask me to define a term, give an example, list categories, or compare two "
+    "terms — try \"what is a deductible?\" or \"compare ACV and replacement cost\".",
     "I can explain insurance terms, show you an example sentence, list categories, or compare two "
-    "terms side by side. Just ask naturally, typos and all.",
+    "terms side by side, {name}. Just ask naturally, typos and all.",
+    "Good question, {name} — here's what I can do: define terms, give examples, list categories, "
+    "or compare two terms.",
+    "A few things I'm good for, {name}: definitions, examples, category browsing, and comparisons. "
+    "Ask away.",
+    "{name}, think of me as a glossary you can talk to — ask for a definition, an example, or a "
+    "comparison.",
 ]
 
 _GOODBYE_TEMPLATES = [
-    "Goodbye! Come back anytime you run into a term you don't know.",
-    "See you later — happy learning!",
-    "Bye! Ping me whenever another insurance term trips you up.",
+    "Goodbye, {name}! Come back anytime you run into a term you don't know.",
+    "See you later, {name} — happy learning!",
+    "Bye, {name}! Ping me whenever another insurance term trips you up.",
+    "Take care, {name} — glad I could help.",
+    "Catch you next time, {name}!",
+    "Thanks for stopping by, {name} — good luck out there.",
+    "Until next time, {name}! Keep those terms straight.",
+    "Bye for now, {name} — this glossary isn't going anywhere.",
 ]
 
 _FALLBACK_TEMPLATES = [
-    "I'm not sure what you're asking — could you rephrase that, or name a specific insurance term?",
-    "I didn't quite catch that. Try asking about a specific term, like \"what is a deductible?\"",
+    "I'm not sure what you're asking, {name} — could you rephrase that, or name a specific insurance term?",
+    "I didn't quite catch that, {name}. Try asking about a specific term, like \"what is a deductible?\"",
+    "Hmm, not sure I follow, {name} — mind trying that a different way?",
+    "{name}, I don't think I've got that one. Ask me about a specific term and I'll do my best.",
+    "That one's got me stumped, {name} — could you be more specific?",
 ]
 
-_FALLBACK_DISAMBIGUATION_TEMPLATE = "I'm not sure which term you meant — did you mean {candidates}?"
+_FALLBACK_DISAMBIGUATION_TEMPLATES = [
+    "I'm not sure which term you meant, {name} — did you mean {candidates}?",
+    "A couple of options match that, {name}: {candidates}. Which one?",
+    "{name}, did you mean {candidates}?",
+]
+
+# Same random-choice-from-a-list approach as every other intent above, just
+# for the one-time session opener instead of a per-message reply — kept
+# roughly the same length and shape across all ten so the experience feels
+# consistent regardless of which one gets picked, while the example query
+# and phrasing still vary session to session.
+_WELCOME_TEMPLATES = [
+    "Welcome, {name}! I'm here to help you learn insurance terminology — ask me about any term "
+    "and I'll explain it, give you an example, or compare it against another one. Try something "
+    "like \"what is a deductible?\" or \"compare ACV and replacement cost\". Type 'quit' anytime "
+    "to leave. Let's get started, {name}!",
+
+    "Hey {name}! Think of me as your insurance glossary — ask about any term and I'll explain it, "
+    "show you an example, or compare it to another one. Try \"what's a premium?\" or \"compare "
+    "deductible and coinsurance\". Type 'quit' whenever you want to leave. Ready when you are, {name}!",
+
+    "Hi there, {name}! I'm here to help with insurance vocabulary — definitions, examples, and "
+    "side-by-side comparisons, all on request. Try something like \"what is liability?\" or "
+    "\"compare ACV and replacement cost\". Type 'quit' to exit anytime. Let's dive in, {name}!",
+
+    "Glad you're here, {name}! I can explain any insurance term, give you an example sentence, or "
+    "compare two terms for you. Try \"what's a deductible?\" or \"compare premium and coinsurance\". "
+    "Type 'quit' whenever you're done. Go ahead and ask me anything, {name}!",
+
+    "Welcome aboard, {name}! Stuck on insurance jargon? Ask me for a definition, an example, or a "
+    "comparison between two terms. Try \"what is subrogation?\" or \"compare loss ratio and combined "
+    "ratio\". Type 'quit' to leave whenever. Let's get you up to speed, {name}!",
+
+    "Hey there, {name}! I'm your go-to for insurance terminology — definitions, examples, "
+    "comparisons, just ask. Try \"what's coinsurance?\" or \"compare ACV and replacement cost\". "
+    "Type 'quit' anytime to step away. Fire away, {name}!",
+
+    "Hi {name}, welcome! Whenever an insurance term trips you up, just ask — I'll define it, give "
+    "you an example, or compare it to something else. Try \"what is a premium?\" or \"compare "
+    "deductible and premium\". Type 'quit' to leave when you're ready. What would you like to know, {name}?",
+
+    "Good to have you, {name}! I can walk you through insurance terms — definitions, real examples, "
+    "and comparisons between two terms. Try \"what's liability?\" or \"compare ACV and replacement "
+    "cost\". Type 'quit' anytime to wrap up. Take it away, {name}!",
+
+    "Hello, {name}! Consider me your insurance dictionary that talks back — ask for a definition, "
+    "an example, or a comparison. Try \"what is reinsurance?\" or \"compare premium and coinsurance\". "
+    "Type 'quit' whenever you'd like to stop. Let's get started, {name}!",
+
+    "Welcome, {name}! New insurance term got you stuck? Ask me to define it, show an example, or "
+    "compare it with another. Try \"what's a deductible?\" or \"compare loss ratio and combined "
+    "ratio\". Type 'quit' any time to leave. Over to you, {name}!",
+]
 
 
-def render(intent: Intent, term: Term | None = None, **kwargs) -> str:
+def render(intent: Intent, term: Term | None = None, *, name: str | None = None, **kwargs) -> str:
     """Turn an intent (plus whatever data it needs) into a reply string.
 
-    Most intents only need `term`. A couple need more, passed as keyword
-    arguments so this function's signature doesn't have to grow a pile of
-    mostly-unused parameters:
+    `name` is the user's name, threaded through from ConversationState by
+    the dispatcher — every template uses it, so it's a real parameter here
+    rather than just another entry in **kwargs. Falls back to a generic
+    `_DEFAULT_NAME` if none was captured, so a reply never reads like
+    "Hi !" with a missing word.
+
+    Most intents only need `term` beyond that. A couple need more, passed as
+    keyword arguments so this function's signature doesn't have to grow a
+    pile of mostly-unused parameters:
     - COMPARE_TERMS needs `other_term` (a second Term) alongside `term`.
     - LIST_CATEGORIES needs `categories` (a list of category name strings).
     - FALLBACK optionally takes `candidates` (a list of term-name strings) —
@@ -81,18 +196,26 @@ def render(intent: Intent, term: Term | None = None, **kwargs) -> str:
       is what turns that into a real "did you mean X or Y?" question
       instead of a flat "I don't understand."
     """
+    name = name or _DEFAULT_NAME
+
     if intent is Intent.ASK_DEFINITION:
-        return random.choice(_DEFINITION_TEMPLATES).format(term=term.term, definition=term.definition)
+        return random.choice(_DEFINITION_TEMPLATES).format(
+            term=term.term,
+            definition=term.definition,
+            definition_clean=term.definition.rstrip("."),
+            name=name,
+        )
 
     if intent is Intent.ASK_EXAMPLE:
-        # Every term ships with exactly one example today (handoff.md
-        # §2.5), so the variety here comes from the wrapper sentence, not
-        # from picking among several examples. Falling back to the
-        # definition would be wrong (that's a different intent's job), so
-        # if a term somehow had no example we'd rather say so plainly.
+        # Every term ships with several example sentences (handoff.md
+        # §2.24), so there's room to add more variety here later — for now
+        # this just uses the first one, with the wrapper sentence providing
+        # variety instead. Falling back to the definition would be wrong
+        # (that's a different intent's job), so if a term somehow had no
+        # example we'd rather say so plainly.
         if not term.examples:
-            return f"I don't have an example sentence for {term.term} yet."
-        return random.choice(_EXAMPLE_TEMPLATES).format(term=term.term, example=term.examples[0])
+            return f"I don't have an example sentence for {term.term} yet, {name}."
+        return random.choice(_EXAMPLE_TEMPLATES).format(term=term.term, example=term.examples[0], name=name)
 
     if intent is Intent.COMPARE_TERMS:
         # Deliberately kept as two separate, self-contained sentences rather
@@ -107,25 +230,36 @@ def render(intent: Intent, term: Term | None = None, **kwargs) -> str:
             definition=term.definition,
             other_term=other_term.term,
             other_definition=other_term.definition,
+            name=name,
         )
 
     if intent is Intent.LIST_CATEGORIES:
         categories: list[str] = kwargs.get("categories", [])
-        return random.choice(_LIST_CATEGORIES_TEMPLATES).format(categories=", ".join(sorted(categories)))
+        return random.choice(_LIST_CATEGORIES_TEMPLATES).format(categories=", ".join(sorted(categories)), name=name)
 
     if intent is Intent.GREET:
-        return random.choice(_GREET_TEMPLATES)
+        return random.choice(_GREET_TEMPLATES).format(name=name)
 
     if intent is Intent.HELP:
-        return random.choice(_HELP_TEMPLATES)
+        return random.choice(_HELP_TEMPLATES).format(name=name)
 
     if intent is Intent.GOODBYE:
-        return random.choice(_GOODBYE_TEMPLATES)
+        return random.choice(_GOODBYE_TEMPLATES).format(name=name)
 
     if intent is Intent.FALLBACK:
         candidates: list[str] | None = kwargs.get("candidates")
         if candidates:
-            return _FALLBACK_DISAMBIGUATION_TEMPLATE.format(candidates=" or ".join(candidates))
-        return random.choice(_FALLBACK_TEMPLATES)
+            return random.choice(_FALLBACK_DISAMBIGUATION_TEMPLATES).format(
+                candidates=" or ".join(candidates), name=name
+            )
+        return random.choice(_FALLBACK_TEMPLATES).format(name=name)
 
     raise ValueError(f"No response template wired up for intent: {intent}")
+
+
+def render_welcome(name: str | None) -> str:
+    """The one-time greeting shown at the start of a session, right after
+    asking for the user's name — separate from Intent.GREET, which handles
+    a plain "hi" appearing mid-conversation instead.
+    """
+    return random.choice(_WELCOME_TEMPLATES).format(name=name or _DEFAULT_NAME)

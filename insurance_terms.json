@@ -4,11 +4,11 @@
     "version": "2.0",
     "generated": "2026-08-03",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1149,
+    "count": 1155,
     "categories": {
-      "General Insurance Concepts": 378,
+      "General Insurance Concepts": 379,
       "Property": 190,
-      "Claims": 174,
+      "Claims": 175,
       "Health": 152,
       "Liability": 143,
       "Financial / Accounting": 118,
@@ -19,7 +19,8 @@
       "Regulatory & Legal": 63,
       "Reinsurance": 59,
       "Financial Lines & Surety": 38,
-      "Marine & Aviation": 15
+      "Marine & Aviation": 15,
+      "Insurance Documentation": 4
     },
     "difficulty_levels": [
       "Basic",
@@ -4785,7 +4786,9 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "coinsurance"
+        "coinsurance",
+        "co-insurance",
+        "co insurance"
       ]
     },
     {
@@ -7609,7 +7612,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "declarations page"
+        "declarations page",
+        "policy schedule"
       ]
     },
     {
@@ -29755,6 +29759,198 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "full credibility"
+      ]
+    },
+    {
+      "id": "general-conditions",
+      "term": "General Conditions",
+      "definition": "the foundational contractual rules, obligations, and procedures that govern how an insurance policy operates, including duties of the insured and insurer.",
+      "examples": [
+        "General Conditions outline the responsibilities of both the insurer and the policyholder.",
+        "The policy’s General Conditions section was consulted to determine reporting requirements after a loss.",
+        "Underwriters rely on General Conditions to ensure consistent application of policy rules.",
+        "General Conditions were reviewed to confirm compliance with policy obligations.",
+        "The insured referenced General Conditions to understand how to submit documentation for a claim."
+      ],
+      "categories": [
+        "Insurance Documentation"
+      ],
+      "synonyms": [
+        "Contractual Conditions"
+      ],
+      "related": [
+        {
+          "term": "Exclusions",
+          "id": "exclusions"
+        },
+        {
+          "term": "Policy Cover",
+          "id": "policy-cover"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "general conditions",
+        "policy conditions"
+      ]
+    },
+    {
+      "id": "coverage-limits",
+      "term": "Coverage Limits",
+      "definition": "the maximum amount an insurer will pay for a covered loss, as specified in the policy.",
+      "examples": [
+        "Coverage limits determine the maximum payout for a claim.",
+        "The adjuster checked coverage limits before finalizing the settlement amount.",
+        "Coverage limits were reviewed during underwriting to ensure adequate protection.",
+        "The insured compared coverage limits across policies to choose the best option.",
+        "Legal teams referenced coverage limits when evaluating liability exposure."
+      ],
+      "categories": [
+        "Insurance Documentation"
+      ],
+      "synonyms": [
+        "Maximum Benefit"
+      ],
+      "related": [
+        {
+          "term": "Exclusions",
+          "id": "exclusions"
+        },
+        {
+          "term": "Policy Cover",
+          "id": "policy-cover"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "coverage limits",
+        "policy limits"
+      ]
+    },
+    {
+      "id": "conditions-precedent",
+      "term": "Conditions Precedent",
+      "definition": "contractual requirements that must be fulfilled before coverage becomes valid or a claim can be processed.",
+      "examples": [
+        "Conditions precedent must be met for the insurer to accept liability.",
+        "The claims team checked conditions precedent before approving payment.",
+        "Failure to meet conditions precedent may void coverage.",
+        "The insured reviewed conditions precedent to ensure compliance.",
+        "Underwriters rely on conditions precedent to manage risk obligations."
+      ],
+      "categories": [
+        "Insurance Documentation"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "General Conditions",
+          "id": "general-conditions"
+        },
+        {
+          "term": "Claims Procedure",
+          "id": "claims-procedure"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "conditions precedent",
+        "pre-conditions"
+      ]
+    },
+    {
+      "id": "claims-procedure",
+      "term": "Claims Procedure",
+      "definition": "the formal steps a policyholder must follow to report, document, and request compensation for a covered loss.",
+      "examples": [
+        "Claims procedure outlines how to submit documentation for a loss.",
+        "The adjuster followed the claims procedure to evaluate the incident.",
+        "Claims procedure ensures consistent handling of reported events.",
+        "The insured reviewed the claims procedure before filing a claim.",
+        "Underwriters reference claims procedure when assessing risk exposure."
+      ],
+      "categories": [
+        "Claims"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Conditions Precedent",
+          "id": "conditions-precedent"
+        },
+        {
+          "term": "Exclusions",
+          "id": "exclusions"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims procedure",
+        "claims process"
+      ]
+    },
+    {
+      "id": "per-occurrence-limit",
+      "term": "Per-Occurrence Limit",
+      "definition": "the maximum amount an insurer will pay for a single covered event.",
+      "examples": [
+        "Per-occurrence limits apply to each individual incident.",
+        "The adjuster checked the per-occurrence limit before calculating payout.",
+        "Per-occurrence limits help insurers manage large single-event losses.",
+        "The insured reviewed per-occurrence limits for catastrophic coverage.",
+        "Underwriters set per-occurrence limits based on event severity."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Aggregate Limit",
+          "id": "aggregate-limit"
+        },
+        {
+          "term": "Coverage Limits",
+          "id": "coverage-limits"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "per occurrence limit",
+        "per-occurrence limit",
+        "event limit"
+      ]
+    },
+    {
+      "id": "policy-cover",
+      "term": "Policy Cover",
+      "definition": "the specific protections, benefits, and insured events provided under an insurance contract, outlining what the insurer agrees to compensate or indemnify.",
+      "examples": [
+        "Policy cover defines exactly what events or losses the insurer will compensate.",
+        "In the policy document, Policy Cover was referenced to clarify which risks were included under the contract.",
+        "The adjuster reviewed the Policy Cover section to determine whether the incident fell within the insured events.",
+        "During underwriting, Policy Cover was evaluated to ensure the risk profile matched the insurer’s guidelines.",
+        "The claims team checked Policy Cover before approving the settlement."
+      ],
+      "categories": [
+        "Insurance Documentation"
+      ],
+      "synonyms": [
+        "Insured Benefits"
+      ],
+      "related": [
+        {
+          "term": "General Conditions",
+          "id": "general-conditions"
+        },
+        {
+          "term": "Exclusions",
+          "id": "exclusions"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "policy cover"
       ]
     }
   ]

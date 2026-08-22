@@ -144,7 +144,7 @@ Ask it something like `what's a premium?`, then follow up with `give me an examp
 
 ---
 
-## What's ahead
+## What's next
 
 1. **More testing, as it grows** — keep extending `tests/` with misspelled and casually-worded questions as new intents/features get added, since the whole point is that the audience doesn't already know the "correct" insurance vocabulary to type.
 2. **"v1.5" features**, once the basics work — the data already supports all of this via the `categories`/`difficulty` fields already in `insurance_terms.json`; none of it is wired up yet:

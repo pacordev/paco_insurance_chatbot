@@ -18,6 +18,7 @@ from dataclasses import dataclass
 import spacy
 from rapidfuzz import process, fuzz
 from spacy.matcher import PhraseMatcher
+from spacy.util import filter_spans
 
 from bot.data import TermStore
 
@@ -86,9 +87,20 @@ class EntityMatcher:
         doc = self.nlp(text)
         hits = self.matcher(doc)
         if hits:
+            spans = [doc[start:end] for _, start, end in hits]
+            # Many short, generic single words are themselves real glossary
+            # entries (e.g. "Risk", "Loss"), and plenty of longer terms
+            # contain one as a literal substring ("Risk Adjustment", "Loss
+            # Ratio"). Without this, a question about the longer, more
+            # specific term would also register an exact hit on the shorter
+            # one buried inside it, and whichever happened to come first in
+            # the raw match list would win — in practice, that turned out to
+            # be the shorter, wrong answer. filter_spans keeps only the
+            # longest match wherever spans overlap, so "risk adjustment"
+            # wins outright over the "risk" contained inside it.
+            spans = filter_spans(spans)
             matches = []
-            for _, start, end in hits:
-                span = doc[start:end]
+            for span in spans:
                 term_id = self.store.resolve_surface_form(span.text)
                 if term_id:
                     matches.append(EntityMatch(term_id, span.text, exact=True, score=100.0))

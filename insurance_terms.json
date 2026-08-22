@@ -4,21 +4,21 @@
     "version": "2.0",
     "generated": "2026-08-03",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1012,
+    "count": 1149,
     "categories": {
-      "General Insurance Concepts": 346,
-      "Property": 157,
+      "General Insurance Concepts": 378,
+      "Property": 190,
+      "Claims": 174,
+      "Health": 152,
       "Liability": 143,
-      "Claims": 138,
-      "Health": 110,
+      "Financial / Accounting": 118,
+      "Underwriting & Actuarial": 104,
       "Workers Compensation": 78,
+      "Life": 76,
       "Auto": 71,
-      "Life": 60,
-      "Financial / Accounting": 50,
+      "Regulatory & Legal": 63,
+      "Reinsurance": 59,
       "Financial Lines & Surety": 38,
-      "Regulatory & Legal": 35,
-      "Reinsurance": 34,
-      "Underwriting & Actuarial": 32,
       "Marine & Aviation": 15
     },
     "difficulty_levels": [
@@ -25572,6 +25572,4189 @@
       "difficulty": "Basic",
       "lookup_keys": [
         "year 2000 problem"
+      ]
+    },
+    {
+      "id": "monthly-premium",
+      "term": "Monthly Premium",
+      "definition": "the recurring monthly amount a policyholder pays to maintain active insurance coverage.",
+      "examples": [
+        "Monthly premium allows policyholders to spread costs over time.",
+        "Billing systems track Monthly Premium payments.",
+        "Underwriters adjust Monthly Premium after risk changes.",
+        "Monthly Premium may include installment fees.",
+        "The insurer reviewed Monthly Premium during rate filing."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Health"
+      ],
+      "synonyms": [
+        "monthly payment"
+      ],
+      "related": [
+        {
+          "term": "Annual Premium",
+          "id": "annual-premium"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "monthly premium"
+      ]
+    },
+    {
+      "id": "annual-premium",
+      "term": "Annual Premium",
+      "definition": "the total amount a policyholder pays for one full year of insurance coverage, often discounted compared to monthly payments.",
+      "examples": [
+        "Annual premium reflects the cost of 12 months of coverage.",
+        "Policyholders may pay Annual Premium upfront for discounts.",
+        "Annual Premium is recalculated during renewal.",
+        "Annual Premium is documented in the declarations page.",
+        "Annual Premium may change after underwriting review."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Life"
+      ],
+      "synonyms": [
+        "yearly premium"
+      ],
+      "related": [
+        {
+          "term": "Monthly Premium",
+          "id": "monthly-premium"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "annual premium"
+      ]
+    },
+    {
+      "id": "co-pay",
+      "term": "Co-pay",
+      "definition": "a fixed amount the policyholder must pay out-of-pocket for a covered service, typically due at the time of service.",
+      "examples": [
+        "Co-pays apply to routine medical visits.",
+        "The claim file documented a $25 Co-pay.",
+        "Co-pays simplify cost-sharing for predictable services.",
+        "Co-pay amounts vary by plan design.",
+        "Co-pays do not count toward deductibles in some plans."
+      ],
+      "categories": [
+        "Claims",
+        "Health"
+      ],
+      "synonyms": [
+        "copayment"
+      ],
+      "related": [
+        {
+          "term": "Deductible",
+          "id": "deductible"
+        },
+        {
+          "term": "Coinsurance",
+          "id": "coinsurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "co-pay",
+        "copayment"
+      ]
+    },
+    {
+      "id": "coverage-percentage",
+      "term": "Coverage Percentage",
+      "definition": "the proportion of an approved claim amount that the insurer agrees to pay.",
+      "examples": [
+        "Coverage percentage determines the insurer’s share of the claim.",
+        "The adjuster applied Coverage Percentage to the medical bill.",
+        "Coverage Percentage varies by benefit category.",
+        "An 80% Coverage Percentage means the insured pays 20%.",
+        "Coverage Percentage is defined in the policy contract."
+      ],
+      "categories": [
+        "Claims",
+        "Health"
+      ],
+      "synonyms": [
+        "coinsurance rate"
+      ],
+      "related": [
+        {
+          "term": "Co-pay",
+          "id": "co-pay"
+        },
+        {
+          "term": "Deductible",
+          "id": "deductible"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "coverage percentage"
+      ]
+    },
+    {
+      "id": "out-of-pocket-maximum",
+      "term": "Out-of-Pocket Maximum",
+      "definition": "the maximum amount a policyholder must pay for covered services during a policy period before the insurer pays 100% of covered costs.",
+      "examples": [
+        "Once the out-of-pocket maximum is reached, the insurer pays all covered expenses.",
+        "The adjuster confirmed the insured met the Out-of-Pocket Maximum.",
+        "Out-of-pocket maximum includes deductibles and coinsurance.",
+        "High out-of-pocket maximums reduce premiums.",
+        "Out-of-pocket maximum protects insureds from catastrophic costs."
+      ],
+      "categories": [
+        "Claims",
+        "Health"
+      ],
+      "synonyms": [
+        "OOP max"
+      ],
+      "related": [
+        {
+          "term": "Deductible",
+          "id": "deductible"
+        },
+        {
+          "term": "Coinsurance",
+          "id": "coinsurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "out of pocket maximum"
+      ]
+    },
+    {
+      "id": "rating-factor",
+      "term": "Rating Factor",
+      "definition": "a variable used to adjust premium rates based on risk characteristics such as age, location, or claims history.",
+      "examples": [
+        "Rating factors include age, location, and claims history.",
+        "The insurer applied Rating Factors to calculate the final premium.",
+        "Rating Factors vary by product type.",
+        "Underwriting guidelines define acceptable Rating Factors.",
+        "Rating Factors must comply with regulatory standards."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "rating factor"
+      ]
+    },
+    {
+      "id": "credibility-factor",
+      "term": "Credibility Factor",
+      "definition": "a statistical measure used to determine how much weight to give an insured’s own loss experience in premium calculations.",
+      "examples": [
+        "Credibility factor determines how much experience rating applies.",
+        "Small accounts often have low credibility.",
+        "Actuaries calculate credibility using statistical formulas.",
+        "Credibility increases with more data.",
+        "Credibility Factor is used in rate-making."
+      ],
+      "categories": [
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "credibility factor"
+      ]
+    },
+    {
+      "id": "exposure-unit",
+      "term": "Exposure Unit",
+      "definition": "a standardized measure of risk used to calculate premiums.",
+      "examples": [
+        "Exposure units vary by product type.",
+        "Premiums are calculated by multiplying exposure units by rates.",
+        "The insurer updated exposure units during underwriting.",
+        "Exposure units include payroll, vehicle count, or square footage.",
+        "Actuaries analyze exposure units for rate-making."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "exposure unit"
+      ]
+    },
+    {
+      "id": "loss-cost",
+      "term": "Loss Cost",
+      "definition": "the portion of the premium rate that covers expected losses, excluding expenses.",
+      "examples": [
+        "Loss cost reflects expected claim payments.",
+        "The insurer updated Loss Costs based on new data.",
+        "Loss Costs are filed by rating bureaus.",
+        "Loss Cost is combined with expense load to form rates.",
+        "Actuaries calculate Loss Costs using historical losses."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Expense Load",
+          "id": "expense-load"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "loss cost"
+      ]
+    },
+    {
+      "id": "expense-load",
+      "term": "Expense Load",
+      "definition": "the portion of the premium rate that covers insurer expenses such as administration, acquisition, and overhead.",
+      "examples": [
+        "Expense load includes administrative and acquisition costs.",
+        "The insurer adjusted Expense Load during rate filing.",
+        "Expense Load varies by distribution channel.",
+        "Actuaries calculate Expense Load using financial data.",
+        "Expense Load is added to Loss Cost to form rates."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Loss Cost",
+          "id": "loss-cost"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "expense load"
+      ]
+    },
+    {
+      "id": "rate-book",
+      "term": "Rate Book",
+      "definition": "a published set of rates and rating factors used to calculate premiums for various insurance products.",
+      "examples": [
+        "Underwriters reference the Rate Book when pricing policies.",
+        "Rate Books are updated annually.",
+        "Rate Book changes require regulatory approval.",
+        "The insurer maintains separate Rate Books for each product.",
+        "Rate Book accuracy is essential for compliance."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "rating manual"
+      ],
+      "related": [
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        },
+        {
+          "term": "Rating Factor",
+          "id": "rating-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "rate book"
+      ]
+    },
+    {
+      "id": "schedule-rating",
+      "term": "Schedule Rating",
+      "definition": "a method of adjusting premiums based on qualitative risk characteristics not captured in standard rating formulas.",
+      "examples": [
+        "Schedule rating adjusts premiums for unique risk features.",
+        "Underwriters apply Schedule Rating for complex commercial accounts.",
+        "Schedule Rating considers factors like safety programs.",
+        "Schedule Rating adjustments must be documented.",
+        "Schedule Rating supplements experience rating."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "schedule rating"
+      ]
+    },
+    {
+      "id": "individual-rating",
+      "term": "Individual Rating",
+      "definition": "a rating method that prices insurance based on the specific characteristics of an individual risk.",
+      "examples": [
+        "Individual rating is used for unique or complex risks.",
+        "Underwriters perform detailed analysis for Individual Rating.",
+        "Individual Rating may require custom endorsements.",
+        "Individual Rating is common in large commercial accounts.",
+        "Individual Rating considers risk-specific data."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "custom rating"
+      ],
+      "related": [
+        {
+          "term": "Class Rating",
+          "id": "class-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "individual rating"
+      ]
+    },
+    {
+      "id": "experience-modifier",
+      "term": "Experience Modifier",
+      "definition": "a factor applied to premiums based on an insured’s historical loss experience relative to industry averages.",
+      "examples": [
+        "Experience modifiers adjust workers’ compensation premiums.",
+        "A mod below 1.0 indicates better-than-average experience.",
+        "The insurer recalculated the Experience Modifier after updated loss data.",
+        "Experience Modifiers influence underwriting decisions.",
+        "Regulators oversee Experience Modifier calculations."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "mod factor",
+        "x-mod"
+      ],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        },
+        {
+          "term": "Credibility Factor",
+          "id": "credibility-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "experience modifier"
+      ]
+    },
+    {
+      "id": "loss-severity",
+      "term": "Loss Severity",
+      "definition": "the average cost of claims within a given period, used to measure how expensive losses are for a specific risk or portfolio.",
+      "examples": [
+        "Loss severity increased due to rising repair costs.",
+        "Actuaries analyze Loss Severity to adjust rates.",
+        "Loss Severity varies significantly by line of business.",
+        "High Loss Severity may indicate inadequate policy limits.",
+        "Loss Severity is combined with frequency to estimate total losses."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "claim severity"
+      ],
+      "related": [
+        {
+          "term": "Loss Frequency",
+          "id": "loss-frequency"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "loss severity"
+      ]
+    },
+    {
+      "id": "base-rate",
+      "term": "Base Rate",
+      "definition": "the starting premium rate applied before rating factors, modifiers, or underwriting adjustments.",
+      "examples": [
+        "Base rates are filed with regulators.",
+        "Underwriters apply rating factors to the Base Rate.",
+        "Base Rates vary by territory and risk class.",
+        "Actuaries update Base Rates during rate reviews.",
+        "Base Rate changes require actuarial justification."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "initial rate"
+      ],
+      "related": [
+        {
+          "term": "Rating Factor",
+          "id": "rating-factor"
+        },
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "base rate"
+      ]
+    },
+    {
+      "id": "territory-factor",
+      "term": "Territory Factor",
+      "definition": "a rating adjustment applied based on geographic risk characteristics such as crime rates, weather patterns, or traffic density.",
+      "examples": [
+        "Territory factors vary widely between rural and urban areas.",
+        "The insurer updated Territory Factors after new loss data.",
+        "Territory Factors influence auto and property insurance premiums.",
+        "Regulators review Territory Factors for fairness.",
+        "Underwriters apply Territory Factors during pricing."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "geographic factor"
+      ],
+      "related": [
+        {
+          "term": "Rating Factor",
+          "id": "rating-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "territory factor"
+      ]
+    },
+    {
+      "id": "credibility-weighted-losses",
+      "term": "Credibility Weighted Losses",
+      "definition": "a blend of an insured’s actual losses and industry losses based on credibility, used in experience rating.",
+      "examples": [
+        "Credibility weighted losses combine actual and expected experience.",
+        "Actuaries calculate Credibility Weighted Losses for large accounts.",
+        "Credibility Weighted Losses stabilize premium fluctuations.",
+        "Credibility Weighted Losses are used in workers’ compensation.",
+        "Credibility determines how much actual loss experience influences pricing."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Credibility Factor",
+          "id": "credibility-factor"
+        },
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "credibility weighted losses"
+      ]
+    },
+    {
+      "id": "ultimate-loss",
+      "term": "Ultimate Loss",
+      "definition": "the final expected value of all losses for a given accident period, including reported and unreported claims.",
+      "examples": [
+        "Ultimate loss includes both reported claims and IBNR.",
+        "Actuaries estimate Ultimate Loss using development factors.",
+        "Ultimate Loss projections influence reserve adequacy.",
+        "Ultimate Loss varies by accident year.",
+        "Ultimate Loss is essential for financial reporting."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Claims"
+      ],
+      "synonyms": [
+        "ultimate incurred loss"
+      ],
+      "related": [
+        {
+          "term": "Loss Development Factor",
+          "id": "loss-development-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "ultimate loss"
+      ]
+    },
+    {
+      "id": "case-reserve",
+      "term": "Case Reserve",
+      "definition": "the estimated amount set aside for an individual reported claim based on known facts at the time of evaluation.",
+      "examples": [
+        "Adjusters update case reserves as new information becomes available.",
+        "Case reserves vary by claim complexity.",
+        "Case Reserve accuracy affects financial statements.",
+        "Supervisors review Case Reserves for adequacy.",
+        "Case Reserves contribute to total claim reserves."
+      ],
+      "categories": [
+        "Claims",
+        "Property"
+      ],
+      "synonyms": [
+        "individual reserve"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "case reserve"
+      ]
+    },
+    {
+      "id": "premium-triangle",
+      "term": "Premium Triangle",
+      "definition": "a tabular format showing how premiums develop over time, used for analyzing earned and written premium patterns.",
+      "examples": [
+        "Premium triangles help actuaries analyze premium development.",
+        "Premium Triangle data supports rate-making.",
+        "Premium Triangles align premium with exposure periods.",
+        "Premium Triangles are used in financial projections.",
+        "Premium Triangles complement loss triangles in actuarial work."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "premium triangle"
+      ]
+    },
+    {
+      "id": "exposure-triangle",
+      "term": "Exposure Triangle",
+      "definition": "a tabular format showing how exposure units develop over time, used in actuarial analysis and rate-making.",
+      "examples": [
+        "Exposure triangles track changes in exposure over time.",
+        "Actuaries use Exposure Triangles to support rate development.",
+        "Exposure Triangles help identify shifts in risk mix.",
+        "Exposure Triangle data is used in trend analysis.",
+        "Exposure Triangles complement premium and loss triangles."
+      ],
+      "categories": [
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Premium Triangle",
+          "id": "premium-triangle"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "exposure triangle"
+      ]
+    },
+    {
+      "id": "severity-distribution",
+      "term": "Severity Distribution",
+      "definition": "a statistical distribution used to model the size of losses, often applied in pricing and reserving.",
+      "examples": [
+        "Actuaries fit severity distributions to claim data.",
+        "Severity distributions help estimate large losses.",
+        "Common severity distributions include lognormal and Pareto.",
+        "Severity Distribution selection impacts pricing accuracy.",
+        "Severity distributions are used in catastrophe modeling."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Reinsurance"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Frequency Distribution",
+          "id": "frequency-distribution"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "severity distribution"
+      ]
+    },
+    {
+      "id": "frequency-distribution",
+      "term": "Frequency Distribution",
+      "definition": "a statistical distribution used to model how often losses occur, applied in pricing and risk modeling.",
+      "examples": [
+        "Actuaries use frequency distributions to model claim counts.",
+        "Poisson and negative binomial are common frequency distributions.",
+        "Frequency distributions help estimate expected losses.",
+        "Frequency Distribution selection affects premium accuracy.",
+        "Frequency distributions are used in aggregate loss modeling."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Reinsurance"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Severity Distribution",
+          "id": "severity-distribution"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "frequency distribution"
+      ]
+    },
+    {
+      "id": "excess-loss",
+      "term": "Excess Loss",
+      "definition": "the portion of a loss that exceeds a specified attachment point, often covered by excess insurance or reinsurance.",
+      "examples": [
+        "Excess loss coverage protects insurers from large claims.",
+        "Reinsurers assume Excess Loss above the attachment point.",
+        "Excess Loss layers are common in catastrophe programs.",
+        "Actuaries model Excess Loss using severity distributions.",
+        "Excess Loss contracts reduce volatility in insurer results."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "layered loss"
+      ],
+      "related": [
+        {
+          "term": "Attachment Point",
+          "id": "attachment-point"
+        },
+        {
+          "term": "Reinsurance Layer",
+          "id": "reinsurance-layer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "excess loss"
+      ]
+    },
+    {
+      "id": "attachment-point",
+      "term": "Attachment Point",
+      "definition": "the loss amount at which excess or reinsurance coverage begins to apply.",
+      "examples": [
+        "The reinsurer pays losses above the attachment point.",
+        "Attachment Points vary by treaty structure.",
+        "Actuaries evaluate Attachment Points for optimal risk transfer.",
+        "Attachment Points determine reinsurance pricing.",
+        "Higher Attachment Points reduce reinsurance costs."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "threshold"
+      ],
+      "related": [
+        {
+          "term": "Excess Loss",
+          "id": "excess-loss"
+        },
+        {
+          "term": "Reinsurance Layer",
+          "id": "reinsurance-layer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "attachment point"
+      ]
+    },
+    {
+      "id": "reinsurance-layer",
+      "term": "Reinsurance Layer",
+      "definition": "a defined band of loss amounts covered by a reinsurance contract, typically structured in multiple layers.",
+      "examples": [
+        "Reinsurance layers distribute risk among multiple reinsurers.",
+        "Layering allows insurers to manage catastrophe exposure.",
+        "Actuaries model losses by reinsurance layer.",
+        "Reinsurance Layers are priced separately.",
+        "Layer structures appear in excess-of-loss treaties."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "loss layer"
+      ],
+      "related": [
+        {
+          "term": "Excess Loss",
+          "id": "excess-loss"
+        },
+        {
+          "term": "Attachment Point",
+          "id": "attachment-point"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "reinsurance layer"
+      ]
+    },
+    {
+      "id": "quota-share",
+      "term": "Quota Share",
+      "definition": "a proportional reinsurance arrangement where the reinsurer assumes a fixed percentage of premiums and losses.",
+      "examples": [
+        "Quota share treaties share premiums and losses proportionally.",
+        "Insurers use quota share to stabilize underwriting results.",
+        "Quota Share agreements include ceding commissions.",
+        "Actuaries evaluate quota share impact on profitability.",
+        "Quota Share reduces insurer retention."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "proportional reinsurance"
+      ],
+      "related": [
+        {
+          "term": "Surplus Share",
+          "id": "surplus-share"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "quota share"
+      ]
+    },
+    {
+      "id": "surplus-share",
+      "term": "Surplus Share",
+      "definition": "a proportional reinsurance arrangement where the reinsurer assumes losses above a specified retention, up to a defined multiple.",
+      "examples": [
+        "Surplus share treaties apply when risks exceed insurer retention.",
+        "Surplus Share allows insurers to write larger policies.",
+        "Actuaries analyze Surplus Share for capital relief.",
+        "Surplus Share differs from quota share in retention structure.",
+        "Surplus Share treaties include negotiated ceding commissions."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "surplus reinsurance"
+      ],
+      "related": [
+        {
+          "term": "Quota Share",
+          "id": "quota-share"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "surplus share"
+      ]
+    },
+    {
+      "id": "ceding-commission",
+      "term": "Ceding Commission",
+      "definition": "a payment from the reinsurer to the insurer to cover acquisition and administrative expenses in proportional reinsurance.",
+      "examples": [
+        "Ceding commissions compensate insurers for acquisition costs.",
+        "Quota share treaties typically include ceding commissions.",
+        "Ceding Commission rates vary by treaty negotiation.",
+        "Actuaries evaluate Ceding Commission adequacy.",
+        "Ceding Commissions impact insurer profitability."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "commission allowance"
+      ],
+      "related": [
+        {
+          "term": "Quota Share",
+          "id": "quota-share"
+        },
+        {
+          "term": "Surplus Share",
+          "id": "surplus-share"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "ceding commission"
+      ]
+    },
+    {
+      "id": "probable-maximum-loss",
+      "term": "Probable Maximum Loss",
+      "definition": "the largest loss expected to occur under normal conditions, often used in catastrophe risk assessment.",
+      "examples": [
+        "Probable Maximum Loss estimates guide reinsurance purchases.",
+        "PML varies by geographic exposure.",
+        "Actuaries calculate PML using catastrophe models.",
+        "PML helps insurers manage capital requirements.",
+        "Regulators review PML assumptions for solvency."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "PML"
+      ],
+      "related": [
+        {
+          "term": "Catastrophe Model",
+          "id": "catastrophe-model"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "probable maximum loss"
+      ]
+    },
+    {
+      "id": "aggregate-loss-model",
+      "term": "Aggregate Loss Model",
+      "definition": "a statistical model combining frequency and severity distributions to estimate total losses for a portfolio over a given period.",
+      "examples": [
+        "Actuaries use aggregate loss models to estimate annual loss totals.",
+        "Aggregate Loss Models help determine reinsurance needs.",
+        "The model combines frequency and severity assumptions.",
+        "Aggregate Loss Models are used in capital adequacy testing.",
+        "Insurers rely on aggregate models for solvency projections."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Reinsurance"
+      ],
+      "synonyms": [
+        "aggregate model"
+      ],
+      "related": [
+        {
+          "term": "Frequency Distribution",
+          "id": "frequency-distribution"
+        },
+        {
+          "term": "Severity Distribution",
+          "id": "severity-distribution"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "aggregate loss model"
+      ]
+    },
+    {
+      "id": "stop-loss",
+      "term": "Stop Loss",
+      "definition": "a reinsurance or insurance mechanism that limits the insurer’s total losses by providing coverage once aggregate losses exceed a specified threshold.",
+      "examples": [
+        "Stop loss coverage protects insurers from unusually high aggregate losses.",
+        "Employers use stop loss insurance for self-funded health plans.",
+        "Stop Loss triggers when total claims exceed the attachment point.",
+        "Actuaries evaluate Stop Loss options for risk management.",
+        "Stop Loss reduces volatility in insurer results."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Health",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "aggregate stop loss"
+      ],
+      "related": [
+        {
+          "term": "Attachment Point",
+          "id": "attachment-point"
+        },
+        {
+          "term": "Aggregate Loss Model",
+          "id": "aggregate-loss-model"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "stop loss"
+      ]
+    },
+    {
+      "id": "coinsurance-stop",
+      "term": "Coinsurance Stop",
+      "definition": "a limit at which coinsurance no longer applies and the insurer begins paying 100% of covered expenses.",
+      "examples": [
+        "Coinsurance stops once the out-of-pocket maximum is reached.",
+        "Coinsurance Stop protects insureds from catastrophic costs.",
+        "Health plans define Coinsurance Stop in the benefits summary.",
+        "Coinsurance Stop varies by plan type.",
+        "Actuaries evaluate Coinsurance Stop levels for affordability."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "coinsurance cap"
+      ],
+      "related": [
+        {
+          "term": "Out-of-Pocket Maximum",
+          "id": "out-of-pocket-maximum"
+        },
+        {
+          "term": "Coinsurance",
+          "id": "coinsurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "coinsurance stop"
+      ]
+    },
+    {
+      "id": "benefit-maximum",
+      "term": "Benefit Maximum",
+      "definition": "the maximum amount an insurer will pay for a specific benefit category within a policy period.",
+      "examples": [
+        "Dental plans often include annual benefit maximums.",
+        "Benefit Maximums limit insurer exposure for certain services.",
+        "The adjuster confirmed the Benefit Maximum had been reached.",
+        "Benefit Maximums vary by coverage type.",
+        "Benefit Maximums are listed in the policy schedule."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "coverage maximum"
+      ],
+      "related": [
+        {
+          "term": "Policy Limit",
+          "id": "policy-limit"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "benefit maximum"
+      ]
+    },
+    {
+      "id": "lifetime-maximum",
+      "term": "Lifetime Maximum",
+      "definition": "the maximum amount an insurer will pay over the lifetime of a policyholder for covered services.",
+      "examples": [
+        "Lifetime maximums were common before regulatory reforms.",
+        "The insured reached the Lifetime Maximum for certain benefits.",
+        "Lifetime Maximums limit long-term insurer exposure.",
+        "Regulations may prohibit Lifetime Maximums for essential health benefits.",
+        "Lifetime Maximums appear in older policy forms."
+      ],
+      "categories": [
+        "Health",
+        "Regulatory & Legal",
+        "Claims"
+      ],
+      "synonyms": [
+        "lifetime cap"
+      ],
+      "related": [
+        {
+          "term": "Benefit Maximum",
+          "id": "benefit-maximum"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "lifetime maximum"
+      ]
+    },
+    {
+      "id": "experience-refund",
+      "term": "Experience Refund",
+      "definition": "a refund paid to the policyholder when actual claims are lower than expected under certain group insurance arrangements.",
+      "examples": [
+        "Experience refunds reward groups with low claims.",
+        "Insurers calculate Experience Refunds annually.",
+        "Experience Refunds depend on loss ratios.",
+        "Experience Refunds are common in group health and life insurance.",
+        "Experience Refund formulas are defined in the policy contract."
+      ],
+      "categories": [
+        "Health",
+        "Life",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "experience dividend"
+      ],
+      "related": [
+        {
+          "term": "Loss Ratio",
+          "id": "loss-ratio"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "experience refund"
+      ]
+    },
+    {
+      "id": "premium-refund",
+      "term": "Premium Refund",
+      "definition": "a return of premium to the policyholder due to cancellation, overpayment, or contractual refund provisions.",
+      "examples": [
+        "Premium refunds occur when policies are canceled mid-term.",
+        "Billing systems calculate Premium Refunds automatically.",
+        "Premium Refunds may result from regulatory rate rollbacks.",
+        "The insurer issued a Premium Refund after correcting a billing error.",
+        "Premium Refunds reduce earned premium."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "return premium"
+      ],
+      "related": [
+        {
+          "term": "Unearned Premium",
+          "id": "unearned-premium"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "premium refund"
+      ]
+    },
+    {
+      "id": "modal-premium",
+      "term": "Modal Premium",
+      "definition": "the premium amount paid based on the selected payment frequency, such as monthly, quarterly, or semiannual.",
+      "examples": [
+        "Modal premiums are higher than annual premiums due to administrative costs.",
+        "Life insurance policies often list multiple modal premium options.",
+        "Billing systems calculate Modal Premiums automatically.",
+        "Modal Premiums include installment fees.",
+        "The insured switched from annual to monthly modal premiums."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Life"
+      ],
+      "synonyms": [
+        "installment premium"
+      ],
+      "related": [
+        {
+          "term": "Monthly Premium",
+          "id": "monthly-premium"
+        },
+        {
+          "term": "Annual Premium",
+          "id": "annual-premium"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "modal premium"
+      ]
+    },
+    {
+      "id": "policy-fee",
+      "term": "Policy Fee",
+      "definition": "a fixed charge added to the premium to cover administrative costs associated with issuing and maintaining the policy.",
+      "examples": [
+        "Policy fees are common in personal lines insurance.",
+        "The insurer added a Policy Fee to cover administrative expenses.",
+        "Policy Fees are listed separately on billing statements.",
+        "Policy Fee amounts vary by product type.",
+        "Policy Fees are not typically subject to commission."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "administrative fee"
+      ],
+      "related": [
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "policy fee"
+      ]
+    },
+    {
+      "id": "trend-rate",
+      "term": "Trend Rate",
+      "definition": "the percentage used to adjust historical losses, premiums, or exposures to reflect expected future changes such as inflation or utilization shifts.",
+      "examples": [
+        "Actuaries apply trend rates to project future claim costs.",
+        "Medical inflation often drives higher trend rates in health insurance.",
+        "Trend Rate assumptions must be justified in regulatory filings.",
+        "Trend Rates vary by line of business and geographic region.",
+        "Trend Rate selection significantly impacts premium adequacy."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Health",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "trend assumption"
+      ],
+      "related": [
+        {
+          "term": "Trend Factor",
+          "id": "trend-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "trend rate"
+      ]
+    },
+    {
+      "id": "exposure-base",
+      "term": "Exposure Base",
+      "definition": "the unit of measurement used to quantify risk for rating purposes, such as payroll, sales, vehicle count, or square footage.",
+      "examples": [
+        "Workers’ compensation uses payroll as the exposure base.",
+        "General liability often uses sales as the exposure base.",
+        "Exposure Base selection affects premium accuracy.",
+        "Underwriters verify Exposure Base values during audits.",
+        "Actuaries analyze Exposure Base trends for pricing."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "Property"
+      ],
+      "synonyms": [
+        "rating base"
+      ],
+      "related": [
+        {
+          "term": "Exposure Unit",
+          "id": "exposure-unit"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "exposure base"
+      ]
+    },
+    {
+      "id": "audit-premium",
+      "term": "Audit Premium",
+      "definition": "the final premium calculated after a policy audit adjusts exposure values to actual amounts rather than estimates.",
+      "examples": [
+        "Audit premiums are common in commercial insurance.",
+        "The insurer issued an additional Audit Premium after reviewing payroll.",
+        "Audit Premiums ensure accurate premium based on actual exposure.",
+        "Policyholders may owe or receive money after an audit.",
+        "Audit Premiums reduce mispricing risk for insurers."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "final premium"
+      ],
+      "related": [
+        {
+          "term": "Exposure Base",
+          "id": "exposure-base"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "audit premium"
+      ]
+    },
+    {
+      "id": "deposit-premium",
+      "term": "Deposit Premium",
+      "definition": "an initial premium paid at policy inception, subject to adjustment after audit or final exposure determination.",
+      "examples": [
+        "Deposit premiums are common in auditable commercial policies.",
+        "The insurer collected a Deposit Premium based on estimated payroll.",
+        "Deposit Premiums help insurers manage cash flow.",
+        "Deposit Premiums are reconciled during final audit.",
+        "Underwriters set Deposit Premiums using estimated exposures."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "initial premium"
+      ],
+      "related": [
+        {
+          "term": "Audit Premium",
+          "id": "audit-premium"
+        },
+        {
+          "term": "Minimum Premium",
+          "id": "minimum-premium"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "deposit premium"
+      ]
+    },
+    {
+      "id": "rate-on-line",
+      "term": "Rate on Line",
+      "definition": "a reinsurance pricing metric calculated as the reinsurance premium divided by the limit of coverage.",
+      "examples": [
+        "Rate on line helps compare reinsurance pricing across layers.",
+        "Higher Rate on Line indicates higher perceived risk.",
+        "Reinsurers use Rate on Line in catastrophe programs.",
+        "Rate on Line varies by attachment point and layer.",
+        "Actuaries evaluate Rate on Line for reinsurance purchasing."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "ROL"
+      ],
+      "related": [
+        {
+          "term": "Reinsurance Layer",
+          "id": "reinsurance-layer"
+        },
+        {
+          "term": "Attachment Point",
+          "id": "attachment-point"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "rate on line"
+      ]
+    },
+    {
+      "id": "ex-gratia-payment",
+      "term": "Ex Gratia Payment",
+      "definition": "a payment made by an insurer without admitting liability, typically for goodwill or exceptional circumstances.",
+      "examples": [
+        "Ex gratia payments are made at the insurer’s discretion.",
+        "The insurer issued an Ex Gratia Payment to maintain customer goodwill.",
+        "Ex Gratia Payments do not set precedent for future claims.",
+        "Claims managers approve Ex Gratia Payments under strict guidelines.",
+        "Ex Gratia Payments are documented separately from claim obligations."
+      ],
+      "categories": [
+        "Claims",
+        "General Insurance Concepts",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "goodwill payment"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "ex gratia payment"
+      ]
+    },
+    {
+      "id": "primary-coverage",
+      "term": "Primary Coverage",
+      "definition": "the insurance policy that pays first when multiple policies apply to the same claim.",
+      "examples": [
+        "Primary coverage determines which insurer pays before others.",
+        "The health plan was designated as Primary Coverage for the dependent.",
+        "Primary Coverage rules are defined in coordination-of-benefits guidelines.",
+        "Claims adjusters verify Primary Coverage before processing payments.",
+        "Primary Coverage may vary depending on employment or policyholder status."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "primary insurer"
+      ],
+      "related": [
+        {
+          "term": "Secondary Coverage",
+          "id": "secondary-coverage"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "primary coverage"
+      ]
+    },
+    {
+      "id": "secondary-coverage",
+      "term": "Secondary Coverage",
+      "definition": "the insurance policy that pays after the primary insurer has processed the claim.",
+      "examples": [
+        "Secondary coverage pays remaining eligible expenses after primary coverage.",
+        "The dental plan acted as Secondary Coverage for the claim.",
+        "Secondary Coverage rules prevent duplicate payments.",
+        "Secondary Coverage depends on coordination-of-benefits guidelines.",
+        "Secondary Coverage may cover deductibles or coinsurance left by the primary insurer."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "secondary insurer"
+      ],
+      "related": [
+        {
+          "term": "Primary Coverage",
+          "id": "primary-coverage"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "secondary coverage"
+      ]
+    },
+    {
+      "id": "surrender-value",
+      "term": "Surrender Value",
+      "definition": "the amount a policyholder receives when voluntarily terminating a life insurance policy with cash value.",
+      "examples": [
+        "Surrender value is paid when the insured cancels a permanent life policy.",
+        "Surrender charges reduce the Surrender Value in early years.",
+        "The insurer calculated the Surrender Value based on accumulated cash value.",
+        "Surrender Value may trigger tax consequences.",
+        "Surrender Value is listed in policy illustrations."
+      ],
+      "categories": [
+        "Life",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "cash surrender value"
+      ],
+      "related": [
+        {
+          "term": "Cash Value",
+          "id": "cash-value"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "surrender value"
+      ]
+    },
+    {
+      "id": "contestability-period",
+      "term": "Contestability Period",
+      "definition": "a period during which an insurer may investigate and deny a life insurance claim due to misrepresentation on the application.",
+      "examples": [
+        "The claim fell within the contestability period, prompting investigation.",
+        "Contestability periods typically last two years.",
+        "Misrepresentation may lead to denial during the Contestability Period.",
+        "Contestability Period rules protect insurers from fraud.",
+        "After the Contestability Period, claims are generally incontestable."
+      ],
+      "categories": [
+        "Life",
+        "Regulatory & Legal",
+        "Claims"
+      ],
+      "synonyms": [
+        "contestable period"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "contestability period"
+      ]
+    },
+    {
+      "id": "accelerated-death-benefit",
+      "term": "Accelerated Death Benefit",
+      "definition": "a feature allowing policyholders to receive a portion of the death benefit while living if diagnosed with a terminal or qualifying illness.",
+      "examples": [
+        "The insured accessed an accelerated death benefit after diagnosis.",
+        "Accelerated Death Benefits reduce the final payout to beneficiaries.",
+        "Policies define eligibility for Accelerated Death Benefits.",
+        "Accelerated Death Benefits help cover medical expenses.",
+        "The insurer reviewed medical records before approving the benefit."
+      ],
+      "categories": [
+        "Life",
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "living benefit"
+      ],
+      "related": [
+        {
+          "term": "Death Benefit",
+          "id": "death-benefit"
+        },
+        {
+          "term": "Cash Value",
+          "id": "cash-value"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "accelerated death benefit"
+      ]
+    },
+    {
+      "id": "waiver-of-premium",
+      "term": "Waiver of Premium",
+      "definition": "a provision that waives premium payments if the insured becomes disabled and meets policy criteria.",
+      "examples": [
+        "The insured qualified for waiver of premium after disability.",
+        "Waiver of Premium keeps the policy active without payment.",
+        "Life insurance policies often include Waiver of Premium riders.",
+        "The insurer verified disability before approving the waiver.",
+        "Waiver of Premium reduces lapse risk during disability."
+      ],
+      "categories": [
+        "Life",
+        "Health",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "premium waiver"
+      ],
+      "related": [
+        {
+          "term": "Lapse",
+          "id": "lapse"
+        },
+        {
+          "term": "Reinstatement",
+          "id": "reinstatement"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "waiver of premium"
+      ]
+    },
+    {
+      "id": "accidental-death-benefit",
+      "term": "Accidental Death Benefit",
+      "definition": "an additional benefit paid if the insured dies due to an accident, often added as a rider to life insurance policies.",
+      "examples": [
+        "Accidental death benefit doubles the payout in accidental death cases.",
+        "The insurer verified accident circumstances before paying the benefit.",
+        "Accidental Death Benefit riders increase premium.",
+        "Accidental Death Benefits exclude certain hazardous activities.",
+        "The rider provides extra financial protection for families."
+      ],
+      "categories": [
+        "Life",
+        "Claims"
+      ],
+      "synonyms": [
+        "ADB"
+      ],
+      "related": [
+        {
+          "term": "Death Benefit",
+          "id": "death-benefit"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "accidental death benefit"
+      ]
+    },
+    {
+      "id": "critical-illness-benefit",
+      "term": "Critical Illness Benefit",
+      "definition": "a lump-sum payment provided when the insured is diagnosed with a covered critical illness such as cancer or heart attack.",
+      "examples": [
+        "Critical illness benefits help cover major medical expenses.",
+        "The insured filed a claim for the Critical Illness Benefit.",
+        "Critical Illness policies list specific covered conditions.",
+        "Critical Illness Benefits are paid regardless of actual medical costs.",
+        "Underwriters assess health history before issuing coverage."
+      ],
+      "categories": [
+        "Health",
+        "Life",
+        "Claims"
+      ],
+      "synonyms": [
+        "CI benefit"
+      ],
+      "related": [
+        {
+          "term": "Accelerated Death Benefit",
+          "id": "accelerated-death-benefit"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "critical illness benefit"
+      ]
+    },
+    {
+      "id": "long-term-care-benefit",
+      "term": "Long-Term Care Benefit",
+      "definition": "coverage that pays for extended care services such as nursing homes, assisted living, or in-home care.",
+      "examples": [
+        "Long-term care benefits help cover nursing home expenses.",
+        "The insured qualified for Long-Term Care Benefits after assessment.",
+        "Long-Term Care policies require inability to perform daily activities.",
+        "Premiums for Long-Term Care Benefits increase with age.",
+        "Long-Term Care Benefits may be included as riders on life policies."
+      ],
+      "categories": [
+        "Health",
+        "Life",
+        "Claims"
+      ],
+      "synonyms": [
+        "LTC benefit"
+      ],
+      "related": [
+        {
+          "term": "Critical Illness Benefit",
+          "id": "critical-illness-benefit"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "long term care benefit"
+      ]
+    },
+    {
+      "id": "actuarial-present-value",
+      "term": "Actuarial Present Value",
+      "definition": "the discounted value of future cash flows, weighted by probabilities such as mortality or morbidity.",
+      "examples": [
+        "Actuarial present value is used to price life insurance benefits.",
+        "APV calculations incorporate mortality tables and interest rates.",
+        "Actuaries compute APV for pension and annuity valuations.",
+        "APV determines reserve requirements for future obligations.",
+        "APV changes when interest assumptions shift."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "APV"
+      ],
+      "related": [
+        {
+          "term": "Mortality Table",
+          "id": "mortality-table"
+        },
+        {
+          "term": "Discount Rate",
+          "id": "discount-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "actuarial present value"
+      ]
+    },
+    {
+      "id": "discount-rate",
+      "term": "Discount Rate",
+      "definition": "the interest rate used to convert future cash flows into present value for pricing, reserving, and financial reporting.",
+      "examples": [
+        "Actuaries adjust reserves using an appropriate discount rate.",
+        "Lower discount rates increase actuarial present value.",
+        "Discount Rate assumptions must be justified for regulatory filings.",
+        "Life insurers use discount rates in annuity pricing.",
+        "Discount Rate changes impact long-term liabilities."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "Life"
+      ],
+      "synonyms": [
+        "interest rate"
+      ],
+      "related": [
+        {
+          "term": "Actuarial Present Value",
+          "id": "actuarial-present-value"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "discount rate"
+      ]
+    },
+    {
+      "id": "premium-load",
+      "term": "Premium Load",
+      "definition": "the portion of premium added to cover expenses, commissions, and profit margins beyond pure risk cost.",
+      "examples": [
+        "Premium loads vary by distribution channel.",
+        "Life insurers include Premium Loads to cover administrative expenses.",
+        "Premium Load affects policy affordability.",
+        "Actuaries analyze Premium Loads during rate development.",
+        "Premium Loads are disclosed in policy illustrations."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Life",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "loading"
+      ],
+      "related": [
+        {
+          "term": "Expense Load",
+          "id": "expense-load"
+        },
+        {
+          "term": "Pure Premium",
+          "id": "pure-premium"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "premium load"
+      ]
+    },
+    {
+      "id": "claims-triage",
+      "term": "Claims Triage",
+      "definition": "the process of categorizing incoming claims based on severity, complexity, and required handling.",
+      "examples": [
+        "Claims triage assigns high-severity claims to senior adjusters.",
+        "Automated systems perform Claims Triage using predictive analytics.",
+        "Claims Triage improves efficiency and reduces cycle time.",
+        "Triage rules vary by line of business.",
+        "Claims Triage helps prioritize urgent losses."
+      ],
+      "categories": [
+        "Claims",
+        "Property",
+        "Health"
+      ],
+      "synonyms": [
+        "claim sorting"
+      ],
+      "related": [
+        {
+          "term": "Claims Adjuster",
+          "id": "claims-adjuster"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims triage"
+      ]
+    },
+    {
+      "id": "claims-cycle-time",
+      "term": "Claims Cycle Time",
+      "definition": "the total time from claim reporting to final settlement, used as a key performance metric.",
+      "examples": [
+        "Reducing claims cycle time improves customer satisfaction.",
+        "Claims Cycle Time varies by claim complexity.",
+        "Insurers track Claims Cycle Time for operational efficiency.",
+        "Automation helps reduce Claims Cycle Time.",
+        "Regulators monitor Claims Cycle Time for compliance."
+      ],
+      "categories": [
+        "Claims",
+        "Property"
+      ],
+      "synonyms": [
+        "claim duration"
+      ],
+      "related": [
+        {
+          "term": "Claims Triage",
+          "id": "claims-triage"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "claims cycle time"
+      ]
+    },
+    {
+      "id": "claims-leakage",
+      "term": "Claims Leakage",
+      "definition": "financial loss resulting from errors, inefficiencies, or overpayments in the claims process.",
+      "examples": [
+        "Claims leakage occurs when adjusters overpay claims.",
+        "Insurers monitor Claims Leakage to improve profitability.",
+        "Training reduces Claims Leakage in complex claims.",
+        "Audit teams identify sources of Claims Leakage.",
+        "Claims Leakage may result from poor documentation."
+      ],
+      "categories": [
+        "Claims",
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "leakage"
+      ],
+      "related": [
+        {
+          "term": "Claims Cycle Time",
+          "id": "claims-cycle-time"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims leakage"
+      ]
+    },
+    {
+      "id": "claims-audit",
+      "term": "Claims Audit",
+      "definition": "a formal review of claim files to ensure accuracy, compliance, and proper handling according to regulatory and company standards.",
+      "examples": [
+        "Claims audits identify errors and opportunities for improvement.",
+        "The insurer performed a Claims Audit to reduce leakage.",
+        "Claims Audit findings influence training programs.",
+        "Regulators may require periodic Claims Audits.",
+        "Audit teams review documentation quality and settlement accuracy."
+      ],
+      "categories": [
+        "Claims",
+        "Regulatory & Legal",
+        "Property"
+      ],
+      "synonyms": [
+        "claim review"
+      ],
+      "related": [
+        {
+          "term": "Claims Leakage",
+          "id": "claims-leakage"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims audit"
+      ]
+    },
+    {
+      "id": "claims-reserve-strengthening",
+      "term": "Claims Reserve Strengthening",
+      "definition": "an increase in claim reserves due to updated assumptions, adverse development, or regulatory requirements.",
+      "examples": [
+        "Reserve strengthening increases reported liabilities.",
+        "Actuaries recommended Claims Reserve Strengthening after new data.",
+        "Reserve Strengthening impacts insurer profitability.",
+        "Regulators monitor Claims Reserve Strengthening for solvency.",
+        "Claims Reserve Strengthening may occur after catastrophe events."
+      ],
+      "categories": [
+        "Claims",
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "reserve increase"
+      ],
+      "related": [
+        {
+          "term": "Loss Reserve",
+          "id": "loss-reserve"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims reserve strengthening"
+      ]
+    },
+    {
+      "id": "claims-adjustment-expense",
+      "term": "Claims Adjustment Expense",
+      "definition": "the cost incurred by insurers to investigate, evaluate, and settle claims, including both allocated and unallocated expenses.",
+      "examples": [
+        "Claims adjustment expenses include adjuster salaries and legal fees.",
+        "CAE impacts insurer profitability and expense ratios.",
+        "Actuaries analyze Claims Adjustment Expense trends.",
+        "Regulators require reporting of Claims Adjustment Expenses.",
+        "CAE varies by claim complexity and line of business."
+      ],
+      "categories": [
+        "Claims",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "CAE"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims adjustment expense"
+      ]
+    },
+    {
+      "id": "claims-adjudication",
+      "term": "Claims Adjudication",
+      "definition": "the process of reviewing and determining payment eligibility for health insurance claims.",
+      "examples": [
+        "Claims adjudication verifies coverage and medical necessity.",
+        "Automated systems perform Claims Adjudication for routine claims.",
+        "Claims Adjudication ensures compliance with plan rules.",
+        "Examiners handle complex Claims Adjudication cases.",
+        "Accurate Claims Adjudication reduces overpayment risk."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "claim processing"
+      ],
+      "related": [
+        {
+          "term": "Claims Examiner",
+          "id": "claims-examiner"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims adjudication"
+      ]
+    },
+    {
+      "id": "medical-necessity",
+      "term": "Medical Necessity",
+      "definition": "a determination that a healthcare service is reasonable, necessary, and appropriate based on clinical standards.",
+      "examples": [
+        "Claims adjudication requires verifying medical necessity.",
+        "Medical Necessity guidelines vary by insurer.",
+        "The claim was denied due to lack of Medical Necessity.",
+        "Medical Necessity reviews prevent unnecessary treatments.",
+        "Providers submit documentation to prove Medical Necessity."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "clinical necessity"
+      ],
+      "related": [
+        {
+          "term": "Claims Adjudication",
+          "id": "claims-adjudication"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "medical necessity"
+      ]
+    },
+    {
+      "id": "pre-authorization",
+      "term": "Pre-Authorization",
+      "definition": "a requirement that certain medical services be approved by the insurer before they are performed.",
+      "examples": [
+        "Pre-authorization is required for high-cost procedures.",
+        "The insurer denied the claim due to missing Pre-Authorization.",
+        "Pre-Authorization helps control healthcare costs.",
+        "Providers submit Pre-Authorization requests electronically.",
+        "Pre-Authorization rules vary by plan type."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "prior authorization"
+      ],
+      "related": [
+        {
+          "term": "Medical Necessity",
+          "id": "medical-necessity"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "pre authorization"
+      ]
+    },
+    {
+      "id": "explanation-of-benefits",
+      "term": "Explanation of Benefits",
+      "definition": "a document sent to policyholders explaining how a health insurance claim was processed, including amounts paid and owed.",
+      "examples": [
+        "The insured received an Explanation of Benefits after the claim.",
+        "EOBs detail deductibles, co-pays, and coinsurance.",
+        "Explanation of Benefits documents are not bills.",
+        "EOBs help policyholders understand claim outcomes.",
+        "Insurers send EOBs electronically or by mail."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "EOB"
+      ],
+      "related": [
+        {
+          "term": "Claims Adjudication",
+          "id": "claims-adjudication"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "explanation of benefits"
+      ]
+    },
+    {
+      "id": "provider-network",
+      "term": "Provider Network",
+      "definition": "a group of healthcare providers contracted with an insurer to offer services at negotiated rates.",
+      "examples": [
+        "In-network providers offer lower costs to insureds.",
+        "Provider networks vary by health plan.",
+        "The insured visited an out-of-network provider.",
+        "Provider Network agreements define reimbursement rates.",
+        "Insurers maintain directories of Provider Network participants."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "network providers"
+      ],
+      "related": [
+        {
+          "term": "In-Network",
+          "id": "in-network"
+        },
+        {
+          "term": "Out-of-Network",
+          "id": "out-of-network"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "provider network"
+      ]
+    },
+    {
+      "id": "in-network",
+      "term": "In-Network",
+      "definition": "healthcare providers who have contracted with an insurer to offer services at discounted rates.",
+      "examples": [
+        "In-network services cost less for policyholders.",
+        "The insured selected an in-network hospital for surgery.",
+        "In-Network providers follow insurer reimbursement rules.",
+        "Claims from In-Network providers are processed more quickly.",
+        "In-Network status affects co-pays and coinsurance."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "network provider"
+      ],
+      "related": [
+        {
+          "term": "Out-of-Network",
+          "id": "out-of-network"
+        },
+        {
+          "term": "Provider Network",
+          "id": "provider-network"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "in network"
+      ]
+    },
+    {
+      "id": "out-of-network",
+      "term": "Out-of-Network",
+      "definition": "healthcare providers who do not have a contract with the insurer, resulting in higher costs for the insured.",
+      "examples": [
+        "Out-of-network services often have higher deductibles.",
+        "The insured visited an out-of-network specialist.",
+        "Claims from Out-of-Network providers may be partially reimbursed.",
+        "Out-of-Network charges can exceed allowed amounts.",
+        "Provider network directories help avoid Out-of-Network visits."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "non-network provider"
+      ],
+      "related": [
+        {
+          "term": "In-Network",
+          "id": "in-network"
+        },
+        {
+          "term": "Provider Network",
+          "id": "provider-network"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "out of network"
+      ]
+    },
+    {
+      "id": "allowed-amount",
+      "term": "Allowed Amount",
+      "definition": "the maximum payment an insurer will consider for a covered service, based on negotiated or standard rates.",
+      "examples": [
+        "The insurer paid the allowed amount for the procedure.",
+        "Out-of-network providers may charge more than the allowed amount.",
+        "Allowed Amount determines patient responsibility.",
+        "Claims adjudication calculates payments using the allowed amount.",
+        "Allowed Amount varies by provider contract."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "eligible charge"
+      ],
+      "related": [
+        {
+          "term": "Explanation of Benefits",
+          "id": "explanation-of-benefits"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "allowed amount"
+      ]
+    },
+    {
+      "id": "balance-billing",
+      "term": "Balance Billing",
+      "definition": "the practice of billing patients for the difference between a provider’s charge and the insurer’s allowed amount.",
+      "examples": [
+        "Out-of-network providers may engage in balance billing.",
+        "Balance billing is prohibited in some jurisdictions.",
+        "The insured received a balance bill after surgery.",
+        "Balance Billing increases patient out-of-pocket costs.",
+        "EOBs help identify balance billing situations."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "surprise billing"
+      ],
+      "related": [
+        {
+          "term": "Allowed Amount",
+          "id": "allowed-amount"
+        },
+        {
+          "term": "Out-of-Network",
+          "id": "out-of-network"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "balance billing"
+      ]
+    },
+    {
+      "id": "case-management",
+      "term": "Case Management",
+      "definition": "a coordinated approach to managing complex or high-cost medical cases to improve outcomes and control expenses.",
+      "examples": [
+        "Case management helps patients navigate complex treatments.",
+        "Insurers assign case managers to high-cost claims.",
+        "Case Management reduces unnecessary medical spending.",
+        "Case managers coordinate care among multiple providers.",
+        "Case Management improves patient outcomes."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "care coordination"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "case management"
+      ]
+    },
+    {
+      "id": "disease-management",
+      "term": "Disease Management",
+      "definition": "programs designed to help patients manage chronic conditions through education, monitoring, and coordinated care.",
+      "examples": [
+        "Disease management programs reduce long-term healthcare costs.",
+        "Insurers offer disease management for diabetes and heart disease.",
+        "Disease Management improves patient adherence to treatment.",
+        "Case managers support patients enrolled in disease management.",
+        "Disease Management programs track clinical outcomes."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "chronic care management"
+      ],
+      "related": [
+        {
+          "term": "Case Management",
+          "id": "case-management"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "disease management"
+      ]
+    },
+    {
+      "id": "formulary",
+      "term": "Formulary",
+      "definition": "a list of prescription drugs covered by a health insurance plan, often organized by tiers.",
+      "examples": [
+        "The insurer updated its formulary for the new plan year.",
+        "Formulary tiers determine co-pay amounts.",
+        "Non-formulary drugs may require prior authorization.",
+        "Formulary changes affect patient medication costs.",
+        "Pharmacy benefits rely on formulary management."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "drug list"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "formulary"
+      ]
+    },
+    {
+      "id": "tiered-benefits",
+      "term": "Tiered Benefits",
+      "definition": "a benefit structure that categorizes services or medications into tiers with varying cost-sharing levels.",
+      "examples": [
+        "Tiered benefits reduce costs for generic medications.",
+        "The insured paid more for a Tier 3 medication.",
+        "Tiered Benefits encourage use of cost-effective treatments.",
+        "Formularies often use tiered benefit structures.",
+        "Tiered Benefits vary by health plan."
+      ],
+      "categories": [
+        "Health",
+        "Claims"
+      ],
+      "synonyms": [
+        "benefit tiers"
+      ],
+      "related": [
+        {
+          "term": "Formulary",
+          "id": "formulary"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "tiered benefits"
+      ]
+    },
+    {
+      "id": "stop-loss-carrier",
+      "term": "Stop-Loss Carrier",
+      "definition": "an insurer that provides stop-loss coverage to self-funded employer health plans.",
+      "examples": [
+        "Stop-loss carriers protect employers from high claims.",
+        "The employer purchased coverage from a stop-loss carrier.",
+        "Stop-Loss Carriers evaluate group health risk.",
+        "Stop-Loss Carriers set attachment points based on claims history.",
+        "Stop-Loss Carriers reimburse employers for excess claims."
+      ],
+      "categories": [
+        "Health",
+        "Reinsurance",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "stop-loss insurer"
+      ],
+      "related": [
+        {
+          "term": "Stop Loss",
+          "id": "stop-loss"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "stop loss carrier"
+      ]
+    },
+    {
+      "id": "experience-rating-adjustment",
+      "term": "Experience Rating Adjustment",
+      "definition": "a modification to premiums based on the historical claims experience of a group or policyholder.",
+      "examples": [
+        "Experience rating adjustments reward low-claim groups.",
+        "The insurer applied an Experience Rating Adjustment at renewal.",
+        "Experience Rating Adjustments depend on credibility.",
+        "Large groups often receive significant Experience Rating Adjustments.",
+        "Actuaries calculate Experience Rating Adjustments annually."
+      ],
+      "categories": [
+        "Health",
+        "Life",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "experience adjustment"
+      ],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        },
+        {
+          "term": "Credibility Factor",
+          "id": "credibility-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "experience rating adjustment"
+      ]
+    },
+    {
+      "id": "risk-pool",
+      "term": "Risk Pool",
+      "definition": "a group of individuals or entities whose collective risk is shared to stabilize premiums and reduce volatility.",
+      "examples": [
+        "Risk pools help stabilize premiums for small groups.",
+        "Health insurance marketplaces rely on large risk pools.",
+        "Risk Pool composition affects premium levels.",
+        "Insurers analyze Risk Pools for pricing accuracy.",
+        "Risk Pools reduce the impact of high-cost individuals."
+      ],
+      "categories": [
+        "Health",
+        "Underwriting & Actuarial",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "risk group"
+      ],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk pool"
+      ]
+    },
+    {
+      "id": "risk-adjustment",
+      "term": "Risk Adjustment",
+      "definition": "a process that modifies payments to insurers based on the health risk profile of their members to prevent adverse selection.",
+      "examples": [
+        "Risk adjustment ensures fair compensation for plans with sicker members.",
+        "Health marketplaces rely on risk adjustment to stabilize premiums.",
+        "Risk Adjustment models use demographic and diagnostic data.",
+        "Insurers submit risk scores for risk adjustment calculations.",
+        "Risk Adjustment reduces incentives for cherry-picking healthy individuals."
+      ],
+      "categories": [
+        "Health",
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Risk Pool",
+          "id": "risk-pool"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk adjustment"
+      ]
+    },
+    {
+      "id": "risk-score",
+      "term": "Risk Score",
+      "definition": "a numerical value representing the expected healthcare costs of an individual based on demographic and clinical factors.",
+      "examples": [
+        "Higher risk scores indicate higher expected medical costs.",
+        "Risk scores are used in risk adjustment programs.",
+        "Insurers calculate risk scores using diagnostic codes.",
+        "Risk Score accuracy affects insurer payments.",
+        "Risk Scores vary by age, gender, and health conditions."
+      ],
+      "categories": [
+        "Health",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "health risk score"
+      ],
+      "related": [
+        {
+          "term": "Risk Adjustment",
+          "id": "risk-adjustment"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk score"
+      ]
+    },
+    {
+      "id": "risk-selection",
+      "term": "Risk Selection",
+      "definition": "the process by which insurers attract or avoid certain risk profiles, intentionally or unintentionally.",
+      "examples": [
+        "Risk selection occurs when healthier individuals choose certain plans.",
+        "Regulations aim to reduce risk selection in health markets.",
+        "Risk Selection impacts premium stability.",
+        "Risk Selection can lead to adverse selection.",
+        "Insurers monitor enrollment patterns to detect risk selection."
+      ],
+      "categories": [
+        "Health",
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "risk sorting"
+      ],
+      "related": [
+        {
+          "term": "Adverse Selection",
+          "id": "adverse-selection"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk selection"
+      ]
+    },
+    {
+      "id": "morbidity-rate",
+      "term": "Morbidity Rate",
+      "definition": "the rate at which individuals experience illness or disability, used in health and disability insurance pricing.",
+      "examples": [
+        "Morbidity rates influence health insurance premiums.",
+        "Actuaries analyze morbidity rates for product development.",
+        "Higher morbidity rates increase expected claim costs.",
+        "Morbidity Rate trends vary by demographic group.",
+        "Morbidity assumptions impact reserve calculations."
+      ],
+      "categories": [
+        "Health",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "illness rate"
+      ],
+      "related": [
+        {
+          "term": "Mortality Rate",
+          "id": "mortality-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "morbidity rate"
+      ]
+    },
+    {
+      "id": "mortality-rate",
+      "term": "Mortality Rate",
+      "definition": "the rate at which individuals die within a given population, used in life insurance pricing and reserving.",
+      "examples": [
+        "Mortality rates influence life insurance premiums.",
+        "Actuaries update mortality rate assumptions regularly.",
+        "Mortality Rate improvements reduce insurer liabilities.",
+        "Mortality Rates vary by age and gender.",
+        "Mortality Rate trends impact annuity pricing."
+      ],
+      "categories": [
+        "Life",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "death rate"
+      ],
+      "related": [
+        {
+          "term": "Morbidity Rate",
+          "id": "morbidity-rate"
+        },
+        {
+          "term": "Mortality Table",
+          "id": "mortality-table"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "mortality rate"
+      ]
+    },
+    {
+      "id": "underwriting-guidelines",
+      "term": "Underwriting Guidelines",
+      "definition": "rules and criteria used by insurers to evaluate risk and determine eligibility and pricing.",
+      "examples": [
+        "Underwriting guidelines define acceptable risk levels.",
+        "The insurer updated underwriting guidelines for new regulations.",
+        "Underwriting Guidelines vary by product type.",
+        "Agents must follow underwriting guidelines during submissions.",
+        "Underwriting Guidelines help maintain consistency."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Regulatory & Legal",
+        "Property"
+      ],
+      "synonyms": [
+        "underwriting rules"
+      ],
+      "related": [
+        {
+          "term": "Underwriting",
+          "id": "underwriting"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "underwriting guidelines"
+      ]
+    },
+    {
+      "id": "underwriting-manual",
+      "term": "Underwriting Manual",
+      "definition": "a detailed reference document containing underwriting rules, procedures, and rating instructions.",
+      "examples": [
+        "Underwriters consult the underwriting manual for complex cases.",
+        "The insurer updated its underwriting manual annually.",
+        "Underwriting Manuals ensure consistent risk evaluation.",
+        "Agents reference the underwriting manual for submissions.",
+        "Underwriting Manuals include rating factor definitions."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Property",
+        "Life"
+      ],
+      "synonyms": [
+        "underwriting guide"
+      ],
+      "related": [
+        {
+          "term": "Underwriting Guidelines",
+          "id": "underwriting-guidelines"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "underwriting manual"
+      ]
+    },
+    {
+      "id": "underwriting-profit",
+      "term": "Underwriting Profit",
+      "definition": "the profit an insurer earns from its core insurance operations, calculated as premiums minus claims and underwriting expenses.",
+      "examples": [
+        "Underwriting profit excludes investment income.",
+        "A combined ratio below 100% indicates underwriting profit.",
+        "Insurers aim for consistent underwriting profit across product lines.",
+        "Underwriting Profit reflects pricing and risk selection quality.",
+        "Actuaries analyze underwriting profit trends annually."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "Property"
+      ],
+      "synonyms": [
+        "operating profit"
+      ],
+      "related": [
+        {
+          "term": "Combined Ratio",
+          "id": "combined-ratio"
+        },
+        {
+          "term": "Loss Ratio",
+          "id": "loss-ratio"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "underwriting profit"
+      ]
+    },
+    {
+      "id": "underwriting-loss",
+      "term": "Underwriting Loss",
+      "definition": "a financial loss resulting when claims and underwriting expenses exceed earned premiums.",
+      "examples": [
+        "A combined ratio above 100% indicates underwriting loss.",
+        "Underwriting loss may occur after catastrophe events.",
+        "Insurers offset underwriting loss with investment income.",
+        "Underwriting Loss signals pricing or risk selection issues.",
+        "Regulators monitor underwriting loss for solvency concerns."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "Property"
+      ],
+      "synonyms": [
+        "operating loss"
+      ],
+      "related": [
+        {
+          "term": "Underwriting Profit",
+          "id": "underwriting-profit"
+        },
+        {
+          "term": "Combined Ratio",
+          "id": "combined-ratio"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "underwriting loss"
+      ]
+    },
+    {
+      "id": "rate-filing",
+      "term": "Rate Filing",
+      "definition": "a formal submission to regulators requesting approval for changes to insurance rates or rating factors.",
+      "examples": [
+        "Insurers submit rate filings for premium adjustments.",
+        "Rate Filing requires actuarial justification.",
+        "Regulators review rate filings for fairness and compliance.",
+        "Rate Filings include trend, loss, and expense data.",
+        "Rate Filing timelines vary by jurisdiction."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "rate submission"
+      ],
+      "related": [
+        {
+          "term": "Premium Rate",
+          "id": "premium-rate"
+        },
+        {
+          "term": "Rating Factor",
+          "id": "rating-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "rate filing"
+      ]
+    },
+    {
+      "id": "policy-form",
+      "term": "Policy Form",
+      "definition": "the standardized contract language used in insurance policies, subject to regulatory approval.",
+      "examples": [
+        "Policy forms define coverage terms and exclusions.",
+        "Regulators approve policy forms before use.",
+        "Policy Forms vary by product and jurisdiction.",
+        "Insurers update policy forms to reflect new regulations.",
+        "Policy Form changes require formal filing."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "policy contract"
+      ],
+      "related": [
+        {
+          "term": "Endorsement",
+          "id": "endorsement"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "policy form"
+      ]
+    },
+    {
+      "id": "policy-exclusion",
+      "term": "Policy Exclusion",
+      "definition": "a provision that removes specific risks or events from coverage under an insurance policy.",
+      "examples": [
+        "Policy exclusions limit insurer exposure.",
+        "Flood damage is a common policy exclusion in property insurance.",
+        "Exclusions are listed in the policy form.",
+        "Claims adjusters verify exclusions before payment.",
+        "Policy Exclusions vary by product type."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Property"
+      ],
+      "synonyms": [
+        "coverage exclusion"
+      ],
+      "related": [
+        {
+          "term": "Endorsement",
+          "id": "endorsement"
+        },
+        {
+          "term": "Policy Form",
+          "id": "policy-form"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "policy exclusion"
+      ]
+    },
+    {
+      "id": "policy-condition",
+      "term": "Policy Condition",
+      "definition": "a requirement that must be met for coverage to apply, such as timely reporting or maintenance obligations.",
+      "examples": [
+        "Policy conditions outline responsibilities of the insured.",
+        "Failure to meet policy conditions may result in denial.",
+        "Policy Conditions include reporting deadlines.",
+        "Underwriters review policy conditions during issuance.",
+        "Policy Conditions appear in the contract’s terms section."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Property"
+      ],
+      "synonyms": [
+        "coverage condition"
+      ],
+      "related": [
+        {
+          "term": "Policy Exclusion",
+          "id": "policy-exclusion"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "policy condition"
+      ]
+    },
+    {
+      "id": "schedule-of-benefits",
+      "term": "Schedule of Benefits",
+      "definition": "a document listing covered services, limits, and cost-sharing requirements in health or life insurance policies.",
+      "examples": [
+        "The schedule of benefits outlines co-pays and deductibles.",
+        "Policyholders consult the Schedule of Benefits for coverage details.",
+        "Schedule of Benefits varies by plan type.",
+        "Claims adjudication uses the Schedule of Benefits for verification.",
+        "Schedule of Benefits is included in policy materials."
+      ],
+      "categories": [
+        "Health",
+        "Life"
+      ],
+      "synonyms": [
+        "benefit schedule"
+      ],
+      "related": [
+        {
+          "term": "Explanation of Benefits",
+          "id": "explanation-of-benefits"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "schedule of benefits"
+      ]
+    },
+    {
+      "id": "coverage-trigger",
+      "term": "Coverage Trigger",
+      "definition": "the event or condition that activates coverage under an insurance policy, such as occurrence, claims-made, or discovery.",
+      "examples": [
+        "Occurrence policies use the event date as the coverage trigger.",
+        "Claims-made policies trigger coverage when the claim is reported.",
+        "Coverage Trigger definitions vary by liability product.",
+        "Coverage Trigger impacts premium and risk selection.",
+        "Regulators define acceptable coverage trigger structures."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Property"
+      ],
+      "synonyms": [
+        "trigger event"
+      ],
+      "related": [
+        {
+          "term": "Policy Form",
+          "id": "policy-form"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "coverage trigger"
+      ]
+    },
+    {
+      "id": "occurrence-policy",
+      "term": "Occurrence Policy",
+      "definition": "a liability insurance policy that provides coverage for events occurring during the policy period, regardless of when the claim is reported.",
+      "examples": [
+        "Occurrence policies cover claims reported years after the event.",
+        "Occurrence coverage is common in general liability insurance.",
+        "Occurrence Policies do not require tail coverage.",
+        "The insurer accepted the claim because the event occurred during the policy term.",
+        "Occurrence Policies simplify long-term claim handling."
+      ],
+      "categories": [
+        "Property",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "occurrence coverage"
+      ],
+      "related": [
+        {
+          "term": "Claims-Made Policy",
+          "id": "claims-made-policy"
+        },
+        {
+          "term": "Coverage Trigger",
+          "id": "coverage-trigger"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "occurrence policy"
+      ]
+    },
+    {
+      "id": "retroactive-date",
+      "term": "Retroactive Date",
+      "definition": "the earliest date an event can occur and still be covered under a claims-made policy.",
+      "examples": [
+        "Claims-made policies list a retroactive date on the declarations page.",
+        "Events before the retroactive date are excluded from coverage.",
+        "Retroactive Dates help insurers manage long-tail exposure.",
+        "The insured requested an earlier retroactive date for broader protection.",
+        "Retroactive Date changes require underwriting approval."
+      ],
+      "categories": [
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "retro date"
+      ],
+      "related": [
+        {
+          "term": "Claims-Made Policy",
+          "id": "claims-made-policy"
+        },
+        {
+          "term": "Tail Coverage",
+          "id": "tail-coverage"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "retroactive date"
+      ]
+    },
+    {
+      "id": "tail-coverage",
+      "term": "Tail Coverage",
+      "definition": "extended reporting coverage that allows claims to be reported after a claims-made policy expires.",
+      "examples": [
+        "Tail coverage is essential when switching from claims-made to occurrence policies.",
+        "The insured purchased tail coverage after retiring.",
+        "Tail Coverage protects against late-reported claims.",
+        "Tail Coverage is common in medical malpractice insurance.",
+        "Tail Coverage premiums depend on exposure and retroactive dates."
+      ],
+      "categories": [
+        "Property",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "extended reporting period"
+      ],
+      "related": [
+        {
+          "term": "Claims-Made Policy",
+          "id": "claims-made-policy"
+        },
+        {
+          "term": "Retroactive Date",
+          "id": "retroactive-date"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "tail coverage"
+      ]
+    },
+    {
+      "id": "catastrophe-bond",
+      "term": "Catastrophe Bond",
+      "definition": "a financial instrument that transfers catastrophe risk from insurers to investors, who may lose principal if a triggering event occurs.",
+      "examples": [
+        "Catastrophe bonds help insurers manage extreme event risk.",
+        "Investors receive high yields for assuming catastrophe risk.",
+        "Catastrophe Bonds trigger when losses exceed predefined thresholds.",
+        "CAT bonds are common in hurricane and earthquake exposure.",
+        "Catastrophe Bonds diversify insurer capital strategies."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "CAT bond"
+      ],
+      "related": [
+        {
+          "term": "Catastrophe Model",
+          "id": "catastrophe-model"
+        },
+        {
+          "term": "Probable Maximum Loss",
+          "id": "probable-maximum-loss"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "catastrophe bond"
+      ]
+    },
+    {
+      "id": "parametric-insurance",
+      "term": "Parametric Insurance",
+      "definition": "insurance that pays a predetermined amount when a triggering event meets specific measurable parameters, rather than based on actual loss.",
+      "examples": [
+        "Parametric insurance pays quickly after a triggering event.",
+        "Parametric triggers include wind speed or earthquake magnitude.",
+        "Parametric Insurance reduces claims handling complexity.",
+        "Businesses use parametric insurance for catastrophe protection.",
+        "Parametric Insurance requires accurate data measurement."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Property",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "index-based insurance"
+      ],
+      "related": [
+        {
+          "term": "Catastrophe Model",
+          "id": "catastrophe-model"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "parametric insurance"
+      ]
+    },
+    {
+      "id": "captive-insurance",
+      "term": "Captive Insurance",
+      "definition": "an insurance company created and owned by a business to insure its own risks.",
+      "examples": [
+        "Captive insurance allows companies to control their risk financing.",
+        "Captives provide coverage when commercial markets are expensive.",
+        "Captive Insurance requires regulatory approval.",
+        "Captives often reinsure part of their exposure.",
+        "Captive Insurance can reduce long-term insurance costs."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Reinsurance",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "captive"
+      ],
+      "related": [
+        {
+          "term": "Self-Insurance",
+          "id": "self-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "captive insurance"
+      ]
+    },
+    {
+      "id": "pooling-arrangement",
+      "term": "Pooling Arrangement",
+      "definition": "a structure where multiple insurers or entities share risk to reduce volatility and stabilize results.",
+      "examples": [
+        "Pooling arrangements help small insurers manage large losses.",
+        "Health plans use pooling arrangements for high-cost claims.",
+        "Pooling Arrangements distribute risk across participants.",
+        "Actuaries evaluate pooling thresholds for stability.",
+        "Pooling Arrangements reduce exposure to catastrophic claims."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Health",
+        "Reinsurance"
+      ],
+      "synonyms": [
+        "risk pool arrangement"
+      ],
+      "related": [
+        {
+          "term": "Risk Pool",
+          "id": "risk-pool"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "pooling arrangement"
+      ]
+    },
+    {
+      "id": "stop-loss-threshold",
+      "term": "Stop-Loss Threshold",
+      "definition": "the point at which stop-loss coverage begins to reimburse a self-funded plan for excess claims.",
+      "examples": [
+        "Stop-loss thresholds vary by employer size.",
+        "The plan triggered reimbursement after reaching the stop-loss threshold.",
+        "Stop-Loss Thresholds protect employers from catastrophic claims.",
+        "Actuaries set stop-loss thresholds based on historical claims.",
+        "Stop-Loss Thresholds influence premium levels."
+      ],
+      "categories": [
+        "Health",
+        "Reinsurance",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "attachment threshold"
+      ],
+      "related": [
+        {
+          "term": "Stop Loss",
+          "id": "stop-loss"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "stop loss threshold"
+      ]
+    },
+    {
+      "id": "aggregate-deductible",
+      "term": "Aggregate Deductible",
+      "definition": "a deductible that applies to the total claims incurred during a policy period rather than to individual claims.",
+      "examples": [
+        "Aggregate deductibles are common in self-funded health plans.",
+        "The employer met its aggregate deductible mid-year.",
+        "Aggregate Deductibles limit total plan liability.",
+        "Actuaries evaluate aggregate deductible levels for cost control.",
+        "Aggregate Deductibles differ from individual deductibles."
+      ],
+      "categories": [
+        "Health",
+        "Claims",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "annual aggregate deductible"
+      ],
+      "related": [
+        {
+          "term": "Deductible",
+          "id": "deductible"
+        },
+        {
+          "term": "Stop Loss",
+          "id": "stop-loss"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "aggregate deductible"
+      ]
+    },
+    {
+      "id": "experience-period",
+      "term": "Experience Period",
+      "definition": "the time frame of historical data used to calculate premiums, rates, or experience adjustments.",
+      "examples": [
+        "Experience periods vary by line of business.",
+        "Actuaries selected a three-year experience period for rate development.",
+        "Experience Periods influence credibility calculations.",
+        "Regulators define acceptable experience periods for filings.",
+        "Experience Period selection impacts premium stability."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "rating period"
+      ],
+      "related": [
+        {
+          "term": "Experience Rating",
+          "id": "experience-rating"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "experience period"
+      ]
+    },
+    {
+      "id": "trend-analysis",
+      "term": "Trend Analysis",
+      "definition": "the evaluation of historical data to identify patterns and project future changes in losses, premiums, or utilization.",
+      "examples": [
+        "Trend analysis helps actuaries forecast future claim costs.",
+        "Medical inflation is a key component of trend analysis.",
+        "Trend Analysis supports rate filing justification.",
+        "Insurers use trend analysis to adjust premiums annually.",
+        "Trend Analysis varies by geographic region and product type."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Health",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "trend evaluation"
+      ],
+      "related": [
+        {
+          "term": "Trend Rate",
+          "id": "trend-rate"
+        },
+        {
+          "term": "Trend Factor",
+          "id": "trend-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "trend analysis"
+      ]
+    },
+    {
+      "id": "loss-portfolio-transfer",
+      "term": "Loss Portfolio Transfer",
+      "definition": "a reinsurance transaction where an insurer transfers existing claim liabilities to a reinsurer.",
+      "examples": [
+        "Loss portfolio transfers help insurers manage legacy liabilities.",
+        "The reinsurer assumed all outstanding claims through a loss portfolio transfer.",
+        "LPTs improve insurer balance sheet strength.",
+        "Loss Portfolio Transfers require detailed actuarial analysis.",
+        "Regulators review LPTs for solvency impact."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "LPT"
+      ],
+      "related": [
+        {
+          "term": "Reserve",
+          "id": "reserve"
+        },
+        {
+          "term": "Claims Reserve Strengthening",
+          "id": "claims-reserve-strengthening"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "loss portfolio transfer"
+      ]
+    },
+    {
+      "id": "finite-reinsurance",
+      "term": "Finite Reinsurance",
+      "definition": "a reinsurance arrangement with limited risk transfer, often involving capped losses and multi-year agreements.",
+      "examples": [
+        "Finite reinsurance provides predictable financial outcomes.",
+        "Regulators scrutinize finite reinsurance for proper risk transfer.",
+        "Finite Reinsurance agreements include strict loss caps.",
+        "Insurers use finite reinsurance for earnings smoothing.",
+        "Finite Reinsurance requires detailed actuarial modeling."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "financial reinsurance"
+      ],
+      "related": [
+        {
+          "term": "Loss Portfolio Transfer",
+          "id": "loss-portfolio-transfer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "finite reinsurance"
+      ]
+    },
+    {
+      "id": "quota-share-ceding",
+      "term": "Quota Share Ceding",
+      "definition": "the act of transferring a fixed percentage of premiums and losses to a reinsurer under a quota share treaty.",
+      "examples": [
+        "Quota share ceding stabilizes insurer results.",
+        "The insurer ceded 40% of premiums under the quota share agreement.",
+        "Quota Share Ceding reduces retained risk.",
+        "Ceding commissions offset acquisition expenses.",
+        "Quota Share Ceding is common in new product launches."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "quota cession"
+      ],
+      "related": [
+        {
+          "term": "Quota Share",
+          "id": "quota-share"
+        },
+        {
+          "term": "Ceding Commission",
+          "id": "ceding-commission"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "quota share ceding"
+      ]
+    },
+    {
+      "id": "surplus-relief",
+      "term": "Surplus Relief",
+      "definition": "an increase in an insurer’s surplus resulting from reinsurance arrangements that reduce required reserves.",
+      "examples": [
+        "Surplus relief improves insurer financial strength.",
+        "Quota share treaties often provide surplus relief.",
+        "Regulators monitor surplus relief for solvency compliance.",
+        "Surplus Relief helps insurers expand underwriting capacity.",
+        "Actuaries evaluate surplus relief impact on capital ratios."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Reinsurance",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "capital relief"
+      ],
+      "related": [
+        {
+          "term": "Quota Share",
+          "id": "quota-share"
+        },
+        {
+          "term": "Policy Reserve",
+          "id": "policy-reserve"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "surplus relief"
+      ]
+    },
+    {
+      "id": "risk-transfer",
+      "term": "Risk Transfer",
+      "definition": "the process of shifting financial responsibility for losses from one party to another, typically through insurance or reinsurance.",
+      "examples": [
+        "Insurance is a common method of risk transfer.",
+        "Reinsurance provides additional layers of risk transfer.",
+        "Risk Transfer reduces volatility for organizations.",
+        "Captive insurers may use reinsurance for risk transfer.",
+        "Risk Transfer strategies vary by industry and exposure."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Reinsurance",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "risk shifting"
+      ],
+      "related": [
+        {
+          "term": "Risk Retention",
+          "id": "risk-retention"
+        },
+        {
+          "term": "Reinsurance Layer",
+          "id": "reinsurance-layer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk transfer"
+      ]
+    },
+    {
+      "id": "risk-retention",
+      "term": "Risk Retention",
+      "definition": "the portion of risk an organization chooses to keep rather than transfer through insurance or reinsurance.",
+      "examples": [
+        "Higher risk retention reduces premium costs.",
+        "Risk retention requires strong financial reserves.",
+        "Self-insured employers rely heavily on risk retention.",
+        "Risk Retention levels impact stop-loss purchasing.",
+        "Risk Retention is documented in underwriting agreements."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "retained risk"
+      ],
+      "related": [
+        {
+          "term": "Risk Transfer",
+          "id": "risk-transfer"
+        },
+        {
+          "term": "Self-Insurance",
+          "id": "self-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk retention"
+      ]
+    },
+    {
+      "id": "risk-appetite",
+      "term": "Risk Appetite",
+      "definition": "the level and type of risk an organization is willing to accept in pursuit of its objectives.",
+      "examples": [
+        "Insurers define risk appetite to guide underwriting decisions.",
+        "Risk Appetite statements help align strategy and risk tolerance.",
+        "High risk appetite may lead to aggressive growth strategies.",
+        "Risk Appetite varies by market conditions and capital strength.",
+        "Boards review risk appetite annually."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "risk tolerance"
+      ],
+      "related": [
+        {
+          "term": "Risk Capacity",
+          "id": "risk-capacity"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk appetite"
+      ]
+    },
+    {
+      "id": "risk-capacity",
+      "term": "Risk Capacity",
+      "definition": "the maximum amount of risk an organization can absorb without jeopardizing its financial stability.",
+      "examples": [
+        "Risk capacity depends on capital strength.",
+        "Insurers evaluate risk capacity before expanding underwriting.",
+        "Risk Capacity influences reinsurance purchasing.",
+        "Boards assess risk capacity during strategic planning.",
+        "Risk Capacity must align with risk appetite."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "risk limit"
+      ],
+      "related": [
+        {
+          "term": "Risk Appetite",
+          "id": "risk-appetite"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk capacity"
+      ]
+    },
+    {
+      "id": "risk-mitigation",
+      "term": "Risk Mitigation",
+      "definition": "actions taken to reduce the likelihood or severity of losses.",
+      "examples": [
+        "Risk mitigation strategies include safety training.",
+        "Loss control programs support risk mitigation.",
+        "Risk Mitigation reduces insurance premiums.",
+        "Businesses invest in risk mitigation to prevent accidents.",
+        "Risk Mitigation is part of enterprise risk management."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "loss mitigation"
+      ],
+      "related": [
+        {
+          "term": "Loss Control",
+          "id": "loss-control"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "risk mitigation"
+      ]
+    },
+    {
+      "id": "enterprise-risk-management",
+      "term": "Enterprise Risk Management",
+      "definition": "a holistic approach to identifying, assessing, and managing risks across an entire organization.",
+      "examples": [
+        "Enterprise risk management integrates financial and operational risks.",
+        "ERM frameworks help organizations prioritize risks.",
+        "Boards oversee enterprise risk management programs.",
+        "ERM improves decision-making and resilience.",
+        "Insurers use ERM to align risk appetite with strategy."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "ERM"
+      ],
+      "related": [
+        {
+          "term": "Risk Appetite",
+          "id": "risk-appetite"
+        },
+        {
+          "term": "Risk Mitigation",
+          "id": "risk-mitigation"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "enterprise risk management"
+      ]
+    },
+    {
+      "id": "risk-register",
+      "term": "Risk Register",
+      "definition": "a structured document listing identified risks, their severity, likelihood, and mitigation strategies.",
+      "examples": [
+        "Risk registers help track organizational risks.",
+        "ERM teams update the risk register quarterly.",
+        "Risk Register entries include mitigation plans.",
+        "Risk Registers support compliance and governance.",
+        "Risk Registers vary by industry and risk profile."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "risk log"
+      ],
+      "related": [
+        {
+          "term": "Enterprise Risk Management",
+          "id": "enterprise-risk-management"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk register"
+      ]
+    },
+    {
+      "id": "risk-scoring",
+      "term": "Risk Scoring",
+      "definition": "a method of quantifying risk using numerical values to support decision-making and prioritization.",
+      "examples": [
+        "Risk scoring helps prioritize mitigation efforts.",
+        "Insurers use risk scoring models for underwriting.",
+        "Risk Scoring incorporates severity and likelihood.",
+        "ERM teams rely on risk scoring for reporting.",
+        "Risk Scoring improves consistency in risk evaluation."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "risk rating"
+      ],
+      "related": [
+        {
+          "term": "Risk Assessment",
+          "id": "risk-assessment"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk scoring"
+      ]
+    },
+    {
+      "id": "risk-aggregation",
+      "term": "Risk Aggregation",
+      "definition": "the process of combining multiple risks to understand total exposure and potential cumulative losses.",
+      "examples": [
+        "Risk aggregation helps insurers evaluate catastrophe exposure.",
+        "ERM teams use risk aggregation to assess enterprise-wide threats.",
+        "Risk Aggregation models consider correlations between risks.",
+        "Regulators require risk aggregation for solvency assessments.",
+        "Risk Aggregation supports capital allocation decisions."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "risk accumulation"
+      ],
+      "related": [
+        {
+          "term": "Enterprise Risk Management",
+          "id": "enterprise-risk-management"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk aggregation"
+      ]
+    },
+    {
+      "id": "risk-correlation",
+      "term": "Risk Correlation",
+      "definition": "the degree to which two or more risks are related, influencing how they combine to affect total exposure.",
+      "examples": [
+        "High risk correlation increases aggregate loss potential.",
+        "Actuaries analyze risk correlation for catastrophe modeling.",
+        "Risk Correlation impacts diversification strategies.",
+        "Risk Correlation varies by geographic and economic factors.",
+        "ERM teams monitor risk correlation across business units."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "correlated risk"
+      ],
+      "related": [
+        {
+          "term": "Risk Aggregation",
+          "id": "risk-aggregation"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk correlation"
+      ]
+    },
+    {
+      "id": "scenario-analysis",
+      "term": "Scenario Analysis",
+      "definition": "a method of evaluating potential outcomes by modeling hypothetical events or conditions.",
+      "examples": [
+        "Scenario analysis helps insurers prepare for extreme events.",
+        "ERM teams run scenario analysis for strategic planning.",
+        "Scenario Analysis supports regulatory stress testing.",
+        "Actuaries use scenario analysis to evaluate reserve adequacy.",
+        "Scenario Analysis identifies vulnerabilities in operations."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "scenario modeling"
+      ],
+      "related": [
+        {
+          "term": "Stress Testing",
+          "id": "stress-testing"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "scenario analysis"
+      ]
+    },
+    {
+      "id": "stress-testing",
+      "term": "Stress Testing",
+      "definition": "an evaluation of how an organization performs under extreme but plausible adverse conditions.",
+      "examples": [
+        "Regulators require stress testing for solvency monitoring.",
+        "Stress Testing helps insurers assess capital adequacy.",
+        "ERM teams conduct stress testing annually.",
+        "Stress Testing scenarios include economic downturns and catastrophes.",
+        "Stress Testing identifies weaknesses in risk controls."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "stress analysis"
+      ],
+      "related": [
+        {
+          "term": "Scenario Analysis",
+          "id": "scenario-analysis"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "stress testing"
+      ]
+    },
+    {
+      "id": "capital-requirement",
+      "term": "Capital Requirement",
+      "definition": "the minimum amount of capital an insurer must hold to ensure solvency and meet regulatory standards.",
+      "examples": [
+        "Capital requirements vary by jurisdiction.",
+        "Regulators enforce capital requirements to protect policyholders.",
+        "Capital Requirement calculations use risk-based formulas.",
+        "Insurers adjust portfolios to meet capital requirements.",
+        "Capital Requirements influence underwriting capacity."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "required capital"
+      ],
+      "related": [
+        {
+          "term": "Risk Capacity",
+          "id": "risk-capacity"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "capital requirement"
+      ]
+    },
+    {
+      "id": "economic-capital",
+      "term": "Economic Capital",
+      "definition": "the amount of capital an insurer needs to absorb unexpected losses based on internal risk models.",
+      "examples": [
+        "Economic capital reflects an insurer’s true risk exposure.",
+        "Insurers use economic capital for strategic planning.",
+        "Economic Capital models consider market, credit, and insurance risk.",
+        "Economic Capital differs from regulatory capital requirements.",
+        "Boards review economic capital metrics regularly."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "internal capital"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "economic capital"
+      ]
+    },
+    {
+      "id": "solvency-margin",
+      "term": "Solvency Margin",
+      "definition": "the excess of an insurer’s assets over its liabilities, used to measure financial strength.",
+      "examples": [
+        "Regulators require insurers to maintain a minimum solvency margin.",
+        "Solvency Margin indicates an insurer’s ability to absorb losses.",
+        "Solvency Margins vary by product and jurisdiction.",
+        "Insurers monitor solvency margin for capital planning.",
+        "Solvency Margin impacts credit ratings."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "solvency buffer"
+      ],
+      "related": [
+        {
+          "term": "Capital Requirement",
+          "id": "capital-requirement"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "solvency margin"
+      ]
+    },
+    {
+      "id": "solvency-ratio",
+      "term": "Solvency Ratio",
+      "definition": "a financial metric comparing an insurer’s capital to its required capital, indicating solvency strength.",
+      "examples": [
+        "Higher solvency ratios indicate stronger financial stability.",
+        "Regulators monitor solvency ratios for compliance.",
+        "Solvency Ratio changes reflect shifts in risk exposure.",
+        "Insurers report solvency ratios in annual statements.",
+        "Solvency Ratios influence investor confidence."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "capital adequacy ratio"
+      ],
+      "related": [
+        {
+          "term": "Solvency Margin",
+          "id": "solvency-margin"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "solvency ratio"
+      ]
+    },
+    {
+      "id": "capital-adequacy",
+      "term": "Capital Adequacy",
+      "definition": "the extent to which an insurer’s capital is sufficient to cover its risks and regulatory requirements.",
+      "examples": [
+        "Capital adequacy is essential for insurer solvency.",
+        "Regulators evaluate capital adequacy during audits.",
+        "Capital Adequacy influences underwriting capacity.",
+        "Insurers improve capital adequacy through reinsurance.",
+        "Capital Adequacy metrics guide strategic planning."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "adequate capital"
+      ],
+      "related": [
+        {
+          "term": "Solvency Ratio",
+          "id": "solvency-ratio"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "capital adequacy"
+      ]
+    },
+    {
+      "id": "capital-modeling",
+      "term": "Capital Modeling",
+      "definition": "the process of estimating the capital an insurer needs to remain solvent under various risk scenarios.",
+      "examples": [
+        "Capital modeling incorporates market, credit, and insurance risk.",
+        "Insurers use capital modeling for strategic planning.",
+        "Capital Modeling supports regulatory filings.",
+        "Actuaries run capital modeling simulations annually.",
+        "Capital Modeling helps determine economic capital needs."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "capital simulation"
+      ],
+      "related": [
+        {
+          "term": "Economic Capital",
+          "id": "economic-capital"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "capital modeling"
+      ]
+    },
+    {
+      "id": "capital-allocation",
+      "term": "Capital Allocation",
+      "definition": "the process of distributing capital across business units or risks to optimize returns and manage exposure.",
+      "examples": [
+        "Capital allocation supports strategic growth decisions.",
+        "Insurers allocate capital based on risk-adjusted returns.",
+        "Capital Allocation influences underwriting capacity.",
+        "ERM teams evaluate capital allocation efficiency.",
+        "Capital Allocation models consider diversification benefits."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "capital distribution"
+      ],
+      "related": [
+        {
+          "term": "Capital Requirement",
+          "id": "capital-requirement"
+        },
+        {
+          "term": "Economic Capital",
+          "id": "economic-capital"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "capital allocation"
+      ]
+    },
+    {
+      "id": "capital-ratio",
+      "term": "Capital Ratio",
+      "definition": "a financial metric comparing an insurer’s capital to its liabilities or required capital.",
+      "examples": [
+        "Capital ratios indicate financial strength.",
+        "Regulators monitor capital ratios for solvency compliance.",
+        "Capital Ratio changes reflect shifts in risk exposure.",
+        "Insurers report capital ratios in annual statements.",
+        "Capital Ratios influence credit ratings."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Solvency Ratio",
+          "id": "solvency-ratio"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "capital ratio"
+      ]
+    },
+    {
+      "id": "loss-distribution",
+      "term": "Loss Distribution",
+      "definition": "a statistical representation of the probability and severity of losses within a portfolio.",
+      "examples": [
+        "Loss distributions help actuaries model aggregate losses.",
+        "Insurers use loss distribution curves for pricing.",
+        "Loss Distribution varies by line of business.",
+        "Loss Distribution modeling supports reinsurance decisions.",
+        "Loss Distribution informs capital modeling."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Reinsurance",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "loss curve"
+      ],
+      "related": [
+        {
+          "term": "Severity Distribution",
+          "id": "severity-distribution"
+        },
+        {
+          "term": "Frequency Distribution",
+          "id": "frequency-distribution"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "loss distribution"
+      ]
+    },
+    {
+      "id": "loss-pick",
+      "term": "Loss Pick",
+      "definition": "an actuarial estimate of expected losses for a future period, used in pricing and planning.",
+      "examples": [
+        "Loss picks support rate development.",
+        "Actuaries update loss picks annually.",
+        "Loss Pick accuracy impacts profitability.",
+        "Loss Picks incorporate trend and development assumptions.",
+        "Loss Picks vary by product and exposure."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "expected loss"
+      ],
+      "related": [
+        {
+          "term": "Ultimate Loss",
+          "id": "ultimate-loss"
+        },
+        {
+          "term": "Trend Rate",
+          "id": "trend-rate"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "loss pick"
+      ]
+    },
+    {
+      "id": "frequency-severity-model",
+      "term": "Frequency-Severity Model",
+      "definition": "an actuarial model combining claim frequency and severity to estimate total losses.",
+      "examples": [
+        "Frequency-severity models support pricing decisions.",
+        "Actuaries use frequency-severity models for forecasting.",
+        "Frequency-Severity Models help evaluate reinsurance needs.",
+        "Frequency-Severity Models vary by product line.",
+        "Frequency-Severity Models inform capital planning."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "Reinsurance"
+      ],
+      "synonyms": [
+        "freq-sev model"
+      ],
+      "related": [
+        {
+          "term": "Loss Frequency",
+          "id": "loss-frequency"
+        },
+        {
+          "term": "Loss Severity",
+          "id": "loss-severity"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "frequency severity model"
+      ]
+    },
+    {
+      "id": "stochastic-modeling",
+      "term": "Stochastic Modeling",
+      "definition": "a method that uses random variables and probability distributions to simulate a range of possible outcomes.",
+      "examples": [
+        "Stochastic modeling helps actuaries evaluate uncertainty.",
+        "Insurers use stochastic modeling for capital planning.",
+        "Stochastic Models simulate thousands of loss scenarios.",
+        "Stochastic Modeling supports solvency assessments.",
+        "Stochastic Modeling improves risk quantification."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "probabilistic modeling"
+      ],
+      "related": [
+        {
+          "term": "Scenario Analysis",
+          "id": "scenario-analysis"
+        },
+        {
+          "term": "Loss Distribution",
+          "id": "loss-distribution"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "stochastic modeling"
+      ]
+    },
+    {
+      "id": "deterministic-modeling",
+      "term": "Deterministic Modeling",
+      "definition": "a method that uses fixed assumptions to produce a single outcome without incorporating randomness.",
+      "examples": [
+        "Deterministic modeling is used for straightforward projections.",
+        "Insurers use deterministic models for baseline forecasts.",
+        "Deterministic Modeling simplifies regulatory reporting.",
+        "Deterministic Models complement stochastic simulations.",
+        "Deterministic Modeling is common in pricing exercises."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "fixed modeling"
+      ],
+      "related": [
+        {
+          "term": "Stochastic Modeling",
+          "id": "stochastic-modeling"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "deterministic modeling"
+      ]
+    },
+    {
+      "id": "partial-credibility",
+      "term": "Partial Credibility",
+      "definition": "a situation where experience data is insufficient for full credibility, requiring blending with external or expected values.",
+      "examples": [
+        "Small groups often receive partial credibility.",
+        "Partial Credibility adjusts rates toward manual values.",
+        "Actuaries calculate partial credibility using statistical formulas.",
+        "Partial Credibility improves stability in pricing.",
+        "Partial Credibility varies by exposure size."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "limited credibility"
+      ],
+      "related": [
+        {
+          "term": "Credibility Factor",
+          "id": "credibility-factor"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "partial credibility"
+      ]
+    },
+    {
+      "id": "full-credibility",
+      "term": "Full Credibility",
+      "definition": "a condition where experience data is statistically sufficient to be used without blending.",
+      "examples": [
+        "Large groups often achieve full credibility.",
+        "Full Credibility requires meeting minimum data thresholds.",
+        "Full Credibility allows direct use of experience data.",
+        "Actuaries determine full credibility using variance formulas.",
+        "Full Credibility improves accuracy in experience rating."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "complete credibility"
+      ],
+      "related": [
+        {
+          "term": "Credibility Factor",
+          "id": "credibility-factor"
+        },
+        {
+          "term": "Partial Credibility",
+          "id": "partial-credibility"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "full credibility"
       ]
     }
   ]

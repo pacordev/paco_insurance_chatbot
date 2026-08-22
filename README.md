@@ -73,14 +73,38 @@ That last piece is where testing caught a real bug before it shipped. Once the b
 
 With that fixed, the pitch at the top of this README is no longer aspirational — it's the first scripted test in `tests/test_dispatcher.py`, and it passes against the real dataset.
 
+### More examples per term, and a templated filler I had to catch
+
+Every term went from one example sentence to five. Good idea in principle — more variety, less chance of the same answer feeling stale — but checking the actual output caught a real problem before it went further: two of the four new template slots were pasting the raw definition text straight into the "example," verbatim. For an average term that's just redundant filler; for the handful of unusually long, dense definitions flagged earlier as a known limitation, it made things actively worse — the "example" ended up longer and denser than the definition itself. There was also a small grammar bug riding along in the same template ("in a auto file" instead of "in an auto file," missing article agreement for a couple of categories).
+
+Fixed by replacing those two specific templates with ones that don't repeat content, and by computing the article correctly. Small thing, but a good reminder that "more content" and "better content" aren't automatically the same thing — worth actually reading the output, not just checking that the field got populated.
+
+This is also where I was glad I keep a backup copy of my working files outside of git. Mid-fix, an assumption in my first pass turned out wrong (I'd assumed every term's new examples landed in the same fixed positions, which wasn't true for a couple of terms with older, hand-written examples already in place), and in the process of restarting I ended up discarding the update before it had ever been committed. Pasting my backup back in got the file back exactly as it was, no harm done — but it's the kind of near-miss that's a good nudge to commit more often rather than let real work sit unsaved for too long.
+
+### Growing the glossary: comparing and merging in 137 new terms
+
+Insurance payment and premium terminology deserved its own dedicated pass, so I put together a separate batch of candidate terms — things like `Loss Ratio`, `Risk Adjustment`, `Written Premium` — rather than trying to wedge them into the existing enrichment pipeline.
+
+Before merging anything in, the obvious first step was checking for duplicates, and it's a good thing I did: the new batch had 19 internal duplicates (the same term appearing twice within its own file), plus 55 terms that already existed in the glossary under the same name, plus another 71 that collided on a lookup phrase even though the id or name looked different. One of those was `IBNR` colliding with the exact same term that had already been carefully deduplicated once before, months earlier — a good reminder that "we fixed this duplicate" doesn't mean "this duplicate can never come back," if new content gets added later without checking against what's already there.
+
+After filtering all of that out, 137 terms were genuinely new. Merging them in wasn't just a matter of appending — the new batch used a slightly different schema (different category names, a three-tier difficulty scale instead of the existing two-tier one, related-terms as plain names instead of resolved ids), so all of that got normalized into the existing structure first. The glossary now sits at **1,149 terms**.
+
+### Growth exposed a real matcher bug
+
+Right after merging, a quick round of live testing on some of the new terms turned up something genuinely wrong: asking about "risk adjustment" answered about "Risk" instead — a much more generic, pre-existing term that happens to be a literal substring of the one actually being asked about. Same thing happened comparing "loss ratio" against "combined ratio" — the bot compared "Loss" against "Loss Ratio," dropping the second term entirely.
+
+This turned out not to be a new bug at all — "Risk" and "Loss" have been standalone entries since the very first version of the glossary. The entity matcher was always capable of finding multiple overlapping matches in one phrase, but never had any logic to prefer the longer, more specific one over a shorter one buried inside it — it just used whichever the matching library handed back first. It had simply never been exercised before, because no phrasing tested up to this point happened to combine a longer term with a shorter one contained inside it. Adding 137 new terms — many of them short, common-word compounds like "Risk Adjustment" and "Loss Reserve" — made that gap much more likely to actually get hit.
+
+The fix was small: when multiple exact matches overlap, keep only the longest one. spaCy has a utility built for exactly this. Re-tested both broken cases, plus a known pre-existing example ("absolute liability," which has the same contains-a-shorter-word shape) — all correct now, and it's locked in with a dedicated test file, `tests/test_nlu.py`.
+
 ---
 
 ## Current status
 
 Data is done (for the moment). Architecture is decided. The core conversation loop works end to end:
 
-- The dataset (`insurance_terms.json`) is finalized, validated, and ready to build against.
-- The entity-matching layer (figuring out *which term* someone means) is built and tested.
+- The dataset (`insurance_terms.json`) now holds **1,149 terms**, each with 5 example sentences, validated and ready to build against.
+- The entity-matching layer (figuring out *which term* someone means) is built and tested, including preferring the longest match when phrases overlap.
 - The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, etc.) is built and tested.
 - Response templates (turning a term + intent into actual reply text) are built and tested.
 - The dispatcher — the piece that ties all of the above into one real, multi-turn conversation, including follow-ups and "did you mean X or Y?" disambiguation — is built and tested against the real dataset.
@@ -108,16 +132,17 @@ ins_chatbot/
 └── tests/                      # growing hand-written test suite
     ├── test_intents.py          # regression tests for bot/intents.py
     ├── test_responses.py        # regression tests for bot/responses.py
-    └── test_dispatcher.py        # multi-turn regression tests for bot/dispatcher.py
+    ├── test_dispatcher.py        # multi-turn regression tests for bot/dispatcher.py
+    └── test_nlu.py               # regression tests for bot/nlu.py
 ```
 
 ### File by file
 
-**`insurance_terms.json`** — The knowledge base. 1,012 insurance terms, each with an id, definition, one example sentence, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
+**`insurance_terms.json`** — The knowledge base. 1,149 insurance terms, each with an id, definition, five example sentences, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
 
 **`bot/data.py`** — Reads `insurance_terms.json` off disk exactly once and reshapes it into a `TermStore`: proper Python objects instead of raw dict/JSON, plus an index mapping every possible phrase a user might type straight to the term it belongs to. Every other module goes through this one to get at the glossary — nothing else touches the JSON file directly.
 
-**`bot/nlu.py`** — Short for "natural language understanding," though really it does one specific job: given a raw message, which glossary term(s) is it about? Two layers: an exact match against known phrases (using spaCy's `PhraseMatcher`), and — only if that comes up empty — a fuzzy, typo-tolerant guess (using `rapidfuzz`) with some extra logic to keep that guess from getting fooled by short or filler-heavy sentences.
+**`bot/nlu.py`** — Short for "natural language understanding," though really it does one specific job: given a raw message, which glossary term(s) is it about? Two layers: an exact match against known phrases (using spaCy's `PhraseMatcher`, keeping the longest match when phrases overlap), and — only if that comes up empty — a fuzzy, typo-tolerant guess (using `rapidfuzz`) with some extra logic to keep that guess from getting fooled by short or filler-heavy sentences.
 
 **`bot/state.py`** — A small object representing one user's ongoing conversation: what term was last discussed, what the last thing they asked for was, and whether the bot is mid-way through asking "did you mean X or Y?" This is what makes follow-up questions possible without the user repeating themselves.
 
@@ -157,7 +182,7 @@ Ask it something like `what's a premium?`, then follow up with `give me an examp
 
 ## Known limitations (being upfront about these)
 
-- Categories and difficulty ratings are rule-based guesses, not reviewed by an actual insurance expert — good enough to build on, not something to present as authoritative without a spot-check.
+- Categories and difficulty ratings are rule-based guesses, not reviewed by an actual insurance expert — good enough to build on, not something to present as authoritative without a spot-check. This applies doubly to the 137 payment-related terms merged in later: their categories and difficulty levels were machine-remapped from a different labeling scheme onto the existing one (e.g. a three-tier difficulty scale folded down into the existing two-tier one), which is an extra layer of approximation on top of the original guesswork.
 - About half the glossary terms have no "related terms" suggestions — mostly because their definitions genuinely don't reference another glossary term, not a bug, just a ceiling on how much "see also" richness is possible without a smarter (e.g. embedding-based) approach.
 - A few near-duplicate glossary entries were found and merged (ALAE, HMO, IBNR), but that was only because they happened to collide on the same lookup phrase — there could be other duplicates out there using different wording that haven't been caught yet.
 - **33 terms (about 3%) have unusually long, dense definitions** — multi-sentence passages several times the median length (e.g. "Liability" runs 716 characters, versus a ~110-character median across the glossary). The bot currently just passes these through as-is, so an answer for one of these terms will read noticeably denser than a typical one. Not fixed for now — worth a future pass to shorten these for chat, or to show the short version first with a "want the full definition?" follow-up.

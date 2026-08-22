@@ -8,7 +8,7 @@ This README tells the story of the project as it happens: why it exists, what's 
 
 ## Why this exists
 
-I kept noticing the same pattern: someone new joins a project that touches insurance, and half of onboarding turns into "what does that word mean?" moments — asked in Teams, answered inconsistently, and never written down anywhere useful. A searchable glossary already helps, but a chatbot that can hold a small conversation ("what's ACV?" → "can you give me an example?" → "how's that different from replacement cost?") is a much nicer way to actually learn the terms rather than just look them up once and forget them.
+I kept noticing the same pattern: someone new joins a project that touches insurance, and half of onboarding turns into "what does that word mean?" moments — asked in Teams, answered inconsistently, and never written down anywhere useful. A searchable glossary already helps, but a chatbot that can hold a small conversation ("what's a premium?" → "can you give me an example?" → "how's that different from replacement cost?") is a much nicer way to actually learn the terms rather than just look them up once and forget them.
 
 ## Scope — what this is, and what it deliberately isn't
 
@@ -67,7 +67,7 @@ The one wrinkle worth recording: for `compare_terms`, my first instinct was a si
 
 Everything up to this point answered one narrow question in isolation — which term, which intent, what wording. The dispatcher (`bot/dispatcher.py`) is where those get wired into something that behaves like a single, continuous conversation rather than a series of unrelated lookups.
 
-The main design question was how much of §2.11's conversational plan to actually build now versus leave for later, and the honest answer turned out to be "all of it" — none of it is optional if the bot is meant to hold the kind of exchange pitched at the very top of this README ("what's ACV?" → "can you give me an example?" → "how's that different from replacement cost?"). So the dispatcher does three real things: it remembers the last term discussed so a follow-up like "give me an example" or "how's that different from Y" doesn't require repeating the term name; it decides what to do when nothing in the message resolves to a term at all (falling back cleanly rather than guessing wrong); and it turns a genuinely ambiguous fuzzy match into a real "did you mean X or Y?" question, tracked as pending state until the next message resolves it.
+The main design question was how much of §2.11's conversational plan to actually build now versus leave for later, and the honest answer turned out to be "all of it" — none of it is optional if the bot is meant to hold the kind of exchange pitched at the very top of this README ("what's a premium?" → "can you give me an example?" → "how's that different from replacement cost?"). So the dispatcher does three real things: it remembers the last term discussed so a follow-up like "give me an example" or "how's that different from Y" doesn't require repeating the term name; it decides what to do when nothing in the message resolves to a term at all (falling back cleanly rather than guessing wrong); and it turns a genuinely ambiguous fuzzy match into a real "did you mean X or Y?" question, tracked as pending state until the next message resolves it.
 
 That last piece is where testing caught a real bug before it shipped. Once the bot has asked "did you mean X or Y?", a natural reply is something like "the first one" — and it turns out that phrase is exactly the kind of short, generic text the fuzzy matcher can accidentally match against some unrelated glossary term on its own. My first version only checked "did this answer the pending question" when the entity matcher found *nothing* — so that accidental fuzzy match silently won, and the bot answered a completely different, unrelated question instead of the one it had just asked. The fix was ordering: an open "did you mean" question now gets first right of interpretation over anything the entity matcher guesses on its own, not just when the matcher comes up empty.
 
@@ -113,7 +113,7 @@ ins_chatbot/
 
 ### File by file
 
-**`insurance_terms.json`** — The knowledge base. 1,012 insurance terms, each with an id, definition, one example sentence, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("ACV," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
+**`insurance_terms.json`** — The knowledge base. 1,012 insurance terms, each with an id, definition, one example sentence, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
 
 **`bot/data.py`** — Reads `insurance_terms.json` off disk exactly once and reshapes it into a `TermStore`: proper Python objects instead of raw dict/JSON, plus an index mapping every possible phrase a user might type straight to the term it belongs to. Every other module goes through this one to get at the glossary — nothing else touches the JSON file directly.
 
@@ -140,7 +140,7 @@ pip install -r requirements.txt
 python paco_chatbot.py
 ```
 
-Ask it something like `what's ACV?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit.
+Ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit.
 
 ---
 
@@ -166,4 +166,4 @@ Ask it something like `what's ACV?`, then follow up with `give me an example` or
 - About half the glossary terms have no "related terms" suggestions — mostly because their definitions genuinely don't reference another glossary term, not a bug, just a ceiling on how much "see also" richness is possible without a smarter (e.g. embedding-based) approach.
 - A few near-duplicate glossary entries were found and merged (ALAE, HMO, IBNR), but that was only because they happened to collide on the same lookup phrase — there could be other duplicates out there using different wording that haven't been caught yet.
 - **33 terms (about 3%) have unusually long, dense definitions** — multi-sentence passages several times the median length (e.g. "Liability" runs 716 characters, versus a ~110-character median across the glossary). The bot currently just passes these through as-is, so an answer for one of these terms will read noticeably denser than a typical one. Not fixed for now — worth a future pass to shorten these for chat, or to show the short version first with a "want the full definition?" follow-up.
-- **Comparing two terms when one of them is misspelled doesn't work as well as it should.** The entity matcher only reaches for its typo-tolerant fuzzy matching when it finds *zero* exact matches in the whole message — so if one of the two terms in "compare ACV and workres comp" matches exactly, the matcher never even attempts to fuzzy-match the misspelled second one, and the dispatcher ends up one term short. Correctly spelled comparisons, and comparisons that lean on the last-discussed term ("how's that different from Y"), both work fine — it's specifically the "two terms, one of them typo'd, both new to this message" case that's weaker than it should be.
+- **Comparing two terms when one of them is misspelled doesn't work as well as it should.** The entity matcher only reaches for its typo-tolerant fuzzy matching when it finds *zero* exact matches in the whole message — so if one of the two terms in "compare premiums and workres comp" matches exactly, the matcher never even attempts to fuzzy-match the misspelled second one, and the dispatcher ends up one term short. Correctly spelled comparisons, and comparisons that lean on the last-discussed term ("how's that different from Y"), both work fine — it's specifically the "two terms, one of them typo'd, both new to this message" case that's weaker than it should be.

@@ -97,19 +97,39 @@ This turned out not to be a new bug at all — "Risk" and "Loss" have been stand
 
 The fix was small: when multiple exact matches overlap, keep only the longest one. spaCy has a utility built for exactly this. Re-tested both broken cases, plus a known pre-existing example ("absolute liability," which has the same contains-a-shorter-word shape) — all correct now, and it's locked in with a dedicated test file, `tests/test_nlu.py`.
 
+### Making it personal: asking for a name, and a lot more phrasing variety
+
+Up to this point the bot answered correctly, but it still felt like talking to a lookup tool rather than a conversation. So now, before anything else happens, it asks for your name — and every single reply for the rest of the session addresses you by it, starting with a randomized welcome message (one of ten variants, so two sessions don't open identically) and ending with a randomized goodbye when you type `quit`, not just when you say "bye" mid-conversation.
+
+Doing that properly meant going back through every response template and roughly tripling how many phrasings each intent has, since 2-3 variants per intent — which felt fine before — turned out to read as repetitive the moment every single reply also had a name stitched into it in the same spot every time. So the name's position moves around too: sometimes opening the sentence, sometimes closing it, sometimes a mid-message aside ("Good question, Paco...").
+
+That rewrite surfaced a genuinely funny bug: a couple of the new templates continue the sentence right after the definition with no line break ("...basis. Hope that helps, Paco."), and since almost every definition in the glossary already ends in its own period, the naive version produced a doubled period — "...basis.. Hope that helps." Fixed by stripping the definition's own trailing period specifically for those two templates, and locked in with a test that checks for it directly, since it's exactly the kind of small thing that's easy to eyeball right past.
+
+### Growing the glossary again: insurance documents, and a much lower yield than last time
+
+Testing surfaced a real content gap: no entries at all for the *documents* insurance runs on — policy schedules, declarations pages, exclusions sections, that kind of thing. So I put together a second candidate batch focused specifically on that, the same way as the payment-terms batch before it.
+
+The duplicate-check process was the same, but the result was strikingly different: of 27 unique candidates, only **5 were genuinely new** (`General Conditions`, `Coverage Limits`, `Conditions Precedent`, `Claims Procedure`, `Per-Occurrence Limit`) — versus 137 out of 200 last time. Most of what got generated re-covered concepts the glossary already had, just reframed through a "documentation" lens rather than actually filling the gap. Worth remembering for next time: a low yield on a targeted batch is itself useful information, not just a disappointing result — it can mean the gap is smaller than it looked, or that the generation prompt needs to be more specific about what's actually missing.
+
+One of the 5 new terms — `Insurance Documentation` as a category — didn't fit anywhere in the existing 14-category list, so rather than force it into an ill-fitting bucket, it became a genuine 15th category. That's exactly the kind of gap this batch was meant to close.
+
+A sixth term, `Policy Cover`, had been excluded from that first pass — not because it duplicated anything, but because its lookup phrase happened to be the single word "coverage," which was already spoken for by an existing, unrelated generic entry. Once that was pointed out, fixing it was simple: give it a lookup key that doesn't collide (`"policy cover"` instead of `"coverage"`), and it's a perfectly good, distinct entry. I went back and checked whether any of the other excluded candidates had the same shape — a real, distinct concept blocked only by an unlucky shared word — and found three more that were *close* but turned out to be true duplicates once I actually compared definitions (`Co-Insurance`, `Policy Schedule`, and a second `Actual Cash Value` entry all described concepts the glossary already covers, just under different wording), so those stayed out.
+
+That check did catch something else worth fixing, though: asking the bot about "policy schedule" or "co-insurance" — both real phrases someone might actually type — was silently answering about the wrong thing entirely (the bare word "policy" and the bare word "insurance," respectively), because neither the existing `Declarations Page` nor `Coinsurance` entries had ever been taught those phrasings. Added them as extra lookup keys on the existing entries rather than creating new, duplicate ones. The glossary now sits at **1,155 terms**.
+
 ---
 
 ## Current status
 
 Data is done (for the moment). Architecture is decided. The core conversation loop works end to end:
 
-- The dataset (`insurance_terms.json`) now holds **1,149 terms**, each with 5 example sentences, validated and ready to build against.
+- The dataset (`insurance_terms.json`) now holds **1,155 terms**, each with 5 example sentences, validated and ready to build against.
 - The entity-matching layer (figuring out *which term* someone means) is built and tested, including preferring the longest match when phrases overlap.
 - The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, etc.) is built and tested.
-- Response templates (turning a term + intent into actual reply text) are built and tested.
+- Response templates (turning a term + intent into actual reply text) are built and tested, with real phrasing variety and every reply personalized by name.
 - The dispatcher — the piece that ties all of the above into one real, multi-turn conversation, including follow-ups and "did you mean X or Y?" disambiguation — is built and tested against the real dataset.
 
-In other words: `python paco_chatbot.py` is now an actual (if bare-bones) conversation with the bot, not just a component demo. What's left is mostly about making the experience richer and getting it in front of people — see "What's ahead" below.
+In other words: `python paco_chatbot.py` now opens by asking your name and greeting you personally, then holds an actual (if bare-bones) conversation from there — not just a component demo. What's left is mostly about making the experience richer and getting it in front of people — see "What's next" below.
 
 ---
 
@@ -138,21 +158,21 @@ ins_chatbot/
 
 ### File by file
 
-**`insurance_terms.json`** — The knowledge base. 1,149 insurance terms, each with an id, definition, five example sentences, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
+**`insurance_terms.json`** — The knowledge base. 1,155 insurance terms across 15 categories, each with an id, definition, five example sentences, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
 
 **`bot/data.py`** — Reads `insurance_terms.json` off disk exactly once and reshapes it into a `TermStore`: proper Python objects instead of raw dict/JSON, plus an index mapping every possible phrase a user might type straight to the term it belongs to. Every other module goes through this one to get at the glossary — nothing else touches the JSON file directly.
 
 **`bot/nlu.py`** — Short for "natural language understanding," though really it does one specific job: given a raw message, which glossary term(s) is it about? Two layers: an exact match against known phrases (using spaCy's `PhraseMatcher`, keeping the longest match when phrases overlap), and — only if that comes up empty — a fuzzy, typo-tolerant guess (using `rapidfuzz`) with some extra logic to keep that guess from getting fooled by short or filler-heavy sentences.
 
-**`bot/state.py`** — A small object representing one user's ongoing conversation: what term was last discussed, what the last thing they asked for was, and whether the bot is mid-way through asking "did you mean X or Y?" This is what makes follow-up questions possible without the user repeating themselves.
+**`bot/state.py`** — A small object representing one user's ongoing conversation: their name (captured once at the start of the session), what term was last discussed, what the last thing they asked for was, and whether the bot is mid-way through asking "did you mean X or Y?" This is what makes both personalized replies and follow-up questions possible without the user repeating themselves.
 
 **`bot/intents.py`** — Defines the fixed list of things a user can be trying to do (`ask_definition`, `ask_example`, `list_categories`, `compare_terms`, plus conversational basics like greeting/help/goodbye, and a fallback for "I don't know what you mean") and `recognize_intent()`, which classifies a raw message into one of them using priority-ordered regex patterns. A bare term with no question wrapped around it comes back as `fallback` on purpose — promoting that to `ask_definition` needs the entity-match result too, which only the dispatcher will have.
 
-**`bot/responses.py`** — Turns "this term, with this intent" into an actual reply sentence via `render()`, with 2-3 phrasings per intent (picked at random) so answers don't feel robotic. Also handles the two intents that need more than just a term: comparing two terms side by side, and listing categories.
+**`bot/responses.py`** — Turns "this term, with this intent" into an actual reply sentence via `render()`, with 5-8 phrasings per intent (picked at random, with the user's name woven in at a different spot each time) so answers don't feel robotic. Also handles the two intents that need more than just a term (comparing two terms side by side, listing categories), and `render_welcome()` for the randomized session-opening greeting.
 
 **`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time.
 
-**`paco_chatbot.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's ahead").
+**`paco_chatbot.py`** — A command-line REPL that asks your name, shows a personalized welcome message, then talks to the real `Dispatcher` for the rest of the session — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's next").
 
 ---
 
@@ -165,7 +185,7 @@ pip install -r requirements.txt
 python paco_chatbot.py
 ```
 
-Ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit.
+It'll ask your name first. After that, ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit (you'll get a goodbye message too).
 
 ---
 
@@ -187,3 +207,4 @@ Ask it something like `what's a premium?`, then follow up with `give me an examp
 - A few near-duplicate glossary entries were found and merged (ALAE, HMO, IBNR), but that was only because they happened to collide on the same lookup phrase — there could be other duplicates out there using different wording that haven't been caught yet.
 - **33 terms (about 3%) have unusually long, dense definitions** — multi-sentence passages several times the median length (e.g. "Liability" runs 716 characters, versus a ~110-character median across the glossary). The bot currently just passes these through as-is, so an answer for one of these terms will read noticeably denser than a typical one. Not fixed for now — worth a future pass to shorten these for chat, or to show the short version first with a "want the full definition?" follow-up.
 - **Comparing two terms when one of them is misspelled doesn't work as well as it should.** The entity matcher only reaches for its typo-tolerant fuzzy matching when it finds *zero* exact matches in the whole message — so if one of the two terms in "compare premiums and workres comp" matches exactly, the matcher never even attempts to fuzzy-match the misspelled second one, and the dispatcher ends up one term short. Correctly spelled comparisons, and comparisons that lean on the last-discussed term ("how's that different from Y"), both work fine — it's specifically the "two terms, one of them typo'd, both new to this message" case that's weaker than it should be.
+- **A phrase that was never explicitly taught to the matcher can silently resolve to the wrong, much more generic term**, rather than failing loudly. This is different from the "shorter term wins" bug above (which was about *ordering* between two registered phrases) — this is about a phrase not being registered *at all*, but happening to contain a shorter word that is. Found twice so far ("policy schedule" answering about "Policy," "co-insurance" answering about "Insurance") and fixed both times by adding the missing lookup key to the right existing entry — but there's no way to know how many more of these are lurking until someone happens to type the phrase. Worth keeping an eye out for as the glossary keeps growing, especially with short, common-word-containing terms.

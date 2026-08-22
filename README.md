@@ -57,18 +57,35 @@ Working through it surfaced something worth stating plainly rather than discover
 
 The mitigating factor is scope: this isn't an open-domain bot fielding phrasing from the general public, it's a fixed, narrow set of coworkers asking about a fixed glossary — so the realistic range of phrasing is bounded, even if it doesn't feel that way while writing the regexes. Given that, the plan going forward is a growing table-driven regression suite (`tests/test_intents.py`) rather than trying to anticipate every phrasing up front: cheap to add one line to, and the whole thing gets re-run every time the pattern list changes, so a new intent's collisions with old ones show up immediately instead of silently in production. If pattern collisions ever get genuinely unmanageable despite that, the honest fallback is a small trained classifier instead of hand-written regex — but that reintroduces real complexity, so it's not worth reaching for pre-emptively.
 
+### Response templates, and a grammar trap I almost walked into
+
+With intents recognized, the next piece was turning them into actual reply text (`bot/responses.py`) — a few phrasings per intent, picked at random, so the bot doesn't answer with the exact same fill-in-the-blank sentence every time.
+
+The one wrinkle worth recording: for `compare_terms`, my first instinct was a single flowing sentence — "X is `<definition of X, lowercased>`, while Y is `<definition of Y, lowercased>`." Before committing to that, I pulled a random sample of definitions straight from `insurance_terms.json` to sanity-check it, and the phrasing turned out to be far less consistent than I'd assumed — some are noun phrases ("Coverage for property under construction"), some already read as sentence continuations ("refers to the primary business type under which..."). Splicing that second kind into "X is refers to the primary business type..." is just broken grammar. So `compare_terms` presents both definitions as their own separate sentences instead — less clever, but correct for all 1,012 terms rather than most of them.
+
+### The dispatcher: making it an actual conversation
+
+Everything up to this point answered one narrow question in isolation — which term, which intent, what wording. The dispatcher (`bot/dispatcher.py`) is where those get wired into something that behaves like a single, continuous conversation rather than a series of unrelated lookups.
+
+The main design question was how much of §2.11's conversational plan to actually build now versus leave for later, and the honest answer turned out to be "all of it" — none of it is optional if the bot is meant to hold the kind of exchange pitched at the very top of this README ("what's ACV?" → "can you give me an example?" → "how's that different from replacement cost?"). So the dispatcher does three real things: it remembers the last term discussed so a follow-up like "give me an example" or "how's that different from Y" doesn't require repeating the term name; it decides what to do when nothing in the message resolves to a term at all (falling back cleanly rather than guessing wrong); and it turns a genuinely ambiguous fuzzy match into a real "did you mean X or Y?" question, tracked as pending state until the next message resolves it.
+
+That last piece is where testing caught a real bug before it shipped. Once the bot has asked "did you mean X or Y?", a natural reply is something like "the first one" — and it turns out that phrase is exactly the kind of short, generic text the fuzzy matcher can accidentally match against some unrelated glossary term on its own. My first version only checked "did this answer the pending question" when the entity matcher found *nothing* — so that accidental fuzzy match silently won, and the bot answered a completely different, unrelated question instead of the one it had just asked. The fix was ordering: an open "did you mean" question now gets first right of interpretation over anything the entity matcher guesses on its own, not just when the matcher comes up empty.
+
+With that fixed, the pitch at the top of this README is no longer aspirational — it's the first scripted test in `tests/test_dispatcher.py`, and it passes against the real dataset.
+
 ---
 
 ## Current status
 
-Data is done (for the moment). Architecture is decided. Code has started:
+Data is done (for the moment). Architecture is decided. The core conversation loop works end to end:
 
 - The dataset (`insurance_terms.json`) is finalized, validated, and ready to build against.
 - The entity-matching layer (figuring out *which term* someone means) is built and tested.
-- The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, etc.) is built and covered by a regression test suite.
-- Remembering context between messages and actually phrasing replies are still scaffolded with clear stubs, not implemented yet — same for the dispatcher that ties everything together into one real conversation.
+- The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, etc.) is built and tested.
+- Response templates (turning a term + intent into actual reply text) are built and tested.
+- The dispatcher — the piece that ties all of the above into one real, multi-turn conversation, including follow-ups and "did you mean X or Y?" disambiguation — is built and tested against the real dataset.
 
-No chatbot conversation has happened yet, in other words — but the foundation it'll stand on is solid and already proven to work.
+In other words: `python main.py` is now an actual (if bare-bones) conversation with the bot, not just a component demo. What's left is mostly about making the experience richer and getting it in front of people — see "What's ahead" below.
 
 ---
 
@@ -87,10 +104,11 @@ ins_chatbot/
 │   ├── state.py                 # remembers context across a conversation (last term discussed, etc.)
 │   ├── intents.py               # defines what a user could be asking for
 │   ├── responses.py             # turns "this term + this intent" into an actual reply
-│   └── dispatcher.py            # ties everything above together into one conversation turn (not implemented yet)
+│   └── dispatcher.py            # ties everything above together into one real conversation turn
 └── tests/                      # growing hand-written test suite
     ├── test_intents.py          # regression tests for bot/intents.py
-    └── test_responses.py        # regression tests for bot/responses.py
+    ├── test_responses.py        # regression tests for bot/responses.py
+    └── test_dispatcher.py        # multi-turn regression tests for bot/dispatcher.py
 ```
 
 ### File by file
@@ -107,9 +125,9 @@ ins_chatbot/
 
 **`bot/responses.py`** — Turns "this term, with this intent" into an actual reply sentence via `render()`, with 2-3 phrasings per intent (picked at random) so answers don't feel robotic. Also handles the two intents that need more than just a term: comparing two terms side by side, and listing categories.
 
-**`bot/dispatcher.py`** — The conductor. Once everything above exists, this is what a single incoming message actually flows through: figure out the intent, figure out the term (using conversation state to fill in gaps for follow-ups), build a reply, update the state for next time. Stubbed out for now.
+**`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time.
 
-**`main.py`** — Right now, just a small command-line loop to manually try out the entity-matching layer and see what it resolves a typed phrase to. Once the dispatcher is built, this will become the actual way to talk to the bot (or get replaced by a proper interface — see Open Decisions).
+**`main.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see Open Decisions).
 
 ---
 
@@ -122,17 +140,17 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Type a phrase like `what is ACV` or a typo like `workers comp` and it'll tell you which glossary term it thinks you mean. That's genuinely all it does right now — there's no conversation yet, just "can it find the right term."
+Ask it something like `what's ACV?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit.
 
 ---
 
 ## What's ahead
 
 1. ~~**Intent recognition**~~ — done. `bot/intents.py` now tells "what's a deductible" apart from "give me an example of a deductible," backed by a growing regression suite (`tests/test_intents.py`).
-2. **Response templates** — filling in `bot/responses.py` with real, varied wording.
-3. **The dispatcher** — wiring entity matching + intent + state + responses into one real conversation loop in `bot/dispatcher.py`.
+2. ~~**Response templates**~~ — done. `bot/responses.py` turns any (term, intent) pair into varied reply text, including two-term comparisons and category listings.
+3. ~~**The dispatcher**~~ — done. `bot/dispatcher.py` wires entity matching + intent + state + responses into one real conversation loop, including follow-ups and disambiguation, tested end to end in `tests/test_dispatcher.py`.
 4. **More testing, as it grows** — keep extending `tests/` with misspelled and casually-worded questions as new intents/features get added, since the whole point is that the audience doesn't already know the "correct" insurance vocabulary to type.
-5. **"v1.5" features**, once the basics work — browsing by category, a quiz mode, comparing two terms side by side. The data already supports all of this; it's just not wired up yet.
+5. **"v1.5" features**, once the basics work — browsing by category, a quiz mode, difficulty-aware onboarding. The data already supports all of this; it's just not wired up yet. (Comparing two terms is already in, as of the dispatcher.)
 6. **Actually shipping it somewhere people can use it** — still an open question, see below.
 7. **A Spanish translation of the dictionary.** English isn't everyone's first language on the team (mine included), so I plan to translate `insurance_terms.json` into Spanish as its own language variant, not just a machine-translated afterthought.
 8. **Asking the session's language up front.** Once a Spanish dictionary exists, the bot should ask at the start of a session which language to use, and answer consistently in that language for the rest of the conversation.
@@ -148,3 +166,4 @@ Type a phrase like `what is ACV` or a typo like `workers comp` and it'll tell yo
 - About half the glossary terms have no "related terms" suggestions — mostly because their definitions genuinely don't reference another glossary term, not a bug, just a ceiling on how much "see also" richness is possible without a smarter (e.g. embedding-based) approach.
 - A few near-duplicate glossary entries were found and merged (ALAE, HMO, IBNR), but that was only because they happened to collide on the same lookup phrase — there could be other duplicates out there using different wording that haven't been caught yet.
 - **33 terms (about 3%) have unusually long, dense definitions** — multi-sentence passages several times the median length (e.g. "Liability" runs 716 characters, versus a ~110-character median across the glossary). The bot currently just passes these through as-is, so an answer for one of these terms will read noticeably denser than a typical one. Not fixed for now — worth a future pass to shorten these for chat, or to show the short version first with a "want the full definition?" follow-up.
+- **Comparing two terms when one of them is misspelled doesn't work as well as it should.** The entity matcher only reaches for its typo-tolerant fuzzy matching when it finds *zero* exact matches in the whole message — so if one of the two terms in "compare ACV and workres comp" matches exactly, the matcher never even attempts to fuzzy-match the misspelled second one, and the dispatcher ends up one term short. Correctly spelled comparisons, and comparisons that lean on the last-discussed term ("how's that different from Y"), both work fine — it's specifically the "two terms, one of them typo'd, both new to this message" case that's weaker than it should be.

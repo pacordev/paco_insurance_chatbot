@@ -146,18 +146,14 @@ Ask it something like `what's a premium?`, then follow up with `give me an examp
 
 ## What's ahead
 
-1. ~~**Intent recognition**~~ — done. `bot/intents.py` now tells "what's a deductible" apart from "give me an example of a deductible," backed by a growing regression suite (`tests/test_intents.py`).
-2. ~~**Response templates**~~ — done. `bot/responses.py` turns any (term, intent) pair into varied reply text, including two-term comparisons and category listings.
-3. ~~**The dispatcher**~~ — done. `bot/dispatcher.py` wires entity matching + intent + state + responses into one real conversation loop, including follow-ups and disambiguation, tested end to end in `tests/test_dispatcher.py`.
-4. **More testing, as it grows** — keep extending `tests/` with misspelled and casually-worded questions as new intents/features get added, since the whole point is that the audience doesn't already know the "correct" insurance vocabulary to type.
-5. **"v1.5" features**, once the basics work — the data already supports all of this via the `categories`/`difficulty` fields already in `insurance_terms.json`; none of it is wired up yet:
+1. **More testing, as it grows** — keep extending `tests/` with misspelled and casually-worded questions as new intents/features get added, since the whole point is that the audience doesn't already know the "correct" insurance vocabulary to type.
+2. **"v1.5" features**, once the basics work — the data already supports all of this via the `categories`/`difficulty` fields already in `insurance_terms.json`; none of it is wired up yet:
    - **Browsing by category** — "show me Auto terms" style listing, instead of only looking up one term at a time.
    - **A quiz mode** — testing recall instead of just answering lookups.
    - **Difficulty-aware onboarding** — using the `difficulty` field (Basic/Technical) to guide what a newcomer sees first, easiest terms before the dense ones.
-   - (Comparing two terms is already in, as of the dispatcher — that one moved out of this bucket.)
-6. **Actually shipping it somewhere people can use it** — still an open question, see below.
-7. **A Spanish translation of the dictionary.** English isn't everyone's first language on the team (mine included), so I plan to translate `insurance_terms.json` into Spanish as its own language variant, not just a machine-translated afterthought.
-8. **Asking the session's language up front.** Once a Spanish dictionary exists, the bot should ask at the start of a session which language to use, and answer consistently in that language for the rest of the conversation.
+3. **Actually shipping it somewhere people can use it** — still an open question, see below.
+4. **A Spanish translation of the dictionary.** English isn't everyone's first language on the team (mine included), so I plan to translate `insurance_terms.json` into Spanish as its own language variant, not just a machine-translated afterthought.
+5. **Asking the session's language up front.** Once a Spanish dictionary exists, the bot should ask at the start of a session which language to use, and answer consistently in that language for the rest of the conversation.
 
 ## Open decisions
 

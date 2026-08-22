@@ -127,7 +127,7 @@ ins_chatbot/
 
 **`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time.
 
-**`paco_chatbot.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see Open Decisions).
+**`paco_chatbot.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see "What's ahead").
 
 ---
 
@@ -151,14 +151,9 @@ Ask it something like `what's a premium?`, then follow up with `give me an examp
    - **Browsing by category** — "show me Auto terms" style listing, instead of only looking up one term at a time.
    - **A quiz mode** — testing recall instead of just answering lookups.
    - **Difficulty-aware onboarding** — using the `difficulty` field (Basic/Technical) to guide what a newcomer sees first, easiest terms before the dense ones.
-3. **Actually shipping it somewhere people can use it** — still an open question, see below.
+3. **Actually shipping it somewhere people can use it** — still an open question: a simple web/REST interface, or a Teams bot? Affects how replies should be shaped (plain text vs. something richer).
 4. **A Spanish translation of the dictionary.** English isn't everyone's first language on the team (mine included), so I plan to translate `insurance_terms.json` into Spanish as its own language variant, not just a machine-translated afterthought.
 5. **Asking the session's language up front.** Once a Spanish dictionary exists, the bot should ask at the start of a session which language to use, and answer consistently in that language for the rest of the conversation.
-
-## Open decisions
-
-- **Where coworkers will actually access this** — a simple web/REST interface, or a Teams bot? Affects how replies should be shaped (plain text vs. something richer).
-- **Whether v1 ships lookup-only**, or launches with compare/quiz features included from day one.
 
 ## Known limitations (being upfront about these)
 

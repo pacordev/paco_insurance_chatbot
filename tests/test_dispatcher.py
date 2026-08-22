@@ -118,6 +118,31 @@ class DispatcherTests(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertIn("Paco", self._say(text))
 
+    def test_list_risks_under_a_recognized_domain(self):
+        # The exact motivating question for this feature — asking about a
+        # term-shaped intent (definitions) previously answered "Risk"'s own
+        # definition instead of listing the risks life insurance covers.
+        reply = self._say("what are the usual risks under life insurance")
+        self.assertIn("Mortality Risk", reply)
+        self.assertIn("Longevity Risk", reply)
+        self.assertEqual(self.state.last_intent, Intent.LIST_RISKS)
+
+    def test_list_risks_with_no_domain_lists_available_domains(self):
+        reply = self._say("what are the risks?")
+        self.assertIn("Life", reply)
+        self.assertIn("Auto", reply)
+        # "Risk" itself is the cross-cutting tag, not a line of business —
+        # shouldn't show up as something to pick.
+        self.assertNotIn("Risk,", reply)
+        self.assertNotIn("Risk.", reply)
+
+    def test_singular_risk_still_asks_for_the_definition(self):
+        # Regression: broadening LIST_RISKS's patterns once accidentally
+        # caught singular "risk" too, breaking this.
+        reply = self._say("what is risk")
+        self.assertEqual(self.state.last_intent, Intent.ASK_DEFINITION)
+        self.assertIn("Uncertainty", reply)
+
 
 if __name__ == "__main__":
     unittest.main()

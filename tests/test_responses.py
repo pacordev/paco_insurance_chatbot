@@ -93,6 +93,17 @@ class RenderTests(unittest.TestCase):
         for category in ("Auto", "Property", "Life"):
             self.assertIn(category, reply)
 
+    def test_list_risks_with_a_domain_includes_the_domain_and_every_risk(self):
+        reply = render(Intent.LIST_RISKS, domain="Life", risk_terms=["Mortality Risk", "Longevity Risk"])
+        self.assertIn("Life", reply)
+        self.assertIn("Mortality Risk", reply)
+        self.assertIn("Longevity Risk", reply)
+
+    def test_list_risks_without_a_domain_lists_available_domains_instead(self):
+        reply = render(Intent.LIST_RISKS, available_domains=["Auto", "Life"])
+        self.assertIn("Auto", reply)
+        self.assertIn("Life", reply)
+
     def test_greet_help_goodbye_need_no_term(self):
         for intent in (Intent.GREET, Intent.HELP, Intent.GOODBYE):
             with self.subTest(intent=intent):
@@ -116,6 +127,8 @@ class RenderTests(unittest.TestCase):
             (Intent.ASK_EXAMPLE, {"term": self.acv}),
             (Intent.COMPARE_TERMS, {"term": self.acv, "other_term": self.replacement_cost}),
             (Intent.LIST_CATEGORIES, {"categories": ["Auto"]}),
+            (Intent.LIST_RISKS, {"domain": "Life", "risk_terms": ["Mortality Risk"]}),
+            (Intent.LIST_RISKS, {"available_domains": ["Auto", "Life"]}),
             (Intent.GREET, {}),
             (Intent.HELP, {}),
             (Intent.GOODBYE, {}),

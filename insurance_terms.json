@@ -4,22 +4,23 @@
     "version": "2.0",
     "generated": "2026-08-03",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1155,
+    "count": 1178,
     "categories": {
       "General Insurance Concepts": 379,
-      "Property": 190,
+      "Property": 193,
       "Claims": 175,
-      "Health": 152,
-      "Liability": 143,
+      "Health": 158,
+      "Liability": 144,
       "Financial / Accounting": 118,
       "Underwriting & Actuarial": 104,
-      "Workers Compensation": 78,
-      "Life": 76,
-      "Auto": 71,
+      "Life": 81,
+      "Workers Compensation": 79,
+      "Auto": 74,
       "Regulatory & Legal": 63,
       "Reinsurance": 59,
-      "Financial Lines & Surety": 38,
-      "Marine & Aviation": 15,
+      "Financial Lines & Surety": 40,
+      "Risk": 23,
+      "Marine & Aviation": 17,
       "Insurance Documentation": 4
     },
     "difficulty_levels": [
@@ -29951,6 +29952,599 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "policy cover"
+      ]
+    },
+    {
+      "id": "life-mortality-risk",
+      "term": "Mortality Risk",
+      "definition": "Risk of financial loss due to the death of the insured.",
+      "examples": [
+        "Term life pays when mortality risk materializes.",
+        "Mortality tables quantify this risk.",
+        "Underwriting evaluates mortality risk using medical evidence."
+      ],
+      "categories": [
+        "Life",
+        "Risk"
+      ],
+      "synonyms": [
+        "Death Risk"
+      ],
+      "related": [
+        {
+          "term": "Accidental Death Risk",
+          "id": "life-accidental-death-risk"
+        },
+        {
+          "term": "Longevity Risk",
+          "id": "life-longevity-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "mortality",
+        "life risk"
+      ]
+    },
+    {
+      "id": "life-longevity-risk",
+      "term": "Longevity Risk",
+      "definition": "Risk that the insured lives longer than expected, increasing payout duration.",
+      "examples": [
+        "Annuities price longevity risk.",
+        "Actuarial models use survival curves.",
+        "Longevity risk impacts pension liabilities."
+      ],
+      "categories": [
+        "Life",
+        "Risk"
+      ],
+      "synonyms": [
+        "Survival Risk"
+      ],
+      "related": [
+        {
+          "term": "Mortality Risk",
+          "id": "life-mortality-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "longevity",
+        "annuity risk"
+      ]
+    },
+    {
+      "id": "life-critical-illness-risk",
+      "term": "Critical Illness Risk",
+      "definition": "Risk of financial loss due to diagnosis of a covered critical illness.",
+      "examples": [
+        "CI policies pay lump sums.",
+        "Cancer and heart disease drive CI risk.",
+        "Underwriting screens for hereditary conditions."
+      ],
+      "categories": [
+        "Life",
+        "Risk"
+      ],
+      "synonyms": [
+        "CI Risk"
+      ],
+      "related": [
+        {
+          "term": "Medical Expense Risk",
+          "id": "health-medical-expense-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "critical illness",
+        "ci risk"
+      ]
+    },
+    {
+      "id": "life-accidental-death-risk",
+      "term": "Accidental Death Risk",
+      "definition": "Risk of death caused by accidental events.",
+      "examples": [
+        "AD&D riders cover accidental death.",
+        "Higher for hazardous occupations.",
+        "Accidental death tables differ from mortality tables."
+      ],
+      "categories": [
+        "Life",
+        "Risk"
+      ],
+      "synonyms": [
+        "AD&D Risk"
+      ],
+      "related": [
+        {
+          "term": "Mortality Risk",
+          "id": "life-mortality-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "accidental death",
+        "ad&d"
+      ]
+    },
+    {
+      "id": "life-terminal-illness-risk",
+      "term": "Terminal Illness Risk",
+      "definition": "Risk of diagnosis of a terminal condition triggering accelerated benefits.",
+      "examples": [
+        "Terminal illness riders accelerate death benefits.",
+        "Underwriting checks for chronic conditions.",
+        "Actuarial models use morbidity assumptions."
+      ],
+      "categories": [
+        "Life",
+        "Risk"
+      ],
+      "synonyms": [
+        "End-of-Life Risk"
+      ],
+      "related": [
+        {
+          "term": "Mortality Risk",
+          "id": "life-mortality-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "terminal illness",
+        "accelerated benefit"
+      ]
+    },
+    {
+      "id": "health-medical-expense-risk",
+      "term": "Medical Expense Risk",
+      "definition": "Risk of incurring medical costs requiring reimbursement.",
+      "examples": [
+        "Hospital and physician services drive medical expense risk.",
+        "Chronic conditions increase utilization.",
+        "Insurers manage risk via provider networks."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "Healthcare Cost Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "medical expense",
+        "health risk"
+      ]
+    },
+    {
+      "id": "health-drug-expense-risk",
+      "term": "Prescription Drug Risk",
+      "definition": "Risk of financial loss due to prescription medication costs.",
+      "examples": [
+        "Drug plans cover prescription drug risk.",
+        "Specialty drugs drive high-cost claims.",
+        "Formularies control drug expense risk."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "Pharmacy Risk"
+      ],
+      "related": [
+        {
+          "term": "Medical Expense Risk",
+          "id": "health-medical-expense-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "drug risk",
+        "pharmacy"
+      ]
+    },
+    {
+      "id": "health-dental-expense-risk",
+      "term": "Dental Expense Risk",
+      "definition": "Risk of incurring dental treatment costs.",
+      "examples": [
+        "Dental plans cover routine and major procedures.",
+        "Fee schedules determine reimbursement.",
+        "Utilization varies by age."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "Oral Health Risk"
+      ],
+      "related": [
+        {
+          "term": "Vision Expense Risk",
+          "id": "health-vision-expense-risk"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "dental risk"
+      ]
+    },
+    {
+      "id": "health-vision-expense-risk",
+      "term": "Vision Expense Risk",
+      "definition": "Risk of incurring costs for eye exams, glasses, or contacts.",
+      "examples": [
+        "Vision plans cover exams and corrective lenses.",
+        "Utilization increases with age.",
+        "Retail optical networks manage cost."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "Optical Risk"
+      ],
+      "related": [
+        {
+          "term": "Dental Expense Risk",
+          "id": "health-dental-expense-risk"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "vision risk"
+      ]
+    },
+    {
+      "id": "health-paramedical-risk",
+      "term": "Paramedical Service Risk",
+      "definition": "Risk of costs from physiotherapy, chiropractic, massage, or psychology.",
+      "examples": [
+        "Paramedical benefits cover alternative treatments.",
+        "Utilization varies by lifestyle.",
+        "Insurers cap paramedical limits."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "Allied Health Risk"
+      ],
+      "related": [
+        {
+          "term": "Medical Expense Risk",
+          "id": "health-medical-expense-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "paramedical risk"
+      ]
+    },
+    {
+      "id": "health-catastrophic-risk",
+      "term": "Catastrophic Health Event Risk",
+      "definition": "Risk of extremely high medical costs due to severe illness or injury.",
+      "examples": [
+        "Catastrophic coverage caps out-of-pocket costs.",
+        "Cancer and trauma drive catastrophic claims.",
+        "Reinsurance often covers catastrophic health risk."
+      ],
+      "categories": [
+        "Health",
+        "Risk"
+      ],
+      "synonyms": [
+        "High-Cost Claim Risk"
+      ],
+      "related": [
+        {
+          "term": "Medical Expense Risk",
+          "id": "health-medical-expense-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "catastrophic health"
+      ]
+    },
+    {
+      "id": "auto-collision-risk",
+      "term": "Collision Damage Risk",
+      "definition": "Risk of damage to the insured vehicle from a collision.",
+      "examples": [
+        "Collision coverage repairs the insured vehicle.",
+        "Vehicle type affects collision risk.",
+        "Urban areas have higher collision frequency."
+      ],
+      "categories": [
+        "Auto",
+        "Risk"
+      ],
+      "synonyms": [
+        "Crash Risk"
+      ],
+      "related": [
+        {
+          "term": "Comprehensive Damage Risk",
+          "id": "auto-comprehensive-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "collision risk"
+      ]
+    },
+    {
+      "id": "auto-comprehensive-risk",
+      "term": "Comprehensive Damage Risk",
+      "definition": "Risk of vehicle damage from non-collision events.",
+      "examples": [
+        "Covers theft, fire, vandalism, weather.",
+        "Hailstorms increase comprehensive claims.",
+        "Vehicle storage impacts risk."
+      ],
+      "categories": [
+        "Auto",
+        "Risk"
+      ],
+      "synonyms": [
+        "Non-Collision Risk"
+      ],
+      "related": [
+        {
+          "term": "Collision Damage Risk",
+          "id": "auto-collision-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "comprehensive risk"
+      ]
+    },
+    {
+      "id": "auto-uninsured-motorist-risk",
+      "term": "Uninsured Motorist Risk",
+      "definition": "Risk of loss caused by drivers without insurance.",
+      "examples": [
+        "UM coverage protects insureds.",
+        "Higher in regions with low compliance.",
+        "Severity depends on accident type."
+      ],
+      "categories": [
+        "Auto",
+        "Risk"
+      ],
+      "synonyms": [
+        "UM Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "uninsured motorist"
+      ]
+    },
+    {
+      "id": "home-theft-risk",
+      "term": "Theft Risk",
+      "definition": "Risk of loss due to burglary or theft.",
+      "examples": [
+        "Home contents coverage includes theft.",
+        "Neighborhood crime rates matter.",
+        "Security systems reduce theft risk."
+      ],
+      "categories": [
+        "Property",
+        "Risk"
+      ],
+      "synonyms": [
+        "Burglary Risk"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "theft risk"
+      ]
+    },
+    {
+      "id": "home-liability-risk",
+      "term": "Personal Liability Risk",
+      "definition": "Risk of legal responsibility for injury or damage to others.",
+      "examples": [
+        "Covers slip-and-fall incidents.",
+        "Dog bites increase liability exposure.",
+        "Lawsuits drive severity."
+      ],
+      "categories": [
+        "Property",
+        "Risk"
+      ],
+      "synonyms": [
+        "Premises Liability Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "liability risk"
+      ]
+    },
+    {
+      "id": "home-ale-risk",
+      "term": "Additional Living Expense Risk",
+      "definition": "Risk of incurring temporary housing costs after a covered loss.",
+      "examples": [
+        "ALE covers hotel stays.",
+        "Fire losses often trigger ALE.",
+        "Long rebuild times increase ALE severity."
+      ],
+      "categories": [
+        "Property",
+        "Risk"
+      ],
+      "synonyms": [
+        "Loss of Use Risk"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "ale risk"
+      ]
+    },
+    {
+      "id": "commercial-gl-risk",
+      "term": "General Liability Risk",
+      "definition": "Risk of legal liability for bodily injury or property damage arising from business operations.",
+      "examples": [
+        "Slip-and-fall claims drive GL risk.",
+        "Premises exposure matters.",
+        "Product liability increases GL severity."
+      ],
+      "categories": [
+        "Liability",
+        "Risk"
+      ],
+      "synonyms": [
+        "GL Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "general liability"
+      ]
+    },
+    {
+      "id": "commercial-eo-risk",
+      "term": "Professional Liability Risk",
+      "definition": "Risk of financial loss due to professional errors or omissions.",
+      "examples": [
+        "E&O covers professional mistakes.",
+        "High for legal and financial professions.",
+        "Claims often involve negligence."
+      ],
+      "categories": [
+        "Financial Lines & Surety",
+        "Risk"
+      ],
+      "synonyms": [
+        "E&O Risk"
+      ],
+      "related": [
+        {
+          "term": "Directors and Officers Risk",
+          "id": "commercial-do-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "professional liability"
+      ]
+    },
+    {
+      "id": "commercial-do-risk",
+      "term": "Directors and Officers Risk",
+      "definition": "Risk of financial loss due to wrongful acts by corporate leadership.",
+      "examples": [
+        "D&O covers governance failures.",
+        "Public companies have higher exposure.",
+        "Litigation drives severity."
+      ],
+      "categories": [
+        "Financial Lines & Surety",
+        "Risk"
+      ],
+      "synonyms": [
+        "D&O Risk"
+      ],
+      "related": [
+        {
+          "term": "Professional Liability Risk",
+          "id": "commercial-eo-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "d&o risk"
+      ]
+    },
+    {
+      "id": "commercial-workers-comp-risk",
+      "term": "Workers' Compensation Injury Risk",
+      "definition": "Risk of employee injury or illness arising from employment.",
+      "examples": [
+        "WC covers medical and wage replacement.",
+        "High for construction and manufacturing.",
+        "Safety programs reduce risk."
+      ],
+      "categories": [
+        "Workers Compensation",
+        "Risk"
+      ],
+      "synonyms": [
+        "WC Risk"
+      ],
+      "related": [
+        {
+          "term": "General Liability Risk",
+          "id": "commercial-gl-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "workers' compensation injury risk",
+        "workers comp injury risk"
+      ]
+    },
+    {
+      "id": "specialty-marine-risk",
+      "term": "Marine Cargo Risk",
+      "definition": "Risk of loss or damage to goods in transit over water.",
+      "examples": [
+        "Covers shipping losses.",
+        "Weather impacts marine risk.",
+        "Port congestion increases exposure."
+      ],
+      "categories": [
+        "Marine & Aviation",
+        "Risk"
+      ],
+      "synonyms": [
+        "Cargo Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "marine cargo"
+      ]
+    },
+    {
+      "id": "specialty-aviation-risk",
+      "term": "Aviation Hull Risk",
+      "definition": "Risk of physical damage to aircraft.",
+      "examples": [
+        "Covers aircraft repair or replacement.",
+        "Pilot experience impacts risk.",
+        "Weather and mechanical failure drive severity."
+      ],
+      "categories": [
+        "Marine & Aviation",
+        "Risk"
+      ],
+      "synonyms": [
+        "Aircraft Damage Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "aviation"
       ]
     }
   ]

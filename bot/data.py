@@ -112,3 +112,12 @@ class TermStore:
         category" style features later on.
         """
         return [t for t in self._terms.values() if category in t.categories]
+
+    def by_categories(self, *categories: str) -> list[Term]:
+        """All terms tagged under *every* given category — e.g. `by_categories("Life",
+        "Risk")` for "what risks fall under life insurance", where a category alone
+        (just "Life") would be too broad and a single category alone can't express
+        "and it's specifically a risk-type entry."
+        """
+        wanted = set(categories)
+        return [t for t in self._terms.values() if wanted.issubset(t.categories)]

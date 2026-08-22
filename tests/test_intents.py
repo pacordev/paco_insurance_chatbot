@@ -83,6 +83,27 @@ class RecognizeIntentTests(unittest.TestCase):
             # HELP only fires on the standalone/capability-question phrasing
             # above, not on "help" appearing anywhere in the message.
             ("help me understand deductible", Intent.ASK_DEFINITION),
+            # Singular "risk" is almost certainly about the general concept,
+            # not a request to list risks — see test_list_risks_beats_ask_definition
+            # for the plural case, which is the opposite call.
+            ("what is risk", Intent.ASK_DEFINITION),
+        ])
+
+    def test_list_risks_beats_ask_definition(self):
+        # All of these contain "what is/are"-shaped wording (the
+        # ASK_DEFINITION trigger) — the point is confirming LIST_RISKS wins
+        # because it's checked first, same reasoning as compare/example.
+        # Uses plural "risks" specifically; see test_ask_definition above
+        # for why singular "risk" is intentionally routed differently.
+        self._assert_all([
+            ("what are the usual risks under life insurance", Intent.LIST_RISKS),
+            ("what are the common risks covered under life insurance", Intent.LIST_RISKS),
+            ("what risks does life insurance cover", Intent.LIST_RISKS),
+            ("what are the risks in auto insurance", Intent.LIST_RISKS),
+            ("common risks in health insurance", Intent.LIST_RISKS),
+            ("risks covered under home insurance", Intent.LIST_RISKS),
+            ("list the risks for auto insurance", Intent.LIST_RISKS),
+            ("what are the risks?", Intent.LIST_RISKS),
         ])
 
     def test_fallback_on_bare_term_or_gibberish(self):

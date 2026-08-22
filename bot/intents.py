@@ -21,6 +21,7 @@ class Intent(str, Enum):
     ASK_DEFINITION = "ask_definition"      # "what does X mean?"
     ASK_EXAMPLE = "ask_example"            # "can you use X in a sentence?"
     LIST_CATEGORIES = "list_categories"    # "what topics/categories exist?"
+    LIST_RISKS = "list_risks"              # "what risks does life insurance cover?"
     COMPARE_TERMS = "compare_terms"        # "what's the difference between X and Y?"
     GREET = "greet"                        # "hi" / "hello"
     HELP = "help"                          # "what can you do?"
@@ -103,6 +104,24 @@ _INTENT_PATTERNS: list[tuple[Intent, list[re.Pattern]]] = [
             re.compile(r"\bcategor(y|ies)\b", re.I),
             re.compile(r"\btopics\b", re.I),
             re.compile(r"\b(kinds|types) of insurance\b", re.I),
+        ],
+    ),
+    (
+        # Checked before ASK_DEFINITION for the same reason as compare/example
+        # above — "what are the risks under life insurance" contains "what",
+        # which the broad ASK_DEFINITION catch-all would otherwise claim
+        # first. Deliberately matches plural "risks" only, not singular
+        # "risk" — "what is risk" is almost certainly asking for the
+        # definition of the general concept, not a list, and singular vs.
+        # plural is a cheap, reliable enough signal to tell those apart.
+        Intent.LIST_RISKS,
+        [
+            re.compile(r"\brisks\b.*\bunder\b", re.I),
+            re.compile(r"\brisks\b.*\bcover(s|ed)?\b", re.I),
+            re.compile(r"\bwhat('?s| is| are)\b.*\brisks\b", re.I),
+            re.compile(r"\blist (the )?risks\b", re.I),
+            re.compile(r"\bcommon risks\b", re.I),
+            re.compile(r"\brisks (in|for|of)\b", re.I),
         ],
     ),
     (

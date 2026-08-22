@@ -8,6 +8,8 @@ finished reply for the user on every message.
 
 from __future__ import annotations
 
+import re
+
 from bot.data import Term, TermStore
 from bot.intents import Intent, recognize_intent
 from bot.nlu import EntityMatch, EntityMatcher
@@ -21,6 +23,29 @@ _ORDINAL_WORDS = {
     "1": 0, "one": 0, "first": 0,
     "2": 1, "two": 1, "second": 1,
     "3": 2, "three": 2, "third": 2,
+}
+
+# For LIST_RISKS: maps how someone would naturally phrase a line of business
+# ("life insurance") onto the category name it's actually stored under
+# ("Life"). Categories themselves (lowercased) are also checked directly, so
+# this only needs to cover phrasings that *don't* already match a category
+# name verbatim.
+_DOMAIN_ALIASES = {
+    "life insurance": "Life",
+    "auto insurance": "Auto",
+    "car insurance": "Auto",
+    "health insurance": "Health",
+    "home insurance": "Property",
+    "property insurance": "Property",
+    "homeowners insurance": "Property",
+    "marine insurance": "Marine & Aviation",
+    "aviation insurance": "Marine & Aviation",
+    "marine and aviation": "Marine & Aviation",
+    "liability insurance": "Liability",
+    "financial lines": "Financial Lines & Surety",
+    "financial lines and surety": "Financial Lines & Surety",
+    "workers compensation": "Workers Compensation",
+    "workers comp": "Workers Compensation",
 }
 
 
@@ -45,6 +70,13 @@ class Dispatcher:
         if intent is Intent.LIST_CATEGORIES:
             categories = list(self.store.categories.keys())
             return self._respond(self._render(intent, state, categories=categories), intent, state)
+
+        if intent is Intent.LIST_RISKS:
+            # Like LIST_CATEGORIES, this never needs a specific *term* — it
+            # needs a *domain* (a line of business), resolved from the raw
+            # text directly rather than through the entity matcher, which
+            # only knows about glossary terms, not category names.
+            return self._handle_list_risks(text, state)
 
         matches = self.matcher.extract(text)
 
@@ -120,6 +152,46 @@ class Dispatcher:
         term_b = self.store.get(term_ids[1])
         reply = self._render(Intent.COMPARE_TERMS, state, term=term_a, other_term=term_b)
         return self._respond(reply, Intent.COMPARE_TERMS, state, term_id=term_b.id)
+
+    def _handle_list_risks(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
+        domain = self._resolve_domain(text)
+        if domain:
+            risk_terms = self.store.by_categories(domain, "Risk")
+            if risk_terms:
+                names = [t.term for t in risk_terms]
+                reply = self._render(Intent.LIST_RISKS, state, domain=domain, risk_terms=names)
+                return self._respond(reply, Intent.LIST_RISKS, state)
+
+        # Either no domain was recognized at all ("what are the risks?" on
+        # its own), or it was but there's no risk-type data for it yet —
+        # either way, list what's actually available rather than a flat
+        # "I don't understand," since that's cheap to compute and saves a
+        # guessing round-trip.
+        available = sorted(
+            c for c in self.store.categories if c != "Risk" and self.store.by_categories(c, "Risk")
+        )
+        reply = self._render(Intent.LIST_RISKS, state, available_domains=available)
+        return self._respond(reply, Intent.LIST_RISKS, state)
+
+    def _resolve_domain(self, text: str) -> str | None:
+        """Find a line-of-business category name mentioned in free text —
+        e.g. "life insurance" or bare "Life" both resolve to the "Life"
+        category. Prefers the longest match when more than one could apply,
+        same principle as the entity matcher preferring the longest term
+        (bot/nlu.py) — "life insurance" beating a coincidentally-contained
+        shorter alias would be the wrong kind of match here too.
+        """
+        lowered = text.lower()
+        candidates: list[tuple[int, str]] = []
+        for alias, canonical in _DOMAIN_ALIASES.items():
+            if re.search(rf"\b{re.escape(alias)}\b", lowered):
+                candidates.append((len(alias), canonical))
+        for canonical in self.store.categories:
+            if re.search(rf"\b{re.escape(canonical.lower())}\b", lowered):
+                candidates.append((len(canonical), canonical))
+        if not candidates:
+            return None
+        return max(candidates, key=lambda c: c[0])[1]
 
     def _resolve_primary_term(self, matches: list[EntityMatch]) -> Term | None:
         """Pick the term to answer about, when there's a single clear answer.

@@ -80,6 +80,25 @@ _LIST_CATEGORIES_TEMPLATES = [
     "{categories}\n\nPick one and I'll walk you through it, {name}.",
 ]
 
+_LIST_RISKS_TEMPLATES = [
+    "{name}, here are the risks I know about under {domain}: {risks}.",
+    "Under {domain}, the common risks are: {risks}. Want details on any of them, {name}?",
+    "Good question, {name} — {domain} typically covers these risks: {risks}.",
+    "{domain} risks I have on file, {name}: {risks}.",
+    "Here's what falls under {domain}, {name}: {risks}.",
+]
+
+# Used when the message doesn't name a line of business the bot actually has
+# risk data for (e.g. just "what are the risks?" with no domain, or a domain
+# that has no risk-type entries yet) — lists what's actually available rather
+# than a flat "I don't understand", since that list is cheap to compute and
+# saves a guessing round-trip.
+_LIST_RISKS_CLARIFY_TEMPLATES = [
+    "Which line of business, {name}? I have risk info for: {available}.",
+    "{name}, I can list risks for any of these: {available}. Which one?",
+    "Happy to, {name} — just let me know which one: {available}.",
+]
+
 _GREET_TEMPLATES = [
     "Hi {name}! Ask me about any insurance term and I'll explain it.",
     "Hello {name}! I'm here to help with insurance terminology — what would you like to know?",
@@ -191,6 +210,9 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
     pile of mostly-unused parameters:
     - COMPARE_TERMS needs `other_term` (a second Term) alongside `term`.
     - LIST_CATEGORIES needs `categories` (a list of category name strings).
+    - LIST_RISKS needs either (`domain`, `risk_terms`) when a line of
+      business was recognized and has risk-type entries, or
+      `available_domains` when it wasn't/didn't, to ask which one instead.
     - FALLBACK optionally takes `candidates` (a list of term-name strings) —
       when the fuzzy matcher found a few close-but-uncertain guesses, this
       is what turns that into a real "did you mean X or Y?" question
@@ -236,6 +258,18 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
     if intent is Intent.LIST_CATEGORIES:
         categories: list[str] = kwargs.get("categories", [])
         return random.choice(_LIST_CATEGORIES_TEMPLATES).format(categories=", ".join(sorted(categories)), name=name)
+
+    if intent is Intent.LIST_RISKS:
+        domain: str | None = kwargs.get("domain")
+        risk_terms: list[str] = kwargs.get("risk_terms") or []
+        if domain and risk_terms:
+            return random.choice(_LIST_RISKS_TEMPLATES).format(
+                domain=domain, risks=", ".join(sorted(risk_terms)), name=name
+            )
+        available: list[str] = kwargs.get("available_domains") or []
+        return random.choice(_LIST_RISKS_CLARIFY_TEMPLATES).format(
+            available=", ".join(sorted(available)), name=name
+        )
 
     if intent is Intent.GREET:
         return random.choice(_GREET_TEMPLATES).format(name=name)

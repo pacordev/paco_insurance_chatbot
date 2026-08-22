@@ -85,7 +85,7 @@ Data is done (for the moment). Architecture is decided. The core conversation lo
 - Response templates (turning a term + intent into actual reply text) are built and tested.
 - The dispatcher — the piece that ties all of the above into one real, multi-turn conversation, including follow-ups and "did you mean X or Y?" disambiguation — is built and tested against the real dataset.
 
-In other words: `python main.py` is now an actual (if bare-bones) conversation with the bot, not just a component demo. What's left is mostly about making the experience richer and getting it in front of people — see "What's ahead" below.
+In other words: `python paco_chatbot.py` is now an actual (if bare-bones) conversation with the bot, not just a component demo. What's left is mostly about making the experience richer and getting it in front of people — see "What's ahead" below.
 
 ---
 
@@ -96,7 +96,7 @@ ins_chatbot/
 ├── README.md                # you are here
 ├── insurance_terms.json      # the glossary itself — the chatbot's entire knowledge base
 ├── requirements.txt          # pinned Python dependencies (spaCy, rapidfuzz, and their sub-dependencies)
-├── main.py                   # current entry point — a REPL to try out what's built so far
+├── paco_chatbot.py           # entry point — a command-line REPL to talk to the bot
 ├── bot/                       # the actual chatbot package
 │   ├── __init__.py
 │   ├── data.py                # loads insurance_terms.json into memory, keyed for fast lookup
@@ -127,7 +127,7 @@ ins_chatbot/
 
 **`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time.
 
-**`main.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see Open Decisions).
+**`paco_chatbot.py`** — A command-line REPL that talks to the real `Dispatcher` — this is the actual way to have a conversation with the bot today (or it'll get replaced by a proper interface later — see Open Decisions).
 
 ---
 
@@ -137,7 +137,7 @@ ins_chatbot/
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python main.py
+python paco_chatbot.py
 ```
 
 Ask it something like `what's ACV?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. Type `quit` to exit.

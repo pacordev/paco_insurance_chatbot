@@ -37,3 +37,15 @@ class ConversationState:
     # guesses, they get parked here while the bot asks the user "did you
     # mean X or Y?" — and get resolved (or cleared) on the next message.
     pending_disambiguation: list[str] = field(default_factory=list)
+
+    # Quiz mode is a genuine "mode" rather than a per-message intent: once
+    # `quiz_term_id` is set, the dispatcher treats *every* incoming message
+    # as an answer attempt (or a request to stop) instead of running normal
+    # intent recognition, until the user ends the quiz. `quiz_domain` scopes
+    # question-picking to one category for the whole session (None = any
+    # term); `quiz_asked_ids` avoids repeating a question within one quiz.
+    quiz_term_id: str | None = None
+    quiz_domain: str | None = None
+    quiz_score: int = 0
+    quiz_total: int = 0
+    quiz_asked_ids: set[str] = field(default_factory=set)

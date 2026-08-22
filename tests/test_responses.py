@@ -15,7 +15,7 @@ import unittest
 
 from bot.data import RelatedTerm, Term
 from bot.intents import Intent
-from bot.responses import render, render_welcome
+from bot.responses import render, render_quiz_end, render_quiz_feedback, render_quiz_start, render_welcome
 
 
 def _make_term(id_: str, term: str, definition: str, examples: list[str] | None = None) -> Term:
@@ -115,9 +115,14 @@ class RenderTests(unittest.TestCase):
     def test_list_terms_shown_in_full_does_not_claim_theres_more(self):
         # All 4 terms shown, total is also 4 — should read as complete, not
         # as "here are 4 of them" (which would sound like there's more).
-        reply = render(Intent.LIST_TERMS, domain="Insurance Documentation", term_names=["A", "B", "C", "D"], total_count=4)
-        self.assertIn("4", reply)
-        self.assertNotIn("of them", reply)
+        # Looped since the template is picked at random — a variant missing
+        # the total would otherwise only get caught 1 draw in however many.
+        for _ in range(20):
+            reply = render(
+                Intent.LIST_TERMS, domain="Insurance Documentation", term_names=["A", "B", "C", "D"], total_count=4
+            )
+            self.assertIn("4", reply)
+            self.assertNotIn("of them", reply)
 
     def test_greet_help_goodbye_need_no_term(self):
         for intent in (Intent.GREET, Intent.HELP, Intent.GOODBYE):
@@ -175,6 +180,31 @@ class RenderTests(unittest.TestCase):
         for _ in range(20):
             reply = render_welcome("Paco")
             self.assertIn("Paco", reply)
+
+    def test_render_quiz_start_includes_the_question(self):
+        reply = render_quiz_start("Paco", self.acv)
+        self.assertIn("Paco", reply)
+        self.assertIn(self.acv.definition, reply)
+
+    def test_render_quiz_feedback_includes_result_score_and_next_question(self):
+        # Looped for the same reason as test_list_terms_shown_in_full above —
+        # the template is random, so a variant missing a required piece
+        # needs several draws to reliably surface.
+        for correct in (True, False):
+            with self.subTest(correct=correct):
+                for _ in range(20):
+                    reply = render_quiz_feedback("Paco", correct, self.acv, 3, 5, self.replacement_cost)
+                    self.assertIn("Paco", reply)
+                    self.assertIn(self.acv.term, reply)  # the term just answered about
+                    self.assertIn("3", reply)
+                    self.assertIn("5", reply)
+                    self.assertIn(self.replacement_cost.definition, reply)  # the next question
+
+    def test_render_quiz_end_includes_the_final_score(self):
+        reply = render_quiz_end("Paco", 4, 7)
+        self.assertIn("Paco", reply)
+        self.assertIn("4", reply)
+        self.assertIn("7", reply)
 
 
 if __name__ == "__main__":

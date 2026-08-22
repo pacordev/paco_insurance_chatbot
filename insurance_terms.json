@@ -1,8 +1,9 @@
 {
   "meta": {
     "name": "insurance-terms",
-    "version": "2.0",
+    "version": "3.0",
     "generated": "2026-08-03",
+    "updated": "2026-08-22",
     "source": "dicc_ins_terms_enriched.json",
     "count": 1178,
     "categories": {

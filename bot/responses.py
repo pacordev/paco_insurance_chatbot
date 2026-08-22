@@ -95,7 +95,7 @@ _LIST_TERMS_TRUNCATED_TEMPLATES = [
 _LIST_TERMS_FULL_TEMPLATES = [
     "{name}, there are {total} terms under {domain}: {terms}.",
     "{domain} has {total} terms, {name}: {terms}.",
-    "Here's everything under {domain}, {name}: {terms}.",
+    "Here's everything under {domain}, {name} — all {total}: {terms}.",
     "{total} terms under {domain}, {name}: {terms}.",
 ]
 
@@ -252,15 +252,18 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
         )
 
     if intent is Intent.ASK_EXAMPLE:
-        # Every term ships with several example sentences (handoff.md
-        # §2.24), so there's room to add more variety here later — for now
-        # this just uses the first one, with the wrapper sentence providing
-        # variety instead. Falling back to the definition would be wrong
-        # (that's a different intent's job), so if a term somehow had no
-        # example we'd rather say so plainly.
+        # Every term ships with 5 example sentences (handoff.md §2.24) —
+        # picking one at random, not always the first, is what makes "give
+        # me another example" actually show something different each time
+        # instead of repeating the same sentence with a reworded wrapper.
+        # Falling back to the definition would be wrong (that's a different
+        # intent's job), so if a term somehow had no example we'd rather say
+        # so plainly.
         if not term.examples:
             return f"I don't have an example sentence for {term.term} yet, {name}."
-        return random.choice(_EXAMPLE_TEMPLATES).format(term=term.term, example=term.examples[0], name=name)
+        return random.choice(_EXAMPLE_TEMPLATES).format(
+            term=term.term, example=random.choice(term.examples), name=name
+        )
 
     if intent is Intent.COMPARE_TERMS:
         # Deliberately kept as two separate, self-contained sentences rather
@@ -321,6 +324,69 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
         return random.choice(_FALLBACK_TEMPLATES).format(name=name)
 
     raise ValueError(f"No response template wired up for intent: {intent}")
+
+
+# Quiz mode is its own little state machine (bot/dispatcher.py), not a
+# per-message intent, so — like render_welcome() below — these live as
+# their own functions rather than going through render()'s intent dispatch.
+# Every quiz message ends with the next question already attached (start
+# and feedback alike), so playing feels like one continuous back-and-forth
+# rather than a question, an answer, a pause, then another question.
+def _format_quiz_question(term: Term) -> str:
+    return f"Here's a definition: {term.definition}\n\nWhat term is this? (say \"stop quiz\" to end)"
+
+
+_QUIZ_START_TEMPLATES = [
+    "Let's do it, {name}! I'll give you a definition — you guess the term.\n\n{question}",
+    "Quiz time, {name}! Read the definition and tell me the term.\n\n{question}",
+    "Alright, {name}, let's test your knowledge.\n\n{question}",
+]
+
+_QUIZ_CORRECT_TEMPLATES = [
+    "That's right, {name}! It was {term}. Score: {score}/{total}.\n\n{question}",
+    "Nice, {name} — {term} it is. Score: {score}/{total}.\n\n{question}",
+    "Correct, {name} — {term}! Score: {score}/{total}.\n\n{question}",
+]
+
+_QUIZ_INCORRECT_TEMPLATES = [
+    "Not quite, {name} — it was {term}. Score: {score}/{total}.\n\n{question}",
+    "Close, but no — the answer was {term}, {name}. Score: {score}/{total}.\n\n{question}",
+    "Not this time, {name}. It was {term}. Score: {score}/{total}.\n\n{question}",
+]
+
+_QUIZ_END_TEMPLATES = [
+    "Nice round, {name}! You got {score} out of {total}. Come back anytime for another one.",
+    "That's a wrap, {name} — {score}/{total}. Good practice!",
+    "Ending the quiz there, {name}. Final score: {score}/{total}.",
+]
+
+
+def render_quiz_start(name: str | None, term: Term) -> str:
+    """The message shown when a quiz begins — intro plus the first question."""
+    return random.choice(_QUIZ_START_TEMPLATES).format(
+        name=name or _DEFAULT_NAME, question=_format_quiz_question(term)
+    )
+
+
+def render_quiz_feedback(
+    name: str | None, correct: bool, correct_term: Term, score: int, total: int, next_term: Term
+) -> str:
+    """Feedback on the just-answered question, with the next one already
+    attached — a quiz reads as one continuous flow, not stop-and-go.
+    """
+    templates = _QUIZ_CORRECT_TEMPLATES if correct else _QUIZ_INCORRECT_TEMPLATES
+    return random.choice(templates).format(
+        name=name or _DEFAULT_NAME,
+        term=correct_term.term,
+        score=score,
+        total=total,
+        question=_format_quiz_question(next_term),
+    )
+
+
+def render_quiz_end(name: str | None, score: int, total: int) -> str:
+    """The summary shown when the user stops a quiz in progress."""
+    return random.choice(_QUIZ_END_TEMPLATES).format(name=name or _DEFAULT_NAME, score=score, total=total)
 
 
 def render_welcome(name: str | None) -> str:

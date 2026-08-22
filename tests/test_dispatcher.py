@@ -47,7 +47,11 @@ class DispatcherTests(unittest.TestCase):
         self.assertEqual(self.state.last_term_id, "actual-cash-value-acv")
 
         example_reply = self._say("can you give me an example?")
-        self.assertIn("ten-year-old roof", example_reply)  # from the ACV example sentence
+        # Picked at random from the term's 5 examples (not always the same
+        # one), so check it's one of the real ones rather than one specific
+        # hardcoded sentence.
+        acv_examples = self.store.get("actual-cash-value-acv").examples
+        self.assertTrue(any(example in example_reply for example in acv_examples))
 
         compare_reply = self._say("how's that different from replacement cost?")
         self.assertIn("Actual Cash Value", compare_reply)
@@ -161,6 +165,63 @@ class DispatcherTests(unittest.TestCase):
         reply = self._say("show me terms")
         for category in self.store.categories:
             self.assertIn(category, reply)
+
+    def test_quiz_start_asks_a_definition_based_question(self):
+        reply = self._say("quiz me")
+        self.assertIsNotNone(self.state.quiz_term_id)
+        term = self.store.get(self.state.quiz_term_id)
+        self.assertIn(term.definition, reply)
+
+    def test_quiz_correct_answer_increments_score_and_continues(self):
+        self._say("quiz me")
+        term = self.store.get(self.state.quiz_term_id)
+        reply = self._say(term.term)
+        self.assertEqual(self.state.quiz_score, 1)
+        self.assertEqual(self.state.quiz_total, 1)
+        self.assertIn(term.term, reply)
+        self.assertIsNotNone(self.state.quiz_term_id)  # a new question followed
+
+    def test_quiz_incorrect_answer_reveals_the_term_and_continues(self):
+        self._say("quiz me")
+        reply = self._say("asdkfjasldkfj")
+        self.assertEqual(self.state.quiz_score, 0)
+        self.assertEqual(self.state.quiz_total, 1)
+        self.assertIsNotNone(self.state.quiz_term_id)
+
+    def test_quiz_scoped_to_a_domain_only_asks_about_that_domain(self):
+        self._say("quiz me on Insurance Documentation terms")
+        doc_ids = {t.id for t in self.store.by_category("Insurance Documentation")}
+        for _ in range(10):
+            self.assertIn(self.state.quiz_term_id, doc_ids)
+            self._say("some wrong guess")
+
+    def test_quiz_does_not_repeat_within_a_small_domain_until_exhausted(self):
+        self._say("quiz me on Insurance Documentation terms")
+        doc_ids = {t.id for t in self.store.by_category("Insurance Documentation")}
+        seen = {self.state.quiz_term_id}
+        for _ in range(len(doc_ids) - 1):
+            self._say("some wrong guess")
+            seen.add(self.state.quiz_term_id)
+        self.assertEqual(seen, doc_ids)  # every term asked exactly once, none repeated
+
+    def test_quiz_stop_ends_it_and_resets_state(self):
+        self._say("quiz me")
+        self._say("some wrong guess")
+        reply = self._say("stop quiz")
+        self.assertIsNone(self.state.quiz_term_id)
+        self.assertEqual(self.state.quiz_score, 0)
+        self.assertEqual(self.state.quiz_total, 0)
+        self.assertIn("1", reply)  # final score mentioned (1 question was asked)
+
+    def test_quiz_intercepts_every_message_as_an_answer_while_active(self):
+        # A message that would normally be a totally different intent
+        # (ask_definition) should still be treated as a quiz guess while a
+        # quiz is running, not answered normally.
+        self._say("quiz me")
+        reply = self._say("what is a deductible")
+        self.assertEqual(self.state.quiz_total, 1)
+        self.assertIsNotNone(self.state.quiz_term_id)  # still in quiz mode
+        self.assertNotIn("first specified amount", reply.lower())  # not treated as a real definition question
 
 
 if __name__ == "__main__":

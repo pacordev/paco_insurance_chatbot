@@ -8,12 +8,13 @@ finished reply for the user on every message.
 
 from __future__ import annotations
 
+import random
 import re
 
 from bot.data import Term, TermStore
 from bot.intents import Intent, recognize_intent
 from bot.nlu import EntityMatch, EntityMatcher
-from bot.responses import render
+from bot.responses import render, render_quiz_end, render_quiz_feedback, render_quiz_start
 from bot.state import ConversationState
 
 # When the bot asked "did you mean X or Y?" and the user answers with a
@@ -55,6 +56,18 @@ _DOMAIN_ALIASES = {
 # silently misleading about how much more there is.
 _LIST_TERMS_CAP = 10
 
+# How a user ends a quiz that's in progress — checked before anything else
+# whenever a quiz is active, so it never gets mistaken for a guess at the
+# current question.
+_STOP_QUIZ_PATTERNS = [
+    re.compile(r"\bstop quiz\b", re.I),
+    re.compile(r"\bend quiz\b", re.I),
+    re.compile(r"\bquit quiz\b", re.I),
+    re.compile(r"^\s*stop\s*$", re.I),
+    re.compile(r"\bno more quiz\b", re.I),
+    re.compile(r"\bthat'?s enough\b", re.I),
+]
+
 
 class Dispatcher:
     """The bot's main "brain loop" for a single conversation turn."""
@@ -67,6 +80,15 @@ class Dispatcher:
 
     def process_turn(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
         """Handle one user message and return (reply text, updated state)."""
+        # Quiz mode is a genuine *mode*, not a per-message intent — once
+        # active, every message is either "stop" or an answer attempt,
+        # checked here before recognize_intent() even runs. Everything else
+        # in this method only applies outside of an active quiz.
+        if state.quiz_term_id:
+            if self._is_stop_quiz(text):
+                return self._end_quiz(state)
+            return self._handle_quiz_answer(text, state)
+
         intent = recognize_intent(text)
 
         # Conversational scaffolding never needs a term, so it's handled
@@ -87,6 +109,9 @@ class Dispatcher:
 
         if intent is Intent.LIST_TERMS:
             return self._handle_list_terms(text, state)
+
+        if intent is Intent.START_QUIZ:
+            return self._start_quiz(text, state)
 
         matches = self.matcher.extract(text)
 
@@ -199,6 +224,73 @@ class Dispatcher:
         shown = [t.term for t in terms[:_LIST_TERMS_CAP]]
         reply = self._render(Intent.LIST_TERMS, state, domain=domain, term_names=shown, total_count=len(terms))
         return self._respond(reply, Intent.LIST_TERMS, state)
+
+    def _start_quiz(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
+        # Optional: "quiz me on Auto terms" scopes the whole session to one
+        # category, reusing the same domain resolution as list_risks/list_terms.
+        # No domain mentioned ("quiz me") just means "any term."
+        domain = self._resolve_domain(text)
+        pool = self.store.by_category(domain) if domain else self.store.all_terms()
+        if not pool:
+            # Shouldn't normally happen (every real category has entries),
+            # but falling back to the whole dataset beats dead-ending the quiz.
+            domain = None
+            pool = self.store.all_terms()
+
+        state.quiz_domain = domain
+        state.quiz_score = 0
+        state.quiz_total = 0
+        state.quiz_asked_ids = set()
+
+        term = self._pick_quiz_term(state, pool)
+        state.quiz_term_id = term.id
+        state.last_intent = Intent.START_QUIZ
+        return render_quiz_start(state.user_name, term), state
+
+    def _handle_quiz_answer(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
+        # A guess is just text resolved to a term id — the exact same
+        # matching used for every other question, exact-then-fuzzy included,
+        # so a close-but-typo'd guess still counts as correct.
+        matches = self.matcher.extract(text)
+        guessed_ids = {m.term_id for m in matches}
+        correct = state.quiz_term_id in guessed_ids
+
+        correct_term = self.store.get(state.quiz_term_id)
+        state.quiz_asked_ids.add(state.quiz_term_id)
+        state.quiz_total += 1
+        if correct:
+            state.quiz_score += 1
+
+        pool = self.store.by_category(state.quiz_domain) if state.quiz_domain else self.store.all_terms()
+        next_term = self._pick_quiz_term(state, pool)
+        state.quiz_term_id = next_term.id
+        state.last_intent = Intent.START_QUIZ
+
+        reply = render_quiz_feedback(
+            state.user_name, correct, correct_term, state.quiz_score, state.quiz_total, next_term
+        )
+        return reply, state
+
+    def _end_quiz(self, state: ConversationState) -> tuple[str, ConversationState]:
+        reply = render_quiz_end(state.user_name, state.quiz_score, state.quiz_total)
+        state.quiz_term_id = None
+        state.quiz_domain = None
+        state.quiz_score = 0
+        state.quiz_total = 0
+        state.quiz_asked_ids = set()
+        return reply, state
+
+    def _pick_quiz_term(self, state: ConversationState, pool: list[Term]) -> Term:
+        unused = [t for t in pool if t.id not in state.quiz_asked_ids]
+        if not unused:
+            # Gone through every term in this pool — reset and keep going
+            # rather than dead-ending the quiz once someone's thorough.
+            state.quiz_asked_ids = set()
+            unused = pool
+        return random.choice(unused)
+
+    def _is_stop_quiz(self, text: str) -> bool:
+        return any(pattern.search(text) for pattern in _STOP_QUIZ_PATTERNS)
 
     def _resolve_domain(self, text: str) -> str | None:
         """Find a line-of-business category name mentioned in free text —

@@ -119,6 +119,15 @@ class RecognizeIntentTests(unittest.TestCase):
             ("define this term", Intent.ASK_DEFINITION),
         ])
 
+    def test_start_quiz(self):
+        self._assert_all([
+            ("quiz me", Intent.START_QUIZ),
+            ("start a quiz", Intent.START_QUIZ),
+            ("let's do a quiz", Intent.START_QUIZ),
+            ("test me on Auto terms", Intent.START_QUIZ),
+            ("quiz mode", Intent.START_QUIZ),
+        ])
+
     def test_fallback_on_bare_term_or_gibberish(self):
         # A bare term with no question wrapped around it ("ACV" on its own)
         # deliberately comes back FALLBACK here — recognize_intent() only

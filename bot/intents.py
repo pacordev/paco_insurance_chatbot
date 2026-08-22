@@ -23,6 +23,7 @@ class Intent(str, Enum):
     LIST_CATEGORIES = "list_categories"    # "what topics/categories exist?"
     LIST_RISKS = "list_risks"              # "what risks does life insurance cover?"
     LIST_TERMS = "list_terms"              # "show me the terms under Auto insurance"
+    START_QUIZ = "start_quiz"              # "quiz me" / "test me on Auto terms"
     COMPARE_TERMS = "compare_terms"        # "what's the difference between X and Y?"
     GREET = "greet"                        # "hi" / "hello"
     HELP = "help"                          # "what can you do?"
@@ -138,6 +139,20 @@ _INTENT_PATTERNS: list[tuple[Intent, list[re.Pattern]]] = [
             re.compile(r"\bterms\b.*\bunder\b", re.I),
             re.compile(r"\bwhat terms\b", re.I),
             re.compile(r"\ball\b.*\bterms\b.*\b(under|in|for)\b", re.I),
+        ],
+    ),
+    (
+        # Only recognizes the *start* of a quiz — once one is running, the
+        # dispatcher intercepts every message as an answer attempt before
+        # recognize_intent() is even called (see bot/dispatcher.py), so
+        # these patterns only ever need to fire from a cold start.
+        Intent.START_QUIZ,
+        [
+            re.compile(r"\bquiz me\b", re.I),
+            re.compile(r"\b(start|begin)\b.*\bquiz\b", re.I),
+            re.compile(r"\blet'?s do a quiz\b", re.I),
+            re.compile(r"\btest me\b", re.I),
+            re.compile(r"\bquiz mode\b", re.I),
         ],
     ),
     (

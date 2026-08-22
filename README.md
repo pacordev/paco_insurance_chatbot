@@ -1,4 +1,4 @@
-# Insurance Terminology Chatbot - v1.0
+# Insurance Terminology Chatbot - v1.5
 
 A little chatbot that came to my mind to help coworkers, or people in general, who aren't insurance people — developers, architects, testers, anyone who joins a project and suddenly has to deal with terms like "ALAE" or "IBNR reserves" — actually understand the vocabulary without having to bug someone or dig through a PDF glossary. It's also, honestly, my excuse to get more comfortable with Python.
 

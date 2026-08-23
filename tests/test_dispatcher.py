@@ -224,14 +224,14 @@ class DispatcherTests(unittest.TestCase):
         self.assertFalse(ConversationState().is_newcomer)
 
     def test_list_terms_newcomer_sorts_basic_before_technical(self):
-        # "Financial / Accounting" has few enough Basic terms (5 of 118)
-        # that the capped top-10 genuinely mixes both difficulties — Auto's
-        # 58 Basic terms would fill the whole cap on their own and not
-        # actually exercise the Technical side of the sort.
+        # "Reinsurance" has few enough Basic terms (1 of 65 at last count)
+        # that the capped top-10 genuinely mixes both difficulties — a
+        # category with a large Basic pool would fill the whole cap on its
+        # own and not actually exercise the Technical side of the sort.
         self.state.is_newcomer = True
-        reply = self._say("show me Financial / Accounting terms")
+        reply = self._say("show me Reinsurance terms")
         expected = sorted(
-            self.store.by_category("Financial / Accounting"), key=_difficulty_then_alpha_key
+            self.store.by_category("Reinsurance"), key=_difficulty_then_alpha_key
         )[:_LIST_TERMS_CAP]
         positions = [reply.index(t.term) for t in expected]
         self.assertEqual(positions, sorted(positions))

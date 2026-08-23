@@ -5,25 +5,25 @@
     "generated": "2026-08-03",
     "updated": "2026-08-22",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1344,
+    "count": 1342,
     "categories": {
-      "Liability": 153,
-      "Property": 201,
-      "Workers Compensation": 79,
-      "Claims": 188,
-      "Auto": 83,
-      "Health": 161,
-      "General Insurance Concepts": 398,
-      "Life": 91,
-      "Regulatory & Legal": 79,
-      "Underwriting & Actuarial": 123,
-      "Financial / Accounting": 137,
-      "Reinsurance": 64,
+      "Liability": 162,
+      "Property": 237,
+      "Workers Compensation": 104,
+      "Claims": 201,
+      "Auto": 89,
+      "Health": 173,
+      "General Insurance Concepts": 396,
+      "Life": 104,
+      "Financial Lines & Surety": 60,
+      "Financial / Accounting": 179,
+      "Regulatory & Legal": 108,
+      "Underwriting & Actuarial": 147,
+      "Insurance Documentation": 28,
+      "Reinsurance": 65,
       "Marine & Aviation": 20,
-      "Risk": 53,
-      "Financial Lines & Surety": 47,
-      "Insurance Documentation": 12,
-      "Insurtech & Technology": 85
+      "Risk": 70,
+      "Insurtech & Technology": 88
     },
     "difficulty_levels": [
       "Basic",
@@ -200,7 +200,8 @@
         "An underwriting review considered Accident forgiveness before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [
@@ -321,7 +322,8 @@
         "An underwriting review considered Accident Type before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -384,7 +386,8 @@
         "An underwriting review considered Accidental Death and Dismemberment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -405,7 +408,8 @@
         "An underwriting review considered Accommodation before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -426,7 +430,8 @@
         "An underwriting review considered Accounts Receivable Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -447,7 +452,8 @@
         "An underwriting review considered Accrue before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -658,7 +664,8 @@
         "An underwriting review considered Additional Living Expense Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -868,7 +875,8 @@
         "An underwriting review considered Adverse Selection before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -916,7 +924,8 @@
         "An underwriting review considered Affiliate before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -984,7 +993,8 @@
         "An underwriting review considered Aggregate Amount Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -1198,7 +1208,8 @@
         "An underwriting review considered All Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -1219,7 +1230,8 @@
         "An underwriting review considered All-Risk Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -1230,7 +1242,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "all risk insurance"
+        "all risk insurance",
+        "all-risk insurance"
       ]
     },
     {
@@ -1482,7 +1495,8 @@
         "An underwriting review considered Appeal before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -1530,7 +1544,8 @@
         "An underwriting review considered Application before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -1706,7 +1721,8 @@
         "An underwriting review considered Arrears before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -1727,7 +1743,8 @@
         "An underwriting review considered Arrestee before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -1817,7 +1834,8 @@
         "An underwriting review considered Assets before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -1847,7 +1865,8 @@
         "An underwriting review considered Assigned Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [],
@@ -1868,7 +1887,8 @@
         "An underwriting review considered Assisted Living Care before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [
@@ -1924,7 +1944,8 @@
         "An underwriting review considered Assumption of Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -1966,7 +1987,8 @@
         "An underwriting review considered Attractive Nuisance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -1987,7 +2009,8 @@
         "An underwriting review considered Audit before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -2008,7 +2031,8 @@
         "An underwriting review considered Authorized Company before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -2307,7 +2331,8 @@
         "An underwriting review considered Avoidance of Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -2328,7 +2353,8 @@
         "An underwriting review considered Bad Faith before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -2391,7 +2417,8 @@
         "An underwriting review considered Basic Insurance Policy before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -2451,7 +2478,8 @@
         "An underwriting review considered BCEGS before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -2576,7 +2604,8 @@
         "An underwriting review considered Binder before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -2661,7 +2690,8 @@
         "An underwriting review considered Blanket Policy before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -2719,7 +2749,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "boatowners personal watercraft"
+        "boatowners personal watercraft",
+        "boatowners/personal watercraft"
       ]
     },
     {
@@ -3021,7 +3052,8 @@
         "An underwriting review considered Builder's Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -3084,7 +3116,8 @@
         "An underwriting review considered Building insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -3105,7 +3138,8 @@
         "An underwriting review considered Burglary before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -3221,7 +3255,8 @@
         "An underwriting review considered Business Interruption before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -3335,7 +3370,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "by law endorsement"
+        "by law endorsement",
+        "by-law endorsement"
       ]
     },
     {
@@ -3481,7 +3517,8 @@
         "An underwriting review considered Capacity before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -3648,7 +3685,8 @@
         "An underwriting review considered Captive Insurance Company before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -3669,7 +3707,8 @@
         "An underwriting review considered Captive Insurer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -3697,7 +3736,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "care custody and control"
+        "care custody and control",
+        "care, custody and control"
       ]
     },
     {
@@ -3739,7 +3779,8 @@
         "An underwriting review considered Case Evaluation and Plan (CEP) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "CEP"
@@ -3811,7 +3852,8 @@
         "An underwriting review considered Cash Equivalent before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -3867,7 +3909,8 @@
         "An underwriting review considered Casualty before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -3924,7 +3967,8 @@
         "An underwriting review considered Catastrophe before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -3975,7 +4019,8 @@
         "An underwriting review considered Catastrophe Loss before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -3996,7 +4041,8 @@
         "An underwriting review considered Catastrophe Model before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -4043,7 +4089,8 @@
         "An underwriting review considered Cause of Action before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -4195,7 +4242,8 @@
         "An underwriting review considered Choice of Title Insurer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -4540,7 +4588,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "claims made form"
+        "claims made form",
+        "claims-made form"
       ]
     },
     {
@@ -4561,7 +4610,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "claims made policy"
+        "claims made policy",
+        "claims-made policy"
       ]
     },
     {
@@ -4673,7 +4723,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "co insurance clause"
+        "co insurance clause",
+        "co-insurance clause"
       ]
     },
     {
@@ -4694,7 +4745,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "co insurer"
+        "co insurer",
+        "co-insurer"
       ]
     },
     {
@@ -4709,13 +4761,15 @@
         "An underwriting review considered Co-payment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "co payment"
+        "co payment",
+        "co-payment"
       ]
     },
     {
@@ -4760,7 +4814,8 @@
         "An underwriting review considered Collapse before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -4781,7 +4836,8 @@
         "An underwriting review considered Collar before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -4807,7 +4863,8 @@
         "An underwriting review considered Collateral Loans before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -4859,7 +4916,8 @@
         "An underwriting review considered Collateralized Mortgage Obligations (CMOs) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -4890,7 +4948,8 @@
         "An underwriting review considered Collective Bargaining Agreement before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -4938,7 +4997,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "collision auto"
+        "collision auto",
+        "collision (auto)"
       ]
     },
     {
@@ -5074,7 +5134,8 @@
         "An underwriting review considered Combined Ratio before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -5379,7 +5440,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "commercial mortgage backed securities"
+        "commercial mortgage backed securities",
+        "commercial mortgage-backed securities"
       ]
     },
     {
@@ -5526,7 +5588,8 @@
         "An underwriting review considered Commission before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -5703,7 +5766,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "comprehensive auto"
+        "comprehensive auto",
+        "comprehensive (auto)"
       ]
     },
     {
@@ -5850,7 +5914,8 @@
         "An underwriting review considered Comprehensive Glass Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -5928,7 +5993,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "comprehensive major medical"
+        "comprehensive major medical",
+        "comprehensive/major medical"
       ]
     },
     {
@@ -6020,7 +6086,8 @@
         "An underwriting review considered Condition report before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -6307,7 +6374,8 @@
         "An underwriting review considered Continuing Care Retirement Communities before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
@@ -6349,7 +6417,8 @@
         "An underwriting review considered Contract of Adhesion before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -6563,7 +6632,8 @@
         "An underwriting review considered Corrective Order before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -6611,7 +6681,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "cost benefit analysis"
+        "cost benefit analysis",
+        "cost/benefit analysis"
       ]
     },
     {
@@ -6678,7 +6749,8 @@
         "An underwriting review considered Covered Lives before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
@@ -6814,7 +6886,8 @@
         "An underwriting review considered Credit Credit Default before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [
@@ -6840,7 +6913,8 @@
         "An underwriting review considered Credit Disability before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
@@ -6889,7 +6963,8 @@
         "An underwriting review considered Credit Involuntary Unemployment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -6910,7 +6985,8 @@
         "An underwriting review considered Credit Involuntary Unemployment pay before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -7192,7 +7268,8 @@
         "An underwriting review considered Cumulative Trauma (CT) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "CT"
@@ -7216,7 +7293,8 @@
         "An underwriting review considered Cyber Crime before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurtech & Technology"
       ],
       "synonyms": [],
       "related": [],
@@ -7322,7 +7400,8 @@
         "An underwriting review considered Date of Injury (DOI) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "DOI"
@@ -7346,7 +7425,8 @@
         "An underwriting review considered Date of Issue before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -7439,7 +7519,8 @@
         "An underwriting review considered Debris Removal before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -7557,7 +7638,8 @@
         "An underwriting review considered Declarations page before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -7588,7 +7670,8 @@
         "An underwriting review considered Declaratory Judgment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -7609,7 +7692,8 @@
         "An underwriting review considered Decline before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -7698,7 +7782,8 @@
         "An underwriting review considered Demolition Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -7719,7 +7804,8 @@
         "An underwriting review considered Demutualization before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -7745,7 +7831,8 @@
         "An underwriting review considered Dental Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
@@ -7804,7 +7891,8 @@
         "An underwriting review considered Deposition before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -7852,7 +7940,8 @@
         "An underwriting review considered Derivative before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -7899,7 +7988,8 @@
         "An underwriting review considered Development Triangle before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [
@@ -8003,7 +8093,8 @@
         "An underwriting review considered Direct Incurred Loss before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [
@@ -8178,7 +8269,8 @@
         "An underwriting review considered Disability Benefits before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [
@@ -8345,7 +8437,8 @@
         "An underwriting review considered Disability Management Coordinator before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [
@@ -8371,7 +8464,8 @@
         "An underwriting review considered Disabling Injury before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -8440,7 +8534,8 @@
         "An underwriting review considered Disclosure before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -8487,7 +8582,8 @@
         "An underwriting review considered Discount Factor before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -8557,7 +8653,8 @@
         "An underwriting review considered Dispute before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -8659,7 +8756,8 @@
         "An underwriting review considered Domestic Insurer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -8727,7 +8825,8 @@
         "An underwriting review considered Dual Interest before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -8819,7 +8918,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "dwelling property personal liability"
+        "dwelling property personal liability",
+        "dwelling property/personal liability"
       ]
     },
     {
@@ -8834,7 +8934,8 @@
         "An underwriting review considered Early warning system before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -8855,7 +8956,8 @@
         "An underwriting review considered Earned Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -8902,7 +9004,8 @@
         "An underwriting review considered Earnings Replacement Benefit before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [
@@ -9010,7 +9113,8 @@
         "An underwriting review considered EBNR before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -9031,7 +9135,8 @@
         "An underwriting review considered Economic Damages before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [
@@ -9065,7 +9170,8 @@
         "An underwriting review considered EDP Policies before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -9426,7 +9532,8 @@
         "An underwriting review considered Encumbrance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -9447,7 +9554,8 @@
         "An underwriting review considered Endorsement before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -9473,7 +9581,8 @@
         "An underwriting review considered Enrollment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [
@@ -9616,7 +9725,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "equit association"
+        "equit association",
+        "equité association"
       ]
     },
     {
@@ -9631,7 +9741,8 @@
         "An underwriting review considered Ergonomics before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -9695,7 +9806,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "errors and omissions liability professional liability other than medical"
+        "errors and omissions liability professional liability other than medical",
+        "errors and omissions liability | professional liability other than medical"
       ]
     },
     {
@@ -9736,7 +9848,8 @@
         "An underwriting review considered Escrow Loan Fee before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [
@@ -9762,7 +9875,8 @@
         "An underwriting review considered Escrow Sale Fee before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [
@@ -9788,7 +9902,8 @@
         "An underwriting review considered Essential Job Duties before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -9809,7 +9924,8 @@
         "An underwriting review considered Event Cancellation before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -9887,7 +10003,8 @@
         "An underwriting review considered Excess Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [
@@ -10016,7 +10133,8 @@
         "An underwriting review considered Exclusions before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -10063,7 +10181,8 @@
         "An underwriting review considered Expense Loading before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -10084,7 +10203,8 @@
         "An underwriting review considered Expense Ratio before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -10174,7 +10294,8 @@
         "An underwriting review considered Expiration Notice before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -10195,7 +10316,8 @@
         "An underwriting review considered Explosion before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -10315,7 +10437,8 @@
         "An underwriting review considered Extra Expense before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -10362,7 +10485,8 @@
         "An underwriting review considered Face Amount before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -10425,7 +10549,8 @@
         "An underwriting review considered Fair Employment Housing Act (FEHA) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [
         "FEHA"
@@ -10449,7 +10574,8 @@
         "An underwriting review considered Fair Labor Standards Act (FLSA) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [
         "FLSA"
@@ -10660,7 +10786,8 @@
         "An underwriting review considered Fees Payable before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -10681,7 +10808,8 @@
         "An underwriting review considered FEMA before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -10988,7 +11116,8 @@
         "An underwriting review considered Fine Arts Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -11097,7 +11226,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "fire resistive construction"
+        "fire resistive construction",
+        "fire-resistive construction"
       ]
     },
     {
@@ -11300,7 +11430,8 @@
         "An underwriting review considered Foreign Insurer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -11321,7 +11452,8 @@
         "An underwriting review considered Foreign Investment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -11347,7 +11479,8 @@
         "An underwriting review considered Foreign jurisdiction before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -11368,7 +11501,8 @@
         "An underwriting review considered Forgery before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -11389,7 +11523,8 @@
         "An underwriting review considered Fraternal Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [
@@ -11487,7 +11622,8 @@
         "An underwriting review considered Funding before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -11582,7 +11718,8 @@
         "An underwriting review considered General Damages before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -11603,7 +11740,8 @@
         "An underwriting review considered General Insurance Ombudservice before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -11659,7 +11797,8 @@
         "An underwriting review considered Generally Accepted Accounting Principles (GAAP) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [
         "GAAP"
@@ -11688,7 +11827,8 @@
         "An underwriting review considered Glass Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -11735,7 +11875,8 @@
         "An underwriting review considered Good Faith before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -11843,7 +11984,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "gross paid in and contributed surplus"
+        "gross paid in and contributed surplus",
+        "gross paid-in and contributed surplus"
       ]
     },
     {
@@ -11912,7 +12054,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "group annuities deferred non variable and variable"
+        "group annuities deferred non variable and variable",
+        "group annuities deferred non- variable and variable"
       ]
     },
     {
@@ -11959,7 +12102,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "group annuities immediate non variable and variable"
+        "group annuities immediate non variable and variable",
+        "group annuities immediate non-variable and variable"
       ]
     },
     {
@@ -12063,7 +12207,8 @@
         "An underwriting review considered Group Credit Life before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -12140,7 +12285,8 @@
         "An underwriting review considered Guaranteed Replacement Cost before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -12166,7 +12312,8 @@
         "An underwriting review considered Guaranty Fund before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [
@@ -12213,7 +12360,8 @@
         "An underwriting review considered Hard Market before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -12234,7 +12382,8 @@
         "An underwriting review considered Hazard before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -12413,7 +12562,8 @@
         "An underwriting review considered Hold Harmless Agreement before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -12571,7 +12721,8 @@
         "An underwriting review considered ICLR before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -12613,7 +12764,8 @@
         "An underwriting review considered Impairment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -12634,7 +12786,8 @@
         "An underwriting review considered Implied Warranty before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -12660,7 +12813,8 @@
         "An underwriting review considered Improvements and Betterments before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -12746,7 +12900,8 @@
         "An underwriting review considered Incontestable Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -12823,7 +12978,8 @@
       "difficulty": "Technical",
       "lookup_keys": [
         "incurred but not reported reserves",
-        "losses incurred but not reported"
+        "losses incurred but not reported",
+        "incurred but not reported (ibnr) reserves"
       ]
     },
     {
@@ -12896,7 +13052,8 @@
         "An underwriting review considered Incurred Losses before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [
@@ -12964,7 +13121,8 @@
         "An underwriting review considered Indemnity Agreement before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -13004,7 +13162,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "indemnity principle of"
+        "indemnity principle of",
+        "indemnity, principle of"
       ]
     },
     {
@@ -13067,7 +13226,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "independent agent independent agency"
+        "independent agent independent agency",
+        "independent agent; independent agency"
       ]
     },
     {
@@ -13082,7 +13242,8 @@
         "An underwriting review considered Independent Contractor before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -13159,7 +13320,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "individual annuities deferred non variable"
+        "individual annuities deferred non variable",
+        "individual annuities deferred non-variable"
       ]
     },
     {
@@ -13180,7 +13342,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "individual annuities deferred non variable and variable"
+        "individual annuities deferred non variable and variable",
+        "individual annuities deferred non-variable and variable"
       ]
     },
     {
@@ -13228,7 +13391,8 @@
       "difficulty": "Basic",
       "lookup_keys": [
         "annuities immediate non variable",
-        "individual annuities immediate non variable"
+        "individual annuities immediate non variable",
+        "individual annuities immediate non-variable"
       ]
     },
     {
@@ -13249,7 +13413,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "individual annuities immediate non variable and variable"
+        "individual annuities immediate non variable and variable",
+        "individual annuities immediate non-variable and variable"
       ]
     },
     {
@@ -13290,7 +13455,8 @@
         "An underwriting review considered Individual Annuities Special before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -13311,7 +13477,8 @@
         "An underwriting review considered Individual Credit Life before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -13358,7 +13525,8 @@
         "An underwriting review considered Industrial Accident (IA) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "IA"
@@ -13412,7 +13580,8 @@
         "An underwriting review considered Inherent Explosion before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -13459,7 +13628,8 @@
         "An underwriting review considered Injured party before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -13703,7 +13873,8 @@
         "An underwriting review considered Insurance Holding Company System before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -13724,7 +13895,8 @@
         "An underwriting review considered Insurance identification card before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [],
@@ -13833,7 +14005,8 @@
         "An underwriting review considered Insurance score before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -13967,7 +14140,8 @@
         "An underwriting review considered Insuring Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -14103,7 +14277,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "internet liability insurance cyber insurance"
+        "internet liability insurance cyber insurance",
+        "internet liability insurance/cyber insurance"
       ]
     },
     {
@@ -14139,7 +14314,8 @@
         "An underwriting review considered Investment Income Accrued before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -14160,7 +14336,8 @@
         "An underwriting review considered Investment Income Due before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -14326,7 +14503,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "joint life annuity"
+        "joint life annuity",
+        "joint-life annuity"
       ]
     },
     {
@@ -14362,13 +14540,15 @@
         "An underwriting review considered Key-Persons Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "key persons insurance"
+        "key persons insurance",
+        "key-persons insurance"
       ]
     },
     {
@@ -14389,7 +14569,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "kidnap ransom insurance"
+        "kidnap ransom insurance",
+        "kidnap/ransom insurance"
       ]
     },
     {
@@ -14430,7 +14611,8 @@
         "An underwriting review considered Law of Large Numbers before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -14594,7 +14776,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "liability auto"
+        "liability auto",
+        "liability (auto)"
       ]
     },
     {
@@ -14665,7 +14848,8 @@
         "An underwriting review considered Libel before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -14713,7 +14897,8 @@
         "An underwriting review considered Life Endowment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -14856,7 +15041,8 @@
         "An underwriting review considered Light Duty before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [
@@ -14924,7 +15110,8 @@
         "An underwriting review considered Limitation Period before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -15248,7 +15435,8 @@
         "An underwriting review considered Loan Value before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -15269,7 +15457,8 @@
         "An underwriting review considered Loan-backed Securities before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -15284,7 +15473,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "loan backed securities"
+        "loan backed securities",
+        "loan-backed securities"
       ]
     },
     {
@@ -15397,7 +15587,8 @@
         "An underwriting review considered Long-Term Disability (LTD) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [
         "LTD"
@@ -15471,7 +15662,8 @@
         "An underwriting review considered Loss Control before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -15497,7 +15689,8 @@
         "An underwriting review considered Loss Development before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [
@@ -15527,7 +15720,8 @@
         "An underwriting review considered Loss Development Factor before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [
@@ -15729,7 +15923,8 @@
         "An underwriting review considered Machinery insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -15771,7 +15966,8 @@
         "An underwriting review considered Malpractice before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -15855,7 +16051,8 @@
         "An underwriting review considered Mandated benefits before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -15926,7 +16123,8 @@
         "An underwriting review considered Margin for Adverse Experience before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -15947,7 +16145,8 @@
         "An underwriting review considered Margin Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -15995,7 +16194,8 @@
         "An underwriting review considered Market Value before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -16455,7 +16655,8 @@
         "An underwriting review considered Minimum Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -16602,7 +16803,8 @@
         "An underwriting review considered Mobile Homes under Transport before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -16717,7 +16919,8 @@
         "An underwriting review considered Morbidity before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -16769,7 +16972,8 @@
         "An underwriting review considered Morbidity Table before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -16790,7 +16994,8 @@
         "An underwriting review considered Mortality Table before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -16832,7 +17037,8 @@
         "An underwriting review considered Mortgage Guaranty before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [],
@@ -16895,7 +17101,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "mortgage backed securities"
+        "mortgage backed securities",
+        "mortgage-backed securities"
       ]
     },
     {
@@ -16910,7 +17117,8 @@
         "An underwriting review considered Mortgagee Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -17013,7 +17221,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "multi policy discount"
+        "multi policy discount",
+        "multi-policy discount"
       ]
     },
     {
@@ -17169,7 +17378,8 @@
         "An underwriting review considered Named Peril Coverage before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -17190,7 +17400,8 @@
         "An underwriting review considered Named Perils before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [
@@ -17324,7 +17535,8 @@
         "An underwriting review considered Natural Hazard before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -17350,13 +17562,15 @@
         "An underwriting review considered Nature/Extent of Injury or Damages before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "nature extent of injury or damages"
+        "nature extent of injury or damages",
+        "nature/extent of injury or damages"
       ]
     },
     {
@@ -17445,7 +17659,8 @@
         "An underwriting review considered Net Income before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -17523,7 +17738,8 @@
         "An underwriting review considered No-fault insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [
@@ -17534,7 +17750,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "no fault insurance"
+        "no fault insurance",
+        "no-fault insurance"
       ]
     },
     {
@@ -17549,7 +17766,8 @@
         "An underwriting review considered Non controlled stock insurers before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -17631,7 +17849,8 @@
         "An underwriting review considered Nonadmitted Insurer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -17652,7 +17871,8 @@
         "An underwriting review considered Noninsurance Transfer before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -17686,7 +17906,8 @@
         "An underwriting review considered Notional Value before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -18114,7 +18335,8 @@
         "An underwriting review considered Other Insurance Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -18203,7 +18425,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "over insurance"
+        "over insurance",
+        "over-insurance"
       ]
     },
     {
@@ -18271,7 +18494,8 @@
         "An underwriting review considered Package Policy before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -18385,7 +18609,8 @@
         "An underwriting review considered Parts of the Body before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -18437,7 +18662,8 @@
         "An underwriting review considered Payee Clause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -18641,7 +18867,8 @@
         "An underwriting review considered Permanent Partial Disability (PPD) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "PPD"
@@ -18665,7 +18892,8 @@
         "An underwriting review considered Permanent Total Disability (PTD) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "PTD"
@@ -18796,7 +19024,8 @@
         "An underwriting review considered Personal injury before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -18879,7 +19108,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "personal injury protection coverage pip"
+        "personal injury protection coverage pip",
+        "personal injury protection coverage/pip"
       ]
     },
     {
@@ -18981,7 +19211,8 @@
         "An underwriting review considered Physical Evidence before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -19087,7 +19318,8 @@
         "An underwriting review considered Policy document before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -19108,7 +19340,8 @@
         "An underwriting review considered Policy Limit before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -19250,7 +19483,8 @@
         "An underwriting review considered Pollution before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Liability"
       ],
       "synonyms": [],
       "related": [],
@@ -19271,7 +19505,8 @@
         "An underwriting review considered Pool before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -19297,7 +19532,8 @@
         "An underwriting review considered Power of Attorney before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -19330,7 +19566,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "pre designated physician"
+        "pre designated physician",
+        "pre-designated physician"
       ]
     },
     {
@@ -19356,7 +19593,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "pre existing injury or damages"
+        "pre existing injury or damages",
+        "pre-existing injury or damages"
       ]
     },
     {
@@ -19382,7 +19620,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "pre injury work"
+        "pre injury work",
+        "pre-injury work"
       ]
     },
     {
@@ -19430,7 +19669,8 @@
         "An underwriting review considered Preferred Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [
@@ -19538,7 +19778,8 @@
         "An underwriting review considered Premium Discount Plan before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -19559,7 +19800,8 @@
         "An underwriting review considered Premium Financing before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -19580,7 +19822,8 @@
         "An underwriting review considered Premium Rate before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -19601,7 +19844,8 @@
         "An underwriting review considered Premiums Earned before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -19653,7 +19897,8 @@
         "An underwriting review considered Premiums Written before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -19876,7 +20121,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "pro rata cancellation"
+        "pro rata cancellation",
+        "pro-rata cancellation"
       ]
     },
     {
@@ -20167,7 +20413,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "property loss allegation claim"
+        "property loss allegation claim",
+        "property loss allegation/claim"
       ]
     },
     {
@@ -20295,7 +20542,8 @@
         "An underwriting review considered Proximate Cause before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -20367,7 +20615,8 @@
         "An underwriting review considered Pure Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -20388,7 +20637,8 @@
         "An underwriting review considered Pure Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -20563,7 +20813,8 @@
         "An underwriting review considered Quote before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [
@@ -20589,7 +20840,8 @@
         "An underwriting review considered Rain Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -20631,7 +20883,8 @@
         "An underwriting review considered Rebate before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -20934,7 +21187,8 @@
         "An underwriting review considered Reported Losses before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [],
@@ -21087,7 +21341,8 @@
         "An underwriting review considered Residual Market Plan before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [],
@@ -21134,7 +21389,8 @@
         "An underwriting review considered Retention before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -21265,7 +21521,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "return to work plan"
+        "return to work plan",
+        "return-to-work plan"
       ]
     },
     {
@@ -21286,7 +21543,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "return to work program"
+        "return to work program",
+        "return-to-work program"
       ]
     },
     {
@@ -21301,7 +21559,8 @@
         "An underwriting review considered Rider before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [],
@@ -21352,7 +21611,8 @@
         "An underwriting review considered Risk Acceptance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -21373,7 +21633,8 @@
         "An underwriting review considered Risk Assessment before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -21417,7 +21678,8 @@
         "An underwriting review considered Risk class before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -21438,7 +21700,8 @@
         "An underwriting review considered Risk Management before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -21483,7 +21746,8 @@
         "An underwriting review considered Risk Manager before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -21577,13 +21841,15 @@
         "An underwriting review considered Risk-Sharing before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "risk sharing"
+        "risk sharing",
+        "risk-sharing"
       ]
     },
     {
@@ -21640,7 +21906,8 @@
         "An underwriting review considered Root Causes of Loss before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Claims"
       ],
       "synonyms": [],
       "related": [
@@ -21688,7 +21955,8 @@
         "An underwriting review considered Securitization of Insurance Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Reinsurance"
       ],
       "synonyms": [],
       "related": [],
@@ -21730,7 +21998,8 @@
         "An underwriting review considered Self Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -21806,7 +22075,8 @@
         "An underwriting review considered Separate Account before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [],
       "related": [],
@@ -21890,7 +22160,7 @@
     {
       "id": "short-rate-cancellation",
       "term": "Short Rate Cancellation",
-      "definition": "A cancellation rate for a period shorter than originally written, set higher than a pro-rata rate.",
+      "definition": "A cancellation rate for a period shorter than originally written, set higher than a pro-rata rate -- typically applied when the cancellation is requested by the policyholder rather than the insurer.",
       "examples": [
         "Because the insured cancelled early by choice, the insurer applied short rate cancellation and kept more than a straight pro-rata share.",
         "In a general insurance concepts matter, Short Rate Cancellation came up as the team worked through the file.",
@@ -21906,32 +22176,17 @@
         {
           "term": "Cancellation",
           "id": "cancellation"
+        },
+        {
+          "term": "Earned Premium",
+          "id": "earned-premium"
         }
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "short rate cancellation"
-      ]
-    },
-    {
-      "id": "short-term-disability",
-      "term": "Short term Disability",
-      "definition": "a company standard defining a period of time employees are eligible for short-term disability coverage, typically for 2 years or less.",
-      "examples": [
-        "The company's short term disability standard covers eligible employees for up to two years.",
-        "In a general insurance concepts matter, Short term Disability came up as the team worked through the file.",
-        "During the review, Short term Disability was flagged as relevant to how the policy applied in this case.",
-        "The adjuster noted Short term Disability in the claim file and used the policy language to determine how the situation should be handled.",
-        "An underwriting review considered Short term Disability before the insurer finalized its coverage or risk assessment."
-      ],
-      "categories": [
-        "General Insurance Concepts"
-      ],
-      "synonyms": [],
-      "related": [],
-      "difficulty": "Basic",
-      "lookup_keys": [
-        "short term disability"
+        "policyholder cancellation",
+        "short rate cancellation",
+        "short-rate cancellation"
       ]
     },
     {
@@ -21961,39 +22216,9 @@
       ]
     },
     {
-      "id": "short-rate-cancellation-2",
-      "term": "Short-Rate Cancellation",
-      "definition": "Policyholder-requested early cancellation with higher earned premium.",
-      "examples": [
-        "Short-rate cancellation left her with a smaller refund than a pro-rata calculation would have given.",
-        "In a general insurance concepts matter, Short-Rate Cancellation came up as the team worked through the file.",
-        "During the review, Short-Rate Cancellation was flagged as relevant to how the policy applied in this case.",
-        "The adjuster noted Short-Rate Cancellation in the claim file and used the policy language to determine how the situation should be handled.",
-        "An underwriting review considered Short-Rate Cancellation before the insurer finalized its coverage or risk assessment."
-      ],
-      "categories": [
-        "General Insurance Concepts"
-      ],
-      "synonyms": [],
-      "related": [
-        {
-          "term": "Earned Premium",
-          "id": "earned-premium"
-        },
-        {
-          "term": "Cancellation",
-          "id": "cancellation"
-        }
-      ],
-      "difficulty": "Basic",
-      "lookup_keys": [
-        "policyholder cancellation"
-      ]
-    },
-    {
       "id": "short-term-disability-std",
       "term": "Short-Term Disability (STD)",
-      "definition": "A plan that pays a percentage of salary if an employee becomes temporarily disabled and unable to work due to non-occupational sickness or injury.",
+      "definition": "A plan that pays a percentage of salary if an employee becomes temporarily disabled and unable to work due to non-occupational sickness or injury, typically for a company-defined period of up to two years.",
       "examples": [
         "STD replaced sixty percent of her salary while she recovered from surgery unrelated to work.",
         "In a workers compensation matter, Short-Term Disability (STD) came up as the team worked through the file.",
@@ -22010,6 +22235,7 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
+        "short term disability",
         "std"
       ]
     },
@@ -22025,7 +22251,8 @@
         "An underwriting review considered Situs of Contract before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -22067,7 +22294,8 @@
         "An underwriting review considered Social Insurance before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -22088,7 +22316,8 @@
         "An underwriting review considered Soft Market before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -22169,7 +22398,8 @@
         "An underwriting review considered Specified Disease Coverage before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [],
@@ -22190,7 +22420,8 @@
         "An underwriting review considered Specified or Named Disease before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [
@@ -22320,7 +22551,8 @@
         "An underwriting review considered State of Domicile before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [],
@@ -22341,7 +22573,8 @@
         "An underwriting review considered State Page before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -22594,7 +22827,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "stop loss reinsurance"
+        "stop loss reinsurance",
+        "stop-loss reinsurance"
       ]
     },
     {
@@ -22609,7 +22843,8 @@
         "An underwriting review considered Structured Securities before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -22665,7 +22900,8 @@
         "An underwriting review considered Subpoena before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Regulatory & Legal"
       ],
       "synonyms": [],
       "related": [
@@ -22806,7 +23042,8 @@
         "An underwriting review considered Sudden damage before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -22938,7 +23175,8 @@
         "An underwriting review considered Surcharge before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Auto"
       ],
       "synonyms": [],
       "related": [],
@@ -23114,7 +23352,8 @@
         "An underwriting review considered Survivor Income Benefits (SIB) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Life"
       ],
       "synonyms": [
         "SIB"
@@ -23138,7 +23377,8 @@
         "An underwriting review considered Swap before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [
@@ -23231,7 +23471,8 @@
         "An underwriting review considered Temporary Partial Disability (TPD) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "TPD"
@@ -23264,7 +23505,8 @@
         "An underwriting review considered Temporary Total Disability (TTD) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "TTD"
@@ -23396,7 +23638,8 @@
         "An underwriting review considered Terms and conditions before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -23620,7 +23863,8 @@
         "An underwriting review considered Title Lenders Fee before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial Lines & Surety"
       ],
       "synonyms": [],
       "related": [
@@ -23739,7 +23983,8 @@
         "An underwriting review considered Total Liabilities before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -23786,7 +24031,8 @@
         "An underwriting review considered Total Revenue before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -23807,7 +24053,8 @@
         "An underwriting review considered Transferable Skills before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -23962,7 +24209,8 @@
         "An underwriting review considered Trend Factor before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Underwriting & Actuarial"
       ],
       "synonyms": [],
       "related": [],
@@ -24053,7 +24301,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "umbrella and excess commercial"
+        "umbrella and excess commercial",
+        "umbrella and excess (commercial)"
       ]
     },
     {
@@ -24074,7 +24323,8 @@
       "related": [],
       "difficulty": "Technical",
       "lookup_keys": [
-        "umbrella and excess personal"
+        "umbrella and excess personal",
+        "umbrella and excess (personal)"
       ]
     },
     {
@@ -24375,7 +24625,8 @@
         "An underwriting review considered Unearned Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -24520,7 +24771,8 @@
         "An underwriting review considered Unoccupied before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -24588,7 +24840,8 @@
         "An underwriting review considered Unsafe Acts before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -24609,7 +24862,8 @@
         "An underwriting review considered Usual and Customary (U&C) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "U&C"
@@ -24633,7 +24887,8 @@
         "An underwriting review considered Utility connections before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -24679,7 +24934,8 @@
         "An underwriting review considered Vacant before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -24700,7 +24956,8 @@
         "An underwriting review considered Valuable item before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -24721,7 +24978,8 @@
         "An underwriting review considered Valued Policy before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Property"
       ],
       "synonyms": [],
       "related": [],
@@ -25018,7 +25276,8 @@
         "An underwriting review considered Vision before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Health"
       ],
       "synonyms": [],
       "related": [
@@ -25096,7 +25355,8 @@
         "An underwriting review considered Voice Recognition before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurtech & Technology"
       ],
       "synonyms": [],
       "related": [],
@@ -25220,7 +25480,8 @@
         "An underwriting review considered Warrant before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -25345,7 +25606,8 @@
         "An underwriting review considered Work Hardening before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [],
       "related": [],
@@ -25366,7 +25628,8 @@
         "An underwriting review considered Work Hardening Transitional Assignment Agreement (WHTAA) before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Workers Compensation"
       ],
       "synonyms": [
         "WHTAA"
@@ -25496,7 +25759,8 @@
         "An underwriting review considered Written Premium before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Financial / Accounting"
       ],
       "synonyms": [],
       "related": [],
@@ -25517,7 +25781,8 @@
         "An underwriting review considered Year 2000 Problem before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurtech & Technology"
       ],
       "synonyms": [],
       "related": [],
@@ -25681,7 +25946,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "out of pocket maximum"
+        "out of pocket maximum",
+        "out-of-pocket maximum"
       ]
     },
     {
@@ -27186,7 +27452,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "long term care benefit"
+        "long term care benefit",
+        "long-term care benefit"
       ]
     },
     {
@@ -27546,7 +27813,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "pre authorization"
+        "pre authorization",
+        "pre-authorization"
       ]
     },
     {
@@ -27641,7 +27909,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "in network"
+        "in network",
+        "in-network"
       ]
     },
     {
@@ -27674,7 +27943,8 @@
       ],
       "difficulty": "Basic",
       "lookup_keys": [
-        "out of network"
+        "out of network",
+        "out-of-network"
       ]
     },
     {
@@ -27873,7 +28143,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "stop loss carrier"
+        "stop loss carrier",
+        "stop-loss carrier"
       ]
     },
     {
@@ -28649,7 +28920,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "stop loss threshold"
+        "stop loss threshold",
+        "stop-loss threshold"
       ]
     },
     {
@@ -29581,7 +29853,8 @@
       ],
       "difficulty": "Technical",
       "lookup_keys": [
-        "frequency severity model"
+        "frequency severity model",
+        "frequency-severity model"
       ]
     },
     {
@@ -29849,7 +30122,8 @@
         "Underwriters set per-occurrence limits based on event severity."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Insurance Documentation"
       ],
       "synonyms": [],
       "related": [
@@ -31007,7 +31281,7 @@
           "id": "smart-contracts"
         }
       ],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "blockchain"
       ]
@@ -31088,7 +31362,7 @@
         "RPA"
       ],
       "related": [],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "robotic process automation",
         "rpa"
@@ -31117,7 +31391,7 @@
           "id": "telematics"
         }
       ],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "internet of things",
         "iot"
@@ -31146,7 +31420,7 @@
           "id": "predictive-analytics"
         }
       ],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "machine learning"
       ]
@@ -31923,7 +32197,7 @@
       ],
       "synonyms": [],
       "related": [],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "data mining"
       ]
@@ -33801,7 +34075,7 @@
         "OCR"
       ],
       "related": [],
-      "difficulty": "Technical",
+      "difficulty": "Basic",
       "lookup_keys": [
         "optical character recognition",
         "ocr"

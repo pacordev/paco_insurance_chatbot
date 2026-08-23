@@ -5,24 +5,24 @@
     "generated": "2026-08-03",
     "updated": "2026-08-22",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1178,
+    "count": 1187,
     "categories": {
-      "General Insurance Concepts": 379,
-      "Property": 193,
-      "Claims": 175,
-      "Health": 158,
       "Liability": 144,
-      "Financial / Accounting": 118,
-      "Underwriting & Actuarial": 104,
-      "Life": 81,
+      "Property": 193,
       "Workers Compensation": 79,
+      "Claims": 178,
       "Auto": 74,
-      "Regulatory & Legal": 63,
-      "Reinsurance": 59,
-      "Financial Lines & Surety": 40,
-      "Risk": 23,
+      "Health": 157,
+      "General Insurance Concepts": 378,
+      "Life": 80,
+      "Regulatory & Legal": 66,
+      "Underwriting & Actuarial": 104,
+      "Financial / Accounting": 118,
+      "Reinsurance": 62,
       "Marine & Aviation": 17,
-      "Insurance Documentation": 4
+      "Risk": 40,
+      "Financial Lines & Surety": 40,
+      "Insurance Documentation": 7
     },
     "difficulty_levels": [
       "Basic",
@@ -1449,27 +1449,6 @@
       ]
     },
     {
-      "id": "annuities-immediate-non-variable",
-      "term": "Annuities Immediate Non variable",
-      "definition": "an annuity contract that provides for the fixed payment of the annuity at the end of the first interval of payment after purchase. The interval may vary, however the annuity payouts must begin within 13 months.",
-      "examples": [
-        "He bought an immediate non-variable annuity in March, and the first fixed monthly payment arrived in April.",
-        "In a life matter, Annuities Immediate Non variable came up as the team worked through the file.",
-        "During the review, Annuities Immediate Non variable was flagged as relevant to how the policy applied in this case.",
-        "The adjuster noted Annuities Immediate Non variable in the claim file and used the policy language to determine how the situation should be handled.",
-        "An underwriting review considered Annuities Immediate Non variable before the insurer finalized its coverage or risk assessment."
-      ],
-      "categories": [
-        "Life"
-      ],
-      "synonyms": [],
-      "related": [],
-      "difficulty": "Basic",
-      "lookup_keys": [
-        "annuities immediate non variable"
-      ]
-    },
-    {
       "id": "annuity",
       "term": "Annuity",
       "definition": "a contract providing income for a specified period of time, or duration of life for a person or persons.",
@@ -1815,7 +1794,8 @@
         "An underwriting review considered Asset Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -2533,32 +2513,6 @@
       "difficulty": "Basic",
       "lookup_keys": [
         "benefit"
-      ]
-    },
-    {
-      "id": "benefits-medical-and-hospital-expenses",
-      "term": "Benefits (Medical and Hospital Expenses)",
-      "definition": "total expenditures for health care services paid to or on behalf of a member.",
-      "examples": [
-        "The plan's benefits line totalled the year's payments to hospitals, clinics, and pharmacies on behalf of its members.",
-        "In a health matter, Benefits (Medical and Hospital Expenses) came up as the team worked through the file.",
-        "During the review, Benefits (Medical and Hospital Expenses) was flagged as relevant to how the policy applied in this case.",
-        "The adjuster noted Benefits (Medical and Hospital Expenses) in the claim file and used the policy language to determine how the situation should be handled.",
-        "An underwriting review considered Benefits (Medical and Hospital Expenses) before the insurer finalized its coverage or risk assessment."
-      ],
-      "categories": [
-        "Health"
-      ],
-      "synonyms": [],
-      "related": [
-        {
-          "term": "Member",
-          "id": "member"
-        }
-      ],
-      "difficulty": "Basic",
-      "lookup_keys": [
-        "benefits"
       ]
     },
     {
@@ -6891,7 +6845,8 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
-        "credit disability"
+        "credit disability",
+        "individual credit disability"
       ]
     },
     {
@@ -7067,7 +7022,8 @@
         "An underwriting review considered Credit Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -7301,7 +7257,8 @@
         "An underwriting review considered Cyber Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [],
@@ -13269,6 +13226,7 @@
       "related": [],
       "difficulty": "Basic",
       "lookup_keys": [
+        "annuities immediate non variable",
         "individual annuities immediate non variable"
       ]
     },
@@ -13338,27 +13296,6 @@
       "difficulty": "Basic",
       "lookup_keys": [
         "individual annuities special"
-      ]
-    },
-    {
-      "id": "individual-credit-disability",
-      "term": "Individual Credit Disability",
-      "definition": "makes monthly loan/credit transaction payments to the creditor upon the disablement of an insured debtor.",
-      "examples": [
-        "Individual credit disability made his monthly loan payments to the lender while he was unable to work.",
-        "In a general insurance concepts matter, Individual Credit Disability came up as the team worked through the file.",
-        "During the review, Individual Credit Disability was flagged as relevant to how the policy applied in this case.",
-        "The adjuster noted Individual Credit Disability in the claim file and used the policy language to determine how the situation should be handled.",
-        "An underwriting review considered Individual Credit Disability before the insurer finalized its coverage or risk assessment."
-      ],
-      "categories": [
-        "General Insurance Concepts"
-      ],
-      "synonyms": [],
-      "related": [],
-      "difficulty": "Basic",
-      "lookup_keys": [
-        "individual credit disability"
       ]
     },
     {
@@ -16166,9 +16103,15 @@
         "Claims"
       ],
       "synonyms": [],
-      "related": [],
+      "related": [
+        {
+          "term": "Member",
+          "id": "member"
+        }
+      ],
       "difficulty": "Basic",
       "lookup_keys": [
+        "benefits",
         "benefits or claims",
         "medical and hospital expenses"
       ]
@@ -16794,7 +16737,8 @@
         "An underwriting review considered Morbidity Risk before the insurer finalized its coverage or risk assessment."
       ],
       "categories": [
-        "General Insurance Concepts"
+        "General Insurance Concepts",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -24382,7 +24326,8 @@
       ],
       "categories": [
         "Underwriting & Actuarial",
-        "Financial / Accounting"
+        "Financial / Accounting",
+        "Risk"
       ],
       "synonyms": [],
       "related": [
@@ -30567,6 +30512,315 @@
       "lookup_keys": [
         "aviation",
         "Aviation Hull Risk"
+      ]
+    },
+    {
+      "id": "claims-reserve-risk",
+      "term": "Reserve Risk",
+      "definition": "Risk that reserves set aside for reported or incurred claims prove insufficient to cover the eventual cost of settling them.",
+      "examples": [
+        "Reserve risk grows when claims take longer to settle than the original estimate assumed.",
+        "Actuaries re-evaluate reserve risk as claims develop over time.",
+        "Adverse reserve development is a sign that reserve risk was underestimated."
+      ],
+      "categories": [
+        "Claims",
+        "Risk"
+      ],
+      "synonyms": [
+        "Reserving Risk"
+      ],
+      "related": [
+        {
+          "term": "Incurred but not reported (IBNR) Reserves",
+          "id": "incurred-but-not-reported-ibnr-reserves"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "reserve risk",
+        "claims reserve risk",
+        "Reserve Risk"
+      ]
+    },
+    {
+      "id": "claims-litigation-risk",
+      "term": "Litigation Risk",
+      "definition": "Risk that a claim escalates into costly or unfavorable litigation instead of being resolved through normal claims handling.",
+      "examples": [
+        "Litigation risk rises sharply once a claimant retains an attorney.",
+        "Insurers weigh litigation risk when deciding whether to settle or defend a claim.",
+        "Clear claims documentation helps limit litigation risk."
+      ],
+      "categories": [
+        "Claims",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Bad Faith Risk",
+          "id": "regulatory-bad-faith-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "litigation risk",
+        "claims litigation risk",
+        "Litigation Risk"
+      ]
+    },
+    {
+      "id": "claims-fraud-risk",
+      "term": "Claims Fraud Risk",
+      "definition": "Risk of financial loss from claims that are exaggerated, staged, or entirely fabricated.",
+      "examples": [
+        "Special investigation units are built around managing claims fraud risk.",
+        "Claims fraud risk tends to rise during economic downturns.",
+        "Pattern analysis across claims data helps flag claims fraud risk early."
+      ],
+      "categories": [
+        "Claims",
+        "Risk"
+      ],
+      "synonyms": [
+        "Fraud Risk"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "claims fraud risk",
+        "fraud risk",
+        "Claims Fraud Risk"
+      ]
+    },
+    {
+      "id": "reinsurance-counterparty-credit-risk",
+      "term": "Counterparty Credit Risk",
+      "definition": "Risk that a reinsurer fails to pay its share of a claim, leaving the ceding insurer to absorb the shortfall.",
+      "examples": [
+        "Ceding insurers monitor a reinsurer's financial strength rating to manage counterparty credit risk.",
+        "Counterparty credit risk is a key reason reinsurance is often spread across several reinsurers.",
+        "A reinsurer's insolvency is the clearest way counterparty credit risk materializes."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Risk"
+      ],
+      "synonyms": [
+        "Reinsurer Credit Risk"
+      ],
+      "related": [
+        {
+          "term": "Reinsurer",
+          "id": "reinsurer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "counterparty credit risk",
+        "reinsurance credit risk",
+        "Counterparty Credit Risk"
+      ]
+    },
+    {
+      "id": "reinsurance-basis-risk",
+      "term": "Basis Risk",
+      "definition": "Risk that a reinsurance recovery does not move in line with the ceding insurer's actual losses, leaving a mismatch between what's paid out to policyholders and what's recovered from the reinsurer.",
+      "examples": [
+        "Basis risk is a common concern with parametric or index-based reinsurance triggers.",
+        "A poorly matched reinsurance trigger can leave significant basis risk.",
+        "Insurers weigh basis risk against the simplicity of an index-based reinsurance structure."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "basis risk",
+        "reinsurance basis risk",
+        "Basis Risk"
+      ]
+    },
+    {
+      "id": "reinsurance-treaty-coverage-gap-risk",
+      "term": "Treaty Coverage Gap Risk",
+      "definition": "Risk that a reinsurance treaty's terms leave the ceding insurer exposed to losses that turn out not to actually be covered.",
+      "examples": [
+        "Treaty coverage gap risk often surfaces only when an unusual claim tests the treaty's exact wording.",
+        "Careful treaty drafting is meant to minimize treaty coverage gap risk.",
+        "A new product line can introduce treaty coverage gap risk if the existing treaty wasn't updated to include it."
+      ],
+      "categories": [
+        "Reinsurance",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Facultative Reinsurance",
+          "id": "facultative-reinsurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "treaty coverage gap risk",
+        "coverage gap risk",
+        "Treaty Coverage Gap Risk"
+      ]
+    },
+    {
+      "id": "regulatory-compliance-risk",
+      "term": "Compliance Risk",
+      "definition": "Risk of financial or reputational loss from failing to comply with insurance laws, regulations, or reporting requirements.",
+      "examples": [
+        "Compliance risk grows for insurers operating across multiple states with different requirements.",
+        "Regular filings and audits are meant to keep compliance risk in check.",
+        "A missed regulatory deadline is a straightforward way compliance risk materializes."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "compliance risk",
+        "regulatory compliance risk",
+        "Compliance Risk"
+      ]
+    },
+    {
+      "id": "regulatory-change-risk",
+      "term": "Regulatory Change Risk",
+      "definition": "Risk that new or amended regulations increase compliance costs or restrict how a product can be priced, sold, or administered.",
+      "examples": [
+        "Regulatory change risk is a standard consideration when entering a new state or country.",
+        "A new disclosure requirement is a typical way regulatory change risk shows up.",
+        "Insurers track pending legislation to anticipate regulatory change risk."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Compliance Risk",
+          "id": "regulatory-compliance-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "regulatory change risk",
+        "Regulatory Change Risk"
+      ]
+    },
+    {
+      "id": "regulatory-bad-faith-risk",
+      "term": "Bad Faith Risk",
+      "definition": "Risk of legal liability from being found to have unreasonably denied, delayed, or underpaid a valid claim.",
+      "examples": [
+        "Bad faith risk is a major reason insurers document claims decisions so thoroughly.",
+        "A pattern of denied claims without clear justification raises bad faith risk.",
+        "Bad faith risk can expose an insurer to damages well beyond the original claim amount."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Bad Faith",
+          "id": "bad-faith"
+        },
+        {
+          "term": "Litigation Risk",
+          "id": "claims-litigation-risk"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "bad faith risk",
+        "Bad Faith Risk"
+      ]
+    },
+    {
+      "id": "documentation-ambiguous-wording-risk",
+      "term": "Ambiguous Wording Risk",
+      "definition": "Risk that unclear or poorly drafted policy language gets interpreted against the insurer's intent, often in the insured's favor.",
+      "examples": [
+        "Ambiguous wording risk is why insurance policies go through multiple rounds of legal review.",
+        "Courts often resolve ambiguous wording risk by favoring the policyholder's reasonable interpretation.",
+        "A single unclear clause in an exclusion can create significant ambiguous wording risk."
+      ],
+      "categories": [
+        "Insurance Documentation",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Conditions Precedent",
+          "id": "conditions-precedent"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "ambiguous wording risk",
+        "Ambiguous Wording Risk"
+      ]
+    },
+    {
+      "id": "documentation-endorsement-omission-risk",
+      "term": "Endorsement Omission Risk",
+      "definition": "Risk that a needed endorsement is left off a policy, leaving a coverage gap the insured believed had already been addressed.",
+      "examples": [
+        "Endorsement omission risk is a common finding in post-loss coverage reviews.",
+        "A policy renewal is a typical point where endorsement omission risk creeps in.",
+        "Careful policy checklists exist specifically to reduce endorsement omission risk."
+      ],
+      "categories": [
+        "Insurance Documentation",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Endorsement",
+          "id": "endorsement"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "endorsement omission risk",
+        "Endorsement Omission Risk"
+      ]
+    },
+    {
+      "id": "documentation-misrepresentation-risk",
+      "term": "Misrepresentation Risk",
+      "definition": "Risk that inaccurate or incomplete information on an application or in supporting documents is later used to deny a claim or void the policy.",
+      "examples": [
+        "Misrepresentation risk is why application questions are worded so precisely.",
+        "An inaccurate answer about prior claims history is a common source of misrepresentation risk.",
+        "Underwriters weigh misrepresentation risk when deciding how much to verify at application time."
+      ],
+      "categories": [
+        "Insurance Documentation",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "misrepresentation risk",
+        "Misrepresentation Risk"
       ]
     }
   ]

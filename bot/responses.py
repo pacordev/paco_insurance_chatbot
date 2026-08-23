@@ -51,6 +51,20 @@ _DEFINITION_TEMPLATES = [
     "Sure thing, {name}. {term}: {definition}",
 ]
 
+# A handful of definitions run several times the glossary's usual length
+# (bot/data.py's LONG_DEFINITION_THRESHOLD) -- these show a trimmed version
+# first instead, with a nudge toward asking for the rest, rather than
+# dumping a dense multi-sentence passage into the reply every time. Every
+# variant mentions "full definition" so the follow-up phrasing the
+# dispatcher listens for reads naturally as a response to the bot's own
+# wording.
+_LONG_DEFINITION_TEMPLATES = [
+    "{name}, {term} has a longer definition, so here's the short version: {short_definition} Want the full definition?",
+    "{term}, in brief, {name}: {short_definition} That's the short version — say the word if you want the full definition.",
+    "Good question, {name}. {term}, briefly: {short_definition} Ask for the full definition if you want the rest.",
+    "{term}: {short_definition} (That's the short version, {name} — just ask for the full definition to see the whole thing.)",
+]
+
 _EXAMPLE_TEMPLATES = [
     "Here's an example for you, {name}: {example}",
     "For example, {name}: {example}",
@@ -258,10 +272,18 @@ def render(intent: Intent, term: Term | None = None, *, name: str | None = None,
       when the fuzzy matcher found a few close-but-uncertain guesses, this
       is what turns that into a real "did you mean X or Y?" question
       instead of a flat "I don't understand."
+    - ASK_DEFINITION optionally takes `full=True` to force the complete
+      definition even for a term whose definition normally gets trimmed —
+      this is what the dispatcher passes when the user actually asks for
+      the full definition after seeing the short version.
     """
     name = name or _DEFAULT_NAME
 
     if intent is Intent.ASK_DEFINITION:
+        if term.is_long_definition and not kwargs.get("full"):
+            return random.choice(_LONG_DEFINITION_TEMPLATES).format(
+                term=term.term, short_definition=term.short_definition, name=name
+            )
         return random.choice(_DEFINITION_TEMPLATES).format(
             term=term.term,
             definition=term.definition,

@@ -62,6 +62,42 @@ class DispatcherTests(unittest.TestCase):
         self.assertEqual(self.state.last_intent, Intent.ASK_DEFINITION)
         self.assertIn("Reinsurance", reply)
 
+    def test_long_definition_shows_short_version_then_full_on_request(self):
+        term = self.store.get("actuarial-report")
+        self.assertTrue(term.is_long_definition)  # confirms this test actually exercises the trimming
+
+        short_reply = self._say("what is an actuarial report")
+        self.assertIn(term.short_definition, short_reply)
+        self.assertNotIn(term.definition, short_reply)
+        self.assertEqual(self.state.pending_full_definition_term_id, term.id)
+
+        full_reply = self._say("yes")
+        self.assertIn(term.definition.rstrip("."), full_reply)
+        self.assertIsNone(self.state.pending_full_definition_term_id)
+
+    def test_long_definition_full_request_phrasing_variants(self):
+        for phrasing in ("yes", "give me the full definition", "tell me more", "sure"):
+            with self.subTest(phrasing=phrasing):
+                self.setUp()
+                self._say("what is an actuarial report")
+                full_reply = self._say(phrasing)
+                self.assertIn(self.store.get("actuarial-report").definition.rstrip("."), full_reply)
+
+    def test_ignoring_the_full_definition_prompt_falls_through_normally(self):
+        self._say("what is an actuarial report")
+        reply = self._say("what is a deductible")
+        self.assertIn("Deductible", reply)
+        self.assertIsNone(self.state.pending_full_definition_term_id)
+
+    def test_short_definition_is_unaffected_by_the_long_definition_feature(self):
+        term = self.store.get("deductible")
+        self.assertFalse(term.is_long_definition)
+        reply = self._say("what is a deductible")
+        # rstrip a trailing period: one legitimate template variant drops it
+        # in favor of a dash (see test_responses.py's equivalent check).
+        self.assertIn(term.definition.rstrip("."), reply)
+        self.assertIsNone(self.state.pending_full_definition_term_id)
+
     def test_disambiguation_reply_by_position(self):
         # "workers comp" doesn't exactly match any lookup key, so it should
         # come back as a multi-candidate disambiguation question rather than

@@ -80,6 +80,17 @@ _STOP_QUIZ_PATTERNS = [
     re.compile(r"\bthat'?s enough\b", re.I),
 ]
 
+# How a user asks for the rest of a definition that got trimmed for length
+# (bot/data.py's LONG_DEFINITION_THRESHOLD) — checked only when
+# state.pending_full_definition_term_id is set, right after the bot itself
+# just asked "want the full definition?".
+_FULL_DEFINITION_PATTERNS = [
+    re.compile(r"^\s*(yes|yeah|yep|sure|please|ok(ay)?)\W*$", re.I),
+    re.compile(r"\b(full|complete|whole|entire)\b.*\bdefinition\b", re.I),
+    re.compile(r"\bgive me (the )?(rest|more)\b", re.I),
+    re.compile(r"\btell me more\b", re.I),
+]
+
 
 class Dispatcher:
     """The bot's main "brain loop" for a single conversation turn."""
@@ -100,6 +111,17 @@ class Dispatcher:
             if self._is_stop_quiz(text):
                 return self._end_quiz(state)
             return self._handle_quiz_answer(text, state)
+
+        # Same idea as the pending-disambiguation check further down: if the
+        # bot just showed a trimmed definition and asked "want the full
+        # definition?", give that question first right of interpretation. A
+        # message that doesn't actually answer it (a new question, "quiz
+        # me", etc.) falls through to normal handling below, and gets
+        # cleared there regardless (see _respond()).
+        if state.pending_full_definition_term_id and self._is_full_definition_request(text):
+            term = self.store.get(state.pending_full_definition_term_id)
+            reply = self._render(Intent.ASK_DEFINITION, state, term=term, full=True)
+            return self._respond(reply, Intent.ASK_DEFINITION, state, term_id=term.id)
 
         intent = recognize_intent(text)
 
@@ -178,7 +200,14 @@ class Dispatcher:
         # request, which is this bot's core, most common use case.
         effective_intent = Intent.ASK_DEFINITION if intent is Intent.FALLBACK else intent
         reply = self._render(effective_intent, state, term=term)
-        return self._respond(reply, effective_intent, state, term_id=term.id)
+        result = self._respond(reply, effective_intent, state, term_id=term.id)
+        # If this reply showed the trimmed version of a long definition,
+        # remember which term so a follow-up "yes"/"full definition" can
+        # show the rest. _respond() above already cleared this for every
+        # other path, so it only needs setting (not clearing) here.
+        if effective_intent is Intent.ASK_DEFINITION and term.is_long_definition:
+            state.pending_full_definition_term_id = term.id
+        return result
 
     def _handle_compare(self, matches: list[EntityMatch], state: ConversationState) -> tuple[str, ConversationState]:
         term_ids = self._unique_term_ids(matches)
@@ -261,6 +290,10 @@ class Dispatcher:
         state.quiz_score = 0
         state.quiz_total = 0
         state.quiz_asked_ids = set()
+        # Quiz methods don't go through _respond(), which is what normally
+        # clears this — drop it explicitly so a stale "want the full
+        # definition?" from before the quiz can't misfire once it ends.
+        state.pending_full_definition_term_id = None
 
         term = self._pick_quiz_term(state, pool)
         state.quiz_term_id = term.id
@@ -311,6 +344,9 @@ class Dispatcher:
 
     def _is_stop_quiz(self, text: str) -> bool:
         return any(pattern.search(text) for pattern in _STOP_QUIZ_PATTERNS)
+
+    def _is_full_definition_request(self, text: str) -> bool:
+        return any(pattern.search(text) for pattern in _FULL_DEFINITION_PATTERNS)
 
     def _resolve_domain(self, text: str) -> str | None:
         """Find a line-of-business category name mentioned in free text —
@@ -387,4 +423,5 @@ class Dispatcher:
         if term_id is not None:
             state.last_term_id = term_id
         state.pending_disambiguation = []
+        state.pending_full_definition_term_id = None
         return reply, state

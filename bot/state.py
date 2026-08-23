@@ -44,6 +44,13 @@ class ConversationState:
     # mean X or Y?" — and get resolved (or cleared) on the next message.
     pending_disambiguation: list[str] = field(default_factory=list)
 
+    # Set when the bot just showed a trimmed version of a long definition
+    # (bot/data.py's LONG_DEFINITION_THRESHOLD) — holds the term id so that
+    # a follow-up like "yes" or "give me the full definition" can show the
+    # rest without the user repeating the term name. Cleared on any turn
+    # that doesn't answer it, same pattern as pending_disambiguation.
+    pending_full_definition_term_id: str | None = None
+
     # Quiz mode is a genuine "mode" rather than a per-message intent: once
     # `quiz_term_id` is set, the dispatcher treats *every* incoming message
     # as an answer attempt (or a request to stop) instead of running normal

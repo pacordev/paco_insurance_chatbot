@@ -13,6 +13,14 @@ from pathlib import Path
 
 DEFAULT_DATA_PATH = Path(__file__).resolve().parent.parent / "insurance_terms.json"
 
+# A handful of definitions (33 of 1,175 at last count) run several times the
+# glossary's ~110-character median -- multi-sentence passages up to 800
+# characters. Answering with those in full every time reads noticeably
+# denser than a typical reply, so ask_definition shows a trimmed version
+# first for anything over this length, with the full text available on
+# request (bot/dispatcher.py).
+LONG_DEFINITION_THRESHOLD = 400
+
 
 @dataclass(frozen=True)
 class RelatedTerm:
@@ -38,6 +46,27 @@ class Term:
     related: list[RelatedTerm]
     difficulty: str
     lookup_keys: list[str]
+
+    @property
+    def is_long_definition(self) -> bool:
+        return len(self.definition) > LONG_DEFINITION_THRESHOLD
+
+    @property
+    def short_definition(self) -> str:
+        """A trimmed version of a long definition, for the "want the full
+        definition?" flow (bot/dispatcher.py) -- prefers cutting at the end
+        of the first sentence if that's still reasonably short, otherwise
+        hard-truncates at a word boundary.
+        """
+        stripped = self.definition.strip()
+        if not self.is_long_definition:
+            return stripped
+        limit = LONG_DEFINITION_THRESHOLD // 2
+        first_sentence_end = stripped.find(". ")
+        if 0 < first_sentence_end <= limit:
+            return stripped[: first_sentence_end + 1]
+        truncated = stripped[:limit].rsplit(" ", 1)[0]
+        return truncated.rstrip(",;: ") + "…"
 
 
 class TermStore:

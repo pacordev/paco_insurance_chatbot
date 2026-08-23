@@ -43,6 +43,25 @@ class RenderTests(unittest.TestCase):
             "replacement-cost", "Replacement Cost",
             "The cost to replace an item with a new one of similar kind, with no deduction for depreciation.",
         )
+        # Long enough to cross LONG_DEFINITION_THRESHOLD (400 chars) so
+        # these tests actually exercise the short-first-then-full flow.
+        self.dense_term = _make_term(
+            "dense-term", "Dense Term",
+            "This is a deliberately long, dense definition used to exercise the short-first-then-full-on-"
+            "request flow. " * 6,
+        )
+
+    def test_ask_definition_for_a_long_definition_shows_the_short_version(self):
+        self.assertTrue(self.dense_term.is_long_definition)
+        for _ in range(10):
+            reply = render(Intent.ASK_DEFINITION, term=self.dense_term)
+            self.assertIn(self.dense_term.short_definition, reply)
+            self.assertNotIn(self.dense_term.definition, reply)
+            self.assertIn("full definition", reply.lower())
+
+    def test_ask_definition_with_full_true_shows_the_whole_thing(self):
+        reply = render(Intent.ASK_DEFINITION, term=self.dense_term, full=True)
+        self.assertIn(self.dense_term.definition, reply)
 
     def test_ask_definition_includes_term_and_definition(self):
         # Run several times since the wording is picked at random — every

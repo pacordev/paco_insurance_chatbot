@@ -46,6 +46,7 @@ Beyond the command line, this core is also reachable over HTTP now. A separate F
 - **[unittest](https://docs.python.org/3/library/unittest.html)** (Python standard library) — the regression test suite in `tests/`
 - **argparse-free CLI** — `paco_chatbot.py` is a plain `input()`/`print()` REPL, no CLI framework
 - **[FastAPI](https://fastapi.tiangolo.com/)** — the backend wrapping the existing `Dispatcher`/`TermStore` core; lives in a separate repo, deployed and live on Render (see "What's next")
+- **[Render](https://render.com/)** — hosts that FastAPI backend as a persistent web service, built straight from the repo (no Dockerfile — just a `render.yaml` blueprint and a plain `pip install`); free-tier instance, so it spins down after inactivity and takes a bit to wake back up on the next request
 
 ---
 

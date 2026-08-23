@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paco-insurance-chatbot"
+version = "1.5.0"
+requires-python = ">=3.10"
+dependencies = [
+    "spacy>=3.8,<4",
+    "rapidfuzz>=3.14,<4",
+    "click>=8.4,<9",
+]
+
+[tool.setuptools]
+packages = ["bot"]
+
+[tool.setuptools.package-data]
+bot = ["insurance_terms.json"]

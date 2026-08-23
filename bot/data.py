@@ -11,7 +11,7 @@ import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DEFAULT_DATA_PATH = Path(__file__).resolve().parent.parent / "insurance_terms.json"
+DEFAULT_DATA_PATH = Path(__file__).resolve().parent / "insurance_terms.json"
 
 # A handful of definitions (33 of 1,175 at last count) run several times the
 # glossary's ~110-character median -- multi-sentence passages up to 800

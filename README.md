@@ -35,6 +35,19 @@ In other words: `python paco_chatbot.py` now opens by asking your name and greet
 
 ---
 
+## Tech Stack
+
+- **Python 3** — the whole project; also the secondary goal of getting more comfortable with the language
+- **spaCy** — `PhraseMatcher` powers exact entity matching (which glossary term a message is about), preferring the longest match when phrases overlap
+- **rapidfuzz** — typo-tolerant fuzzy matching, used only when the exact match comes up empty
+- **JSON** (`insurance_terms.json`) — the entire knowledge base; no database yet, the dataset is small enough to load into memory once at startup
+- **unittest** (Python standard library) — the regression test suite in `tests/`
+- **argparse-free CLI** — `paco_chatbot.py` is a plain `input()`/`print()` REPL, no CLI framework
+- **FastAPI** *(planned)* — the backend wrapping the existing `Dispatcher`/`TermStore` core once this gets shipped as an API (see "What's next")
+- **Docker / Docker Compose** *(planned)* — containerizing the API for deployment
+
+---
+
 ## Project structure
 
 ```

@@ -25,7 +25,7 @@ Secondary, smaller goal: I'm using this as a way to practice writing real Python
 
 Data is done (for the moment). Architecture is decided. The core conversation loop works end to end:
 
-- The dataset (`insurance_terms.json`) now holds **1,187 terms** across **16 categories**, each with 5 example sentences, validated and ready to build against.
+- The dataset (`insurance_terms.json`) now holds **1,344 terms** across **17 categories**, each with example sentences, validated and ready to build against.
 - The entity-matching layer (figuring out *which term* someone means) is built and tested, including preferring the longest match when phrases overlap.
 - The intent-recognition layer (figuring out *what they want* — a definition, an example, a comparison, browsing a category's risks or its full term list, a quiz, etc.) is built and tested.
 - Response templates (turning a term + intent into actual reply text) are built and tested, with real phrasing variety and every reply personalized by name.
@@ -61,7 +61,7 @@ ins_chatbot/
 
 ### File by file
 
-**`insurance_terms.json`** — The knowledge base. 1,187 insurance terms across 16 categories (including a cross-cutting `Risk` tag, alongside line-of-business categories like `Life`/`Auto`/`Health`), each with an id, definition, five example sentences, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
+**`insurance_terms.json`** — The knowledge base. 1,344 insurance terms across 17 categories (including a cross-cutting `Risk` tag and a dedicated `Insurtech & Technology` category, alongside line-of-business categories like `Life`/`Auto`/`Health`), each with an id, definition, example sentences, categories, a difficulty rating, related-term links, and every phrase/abbreviation ("premium," "workers comp," etc.) someone might use to refer to it. This is the only data file the bot actually needs; everything else was intermediate work to produce it.
 
 **`bot/data.py`** — Reads `insurance_terms.json` off disk exactly once and reshapes it into a `TermStore`: proper Python objects instead of raw dict/JSON, plus an index mapping every possible phrase a user might type straight to the term it belongs to. `by_category()`/`by_categories()` filter terms by one or more category tags (e.g. "Life" + "Risk" together), used for browsing-style questions. Every other module goes through this one to get at the glossary — nothing else touches the JSON file directly.
 

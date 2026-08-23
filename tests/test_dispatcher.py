@@ -17,7 +17,7 @@ Run with: python -m unittest tests.test_dispatcher
 
 import unittest
 
-from bot.data import TermStore
+from bot.data import Term, TermStore
 from bot.dispatcher import _LIST_TERMS_CAP, Dispatcher, _difficulty_then_alpha_key
 from bot.intents import Intent
 from bot.state import ConversationState
@@ -191,10 +191,25 @@ class DispatcherTests(unittest.TestCase):
         self.assertIn(str(auto_term_count), reply)
 
     def test_list_terms_for_a_small_category_shows_everything(self):
-        reply = self._say("list Insurance Documentation terms")
-        doc_terms = self.store.by_category("Insurance Documentation")
-        self.assertLessEqual(len(doc_terms), 10)  # confirms this does NOT exercise the cap
-        for term in doc_terms:
+        # Every real category has grown past _LIST_TERMS_CAP by now (even the
+        # smallest, Insurance Documentation, passed it), so there's no longer
+        # a real category left to exercise the "shows everything, not
+        # capped" path against — this builds a tiny synthetic store just for
+        # that, the same fake-data approach test_responses.py uses for
+        # content-independent structural checks.
+        small_category = "Widgets"
+        fake_terms = {
+            f"fake-term-{i}": Term(
+                id=f"fake-term-{i}", term=f"Fake Term {i}", definition="A made-up term for this test.",
+                examples=["An example sentence."], categories=[small_category], synonyms=[],
+                related=[], difficulty="Basic", lookup_keys=[f"fake term {i}"],
+            )
+            for i in range(_LIST_TERMS_CAP - 2)
+        }
+        small_store = TermStore(fake_terms, {small_category: len(fake_terms)})
+        small_dispatcher = Dispatcher(small_store)
+        reply, _ = small_dispatcher.process_turn(f"list {small_category} terms", ConversationState())
+        for term in fake_terms.values():
             self.assertIn(term.term, reply)
 
     def test_list_terms_with_no_domain_falls_back_to_list_categories(self):

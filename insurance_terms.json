@@ -5,24 +5,25 @@
     "generated": "2026-08-03",
     "updated": "2026-08-22",
     "source": "dicc_ins_terms_enriched.json",
-    "count": 1187,
+    "count": 1344,
     "categories": {
-      "Liability": 144,
-      "Property": 193,
+      "Liability": 153,
+      "Property": 201,
       "Workers Compensation": 79,
-      "Claims": 178,
-      "Auto": 74,
-      "Health": 157,
-      "General Insurance Concepts": 378,
-      "Life": 80,
-      "Regulatory & Legal": 66,
-      "Underwriting & Actuarial": 104,
-      "Financial / Accounting": 118,
-      "Reinsurance": 62,
-      "Marine & Aviation": 17,
-      "Risk": 40,
-      "Financial Lines & Surety": 40,
-      "Insurance Documentation": 7
+      "Claims": 188,
+      "Auto": 83,
+      "Health": 161,
+      "General Insurance Concepts": 398,
+      "Life": 91,
+      "Regulatory & Legal": 79,
+      "Underwriting & Actuarial": 123,
+      "Financial / Accounting": 137,
+      "Reinsurance": 64,
+      "Marine & Aviation": 20,
+      "Risk": 53,
+      "Financial Lines & Surety": 47,
+      "Insurance Documentation": 12,
+      "Insurtech & Technology": 85
     },
     "difficulty_levels": [
       "Basic",
@@ -30821,6 +30822,3997 @@
       "lookup_keys": [
         "misrepresentation risk",
         "Misrepresentation Risk"
+      ]
+    },
+    {
+      "id": "term-life-insurance",
+      "term": "Term Life Insurance",
+      "definition": "A life insurance policy that provides coverage at a fixed premium for a limited period, the policy's term. If the insured dies during the term, the policy pays a death benefit; if the term expires, coverage ends unless the policy is renewed or converted.",
+      "examples": [
+        "A 20-year term life insurance policy is often used to cover a mortgage or a child's years at home.",
+        "Term life insurance is usually far cheaper than whole life insurance for the same death benefit.",
+        "When the term life insurance policy expired, Sarah had to apply for new coverage at an older age.",
+        "Term life insurance pays a death benefit only if the insured dies within the policy's term.",
+        "Many term life insurance policies can be converted to permanent coverage without a new medical exam."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [
+        "Term Life"
+      ],
+      "related": [
+        {
+          "term": "Whole Life Insurance",
+          "id": "whole-life-insurance"
+        },
+        {
+          "term": "Renewable Term Insurance",
+          "id": "renewable-term-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "term life insurance",
+        "term life"
+      ]
+    },
+    {
+      "id": "force-majeure",
+      "term": "Force Majeure",
+      "definition": "A contract clause that relieves both parties from liability or performance obligations when an extraordinary event beyond their control -- such as war, riot, or a natural disaster -- prevents one or both from fulfilling the contract.",
+      "examples": [
+        "The reinsurer invoked the force majeure clause after a government-ordered shutdown halted operations.",
+        "Force majeure clauses are negotiated carefully in large commercial contracts.",
+        "A hurricane is a classic example of the kind of event a force majeure clause addresses.",
+        "Not every unexpected event qualifies as force majeure under a given contract.",
+        "The dispute centered on whether the strike counted as force majeure."
+      ],
+      "categories": [
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "force majeure"
+      ]
+    },
+    {
+      "id": "duty-to-defend",
+      "term": "Duty to Defend",
+      "definition": "An insurer's obligation, common in liability policies, to provide a legal defense to the insured when they're sued under circumstances that could potentially be covered -- even if the claim is later found not covered.",
+      "examples": [
+        "The insurer's duty to defend kicked in as soon as the lawsuit was filed.",
+        "Duty to defend is broader than the duty to indemnify -- it can apply even to claims that turn out to be excluded.",
+        "General liability policies typically include a duty to defend provision.",
+        "The court ruled the insurer had breached its duty to defend by refusing to appoint counsel.",
+        "Duty to defend costs are usually paid in addition to, not out of, the policy limit."
+      ],
+      "categories": [
+        "Liability",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Liability Insurance",
+          "id": "liability-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "duty to defend"
+      ]
+    },
+    {
+      "id": "key-person-insurance",
+      "term": "Key Person Insurance",
+      "definition": "A life insurance policy a company buys on the life of a key employee, executive, or owner, with the company as beneficiary, meant to offset the financial impact of losing that person unexpectedly.",
+      "examples": [
+        "The startup took out key person insurance on its founder before closing a major funding round.",
+        "Lenders sometimes require key person insurance as a condition of a business loan.",
+        "Key person insurance paid out when the company's lead engineer passed away suddenly.",
+        "The premium for key person insurance is usually paid by the company, not the individual covered.",
+        "Key person insurance is common for businesses that depend heavily on one or two people."
+      ],
+      "categories": [
+        "Life",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "Key Man Insurance"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "key person insurance",
+        "key man insurance"
+      ]
+    },
+    {
+      "id": "net-premium",
+      "term": "Net Premium",
+      "definition": "The portion of a premium calculated to cover expected losses and benefits, before administrative costs, commissions, and other expenses are added -- the actuarial building block for the final rate charged to the policyholder.",
+      "examples": [
+        "The actuary calculated the net premium before adding the expense loading.",
+        "Net premium is based on expected claims, not on what the insurer needs to cover overhead.",
+        "Gross premium equals net premium plus the expense and profit loadings.",
+        "A change in mortality assumptions directly affects the net premium for a life policy.",
+        "Net premium calculations rely on statistical mortality and morbidity tables."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Gross Premium",
+          "id": "gross-premium"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "net premium"
+      ]
+    },
+    {
+      "id": "warranty-policy-condition",
+      "term": "Warranty (Policy Condition)",
+      "definition": "A statement in an insurance policy guaranteeing that certain conditions relating to the insured risk will be met; violating a warranty can void the policy. Common in marine insurance, where a warranty might require a vessel to stay within specified geographical limits.",
+      "examples": [
+        "The marine policy's navigational warranty required the vessel to remain within charted shipping lanes.",
+        "Breaching a warranty can void coverage even if the breach didn't cause the loss.",
+        "Warranties are enforced more strictly in marine insurance than in many other lines.",
+        "The underwriter added a warranty requiring a working sprinkler system as a condition of coverage.",
+        "Unlike a representation, a warranty must be exactly true, not just substantially true."
+      ],
+      "categories": [
+        "Marine & Aviation",
+        "Insurance Documentation"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Conditions Precedent",
+          "id": "conditions-precedent"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "warranty policy condition",
+        "insurance warranty condition",
+        "warranty (policy condition)"
+      ]
+    },
+    {
+      "id": "blockchain",
+      "term": "Blockchain",
+      "definition": "A distributed, tamper-resistant digital ledger that records transactions across many computers so that no single party controls or can alter the record. In insurance, blockchain is used to secure claims data, verify identities, and power self-executing smart contracts.",
+      "examples": [
+        "Some insurers pilot blockchain to speed up reinsurance settlement between multiple parties.",
+        "Blockchain's shared ledger can reduce disputes over which version of a claim record is accurate.",
+        "A blockchain-based platform let several insurers share flight-delay data for parametric payouts.",
+        "Blockchain adoption in insurance has been slower than in banking, but pilots continue to grow.",
+        "Fraud investigators pointed to the blockchain's audit trail to confirm the policy's issue date."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Smart Contracts",
+          "id": "smart-contracts"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "blockchain"
+      ]
+    },
+    {
+      "id": "telematics",
+      "term": "Telematics",
+      "definition": "The use of connected devices and vehicle systems -- GPS, sensors, onboard diagnostics -- to collect and transmit data on driving behavior such as speed, braking, and location. Insurers use telematics data to price auto policies based on how someone actually drives.",
+      "examples": [
+        "Her insurer offered a discount for enrolling in the telematics program.",
+        "Telematics data showed the driver braked hard several times during the trial period.",
+        "Usage-based insurance programs are built on telematics data collected from a phone or a plug-in device.",
+        "Telematics has made pay-how-you-drive pricing possible for everyday drivers.",
+        "The fleet manager used telematics to identify which drivers needed additional coaching."
+      ],
+      "categories": [
+        "Auto",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Usage-Based Insurance (UBI)",
+          "id": "usage-based-insurance-ubi"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "telematics"
+      ]
+    },
+    {
+      "id": "usage-based-insurance-ubi",
+      "term": "Usage-Based Insurance (UBI)",
+      "definition": "An auto insurance pricing model that adjusts premiums based on how, how much, or when a policyholder actually drives, typically measured through telematics data such as speed, braking, mileage, and time of day.",
+      "examples": [
+        "Under usage-based insurance, driving less than usual one month lowered her next bill.",
+        "UBI programs reward smooth, low-mileage driving with lower premiums.",
+        "He opted into usage-based insurance after his commute shortened to a few miles a day.",
+        "Usage-based insurance shifts pricing from broad demographic factors toward actual driving behavior.",
+        "The insurer's UBI app tracked hard-braking events throughout the month."
+      ],
+      "categories": [
+        "Auto",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "UBI"
+      ],
+      "related": [
+        {
+          "term": "Telematics",
+          "id": "telematics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "usage-based insurance",
+        "usage based insurance",
+        "ubi"
+      ]
+    },
+    {
+      "id": "robotic-process-automation-rpa",
+      "term": "Robotic Process Automation (RPA)",
+      "definition": "Software robots that automate highly repetitive, rules-based tasks normally performed by people, such as data entry or routine claims processing steps.",
+      "examples": [
+        "RPA now handles the repetitive data-entry steps in the claims intake process.",
+        "The back office deployed robotic process automation to reconcile policy records overnight.",
+        "RPA reduced the time needed to process routine endorsement requests.",
+        "Robotic process automation doesn't require changing the underlying legacy systems it works with.",
+        "The audit found RPA bots occasionally needed human review for unusual claim formats."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "RPA"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "robotic process automation",
+        "rpa"
+      ]
+    },
+    {
+      "id": "internet-of-things-iot-in-insurance",
+      "term": "Internet of Things (IoT) in Insurance",
+      "definition": "Network-connected sensors and devices -- wearables, smart home systems, connected vehicles -- that collect real-time data insurers use to assess risk, prevent losses, and personalize coverage.",
+      "examples": [
+        "A connected water sensor, an IoT device, alerted the homeowner before a small leak became a major claim.",
+        "IoT wearables let some life insurers offer discounts for meeting activity goals.",
+        "Smart smoke detectors are one of the more common IoT devices insurers encourage policyholders to install.",
+        "IoT data from a connected car informed the claims adjuster's assessment of the accident.",
+        "Insurers piloting IoT programs had to address data privacy concerns from policyholders."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "IoT"
+      ],
+      "related": [
+        {
+          "term": "Telematics",
+          "id": "telematics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "internet of things",
+        "iot"
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "term": "Machine Learning",
+      "definition": "A branch of artificial intelligence in which software improves at a task -- such as predicting risk or detecting fraud -- by learning patterns from data, rather than following explicitly programmed rules.",
+      "examples": [
+        "A machine learning model flagged the claim as unusually likely to be fraudulent.",
+        "Underwriters used a machine learning model to refine how they priced a new product line.",
+        "The machine learning system improved its predictions as more claims data became available.",
+        "Machine learning is used across underwriting, claims, and customer service in modern insurers.",
+        "The team retrained the machine learning model after noticing its accuracy had drifted."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "ML"
+      ],
+      "related": [
+        {
+          "term": "Predictive Analytics",
+          "id": "predictive-analytics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "machine learning"
+      ]
+    },
+    {
+      "id": "smart-contracts",
+      "term": "Smart Contracts",
+      "definition": "Self-executing contracts whose terms are written directly into code, often on a blockchain, so that actions like a claim payout or a premium payment trigger automatically once agreed conditions are met.",
+      "examples": [
+        "A parametric flight-delay policy used a smart contract to pay out automatically once the delay was confirmed.",
+        "Smart contracts can settle a straightforward claim without a human adjuster in the loop.",
+        "The smart contract released payment the moment the weather station reported the trigger wind speed.",
+        "Smart contracts still need reliable outside data feeds to know when a covered event occurred.",
+        "Disputes over a smart contract's logic can be harder to resolve than disputes over a written policy."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Blockchain",
+          "id": "blockchain"
+        },
+        {
+          "term": "Parametric Insurance",
+          "id": "parametric-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "smart contracts",
+        "smart contract"
+      ]
+    },
+    {
+      "id": "chatbots-and-virtual-assistants",
+      "term": "Chatbots and Virtual Assistants",
+      "definition": "AI-driven conversational tools that handle customer service tasks -- answering policy questions, guiding claims reporting, providing 24/7 support -- without a human agent.",
+      "examples": [
+        "The insurer's chatbot walked the customer through filing a first notice of loss at 2 a.m.",
+        "Virtual assistants handle routine policy questions, freeing human agents for complex cases.",
+        "A chatbot flagged the claim for human review once the conversation turned unusual.",
+        "Customer satisfaction dipped when the chatbot couldn't resolve a billing dispute on its own.",
+        "The virtual assistant reminded policyholders about an upcoming renewal date."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "chatbots and virtual assistants",
+        "chatbot",
+        "virtual assistant"
+      ]
+    },
+    {
+      "id": "embedded-insurance",
+      "term": "Embedded Insurance",
+      "definition": "Insurance coverage sold as part of another purchase, at the point of sale, rather than as a separate transaction -- such as travel insurance offered when booking a flight or device protection offered when buying a phone.",
+      "examples": [
+        "The airline offered embedded insurance for trip cancellation right at checkout.",
+        "Embedded insurance lets a retailer sell device protection without the buyer visiting a separate insurer.",
+        "Embedded insurance products tend to have simpler terms than standalone policies.",
+        "A ride-share app offering embedded insurance covers the driver only while a trip is active.",
+        "Embedded insurance has grown alongside e-commerce, since it fits naturally into an existing checkout flow."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "embedded insurance"
+      ]
+    },
+    {
+      "id": "regulatory-technology-regtech",
+      "term": "Regulatory Technology (RegTech)",
+      "definition": "Technology used to help insurers meet regulatory requirements more efficiently, such as automated compliance monitoring, anti-money-laundering checks, and regulatory reporting.",
+      "examples": [
+        "RegTech tools flagged the filing before the deadline, catching a formatting error automatically.",
+        "The compliance team adopted RegTech software to keep up with state-by-state rate filing requirements.",
+        "RegTech automated the anti-money-laundering checks that used to take days to complete by hand.",
+        "Insurers expanding into new states often lean on RegTech to track differing regulatory requirements.",
+        "RegTech reduced the manual effort needed for the insurer's quarterly regulatory reporting."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "RegTech"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "regulatory technology",
+        "regtech"
+      ]
+    },
+    {
+      "id": "predictive-analytics",
+      "term": "Predictive Analytics",
+      "definition": "The use of historical data, statistics, and machine learning to estimate the likelihood of a future outcome -- used across insurance for risk assessment, pricing, fraud detection, and customer targeting.",
+      "examples": [
+        "Predictive analytics flagged which policies were most likely to lapse at renewal.",
+        "The underwriting team used predictive analytics to refine its pricing for a new product.",
+        "Predictive analytics helped the fraud unit prioritize which claims to investigate first.",
+        "A predictive analytics model estimated each applicant's likelihood of filing a claim.",
+        "Predictive analytics is only as good as the historical data it's trained on."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Machine Learning",
+          "id": "machine-learning"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "predictive analytics"
+      ]
+    },
+    {
+      "id": "insurtech",
+      "term": "Insurtech",
+      "definition": "A blend of \"insurance\" and \"technology\" -- technology-driven innovation aimed at making the insurance industry more efficient and customer-friendly, using tools like AI, big data, IoT, and blockchain to change how policies are priced, sold, and serviced.",
+      "examples": [
+        "The insurtech startup built its entire underwriting process around a mobile app.",
+        "Traditional insurers increasingly partner with insurtech companies instead of competing with them.",
+        "Insurtech funding surged as investors bet on digital-first insurance models.",
+        "An insurtech product let customers buy short-term coverage for a single weekend trip.",
+        "Insurtech has reshaped customer expectations around how quickly a claim should be resolved."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Blockchain",
+          "id": "blockchain"
+        },
+        {
+          "term": "Machine Learning",
+          "id": "machine-learning"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "insurtech"
+      ]
+    },
+    {
+      "id": "affinity-sales",
+      "term": "Affinity Sales",
+      "definition": "Selling insurance through a group such as a professional association, alumni network, or employer, typically offering members a discount or streamlined enrollment.",
+      "examples": [
+        "The bar association's affinity sales program offered members a discount on malpractice coverage.",
+        "Affinity sales let the insurer reach a pre-qualified audience without individual underwriting for each member.",
+        "Her homeowners policy came through an affinity sales deal with her credit union.",
+        "Affinity sales programs often bundle marketing costs into a lower combined rate for the group.",
+        "The insurer ended the affinity sales partnership when membership numbers declined."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "affinity sales",
+        "affinity marketing"
+      ]
+    },
+    {
+      "id": "annual-percentage-rate-apr",
+      "term": "Annual Percentage Rate (APR)",
+      "definition": "The yearly cost of borrowing or the yearly return on an investment, expressed as a percentage and including fees, not just the stated interest rate. In insurance, APR most often comes up with premium finance and payment protection products.",
+      "examples": [
+        "Financing the annual premium came with a 9% APR from the premium finance company.",
+        "Comparing two premium payment plans meant comparing their APRs, not just the monthly amount.",
+        "The APR on the credit-life-linked loan included the cost of the insurance itself.",
+        "A low sticker premium can hide a high APR once financing charges are added.",
+        "Regulators require the APR to be disclosed clearly on payment protection insurance products."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "APR"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "annual percentage rate",
+        "apr"
+      ]
+    },
+    {
+      "id": "anti-theft-device",
+      "term": "Anti-Theft Device",
+      "definition": "A tool or system installed on a vehicle or property to prevent or deter theft, such as an alarm, immobilizer, or tracking device. Insurers often discount premiums for insured items equipped with one.",
+      "examples": [
+        "Installing an anti-theft device qualified the car for a small premium discount.",
+        "The stolen vehicle was recovered quickly thanks to its anti-theft tracking device.",
+        "Underwriters asked whether the motorcycle had an anti-theft device before quoting the policy.",
+        "Not all anti-theft devices qualify for the same size of discount.",
+        "The dealership installed an anti-theft device as standard equipment on the new model."
+      ],
+      "categories": [
+        "Auto"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "anti-theft device",
+        "anti theft device"
+      ]
+    },
+    {
+      "id": "artificial-intelligence-ai",
+      "term": "Artificial Intelligence (AI)",
+      "definition": "Software capable of performing tasks that normally require human judgment, such as recognizing patterns or making decisions. In insurance, AI is used across claims processing, underwriting, fraud detection, and customer service.",
+      "examples": [
+        "AI reviewed the claim photos and pre-filled the damage estimate for the adjuster.",
+        "The underwriting team piloted an AI tool to flag applications needing closer review.",
+        "AI-driven chatbots handled most of the routine policy questions that used to tie up call center staff.",
+        "Regulators asked the insurer to explain how its AI model reached certain pricing decisions.",
+        "AI adoption in claims has sped up settlement times for straightforward losses."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "AI"
+      ],
+      "related": [
+        {
+          "term": "Machine Learning",
+          "id": "machine-learning"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "artificial intelligence",
+        "ai"
+      ]
+    },
+    {
+      "id": "assessment-valuation",
+      "term": "Assessment",
+      "definition": "The process of determining the value of property for insurance purposes, either to set the premium for covering it or to determine the amount payable on a claim.",
+      "examples": [
+        "The assessment valued the damaged roof at just under the policy's coverage limit.",
+        "An independent assessment was ordered after the homeowner disputed the insurer's estimate.",
+        "The jeweler's assessment supported the higher scheduled value on the policy.",
+        "A pre-renewal assessment can catch a property that's become underinsured over time.",
+        "The claims adjuster relied on a contractor's assessment to finalize the settlement amount."
+      ],
+      "categories": [
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "property assessment",
+        "insurance assessment",
+        "assessment"
+      ]
+    },
+    {
+      "id": "authorized-insurer",
+      "term": "Authorized Insurer",
+      "definition": "An insurance company approved by a state's insurance department to sell policies within that state, having met the state's licensing, financial, and regulatory requirements.",
+      "examples": [
+        "The broker confirmed the carrier was an authorized insurer before placing the policy.",
+        "Buying from an authorized insurer gives policyholders access to the state guaranty fund if the insurer fails.",
+        "The company applied to become an authorized insurer in three additional states.",
+        "An authorized insurer must file its rates and forms with the state regulator.",
+        "The agent explained the difference between an authorized insurer and a surplus lines carrier."
+      ],
+      "categories": [
+        "Regulatory & Legal"
+      ],
+      "synonyms": [
+        "Admitted Insurer"
+      ],
+      "related": [
+        {
+          "term": "Non-Admitted Insurance",
+          "id": "non-admitted-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "authorized insurer"
+      ]
+    },
+    {
+      "id": "automated-underwriting",
+      "term": "Automated Underwriting",
+      "definition": "The use of algorithms and software to assess risk and price a policy with little or no manual review, drawing on data analytics, AI, and machine learning to speed up and standardize underwriting decisions.",
+      "examples": [
+        "Automated underwriting returned a quote within seconds of the application being submitted.",
+        "The insurer reserved automated underwriting for lower-risk, straightforward applications.",
+        "Automated underwriting flagged the file for human review once it hit an unusual combination of factors.",
+        "Moving to automated underwriting cut the average time-to-quote from days to minutes.",
+        "Automated underwriting still relies on an actuary having set the underlying rules and models."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "Algorithmic Underwriting",
+        "Digital Underwriting",
+        "Underwriting Automation",
+        "Contextual Underwriting"
+      ],
+      "related": [
+        {
+          "term": "Fully Automated Underwriting",
+          "id": "fully-automated-underwriting"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "automated underwriting",
+        "algorithmic underwriting",
+        "digital underwriting",
+        "underwriting automation",
+        "contextual underwriting"
+      ]
+    },
+    {
+      "id": "average-annual-mileage",
+      "term": "Average Annual Mileage",
+      "definition": "The typical number of miles a vehicle is driven in a year, used by auto insurers as a rating factor since more time on the road generally means more exposure to a claim.",
+      "examples": [
+        "Reporting a lower average annual mileage after switching to remote work reduced her premium.",
+        "The underwriter double-checked the stated average annual mileage against the odometer reading.",
+        "Average annual mileage is one of several factors that go into pricing a personal auto policy.",
+        "A commuter's average annual mileage is usually higher than a retiree's.",
+        "Telematics programs can measure actual mileage rather than relying on a self-reported average."
+      ],
+      "categories": [
+        "Auto"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "average annual mileage",
+        "annual mileage"
+      ]
+    },
+    {
+      "id": "bailee-coverage",
+      "term": "Bailee Coverage",
+      "definition": "Insurance protecting property that belongs to someone else but is temporarily in a business's possession, such as items left with a repair shop, cleaner, or storage facility.",
+      "examples": [
+        "The dry cleaner's bailee coverage paid for the customer's suit damaged in a fire.",
+        "A repair shop's bailee coverage protects customer vehicles left overnight for service.",
+        "Bailee coverage is separate from the shop's own property insurance on its own equipment.",
+        "The warehouse operator increased its bailee coverage limit as stored inventory values grew.",
+        "Without bailee coverage, the business would be personally liable for damage to a customer's goods."
+      ],
+      "categories": [
+        "Marine & Aviation",
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Bailee",
+          "id": "bailee"
+        },
+        {
+          "term": "Inland Marine",
+          "id": "inland-marine"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "bailee coverage",
+        "bailee's coverage"
+      ]
+    },
+    {
+      "id": "behavioral-analytics",
+      "term": "Behavioral Analytics",
+      "definition": "The analysis of how people behave — including online and mobile activity — to understand risk profiles, predict claims, and tailor insurance products to individual needs.",
+      "examples": [
+        "Behavioral analytics showed which policyholders were likely to shop for a new insurer at renewal.",
+        "The marketing team used behavioral analytics to time renewal reminders more effectively.",
+        "Behavioral analytics flagged a change in app usage that preceded a spike in claims.",
+        "Health insurers use behavioral analytics to identify members who might benefit from a wellness program.",
+        "Behavioral analytics raised privacy questions the insurer had to address in its disclosures."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "behavioral analytics"
+      ]
+    },
+    {
+      "id": "big-data",
+      "term": "Big Data",
+      "definition": "Data sets too large or varied for traditional tools to analyze easily, drawn from sources like telematics, wearables, and public records. Insurers use big data and advanced analytics to price risk more precisely and personalize products.",
+      "examples": [
+        "Big data from telematics devices let the insurer price policies down to the individual driver.",
+        "The actuarial team built new rating factors from big data sources that weren't available a decade ago.",
+        "Big data analysis surfaced a regional pattern in water-damage claims the insurer hadn't noticed before.",
+        "Handling big data responsibly meant investing heavily in data governance and security.",
+        "Big data doesn't replace actuarial judgment, but it does expand what an actuary has to work with."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "big data"
+      ]
+    },
+    {
+      "id": "business-personal-property-insurance",
+      "term": "Business Personal Property Insurance",
+      "definition": "Coverage for the movable property a business uses in its operations — furniture, fixtures, equipment, inventory, and supplies — usually written as part of a commercial property policy.",
+      "examples": [
+        "Business personal property insurance covered the salon's chairs and equipment after the pipe burst.",
+        "Inventory was the largest component of the shop's business personal property insurance limit.",
+        "The restaurant increased its business personal property insurance after buying new kitchen equipment.",
+        "Business personal property insurance doesn't cover the building itself, just what's inside it.",
+        "The adjuster itemized every damaged fixture covered under business personal property insurance."
+      ],
+      "categories": [
+        "Property"
+      ],
+      "synonyms": [
+        "BPP"
+      ],
+      "related": [
+        {
+          "term": "Commercial Multiple Peril",
+          "id": "commercial-multiple-peril"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "business personal property insurance",
+        "business personal property",
+        "bpp"
+      ]
+    },
+    {
+      "id": "by-peril-rating",
+      "term": "By-Peril Rating",
+      "definition": "A method of setting premiums separately for each peril a policy covers — fire, theft, wind, and so on — rather than one blended rate, letting insurers price each risk more precisely.",
+      "examples": [
+        "By-peril rating charged more for wind coverage on the coastal home than for the rest of the policy.",
+        "The insurer moved to by-peril rating to better reflect regional differences in wildfire exposure.",
+        "Under by-peril rating, a claims-free history for theft doesn't necessarily lower the wind portion of the rate.",
+        "By-peril rating requires more granular loss data than a single blended rate does.",
+        "Regulators reviewed the insurer's by-peril rating plan before approving the new rates."
+      ],
+      "categories": [
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "by-peril rating",
+        "by peril rating"
+      ]
+    },
+    {
+      "id": "commercial-lines",
+      "term": "Commercial Lines",
+      "definition": "Insurance products designed for businesses rather than individuals, spanning property, liability, workers' compensation, and commercial auto coverage.",
+      "examples": [
+        "The agency specialized in commercial lines for small manufacturing businesses.",
+        "Commercial lines underwriting looks at a business's operations, not just its owner's personal history.",
+        "A single commercial lines account can bundle property, liability, and auto coverage together.",
+        "Commercial lines premiums grew faster than personal lines premiums that year.",
+        "She moved from personal lines to commercial lines underwriting to work on larger, more complex accounts."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Personal Lines Insurance",
+          "id": "personal-lines-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "commercial lines"
+      ]
+    },
+    {
+      "id": "continuous-underwriting",
+      "term": "Continuous Underwriting",
+      "definition": "An underwriting approach that uses real-time data — from IoT devices, wearables, or telematics — to continuously reassess an insured's risk profile and adjust policies or pricing over time, rather than only at issue or renewal.",
+      "examples": [
+        "Continuous underwriting lowered her premium mid-term after several months of safe driving data.",
+        "The health insurer piloted continuous underwriting using data from a connected fitness tracker.",
+        "Continuous underwriting depends on the policyholder consenting to ongoing data collection.",
+        "Unlike traditional underwriting, continuous underwriting doesn't stop assessing risk once the policy is issued.",
+        "Continuous underwriting raised questions about how often a rate could reasonably change."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Automated Underwriting",
+          "id": "automated-underwriting"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "continuous underwriting"
+      ]
+    },
+    {
+      "id": "conversational-ai",
+      "term": "Conversational AI",
+      "definition": "AI technology that powers natural, voice- or text-based interaction between a person and a system, used in insurance chatbots and virtual assistants to answer questions and guide claims reporting.",
+      "examples": [
+        "Conversational AI let the customer file a claim just by describing what happened in plain language.",
+        "The insurer's conversational AI could escalate a frustrated customer to a human agent automatically.",
+        "Conversational AI improved noticeably once it was trained on real customer service transcripts.",
+        "A conversational AI interface handled the bulk of routine renewal questions.",
+        "Conversational AI still struggled with unusual, multi-part claims scenarios."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Chatbots and Virtual Assistants",
+          "id": "chatbots-and-virtual-assistants"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "conversational ai"
+      ]
+    },
+    {
+      "id": "cryptocurrency-insurance",
+      "term": "Cryptocurrency Insurance",
+      "definition": "Insurance that protects against loss or theft of cryptocurrency assets, such as from an exchange hack, lost private keys, or fraud.",
+      "examples": [
+        "The exchange bought cryptocurrency insurance to reassure customers after a competitor was hacked.",
+        "Cryptocurrency insurance for individual wallet holders remains harder to find than coverage for exchanges.",
+        "A stolen private key led to a claim under the firm's cryptocurrency insurance policy.",
+        "Cryptocurrency insurance underwriters look closely at how the assets are custodied.",
+        "Cryptocurrency insurance premiums reflect the still-limited historical loss data available for pricing."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial Lines & Surety"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Digital Assets Insurance",
+          "id": "digital-assets-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "cryptocurrency insurance",
+        "crypto insurance"
+      ]
+    },
+    {
+      "id": "customer-acquisition-cost-cac",
+      "term": "Customer Acquisition Cost (CAC)",
+      "definition": "The total cost of acquiring one new customer, including advertising, incentives, and sales staff time — a key efficiency metric for insurers and insurtechs alike.",
+      "examples": [
+        "The insurtech's CAC dropped once it started relying more on referrals than paid ads.",
+        "Customer acquisition cost has to stay well below the expected lifetime value of a policyholder.",
+        "A high customer acquisition cost put pressure on the startup's path to profitability.",
+        "The marketing team tracked customer acquisition cost separately for each channel.",
+        "Rising customer acquisition cost was one reason the company slowed its ad spending."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "CAC"
+      ],
+      "related": [
+        {
+          "term": "Customer Lifetime Value (CLV) in Insurance",
+          "id": "customer-lifetime-value-clv-in-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "customer acquisition cost",
+        "cac"
+      ]
+    },
+    {
+      "id": "customer-data-platform-cdp",
+      "term": "Customer Data Platform (CDP)",
+      "definition": "A unified customer database that consolidates data from multiple sources into a single, coherent profile per customer, used to personalize marketing and tailor insurance offerings.",
+      "examples": [
+        "The CDP merged data from the website, call center, and claims system into one customer profile.",
+        "Marketing used the customer data platform to identify policyholders likely to add a second policy.",
+        "The customer data platform flagged inconsistent contact information across several systems.",
+        "Building a CDP was a multi-year project involving several legacy data sources.",
+        "A well-maintained customer data platform made cross-selling recommendations far more relevant."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "CDP"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "customer data platform",
+        "cdp"
+      ]
+    },
+    {
+      "id": "customer-lifetime-value-clv-in-insurance",
+      "term": "Customer Lifetime Value (CLV) in Insurance",
+      "definition": "The total net profit an insurer expects to earn from a customer over the full length of their relationship, factoring in retention, cross-selling, and upselling.",
+      "examples": [
+        "Bundling home and auto coverage significantly raised that customer's lifetime value.",
+        "The insurer prioritized retention efforts for segments with the highest customer lifetime value.",
+        "CLV modeling helped decide how much the company could afford to spend acquiring a given customer.",
+        "A policyholder's customer lifetime value dropped sharply after a single bad claims experience.",
+        "Customer lifetime value estimates get less reliable the further out they're projected."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "CLV"
+      ],
+      "related": [
+        {
+          "term": "Customer Acquisition Cost (CAC)",
+          "id": "customer-acquisition-cost-cac"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "customer lifetime value",
+        "clv"
+      ]
+    },
+    {
+      "id": "cyber-risk-assessment",
+      "term": "Cyber Risk Assessment",
+      "definition": "The process of evaluating an organization's vulnerabilities to cyber-attacks or data breaches, used by cyber insurers to price and tailor coverage.",
+      "examples": [
+        "The underwriter required a cyber risk assessment before quoting the technology company's policy.",
+        "The cyber risk assessment flagged outdated software as the company's biggest exposure.",
+        "A strong cyber risk assessment score translated into a meaningfully lower premium.",
+        "The insurer's cyber risk assessment questionnaire asked about multi-factor authentication and backups.",
+        "Findings from the cyber risk assessment shaped which security controls the insurer required as a condition of coverage."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Vulnerability Assessment",
+          "id": "vulnerability-assessment"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "cyber risk assessment"
+      ]
+    },
+    {
+      "id": "cybersecurity-insurance-metrics",
+      "term": "Cybersecurity Insurance Metrics",
+      "definition": "The parameters and ratios insurers use to price and manage cyber policies, built from data on threat frequency, breach probability, and financial impact.",
+      "examples": [
+        "Cybersecurity insurance metrics showed ransomware claims rising faster than any other cyber loss type.",
+        "The actuary refined the cybersecurity insurance metrics after a wave of new claims data came in.",
+        "Cybersecurity insurance metrics helped the insurer decide which industries to avoid underwriting.",
+        "Benchmarking against cybersecurity insurance metrics revealed the client's premium was above market.",
+        "Cybersecurity insurance metrics are still evolving as the threat landscape keeps changing."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "cybersecurity insurance metrics"
+      ]
+    },
+    {
+      "id": "data-breach-insurance",
+      "term": "Data Breach Insurance",
+      "definition": "A type of cyber insurance covering the costs of a data breach, including customer notification, credit monitoring, forensic investigation, and legal fees.",
+      "examples": [
+        "Data breach insurance covered the cost of notifying every affected customer.",
+        "The retailer's data breach insurance paid for the forensic firm brought in after the incident.",
+        "Data breach insurance limits are often set separately from the rest of a cyber policy.",
+        "Credit monitoring services offered to affected customers were reimbursed under the data breach insurance.",
+        "The company's data breach insurance didn't cover the reputational damage that followed."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Liability"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Network Security Liability Insurance",
+          "id": "network-security-liability-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "data breach insurance"
+      ]
+    },
+    {
+      "id": "data-mining",
+      "term": "Data Mining",
+      "definition": "The use of analytical tools to uncover patterns and relationships hidden in large data sets. In insurance, data mining supports fraud detection, customer segmentation, and pricing.",
+      "examples": [
+        "Data mining surfaced a cluster of suspiciously similar claims filed within the same week.",
+        "The pricing team used data mining to find which factors best predicted claim frequency.",
+        "Data mining revealed a segment of customers likely to lapse without a targeted retention offer.",
+        "The fraud unit's data mining tools flagged patterns a human reviewer would have missed.",
+        "Data mining is only useful when the underlying data is clean and well-organized."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "data mining"
+      ]
+    },
+    {
+      "id": "decentralized-applications-dapps",
+      "term": "Decentralized Applications (DApps)",
+      "definition": "Applications that run on a blockchain or peer-to-peer network rather than a single controlling server, offering greater transparency and resistance to tampering. In insurtech, DApps have been explored for claims processing and policy management.",
+      "examples": [
+        "The pilot DApp let policyholders track their claim's status directly on the blockchain.",
+        "A DApp handled premium payments without routing them through a central server.",
+        "Building a DApp for insurance meant rethinking how policy data was stored and updated.",
+        "DApps remain a small niche within insurtech compared to conventional cloud-based platforms.",
+        "The DApp's smart contract automatically triggered a payout once the trigger condition was verified."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "DApps"
+      ],
+      "related": [
+        {
+          "term": "Blockchain",
+          "id": "blockchain"
+        },
+        {
+          "term": "Smart Contracts",
+          "id": "smart-contracts"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "decentralized applications",
+        "dapps"
+      ]
+    },
+    {
+      "id": "decentralized-finance-defi-insurance",
+      "term": "Decentralized Finance (DeFi) Insurance",
+      "definition": "Insurance products that protect against risks specific to decentralized finance platforms, such as smart contract bugs, exchange hacks, or extreme asset volatility.",
+      "examples": [
+        "DeFi insurance paid out after a smart contract exploit drained part of the protocol's funds.",
+        "The DeFi insurance pool was funded by premiums from other protocol users, not a traditional insurer.",
+        "Pricing DeFi insurance is difficult given how new and fast-changing the underlying protocols are.",
+        "A DeFi insurance claim required on-chain evidence that the covered event actually occurred.",
+        "DeFi insurance coverage limits are usually capped by the size of the underlying risk pool."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial Lines & Surety"
+      ],
+      "synonyms": [
+        "DeFi Insurance"
+      ],
+      "related": [
+        {
+          "term": "Cryptocurrency Insurance",
+          "id": "cryptocurrency-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "decentralized finance insurance",
+        "defi insurance",
+        "decentralized finance (defi) insurance"
+      ]
+    },
+    {
+      "id": "digital-assets-insurance",
+      "term": "Digital Assets Insurance",
+      "definition": "Coverage protecting digital assets such as websites, digital content, and stored customer data against hacking, breaches, and other cyber threats.",
+      "examples": [
+        "Digital assets insurance covered the cost of restoring the company's website after a defacement attack.",
+        "The e-commerce business added digital assets insurance to cover its product catalog and customer database.",
+        "Digital assets insurance and traditional property insurance don't overlap much in what they cover.",
+        "Valuing digital assets insurance coverage limits proved harder than valuing physical property.",
+        "Digital assets insurance is increasingly bundled with broader cyber liability policies."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial Lines & Surety"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "digital assets insurance"
+      ]
+    },
+    {
+      "id": "digital-twin-technology",
+      "term": "Digital Twin Technology",
+      "definition": "A virtual replica of a physical object, process, or system, used to simulate scenarios and predict outcomes. Insurers use digital twins to analyze complex assets like buildings or manufacturing processes for underwriting and risk management.",
+      "examples": [
+        "The insurer built a digital twin of the factory to model different fire-suppression scenarios.",
+        "Digital twin technology let engineers test how the building would respond to a simulated earthquake.",
+        "A digital twin of the supply chain helped price business interruption exposure more precisely.",
+        "Digital twin technology is resource-intensive to build, so it's mostly used for large or complex risks.",
+        "The digital twin flagged a maintenance gap that would have gone unnoticed during a routine inspection."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "digital twin technology",
+        "digital twin"
+      ]
+    },
+    {
+      "id": "direct-compensation",
+      "term": "Direct Compensation",
+      "definition": "A feature in some auto insurance systems where an insurer pays its own policyholder for damages regardless of fault, rather than the claim going through the at-fault driver's insurer.",
+      "examples": [
+        "Direct compensation meant her own insurer paid out within days, without waiting to establish fault.",
+        "Under direct compensation, each insurer settles with its own policyholder and sorts out fault separately.",
+        "Direct compensation is only available in certain jurisdictions with the right regulatory framework.",
+        "Direct compensation reduced the number of disputes over who was at fault in minor collisions.",
+        "The claims rep explained that direct compensation didn't affect who was ultimately found at fault."
+      ],
+      "categories": [
+        "Auto",
+        "Claims"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "No-Fault Insurance",
+          "id": "no-fault-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "direct compensation"
+      ]
+    },
+    {
+      "id": "drones-in-insurance",
+      "term": "Drones in Insurance",
+      "definition": "The use of unmanned aerial vehicles to inspect property, assess damage, and gather data for underwriting and claims, reaching areas that are difficult or dangerous for a human inspector.",
+      "examples": [
+        "A drone surveyed the storm-damaged roof without anyone having to climb up.",
+        "Drones in insurance let adjusters assess large disaster areas far faster than ground inspections could.",
+        "The underwriter used drone imagery to check the roof's condition before binding coverage.",
+        "Drones in insurance cut down the time claims took to settle after major hailstorms.",
+        "Insurers investing in drones in insurance had to train adjusters on a new set of tools."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Claims"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "drones in insurance",
+        "drone inspection"
+      ]
+    },
+    {
+      "id": "dynamic-pricing",
+      "term": "Dynamic Pricing",
+      "definition": "Adjusting insurance prices in real time based on data and changing conditions, rather than fixing a rate at policy issuance until the next renewal.",
+      "examples": [
+        "Dynamic pricing lowered the premium mid-term after the policyholder's driving score improved.",
+        "The insurtech's dynamic pricing model updated rates weekly based on new claims data.",
+        "Dynamic pricing raised fairness questions when two similar customers ended up with different rates.",
+        "Dynamic pricing depends on a steady stream of fresh data to stay accurate.",
+        "Regulators scrutinized how frequently the insurer's dynamic pricing model could change a rate."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "dynamic pricing"
+      ]
+    },
+    {
+      "id": "e-insurance",
+      "term": "E-insurance",
+      "definition": "The sale and management of insurance policies through digital platforms, letting policyholders purchase coverage, file claims, and manage their policies entirely online.",
+      "examples": [
+        "The e-insurance platform issued a policy in under five minutes.",
+        "E-insurance made it possible to compare quotes from several carriers without calling an agent.",
+        "The startup built its whole business model around e-insurance for renters.",
+        "E-insurance adoption grew quickly once customers got comfortable filing claims through an app.",
+        "Some customers still preferred a human agent over pure e-insurance for complex coverage needs."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "e-Policy",
+          "id": "e-policy"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "e-insurance",
+        "e insurance"
+      ]
+    },
+    {
+      "id": "e-policy",
+      "term": "e-Policy",
+      "definition": "A digital version of an insurance policy that can be accessed and managed online, replacing the traditional paper policy document.",
+      "examples": [
+        "She downloaded her e-Policy the moment coverage was bound.",
+        "The insurer stopped mailing paper documents once e-Policies became the default.",
+        "An e-Policy is easier to search and reference than a stack of paper forms.",
+        "The agent emailed a copy of the e-Policy so the client had it for the closing.",
+        "Switching to e-Policies cut the insurer's printing and mailing costs substantially."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Insurance Documentation"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "E-insurance",
+          "id": "e-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "e-policy",
+        "epolicy",
+        "digital policy"
+      ]
+    },
+    {
+      "id": "economic-loss",
+      "term": "Economic Loss",
+      "definition": "A financial loss quantified in monetary terms that isn't tied to direct physical damage, such as lost income or additional living expenses following a covered event.",
+      "examples": [
+        "Economic loss from the shutdown included the wages the business kept paying idle staff.",
+        "The policy covered economic loss like lost rental income, not just the physical repair costs.",
+        "Calculating economic loss required detailed financial records from before the incident.",
+        "Additional living expenses are a common form of economic loss covered under a homeowners policy.",
+        "The court distinguished economic loss from the physical property damage in the same claim."
+      ],
+      "categories": [
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Business Interruption Insurance",
+          "id": "business-interruption-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "economic loss"
+      ]
+    },
+    {
+      "id": "efficient-frontier-in-insurance",
+      "term": "Efficient Frontier in Insurance",
+      "definition": "A concept borrowed from finance describing the optimal mix of policies in an insurer's portfolio that maximizes expected return for a given level of risk, or minimizes risk for a given expected return.",
+      "examples": [
+        "The actuarial team modeled where the current book of business sat relative to the efficient frontier.",
+        "Adding a new product line shifted the portfolio closer to the efficient frontier.",
+        "The efficient frontier analysis suggested reducing exposure in one line to fund growth in another.",
+        "Advanced analytics made it easier to estimate the efficient frontier for a large, diverse portfolio.",
+        "Reinsurance purchases were partly guided by where management wanted to sit on the efficient frontier."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "efficient frontier",
+        "efficient frontier in insurance"
+      ]
+    },
+    {
+      "id": "electronic-data-interchange-edi",
+      "term": "Electronic Data Interchange (EDI)",
+      "definition": "A standardized electronic format for exchanging business documents between insurance companies, agents, and third parties, used across policy administration, billing, and claims to avoid manual re-entry of the same data.",
+      "examples": [
+        "The agency management system exchanged policy data with the carrier over EDI every night.",
+        "EDI let the third-party administrator receive claims data automatically instead of by fax.",
+        "Setting up EDI with a new carrier took months of testing to get the file formats right.",
+        "EDI reduced data entry errors that used to creep in when staff retyped information by hand.",
+        "Workers' compensation reporting to state regulators is often required over EDI."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "EDI"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "electronic data interchange",
+        "edi"
+      ]
+    },
+    {
+      "id": "embedded-analytics-in-insurance",
+      "term": "Embedded Analytics in Insurance",
+      "definition": "Analytical tools and data visualizations built directly into an insurer's operational software, so users see insights within the system they already work in rather than switching to a separate reporting tool.",
+      "examples": [
+        "Embedded analytics showed the underwriter a risk score right inside the quoting screen.",
+        "The claims platform's embedded analytics flagged a file as an outlier compared to similar claims.",
+        "Embedded analytics cut down on how often staff had to pull separate reports.",
+        "Building embedded analytics into the policy admin system took real integration work.",
+        "Embedded analytics gave managers a live view of claims trends without leaving their dashboard."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "embedded analytics",
+        "embedded analytics in insurance"
+      ]
+    },
+    {
+      "id": "ethical-hacking-in-insurance",
+      "term": "Ethical Hacking in Insurance",
+      "definition": "The practice of hiring cybersecurity experts to deliberately attempt to breach an insurer's own systems in order to find and fix vulnerabilities before a real attacker does.",
+      "examples": [
+        "Ethical hacking uncovered a weakness in the claims portal before it could be exploited.",
+        "The insurer ran an ethical hacking exercise ahead of launching its new customer app.",
+        "Ethical hacking findings went straight to the security team for remediation.",
+        "Regular ethical hacking engagements became part of the insurer's annual security calendar.",
+        "Ethical hacking is often required by cyber insurers as a condition of coverage for large accounts."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "Penetration Testing"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "ethical hacking",
+        "penetration testing",
+        "ethical hacking in insurance"
+      ]
+    },
+    {
+      "id": "fiduciary-liability-insurance",
+      "term": "Fiduciary Liability Insurance",
+      "definition": "Insurance protecting individuals who manage an employee benefit plan against claims of mismanagement, such as errors in administering a pension or health plan.",
+      "examples": [
+        "Fiduciary liability insurance covered the plan administrators after a lawsuit over investment fees.",
+        "The company added fiduciary liability insurance once it began managing its own 401(k) plan.",
+        "Fiduciary liability insurance is distinct from the general liability coverage the company already carried.",
+        "Board members overseeing the pension fund were named insureds under the fiduciary liability policy.",
+        "Fiduciary liability insurance claims often involve allegations of breach of duty, not physical harm."
+      ],
+      "categories": [
+        "Liability",
+        "Financial Lines & Surety"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "fiduciary liability insurance",
+        "fiduciary liability"
+      ]
+    },
+    {
+      "id": "financial-risk-management",
+      "term": "Financial Risk Management",
+      "definition": "The practice of protecting an organization's economic value by using financial instruments and strategies — including insurance, hedging, and diversification — to manage exposure to risks such as credit and market risk.",
+      "examples": [
+        "Financial risk management at the insurer combined reinsurance purchases with investment hedging.",
+        "The CFO's financial risk management strategy diversified the investment portfolio across asset classes.",
+        "Financial risk management decisions balanced the cost of protection against the size of the exposure.",
+        "A stress test was part of the annual financial risk management review.",
+        "Financial risk management extends beyond insurance to how a company invests its own capital."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "financial risk management"
+      ]
+    },
+    {
+      "id": "financial-technology-fintech",
+      "term": "Financial Technology (FinTech)",
+      "definition": "Technology-driven innovation applied to financial services broadly, spanning banking, investing, and insurance (where it's often called insurtech). FinTech aims to make financial services more accessible, efficient, and secure.",
+      "examples": [
+        "The FinTech sector's payment innovations eventually made their way into how insurers collected premiums.",
+        "FinTech investors increasingly funded insurtech as a subset of the broader financial technology space.",
+        "FinTech partnerships gave the insurer access to a faster underwriting data pipeline.",
+        "FinTech regulation often lags the pace of innovation in the sector.",
+        "The bank's FinTech unit and the insurer's insurtech unit shared some of the same underlying technology."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "FinTech"
+      ],
+      "related": [
+        {
+          "term": "Insurtech",
+          "id": "insurtech"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "financial technology",
+        "fintech"
+      ]
+    },
+    {
+      "id": "fintech-partnerships",
+      "term": "Fintech Partnerships",
+      "definition": "Collaborations between traditional insurers and financial technology startups aimed at improving customer experience, operational efficiency, or product offerings through shared technology.",
+      "examples": [
+        "The fintech partnership gave the insurer access to a new digital payments platform.",
+        "Fintech partnerships let the carrier launch a new product faster than building the technology in-house.",
+        "The startup's fintech partnership with a large insurer was its first major distribution deal.",
+        "Fintech partnerships often involve the insurer providing capital and regulatory expertise in exchange for technology.",
+        "Not every fintech partnership survives past the initial pilot phase."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "fintech partnerships",
+        "fintech partnership"
+      ]
+    },
+    {
+      "id": "flexible-premium-policy",
+      "term": "Flexible Premium Policy",
+      "definition": "A life insurance policy that lets the policyholder vary the amount and timing of premium payments within limits, rather than paying a fixed premium on a fixed schedule.",
+      "examples": [
+        "A flexible premium policy let him skip a payment during a tight month without lapsing coverage.",
+        "The flexible premium policy's cash value grew more slowly the year she paid the minimum.",
+        "Flexible premium policies suit people whose income varies from year to year.",
+        "The agent explained how underpaying a flexible premium policy could shorten how long it stays in force.",
+        "Universal life is the most common type of flexible premium policy."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Universal Life Insurance",
+          "id": "universal-life-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "flexible premium policy",
+        "flexible premium"
+      ]
+    },
+    {
+      "id": "fraud-detection-and-prevention",
+      "term": "Fraud Detection and Prevention",
+      "definition": "The use of analytics, machine learning, and other tools to identify and stop fraudulent insurance claims and applications, helping insurers minimize losses and protect the integrity of the claims process.",
+      "examples": [
+        "Fraud detection and prevention flagged a claim with several red flags for further review.",
+        "The special investigations unit relied on fraud detection and prevention models to prioritize its caseload.",
+        "Fraud detection and prevention tools got better as more historical claims data became available.",
+        "A pattern of similar claims from the same repair shop triggered the fraud detection and prevention system.",
+        "Fraud detection and prevention has to balance catching fraud against slowing down legitimate claims."
+      ],
+      "categories": [
+        "Claims",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "Fraud Analytics"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "fraud detection and prevention",
+        "fraud analytics",
+        "fraud detection"
+      ]
+    },
+    {
+      "id": "full-underwriting",
+      "term": "Full Underwriting",
+      "definition": "The process of comprehensively assessing a potential policyholder's risk before issuing a policy, typically reviewing health, lifestyle, and financial status in detail. Common in life insurance, it contrasts with guaranteed-issue or simplified-issue products.",
+      "examples": [
+        "Full underwriting required a medical exam before the large life policy could be issued.",
+        "She chose full underwriting to qualify for a lower rate than a guaranteed-issue policy would offer.",
+        "Full underwriting can take weeks, unlike a same-day simplified-issue decision.",
+        "The applicant's full underwriting review turned up a health condition that affected the final rate.",
+        "Full underwriting gives the insurer a much clearer picture of the risk than a simplified process does."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Life"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Guaranteed Issue",
+          "id": "guaranteed-issue"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "full underwriting"
+      ]
+    },
+    {
+      "id": "fully-automated-underwriting",
+      "term": "Fully Automated Underwriting",
+      "definition": "Underwriting completed entirely by AI, machine learning, and automated processes with no human intervention at any stage, aimed at maximizing speed and consistency for straightforward applications.",
+      "examples": [
+        "Fully automated underwriting issued the renters policy in under a minute.",
+        "The insurer reserved fully automated underwriting for the lowest-risk product tier.",
+        "Fully automated underwriting still routes edge cases to a human underwriter.",
+        "Fully automated underwriting cut the insurer's cost per policy issued substantially.",
+        "Regulators asked how fully automated underwriting decisions could be audited after the fact."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Automated Underwriting",
+          "id": "automated-underwriting"
+        },
+        {
+          "term": "Straight Through Processing (STP)",
+          "id": "straight-through-processing-stp"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "fully automated underwriting"
+      ]
+    },
+    {
+      "id": "general-liability-insurance",
+      "term": "General Liability Insurance",
+      "definition": "Insurance protecting a business against claims of bodily injury, personal injury, and property damage caused by its operations, products, or accidents on its premises.",
+      "examples": [
+        "General liability insurance covered the customer's medical bills after a slip and fall in the store.",
+        "The contractor couldn't bid on the project without proof of general liability insurance.",
+        "General liability insurance doesn't cover injuries to the business's own employees, which is what workers' compensation is for.",
+        "A product defect claim was paid out under the manufacturer's general liability insurance.",
+        "General liability insurance is one of the most foundational coverages a business carries."
+      ],
+      "categories": [
+        "Liability"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Commercial General Liability",
+          "id": "commercial-general-liability"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "general liability insurance"
+      ]
+    },
+    {
+      "id": "genetic-information-nondiscrimination-act-gina",
+      "term": "Genetic Information Nondiscrimination Act (GINA)",
+      "definition": "A U.S. federal law that prohibits health insurers and employers from discriminating against individuals based on their genetic information, such as when issuing coverage or setting premiums.",
+      "examples": [
+        "GINA prevented the health insurer from asking about the applicant's family history of a genetic condition.",
+        "The underwriter had to be careful not to run afoul of GINA when reviewing the file.",
+        "GINA doesn't apply to life or disability insurance the same way it applies to health coverage.",
+        "Compliance training covered GINA alongside other anti-discrimination requirements.",
+        "A GINA complaint was filed after an employer allegedly used genetic test results in a benefits decision."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Health"
+      ],
+      "synonyms": [
+        "GINA"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "genetic information nondiscrimination act",
+        "gina"
+      ]
+    },
+    {
+      "id": "geospatial-analytics-in-insurance",
+      "term": "Geospatial Analytics in Insurance",
+      "definition": "The use of geographic data — GPS coordinates, satellite imagery, GIS mapping — to assess risk, price policies, and manage claims based on location, such as flood zones, wildfire exposure, or crime rates.",
+      "examples": [
+        "Geospatial analytics flagged the property as sitting in a newly expanded flood zone.",
+        "The underwriter used geospatial analytics to compare wildfire risk across nearby addresses.",
+        "Geospatial analytics helped claims teams prioritize which areas to inspect first after the hurricane.",
+        "Property valuations increasingly draw on geospatial analytics rather than manual appraisal alone.",
+        "Geospatial analytics combined satellite imagery with historical claims data to refine the rating model."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "Location Intelligence"
+      ],
+      "related": [
+        {
+          "term": "Remote Sensing Technology",
+          "id": "remote-sensing-technology"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "geospatial analytics",
+        "geospatial analysis",
+        "location intelligence",
+        "geospatial analytics in insurance"
+      ]
+    },
+    {
+      "id": "governance-risk-management-and-compliance-grc",
+      "term": "Governance, Risk Management, and Compliance (GRC)",
+      "definition": "An integrated approach ensuring an organization is managed according to established regulations, risks are identified and managed proactively, and internal policies are consistently followed.",
+      "examples": [
+        "The insurer's GRC platform tracked regulatory filings across every state it operated in.",
+        "A GRC review flagged a gap between the company's stated policy and its actual practice.",
+        "GRC software helped coordinate compliance, audit, and risk teams that used to work in silos.",
+        "The board received a quarterly GRC report summarizing open risk and compliance issues.",
+        "Investing in GRC technology reduced how often compliance deadlines were nearly missed."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "GRC"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "governance risk management and compliance",
+        "grc"
+      ]
+    },
+    {
+      "id": "green-insurance",
+      "term": "Green Insurance",
+      "definition": "Insurance products that offer incentives for environmentally friendly practices, such as covering eco-friendly building materials, renewable energy installations, or green vehicles.",
+      "examples": [
+        "Green insurance paid to rebuild the damaged roof with solar panels instead of standard materials.",
+        "The homeowner chose a green insurance endorsement to cover the cost of energy-efficient upgrades after a loss.",
+        "Green insurance products often come with a discount for installing renewable energy systems.",
+        "The insurer's green insurance line covered electric vehicles at a preferential rate.",
+        "Green insurance is still a small share of the overall property insurance market."
+      ],
+      "categories": [
+        "Property",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "green insurance"
+      ]
+    },
+    {
+      "id": "gross-written-premium-gwp",
+      "term": "Gross Written Premium (GWP)",
+      "definition": "The total premium revenue an insurer generates before deducting reinsurance costs and ceding commissions — a key measure of an insurer's size and growth.",
+      "examples": [
+        "Gross written premium grew 12% year over year as the company expanded into new states.",
+        "Analysts compared gross written premium across insurers to gauge relative market share.",
+        "Gross written premium doesn't account for how much of that business was later ceded to reinsurers.",
+        "The annual report broke gross written premium down by line of business.",
+        "A spike in gross written premium didn't necessarily mean the new business was profitable."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "GWP"
+      ],
+      "related": [
+        {
+          "term": "Net Written Premium (NWP)",
+          "id": "net-written-premium-nwp"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "gross written premium",
+        "gwp"
+      ]
+    },
+    {
+      "id": "group-insurance",
+      "term": "Group Insurance",
+      "definition": "A single insurance policy covering a group of people, typically employees of a company or members of an organization, under one master policy rather than individually underwritten contracts.",
+      "examples": [
+        "Group insurance through her employer was cheaper than buying an individual policy.",
+        "The company's group insurance plan covered health, dental, and life benefits under one master policy.",
+        "Group insurance rates are based on the group's overall risk profile, not each member's individually.",
+        "Losing group insurance coverage after leaving a job often means shopping for individual coverage.",
+        "Group insurance is a common way small businesses offer benefits without high individual underwriting costs."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Group Life Insurance",
+          "id": "group-life-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "group insurance"
+      ]
+    },
+    {
+      "id": "group-life-insurance",
+      "term": "Group Life Insurance",
+      "definition": "Life insurance in which a single contract covers an entire group, typically employees of a company or members of an organization, with the employer or organization as the policyowner.",
+      "examples": [
+        "Group life insurance provided a death benefit equal to one year's salary for every employee.",
+        "She supplemented her group life insurance from work with an individual policy of her own.",
+        "Group life insurance usually ends when the employee leaves the company, unless it's convertible.",
+        "The employer paid the full premium for the basic group life insurance benefit.",
+        "Group life insurance doesn't require individual medical underwriting the way most individual policies do."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Group Insurance",
+          "id": "group-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "group life insurance"
+      ]
+    },
+    {
+      "id": "guaranteed-issue",
+      "term": "Guaranteed Issue",
+      "definition": "A feature of certain insurance policies requiring the insurer to offer coverage to applicants regardless of health status, age, or other factors that would normally increase risk. Common in life and health insurance.",
+      "examples": [
+        "Guaranteed issue coverage was the only option available to him given his health history.",
+        "Guaranteed issue policies usually come with lower coverage limits than fully underwritten ones.",
+        "The open enrollment period offered guaranteed issue for group health coverage.",
+        "Guaranteed issue premiums are typically higher to offset the lack of medical underwriting.",
+        "Guaranteed issue makes coverage accessible to people who'd otherwise be declined."
+      ],
+      "categories": [
+        "Life",
+        "Health"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Full Underwriting",
+          "id": "full-underwriting"
+        },
+        {
+          "term": "Guaranteed Issue Life Insurance",
+          "id": "guaranteed-issue-life-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "guaranteed issue"
+      ]
+    },
+    {
+      "id": "guaranteed-issue-life-insurance",
+      "term": "Guaranteed Issue Life Insurance",
+      "definition": "A type of life insurance that doesn't require a medical exam or health questionnaire, often available to older adults or people with health conditions that would disqualify them from traditional life insurance. Premiums are generally higher to offset the added risk.",
+      "examples": [
+        "Guaranteed issue life insurance was the only coverage available to him after his cancer diagnosis.",
+        "Guaranteed issue life insurance often comes with a graded death benefit for the first two years.",
+        "She paid more per dollar of coverage under guaranteed issue life insurance than a healthy applicant would.",
+        "Guaranteed issue life insurance policies usually cap the maximum death benefit fairly low.",
+        "The agent explained that guaranteed issue life insurance skips the medical exam entirely."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Guaranteed Issue",
+          "id": "guaranteed-issue"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "guaranteed issue life insurance"
+      ]
+    },
+    {
+      "id": "health-savings-account-hsa",
+      "term": "Health Savings Account (HSA)",
+      "definition": "A tax-advantaged account available to people enrolled in a high-deductible health plan, used to pay for qualified medical expenses.",
+      "examples": [
+        "She used her HSA to cover the deductible before her high-deductible health plan kicked in.",
+        "Contributions to a health savings account are tax-deductible, and withdrawals for medical expenses are tax-free.",
+        "Unused HSA funds roll over year to year, unlike a flexible spending account.",
+        "The employer matched a portion of each employee's health savings account contributions.",
+        "An HSA is only available to people enrolled in an HSA-eligible high-deductible health plan."
+      ],
+      "categories": [
+        "Health",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "HSA"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "health savings account",
+        "hsa"
+      ]
+    },
+    {
+      "id": "high-net-worth-insurance",
+      "term": "High-Net-Worth Insurance",
+      "definition": "Specialized insurance products designed for high-net-worth individuals, covering luxury items and offering higher coverage limits and broader protections than standard personal lines policies.",
+      "examples": [
+        "High-net-worth insurance covered the full appraised value of the art collection.",
+        "A high-net-worth insurance policy bundled the primary home, a vacation property, and a yacht under one program.",
+        "High-net-worth insurance underwriters often inspect properties in person before binding coverage.",
+        "Standard homeowners insurance wouldn't have covered the full replacement cost, which is why the family moved to high-net-worth insurance.",
+        "High-net-worth insurance policies frequently include higher liability limits and worldwide coverage."
+      ],
+      "categories": [
+        "Property",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "high-net-worth insurance",
+        "high net worth insurance"
+      ]
+    },
+    {
+      "id": "holistic-risk-assessment",
+      "term": "Holistic Risk Assessment",
+      "definition": "An approach to evaluating risk that considers a wide range of factors together — traditional actuarial data, cybersecurity threats, emerging trends — rather than assessing each risk type in isolation.",
+      "examples": [
+        "A holistic risk assessment linked the company's supply chain exposure to its cyber risk.",
+        "The insurer moved to holistic risk assessment after realizing siloed reviews missed compounding risks.",
+        "Holistic risk assessment gave underwriters a fuller picture than a single-peril review would.",
+        "Holistic risk assessment requires input from teams that don't normally talk to each other.",
+        "The consultant's holistic risk assessment recommended changes across three different departments."
+      ],
+      "categories": [
+        "Risk",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Risk Assessment Models",
+          "id": "risk-assessment-models"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "holistic risk assessment"
+      ]
+    },
+    {
+      "id": "host-liquor-liability",
+      "term": "Host Liquor Liability",
+      "definition": "Liability coverage for a business that serves alcohol at a company event without selling it, protecting against claims arising from alcohol-related incidents at that event.",
+      "examples": [
+        "Host liquor liability covered the company after a guest was injured following the holiday party.",
+        "The venue required proof of host liquor liability before letting the company serve wine at the event.",
+        "Host liquor liability applies when a business serves alcohol but isn't in the business of selling it.",
+        "General liability policies often include host liquor liability as a standard provision.",
+        "Host liquor liability wouldn't apply if the company had instead sold tickets that included drinks."
+      ],
+      "categories": [
+        "Liability"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Liquor Liability",
+          "id": "liquor-liability"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "host liquor liability"
+      ]
+    },
+    {
+      "id": "human-centric-ai-in-insurance",
+      "term": "Human-Centric AI in Insurance",
+      "definition": "AI applications designed with a focus on the end customer's experience, emphasizing usability, ethical use, and transparency rather than automation for its own sake.",
+      "examples": [
+        "Human-centric AI in insurance meant the claims chatbot always offered a clear path to a human agent.",
+        "The design team followed human-centric AI principles when building the new underwriting assistant.",
+        "Human-centric AI in insurance requires explaining, not just making, algorithmic decisions.",
+        "Customer trust scores improved after the insurer adopted a more human-centric AI approach.",
+        "Human-centric AI in insurance pushed the team to test the tool with real customers, not just internally."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "human-centric ai",
+        "human centric ai"
+      ]
+    },
+    {
+      "id": "hurricane-deductible",
+      "term": "Hurricane Deductible",
+      "definition": "A specific deductible in a homeowners policy that applies only to hurricane-related damage, common in hurricane-prone areas and often calculated as a percentage of the home's insured value rather than a flat dollar amount.",
+      "examples": [
+        "The hurricane deductible was 2% of the home's insured value, far more than the standard deductible.",
+        "Homeowners in coastal counties often face a separate hurricane deductible on top of their regular one.",
+        "The hurricane deductible only applied once the storm was officially named.",
+        "A high hurricane deductible kept the annual premium more affordable.",
+        "The adjuster confirmed the loss triggered the hurricane deductible rather than the standard wind deductible."
+      ],
+      "categories": [
+        "Property"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "hurricane deductible"
+      ]
+    },
+    {
+      "id": "hybrid-life-insurance",
+      "term": "Hybrid Life Insurance",
+      "definition": "A life insurance policy combining term or permanent life coverage with a long-term care benefit, letting the death benefit be used for long-term care expenses if needed.",
+      "examples": [
+        "Hybrid life insurance let her access part of the death benefit early to pay for a nursing home stay.",
+        "The couple chose hybrid life insurance over separate life and long-term care policies.",
+        "Hybrid life insurance premiums are generally higher than a standalone term life policy.",
+        "Unused long-term care benefits under a hybrid life insurance policy still pass to beneficiaries as a death benefit.",
+        "Hybrid life insurance has grown more popular as standalone long-term care policies became harder to find."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "hybrid life insurance"
+      ]
+    },
+    {
+      "id": "hyperautomation-in-insurance",
+      "term": "Hyperautomation in Insurance",
+      "definition": "The combination of AI, machine learning, and robotic process automation to automate as much of an insurer's operations as possible, extending well beyond a single task or process.",
+      "examples": [
+        "Hyperautomation in insurance tied together document intake, underwriting, and policy issuance into one automated flow.",
+        "The insurer's hyperautomation initiative touched claims, billing, and customer service all at once.",
+        "Hyperautomation in insurance requires more coordination across departments than automating one process at a time.",
+        "Executives championed hyperautomation as a way to cut operating costs across the board.",
+        "Hyperautomation in insurance still needed human oversight for exceptions the bots couldn't handle."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Robotic Process Automation (RPA)",
+          "id": "robotic-process-automation-rpa"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "hyperautomation",
+        "hyperautomation in insurance"
+      ]
+    },
+    {
+      "id": "identity-theft-insurance",
+      "term": "Identity Theft Insurance",
+      "definition": "Coverage for the costs of recovering from identity theft, including legal fees and lost wages, sometimes bundled with monitoring services that alert the policyholder to potential misuse of their information.",
+      "examples": [
+        "Identity theft insurance covered the legal fees she incurred clearing her name after the fraud.",
+        "The homeowners policy included identity theft insurance as an optional endorsement.",
+        "Identity theft insurance reimbursed lost wages for the days spent resolving the fraudulent accounts.",
+        "Monitoring services included with identity theft insurance flagged the breach before major damage was done.",
+        "Identity theft insurance doesn't cover the stolen money directly, just the costs of recovery."
+      ],
+      "categories": [
+        "Liability",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "identity theft insurance"
+      ]
+    },
+    {
+      "id": "insurance-analytics",
+      "term": "Insurance Analytics",
+      "definition": "The use of data analysis techniques and tools across the insurance industry to improve decisions on risk assessment, pricing, marketing, and claims management, drawing on big data, AI, and machine learning.",
+      "examples": [
+        "Insurance analytics identified which customer segments were most likely to renew.",
+        "The pricing team relied on insurance analytics to refine rates for a new product launch.",
+        "Insurance analytics flagged an emerging trend in claims severity before it showed up in the loss ratio.",
+        "Investing in insurance analytics paid off through more accurate underwriting decisions.",
+        "Insurance analytics increasingly draws on external data sources, not just the insurer's own claims history."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "Data Analytics in Insurance"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "insurance analytics",
+        "data analytics in insurance"
+      ]
+    },
+    {
+      "id": "insurance-tech-stack",
+      "term": "Insurance Tech Stack",
+      "definition": "The collection of technology tools and platforms an insurer uses to manage and deliver its services, including CRM, policy administration, claims processing, and data analytics systems.",
+      "examples": [
+        "Modernizing the insurance tech stack meant replacing three separate legacy systems with one platform.",
+        "The insurtech's whole pitch was a modern insurance tech stack built for a single line of business.",
+        "An outdated insurance tech stack made it hard to launch new products quickly.",
+        "The insurance tech stack had to integrate cleanly with the agency's existing management system.",
+        "Choosing the right insurance tech stack shaped how easily the company could scale later."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Policy Administration System",
+          "id": "policy-administration-system"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "insurance tech stack"
+      ]
+    },
+    {
+      "id": "insurtech-ecosystem",
+      "term": "Insurtech Ecosystem",
+      "definition": "The network of insurtech startups, established insurers, technology providers, and investors involved in developing and adopting innovative insurance technology.",
+      "examples": [
+        "The insurtech ecosystem in the region grew quickly once a major accelerator program launched.",
+        "Partnerships across the insurtech ecosystem let a small startup reach customers a large carrier already had.",
+        "The insurtech ecosystem includes everything from single-product startups to full-stack digital insurers.",
+        "Conferences became a key way for players across the insurtech ecosystem to find each other.",
+        "The insurtech ecosystem matured enough that specialized law firms now focus on it exclusively."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Insurtech",
+          "id": "insurtech"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "insurtech ecosystem"
+      ]
+    },
+    {
+      "id": "intelligent-claims-processing",
+      "term": "Intelligent Claims Processing",
+      "definition": "The automation and enhancement of claims handling using AI, machine learning, and data analytics, from initial notification through settlement, to improve speed, accuracy, and customer satisfaction.",
+      "examples": [
+        "Intelligent claims processing settled the straightforward windshield claim without any human review.",
+        "The insurer's intelligent claims processing system routed complex claims to specialists automatically.",
+        "Intelligent claims processing reduced average settlement time from weeks to days.",
+        "Photos submitted through the app fed directly into the intelligent claims processing pipeline.",
+        "Intelligent claims processing still flagged unusual claims for a human adjuster to review."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Claims"
+      ],
+      "synonyms": [
+        "Claim Automation"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "intelligent claims processing",
+        "claim automation"
+      ]
+    },
+    {
+      "id": "investment-income",
+      "term": "Investment Income",
+      "definition": "Income an insurance company earns by investing the premiums it collects, in assets such as bonds and equities. It's a significant source of an insurer's overall earnings alongside underwriting profit.",
+      "examples": [
+        "Rising interest rates boosted the insurer's investment income for the year.",
+        "Investment income helped offset a weak underwriting result during a heavy claims year.",
+        "The insurer's investment income came mostly from a conservative bond portfolio.",
+        "Analysts separated underwriting profit from investment income when evaluating the company's performance.",
+        "A downturn in the markets can shrink investment income even if underwriting stays strong."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Investment Income Gross",
+          "id": "investment-income-gross"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "investment income"
+      ]
+    },
+    {
+      "id": "iot-enabled-risk-mitigation",
+      "term": "IoT-Enabled Risk Mitigation",
+      "definition": "The use of connected devices to actively monitor and reduce risk on an insured asset or behavior, such as sensors that prevent water damage or wearables that track health indicators, rather than just measuring risk passively.",
+      "examples": [
+        "IoT-enabled risk mitigation shut off the water main automatically when the leak sensor triggered.",
+        "The insurer offered a discount for adopting IoT-enabled risk mitigation in the home.",
+        "IoT-enabled risk mitigation reduced the frequency of small water-damage claims across the book.",
+        "A connected smoke detector is a simple example of IoT-enabled risk mitigation.",
+        "IoT-enabled risk mitigation shifts the insurer's role from paying claims to helping prevent them."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Internet of Things (IoT) in Insurance",
+          "id": "internet-of-things-iot-in-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "iot-enabled risk mitigation",
+        "iot enabled risk mitigation"
+      ]
+    },
+    {
+      "id": "joint-insurance",
+      "term": "Joint Insurance",
+      "definition": "A policy covering two or more parties that can pay out on a claim by any of the insured parties. In life insurance, joint insurance often covers spouses, sometimes paying out on the first death to support the surviving partner.",
+      "examples": [
+        "The couple bought joint insurance so the surviving spouse would have financial support immediately.",
+        "Joint insurance was cheaper than buying two separate individual policies.",
+        "Joint insurance paid out on the first death, as the policy was structured.",
+        "Business partners sometimes use joint insurance to fund a buy-sell agreement.",
+        "Joint insurance can complicate things if the relationship between the insured parties changes."
+      ],
+      "categories": [
+        "Life",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "joint insurance"
+      ]
+    },
+    {
+      "id": "junk-insurance",
+      "term": "Junk Insurance",
+      "definition": "A term for insurance policies seen as offering little real value to the customer, often because a claim is unlikely to be paid or the coverage duplicates something the buyer already has.",
+      "examples": [
+        "Consumer advocates called the add-on policy junk insurance because it excluded almost every likely claim.",
+        "Regulators investigated the lender's practice of bundling junk insurance into loan agreements.",
+        "The coverage was labeled junk insurance since it only paid out in scenarios that almost never occurred.",
+        "Junk insurance complaints often center on policies sold as an afterthought during another purchase.",
+        "Some jurisdictions now require clearer disclosures to cut down on junk insurance sales."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "junk insurance"
+      ]
+    },
+    {
+      "id": "jurisdictional-risk",
+      "term": "Jurisdictional Risk",
+      "definition": "The risk associated with operating across different legal jurisdictions, each with its own regulations, laws, and compliance requirements affecting how policies are written, claims are handled, and data is managed.",
+      "examples": [
+        "Jurisdictional risk shaped how the policy wording differed from one state to the next.",
+        "Expanding into a new country meant a fresh assessment of jurisdictional risk.",
+        "Jurisdictional risk complicated how the insurer handled a claim spanning two countries.",
+        "The compliance team tracked jurisdictional risk across every market the company operated in.",
+        "Jurisdictional risk is a bigger factor for multinational insurers than for single-state carriers."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "jurisdictional risk"
+      ]
+    },
+    {
+      "id": "knock-for-knock-agreement",
+      "term": "Knock-for-Knock Agreement",
+      "definition": "An arrangement, common in auto insurance, where insurers agree to cover their own policyholder's losses regardless of who was at fault in an accident, avoiding legal costs and lengthy claims disputes between insurers.",
+      "examples": [
+        "Under the knock-for-knock agreement, each insurer paid its own policyholder without arguing over fault.",
+        "The knock-for-knock agreement sped up claims that would otherwise have dragged on for months.",
+        "A knock-for-knock agreement doesn't determine who was legally at fault, only who pays first.",
+        "Insurers entered the knock-for-knock agreement to cut down on litigation costs between them.",
+        "The knock-for-knock agreement is common in jurisdictions where liability is often hard to pin down quickly."
+      ],
+      "categories": [
+        "Auto",
+        "Claims"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Direct Compensation",
+          "id": "direct-compensation"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "knock-for-knock agreement",
+        "knock for knock agreement"
+      ]
+    },
+    {
+      "id": "knowledge-management-in-insurance",
+      "term": "Knowledge Management in Insurance",
+      "definition": "The process of creating, sharing, and managing an insurance organization's collective knowledge and information, increasingly supported by data analytics and AI to improve decision-making and operational efficiency.",
+      "examples": [
+        "Knowledge management in insurance turned a decade of adjusters' notes into a searchable database.",
+        "New underwriters relied on the knowledge management system to learn from past pricing decisions.",
+        "Knowledge management in insurance helped preserve expertise as experienced staff retired.",
+        "The claims team's knowledge management tool surfaced similar past claims automatically.",
+        "Poor knowledge management in insurance meant the same mistakes kept getting repeated across teams."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "knowledge management in insurance",
+        "knowledge management"
+      ]
+    },
+    {
+      "id": "lead-scoring-in-insurtech",
+      "term": "Lead Scoring in Insurtech",
+      "definition": "The use of data analytics and AI to evaluate potential customers based on their likelihood to purchase an insurance policy, letting sales teams prioritize the highest-quality leads.",
+      "examples": [
+        "Lead scoring in insurtech pushed the highest-scored prospects to the top of the sales queue.",
+        "The marketing team refined its lead scoring model after noticing which leads actually converted.",
+        "Lead scoring in insurtech considered online behavior alongside basic demographic data.",
+        "A low lead score didn't mean no follow-up, just a lower priority than a hot lead.",
+        "Lead scoring in insurtech improved conversion rates by focusing effort where it mattered most."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "lead scoring",
+        "lead scoring in insurtech"
+      ]
+    },
+    {
+      "id": "legacy-systems-modernization",
+      "term": "Legacy Systems Modernization",
+      "definition": "The process of updating or replacing an insurer's old, outdated IT systems and software with modern technology, aimed at improving efficiency, data processing, and customer service.",
+      "examples": [
+        "Legacy systems modernization replaced a decades-old policy admin system built for a different era.",
+        "Legacy systems modernization projects often take years and carry real business continuity risk.",
+        "The insurer phased its legacy systems modernization line by line rather than all at once.",
+        "Data migration was the hardest part of the legacy systems modernization effort.",
+        "Legacy systems modernization finally let the company launch products at a competitive pace."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "legacy systems modernization",
+        "legacy system modernization"
+      ]
+    },
+    {
+      "id": "lemonade-model",
+      "term": "Lemonade Model",
+      "definition": "A business model, associated with the insurtech company Lemonade, that uses AI and behavioral economics to sell insurance directly to consumers, emphasizing transparency, instant AI-driven claims, and donating excess premiums to charity.",
+      "examples": [
+        "The startup borrowed heavily from the Lemonade model for its own renters insurance product.",
+        "The Lemonade model's giveback structure was meant to reduce the incentive to deny valid claims.",
+        "Under the Lemonade model, a claim could be approved by AI within seconds for simple cases.",
+        "Investors compared the new entrant's pitch to the Lemonade model that had come before it.",
+        "The Lemonade model reflects a broader shift toward digital-first, customer-centric insurance."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "lemonade model"
+      ]
+    },
+    {
+      "id": "machine-to-machine-m2m-in-insurance",
+      "term": "Machine-to-Machine (M2M) in Insurance",
+      "definition": "Direct communication between devices over a wired or wireless network without human involvement, used in insurance to collect real-time data for risk assessment, policy customization, and claims processing.",
+      "examples": [
+        "M2M communication let the connected car report accident data straight to the claims system.",
+        "M2M technology fed sensor readings from the factory floor into the insurer's risk models.",
+        "Machine-to-machine data collection sped up how quickly a claim could be triaged.",
+        "M2M in insurance predates much of today's IoT terminology but describes a similar underlying idea.",
+        "Machine-to-machine connections needed careful security review before the insurer relied on them."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "M2M"
+      ],
+      "related": [
+        {
+          "term": "Internet of Things (IoT) in Insurance",
+          "id": "internet-of-things-iot-in-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "machine-to-machine",
+        "m2m"
+      ]
+    },
+    {
+      "id": "market-value-adjustment-mva",
+      "term": "Market Value Adjustment (MVA)",
+      "definition": "An adjustment to the cash value or death benefit of a life insurance or annuity policy based on changes in market interest rates, applied when a policyholder withdraws funds or takes a loan against the policy.",
+      "examples": [
+        "The market value adjustment reduced her withdrawal because interest rates had risen since she bought the annuity.",
+        "MVA clauses protect the insurer from losses when policyholders withdraw funds during unfavorable rate environments.",
+        "The agent explained how a market value adjustment could work for or against the policyholder.",
+        "Surrendering the annuity early triggered both a surrender charge and a market value adjustment.",
+        "Market value adjustment provisions are more common in indexed and fixed annuities than in simple whole life policies."
+      ],
+      "categories": [
+        "Life",
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "MVA"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "market value adjustment",
+        "mva"
+      ]
+    },
+    {
+      "id": "microinsurance",
+      "term": "Microinsurance",
+      "definition": "Insurance designed to provide protection to low-income individuals and families through affordable premiums and specific, limited coverage, often for health, property, or life risks in developing countries.",
+      "examples": [
+        "Microinsurance gave the farmer basic crop coverage he couldn't otherwise have afforded.",
+        "A microinsurance policy paid a small but meaningful benefit after the family's home flooded.",
+        "Microinsurance premiums are typically collected in small, frequent installments rather than one lump sum.",
+        "Mobile payment platforms made it far easier to distribute microinsurance in remote areas.",
+        "Microinsurance products are deliberately kept simple so buyers can understand exactly what's covered."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "microinsurance"
+      ]
+    },
+    {
+      "id": "mobile-telematics",
+      "term": "Mobile Telematics",
+      "definition": "Telematics data collected through a smartphone app rather than hardware installed in the vehicle, using the phone's sensors to track driving behavior like speed, braking, and phone distraction.",
+      "examples": [
+        "Mobile telematics let him enroll in the usage-based program without installing any hardware.",
+        "The insurer's mobile telematics app also flagged phone use while driving.",
+        "Mobile telematics is cheaper to deploy than a plug-in device, but can be less precise.",
+        "Battery drain was a common complaint about the mobile telematics app.",
+        "Mobile telematics adoption grew quickly once it became a simple app download instead of a mailed device."
+      ],
+      "categories": [
+        "Auto",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Telematics",
+          "id": "telematics"
+        },
+        {
+          "term": "Vehicle Telematics",
+          "id": "vehicle-telematics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "mobile telematics"
+      ]
+    },
+    {
+      "id": "multichannel-engagement",
+      "term": "Multichannel Engagement",
+      "definition": "Interacting with customers across multiple platforms — online, mobile, email, phone, in person — to provide consistent service regardless of how a customer chooses to reach the insurer.",
+      "examples": [
+        "Multichannel engagement let the customer start a claim on the app and finish the call with an agent.",
+        "The insurer's multichannel engagement strategy kept a customer's history consistent across every channel.",
+        "Multichannel engagement required syncing data between the call center and the mobile app in real time.",
+        "Surveys showed customers valued having a choice of channel, which is what multichannel engagement provides.",
+        "Multichannel engagement is a step short of true omnichannel, where the channels feel fully integrated."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Omnichannel",
+          "id": "omnichannel"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "multichannel engagement"
+      ]
+    },
+    {
+      "id": "natural-catastrophe-insurance",
+      "term": "Natural Catastrophe Insurance",
+      "definition": "Insurance protecting against losses from natural disasters such as hurricanes, earthquakes, floods, and wildfires, important for individuals and businesses in disaster-prone areas.",
+      "examples": [
+        "Natural catastrophe insurance paid to rebuild the home after the earthquake.",
+        "The business added natural catastrophe insurance after a wildfire came within a mile of its warehouse.",
+        "Natural catastrophe insurance premiums rose sharply in the region after several bad storm seasons.",
+        "Standard property insurance often excludes flood, which is why separate natural catastrophe insurance mattered here.",
+        "Reinsurance is especially important for insurers writing a lot of natural catastrophe insurance."
+      ],
+      "categories": [
+        "Property",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "natural catastrophe insurance"
+      ]
+    },
+    {
+      "id": "natural-language-processing-nlp-in-insurance",
+      "term": "Natural Language Processing (NLP) in Insurance",
+      "definition": "A branch of AI that lets software understand, interpret, and generate human language. In insurance, NLP powers chatbots, analyzes claims documents, and extracts insights from unstructured text like adjuster notes.",
+      "examples": [
+        "NLP pulled the key facts out of the handwritten adjuster's notes automatically.",
+        "The chatbot's NLP struggled with a question phrased in an unusual way.",
+        "NLP scanned thousands of policy documents to flag inconsistent wording.",
+        "Natural language processing helped triage customer emails by urgency and topic.",
+        "NLP accuracy improved significantly once it was trained on insurance-specific vocabulary."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "NLP"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "natural language processing",
+        "nlp"
+      ]
+    },
+    {
+      "id": "navigational-limits",
+      "term": "Navigational Limits",
+      "definition": "Terms in a marine or aviation insurance policy defining the geographical area within which the insured vessel or aircraft is covered. Operating outside these limits can void coverage.",
+      "examples": [
+        "The policy's navigational limits excluded waters north of a certain latitude during hurricane season.",
+        "The captain checked the navigational limits before charting a course through unfamiliar waters.",
+        "Straying outside the navigational limits voided coverage for the incident that followed.",
+        "Extending the navigational limits required an additional premium and underwriter approval.",
+        "Aviation policies use navigational limits the same way marine policies do, just for airspace instead of water."
+      ],
+      "categories": [
+        "Marine & Aviation",
+        "Insurance Documentation"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Warranty (Policy Condition)",
+          "id": "warranty-policy-condition"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "navigational limits"
+      ]
+    },
+    {
+      "id": "net-written-premium-nwp",
+      "term": "Net Written Premium (NWP)",
+      "definition": "The premium remaining after an insurer pays for reinsurance, representing the total premium the insurer expects to potentially earn and keep at risk itself.",
+      "examples": [
+        "Net written premium grew even though gross written premium was roughly flat, thanks to less reinsurance ceded.",
+        "Net written premium is a better gauge of the insurer's own retained risk than gross written premium.",
+        "The reinsurance treaty renewal directly affected how much net written premium the company reported.",
+        "A falling net written premium alongside rising gross premium can signal heavier reinsurance use.",
+        "Analysts watched net written premium closely as a sign of underwriting appetite."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Reinsurance"
+      ],
+      "synonyms": [
+        "NWP"
+      ],
+      "related": [
+        {
+          "term": "Gross Written Premium (GWP)",
+          "id": "gross-written-premium-gwp"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "net written premium",
+        "nwp"
+      ]
+    },
+    {
+      "id": "network-security-liability-insurance",
+      "term": "Network Security Liability Insurance",
+      "definition": "A component of cyber liability insurance covering claims arising from unauthorized access or hacking into an insured's computer systems, including data breaches, theft of digital assets, or malware transmission.",
+      "examples": [
+        "Network security liability insurance covered the legal costs after hackers breached the customer database.",
+        "The policy's network security liability insurance component paid for the forensic investigation.",
+        "Network security liability insurance is usually written alongside, not instead of, privacy liability coverage.",
+        "The underwriter asked about firewalls and patch management before quoting network security liability insurance.",
+        "Network security liability insurance wouldn't have covered the incident if it had resulted from an employee's honest mistake rather than a hack."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Liability"
+      ],
+      "synonyms": [
+        "Hacker Insurance"
+      ],
+      "related": [
+        {
+          "term": "Data Breach Insurance",
+          "id": "data-breach-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "network security liability insurance",
+        "hacker insurance"
+      ]
+    },
+    {
+      "id": "neural-networks-in-insurance",
+      "term": "Neural Networks in Insurance",
+      "definition": "A type of machine learning model loosely inspired by the human brain's structure, used in insurance for predictive modeling in risk assessment, fraud detection, and customer segmentation.",
+      "examples": [
+        "A neural network flagged the claim as an outlier compared to thousands of similar past claims.",
+        "The underwriting model's neural network improved its accuracy as more data became available.",
+        "Neural networks in insurance can be harder to explain to a regulator than simpler statistical models.",
+        "The fraud team's neural network caught a pattern no manual rule had ever captured.",
+        "Neural networks in insurance are typically just one part of a broader predictive analytics pipeline."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Machine Learning",
+          "id": "machine-learning"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "neural networks",
+        "neural network",
+        "neural networks in insurance"
+      ]
+    },
+    {
+      "id": "no-claim-bonus-ncb",
+      "term": "No-Claim Bonus (NCB)",
+      "definition": "A discount offered to policyholders who don't file any claims during the policy term, applied at renewal to reward safe behavior and loss prevention.",
+      "examples": [
+        "Her no-claim bonus grew each year she went without filing a claim.",
+        "Filing even a small claim reset the no-claim bonus back to zero.",
+        "The NCB made it worth paying a minor repair out of pocket rather than filing a claim.",
+        "Some insurers let a policyholder protect their no-claim bonus for an extra premium.",
+        "The no-claim bonus transferred when she switched to a new auto insurer."
+      ],
+      "categories": [
+        "Auto",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "NCB"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "no-claim bonus",
+        "no claim bonus",
+        "ncb"
+      ]
+    },
+    {
+      "id": "non-admitted-insurance",
+      "term": "Non-Admitted Insurance",
+      "definition": "Insurance provided by an insurer not licensed in the jurisdiction where the risk is located, typically used for hard-to-place risks and usually accessed through a specially licensed surplus lines broker.",
+      "examples": [
+        "The unusual risk was placed with a non-admitted insurance carrier after several standard markets declined it.",
+        "Non-admitted insurance isn't backed by the state guaranty fund the way admitted coverage is.",
+        "A surplus lines broker was required to access the non-admitted insurance market.",
+        "Non-admitted insurance filled the gap for a risk too specialized for any authorized insurer.",
+        "The client was surprised to learn their policy was placed in the non-admitted insurance market."
+      ],
+      "categories": [
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Authorized Insurer",
+          "id": "authorized-insurer"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "non-admitted insurance",
+        "non admitted insurance"
+      ]
+    },
+    {
+      "id": "omnichannel",
+      "term": "Omnichannel",
+      "definition": "A sales and service approach that gives customers a seamlessly integrated experience across every platform they use, so a conversation started on one channel can continue naturally on another.",
+      "examples": [
+        "Omnichannel service let her switch from the mobile app to a phone call without repeating herself.",
+        "The insurer's omnichannel strategy synced data across web, mobile, and in-person interactions instantly.",
+        "Omnichannel goes a step further than multichannel by making the channels feel like one continuous experience.",
+        "Building true omnichannel support required rethinking systems that had grown up separately.",
+        "Customer satisfaction scores rose noticeably after the omnichannel rollout."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Multichannel Engagement",
+          "id": "multichannel-engagement"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "omnichannel"
+      ]
+    },
+    {
+      "id": "on-demand-insurance",
+      "term": "On-Demand Insurance",
+      "definition": "Insurance that can be purchased and activated instantly, often through a mobile app, providing coverage for a specific period or event rather than a full annual term.",
+      "examples": [
+        "She bought on-demand insurance for the weekend she borrowed a friend's car.",
+        "On-demand insurance let him turn coverage on right before a ski trip and off again afterward.",
+        "On-demand insurance suits people who only need coverage occasionally, not year-round.",
+        "The app made on-demand insurance as easy to activate as a ride-share request.",
+        "On-demand insurance pricing reflects the short, specific window of exposure being covered."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "Just-In-Time Insurance"
+      ],
+      "related": [
+        {
+          "term": "Embedded Insurance",
+          "id": "embedded-insurance"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "on-demand insurance",
+        "on demand insurance",
+        "just-in-time insurance"
+      ]
+    },
+    {
+      "id": "online-policy-management",
+      "term": "Online Policy Management",
+      "definition": "Digital tools and platforms that let policyholders manage their insurance policies online — viewing details, making payments, updating information, and filing claims — without needing to call or visit an agent.",
+      "examples": [
+        "Online policy management let him update his address without ever picking up the phone.",
+        "The insurer's online policy management portal cut call center volume noticeably.",
+        "Online policy management gave policyholders 24/7 access to their documents.",
+        "Older customers sometimes still preferred an agent over online policy management for complex changes.",
+        "Online policy management usage climbed steadily once the mobile app launched."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Insurance Documentation"
+      ],
+      "synonyms": [
+        "Interactive Policy Management"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "online policy management",
+        "interactive policy management"
+      ]
+    },
+    {
+      "id": "open-banking-in-insurance",
+      "term": "Open Banking in Insurance",
+      "definition": "The use of open APIs that let third-party developers build services around a financial institution's data, with the customer's consent — applied in insurance to enable more accurate risk assessment and seamless payments.",
+      "examples": [
+        "Open banking in insurance let the underwriter verify income directly instead of asking for pay stubs.",
+        "The insurtech used open banking data to speed up its affordability checks for premium finance.",
+        "Open banking in insurance depends on the customer explicitly consenting to share their financial data.",
+        "Open banking in insurance is more established in some countries than others, depending on regulation.",
+        "Open banking in insurance made it easier to verify a claimed loss against actual bank transactions."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "open banking",
+        "open banking in insurance"
+      ]
+    },
+    {
+      "id": "operational-risk-insurance",
+      "term": "Operational Risk Insurance",
+      "definition": "Insurance covering losses resulting from failed internal processes, people, systems, or external events, distinct from losses tied to a specific insured asset like a building or vehicle.",
+      "examples": [
+        "Operational risk insurance covered the loss after a processing error caused a costly outage.",
+        "The company added operational risk insurance to address gaps its general liability policy didn't cover.",
+        "Operational risk insurance claims often trace back to an internal process failure rather than an external event.",
+        "Underwriting operational risk insurance requires a deep look at a company's internal controls.",
+        "Operational risk insurance became more common as businesses grew more dependent on complex technology systems."
+      ],
+      "categories": [
+        "Financial Lines & Surety",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "operational risk insurance"
+      ]
+    },
+    {
+      "id": "optical-character-recognition-ocr-in-insurance",
+      "term": "Optical Character Recognition (OCR) in Insurance",
+      "definition": "Technology that converts scanned documents, PDFs, or photos into editable, searchable text. In insurance, OCR streamlines processing claims and underwriting documents, cutting down manual data entry.",
+      "examples": [
+        "OCR pulled the policy number and claim amount straight off the scanned form.",
+        "The underwriting team's OCR tool digitized years of paper medical records for review.",
+        "OCR occasionally misread handwriting on an older claim form, requiring a manual check.",
+        "OCR in insurance sped up intake for documents that used to require someone to retype them.",
+        "Combining OCR with NLP let the system both read and interpret the scanned document."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Claims"
+      ],
+      "synonyms": [
+        "OCR"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "optical character recognition",
+        "ocr"
+      ]
+    },
+    {
+      "id": "peer-to-peer-p2p-insurance",
+      "term": "Peer-to-Peer (P2P) Insurance",
+      "definition": "A model where a group of individuals pool their premiums to insure against a shared risk, aiming to reduce costs and increase transparency, typically managed through a technology platform.",
+      "examples": [
+        "P2P insurance let members of the pool see exactly how claims and leftover premiums were handled.",
+        "The peer-to-peer insurance platform returned unused pooled premiums to members at year-end.",
+        "P2P insurance relies on the group being large and diverse enough to spread risk effectively.",
+        "Peer-to-peer insurance is meant to reduce the incentive to file inflated claims, since members share the pool.",
+        "P2P insurance still needs a licensed insurer or reinsurer standing behind the pool for larger losses."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "P2P Insurance"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "peer-to-peer insurance",
+        "p2p insurance",
+        "peer-to-peer (p2p) insurance"
+      ]
+    },
+    {
+      "id": "personal-lines-insurance",
+      "term": "Personal Lines Insurance",
+      "definition": "Insurance policies designed for individuals and families rather than businesses, including auto, homeowners, and personal life insurance.",
+      "examples": [
+        "The agency focused on personal lines insurance for local homeowners and drivers.",
+        "Personal lines insurance underwriting looks at the individual applicant, not a business's operations.",
+        "She switched careers from commercial lines to personal lines insurance for a better work-life balance.",
+        "Bundling auto and home is a common way personal lines insurance customers save on premiums.",
+        "Personal lines insurance makes up the bulk of most people's direct experience with the industry."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Commercial Lines",
+          "id": "commercial-lines"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "personal lines insurance",
+        "personal lines"
+      ]
+    },
+    {
+      "id": "personalized-insurance",
+      "term": "Personalized Insurance",
+      "definition": "Insurance products tailored to an individual's specific risk profile and preferences, using data analytics and machine learning to customize pricing and coverage rather than relying on broad rating categories.",
+      "examples": [
+        "Personalized insurance priced her policy based on her own driving data, not just her age and zip code.",
+        "The insurer's personalized insurance offering adjusted coverage recommendations as circumstances changed.",
+        "Personalized insurance depends on collecting more individual data than traditional underwriting required.",
+        "Personalized insurance pricing can reward low-risk individuals with meaningfully lower premiums.",
+        "Some customers were uneasy about how much data personalized insurance required them to share."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "personalized insurance"
+      ]
+    },
+    {
+      "id": "policy-administration-system",
+      "term": "Policy Administration System",
+      "definition": "The software system an insurer uses to manage policies and related processes, including underwriting, billing, and claims, increasingly integrating AI and analytics to improve efficiency.",
+      "examples": [
+        "The new policy administration system cut the time it took to issue an endorsement from days to minutes.",
+        "Migrating to a modern policy administration system was the company's biggest technology project in years.",
+        "The policy administration system flagged a billing discrepancy before it reached the customer.",
+        "Every underwriting decision eventually flowed through the policy administration system.",
+        "An outdated policy administration system limited how quickly the insurer could launch new products."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Insurance Documentation"
+      ],
+      "synonyms": [
+        "PAS"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "policy administration system"
+      ]
+    },
+    {
+      "id": "premium-to-surplus-ratio",
+      "term": "Premium to Surplus Ratio",
+      "definition": "A ratio measuring an insurer's financial leverage by comparing net written premiums to policyholders' surplus, indicating the insurer's ability to absorb above-average losses.",
+      "examples": [
+        "A rising premium to surplus ratio signaled the insurer was writing more business relative to its capital cushion.",
+        "Rating agencies watch the premium to surplus ratio closely when reviewing financial strength.",
+        "The premium to surplus ratio stayed within the range regulators consider healthy.",
+        "A high premium to surplus ratio can mean an insurer is more exposed to a bad loss year.",
+        "The company raised additional capital partly to bring its premium to surplus ratio back in line."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "premium to surplus ratio",
+        "premium-to-surplus ratio"
+      ]
+    },
+    {
+      "id": "privacy-liability-insurance",
+      "term": "Privacy Liability Insurance",
+      "definition": "A component of cyber liability insurance covering costs associated with data breaches, including legal fees, regulatory fines, and customer notification expenses tied to mishandling personal data.",
+      "examples": [
+        "Privacy liability insurance covered the regulatory fine after the data protection violation.",
+        "The company's privacy liability insurance paid for notifying every customer affected by the breach.",
+        "Privacy liability insurance is increasingly important as data protection regulations grow stricter.",
+        "The underwriter reviewed the company's data handling practices before quoting privacy liability insurance.",
+        "Privacy liability insurance and network security liability insurance are often sold together as parts of one cyber policy."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Liability"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Data Breach Insurance",
+          "id": "data-breach-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "privacy liability insurance"
+      ]
+    },
+    {
+      "id": "property-and-casualty-insurance-pandc",
+      "term": "Property and Casualty Insurance (P&C)",
+      "definition": "A broad category of insurance covering property losses (home, car, other possessions) and liability for accidents or damage caused to others, as opposed to life and health insurance.",
+      "examples": [
+        "The company wrote both property and casualty insurance and life insurance, in separate divisions.",
+        "P&C insurance includes everything from homeowners to commercial general liability policies.",
+        "Property and casualty insurance results are more exposed to catastrophe losses than life insurance is.",
+        "She spent her whole career in property and casualty insurance underwriting.",
+        "P&C insurance premiums are typically shorter-term than the multi-decade contracts common in life insurance."
+      ],
+      "categories": [
+        "General Insurance Concepts",
+        "Property"
+      ],
+      "synonyms": [
+        "P&C"
+      ],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "property and casualty insurance",
+        "p&c",
+        "p and c insurance"
+      ]
+    },
+    {
+      "id": "quantitative-analysis",
+      "term": "Quantitative Analysis",
+      "definition": "The use of mathematical and statistical methods to evaluate financial and risk variables in insurance, including risk assessment, pricing models, and the valuation of complex financial instruments.",
+      "examples": [
+        "Quantitative analysis supported the actuary's recommendation to adjust the pricing model.",
+        "The reinsurance team relied on quantitative analysis to value a complex structured treaty.",
+        "Quantitative analysis increasingly draws on machine learning alongside traditional statistics.",
+        "A quantitative analysis of the loss data revealed a seasonal pattern worth pricing for.",
+        "Quantitative analysis is only as good as the assumptions and data feeding into it."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "quantitative analysis"
+      ]
+    },
+    {
+      "id": "rate-making",
+      "term": "Rate Making",
+      "definition": "The process of determining insurance premiums based on risk assessment and statistical data, analyzing historical trends to set prices sufficient to cover projected claims, expenses, and profit.",
+      "examples": [
+        "Rate making for the new product relied heavily on industry loss data, since the insurer had none of its own yet.",
+        "The rate making process had to balance competitiveness against long-term profitability.",
+        "Regulators reviewed the insurer's rate making methodology before approving the new rates.",
+        "Rate making got more precise once telematics data became available as an input.",
+        "A rate making error that undercharges for risk can take years to fully show up in results."
+      ],
+      "categories": [
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [
+        "Ratemaking"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "rate making",
+        "ratemaking"
+      ]
+    },
+    {
+      "id": "remote-sensing-technology",
+      "term": "Remote Sensing Technology",
+      "definition": "The use of satellite or aerial imagery to collect information about objects or areas from a distance, applied in insurance to assess risk, manage claims, and understand environmental factors affecting a policy.",
+      "examples": [
+        "Remote sensing technology assessed crop damage across the whole farm without a single site visit.",
+        "The insurer used remote sensing technology to check roof condition ahead of renewal.",
+        "Remote sensing technology helped estimate the scale of damage right after the wildfire, before adjusters could get in.",
+        "Remote sensing technology is especially useful for agricultural and natural catastrophe insurance.",
+        "Combining remote sensing technology with historical claims data sharpened the insurer's flood risk maps."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Geospatial Analytics in Insurance",
+          "id": "geospatial-analytics-in-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "remote sensing technology",
+        "remote sensing"
+      ]
+    },
+    {
+      "id": "retention-ratio",
+      "term": "Retention Ratio",
+      "definition": "The percentage of net premiums written compared to gross premiums written, showing how much premium risk an insurer keeps after reinsurance rather than ceding away.",
+      "examples": [
+        "A high retention ratio suggested the insurer was relying less on reinsurance than its peers.",
+        "The retention ratio dropped after the company bought more reinsurance following a bad loss year.",
+        "Analysts used the retention ratio to gauge how much risk the insurer was comfortable keeping.",
+        "Retention ratio and net written premium tend to move together for a given book of business.",
+        "The reinsurance renewal negotiation directly shaped next year's retention ratio."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Reinsurance"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Net Written Premium (NWP)",
+          "id": "net-written-premium-nwp"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "retention ratio"
+      ]
+    },
+    {
+      "id": "return-on-equity-roe",
+      "term": "Return on Equity (ROE)",
+      "definition": "A measure of profitability showing how much profit a company generates relative to shareholders' invested capital, used in insurance to judge how efficiently an insurer deploys its capital.",
+      "examples": [
+        "A strong underwriting year lifted the insurer's return on equity well above its usual range.",
+        "Investors compared ROE across insurers to judge which used capital most efficiently.",
+        "The insurer's ROE target factored into decisions about how much business to write in a soft market.",
+        "A high ROE can come from either strong profits or unusually thin capital, so context matters.",
+        "Return on equity is one of the headline numbers analysts look at in an insurer's annual report."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [
+        "ROE"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "return on equity",
+        "roe"
+      ]
+    },
+    {
+      "id": "risk-assessment-models",
+      "term": "Risk Assessment Models",
+      "definition": "Analytical models used to evaluate the probability and impact of risks. Advanced risk assessment models increasingly incorporate AI and machine learning to improve the accuracy of risk evaluations and premium calculations.",
+      "examples": [
+        "The new risk assessment model outperformed the old one on every backtest the team ran.",
+        "Risk assessment models combined traditional actuarial data with newer telematics inputs.",
+        "The regulator asked the insurer to explain how its risk assessment models reached certain conclusions.",
+        "Risk assessment models need regular recalibration as underlying conditions change.",
+        "A flawed risk assessment model can systematically underprice an entire book of business."
+      ],
+      "categories": [
+        "Risk",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Predictive Analytics",
+          "id": "predictive-analytics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "risk assessment models"
+      ]
+    },
+    {
+      "id": "risk-pooling",
+      "term": "Risk Pooling",
+      "definition": "The practice of spreading financial risk across a large number of contributors, letting an insurer cover large individual losses using contributions from all policyholders rather than any one person bearing the full cost.",
+      "examples": [
+        "Risk pooling is the basic mechanism that makes insurance affordable for any single policyholder.",
+        "A larger pool made risk pooling more stable, since losses averaged out across more people.",
+        "Risk pooling breaks down if too many high-risk individuals join and too few low-risk ones do.",
+        "The mutual company's whole structure was built around risk pooling among its members.",
+        "Reinsurance is itself a form of risk pooling, spread across insurers rather than individuals."
+      ],
+      "categories": [
+        "Risk",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "risk pooling"
+      ]
+    },
+    {
+      "id": "sensor-technology-in-insurance",
+      "term": "Sensor Technology in Insurance",
+      "definition": "The use of sensor devices and IoT technology to collect data on insured assets or risks, enabling real-time monitoring for health, auto, and property insurance to support more accurate risk assessment and loss prevention.",
+      "examples": [
+        "Sensor technology in insurance detected the water leak hours before it would have caused major damage.",
+        "The pilot program used sensor technology in insurance to monitor temperature in a cold-storage warehouse.",
+        "Sensor technology in insurance turned a once-a-year inspection into continuous monitoring.",
+        "Wearable sensor technology in insurance let a health insurer offer activity-based discounts.",
+        "Sensor technology in insurance raised new questions about how long collected data should be kept."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Internet of Things (IoT) in Insurance",
+          "id": "internet-of-things-iot-in-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "sensor technology in insurance",
+        "sensor technology"
+      ]
+    },
+    {
+      "id": "sharing-economy-insurance",
+      "term": "Sharing Economy Insurance",
+      "definition": "Insurance products designed for the sharing economy, where assets and services are shared between individuals through a digital platform, covering hosts, guests, drivers, and renters.",
+      "examples": [
+        "Sharing economy insurance covered the host's liability when a guest was injured on the property.",
+        "The ride-share driver relied on sharing economy insurance to fill the gap her personal auto policy didn't cover.",
+        "Sharing economy insurance often only applies while the platform's app is actively in use.",
+        "Sharing economy insurance had to be built quickly as the underlying platforms grew faster than traditional products.",
+        "Sharing economy insurance adapts standard coverage concepts to a much shorter, more intermittent kind of exposure."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [
+        "Collaborative Consumption Insurance"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "sharing economy insurance",
+        "collaborative consumption insurance"
+      ]
+    },
+    {
+      "id": "statutory-reserve",
+      "term": "Statutory Reserve",
+      "definition": "A reserve an insurance company is legally required to maintain, set by regulation, to help ensure the insurer can meet its future obligations to policyholders.",
+      "examples": [
+        "The insurer's statutory reserve calculation followed the formula set by the state regulator.",
+        "A shortfall in the statutory reserve would have triggered regulatory intervention.",
+        "Statutory reserve requirements are typically more conservative than an insurer's own internal reserve estimate.",
+        "The actuary certified that the statutory reserve met the minimum required by law.",
+        "Statutory reserve rules differ somewhat from one jurisdiction to the next."
+      ],
+      "categories": [
+        "Regulatory & Legal",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "statutory reserve"
+      ]
+    },
+    {
+      "id": "straight-through-processing-stp",
+      "term": "Straight Through Processing (STP)",
+      "definition": "Processing insurance policies or claims entirely electronically, from start to finish, without manual intervention, improving efficiency, reducing processing time, and minimizing errors.",
+      "examples": [
+        "Straight through processing issued the policy the moment the application was submitted.",
+        "STP handled routine claims end to end, freeing adjusters to focus on complex cases.",
+        "Straight through processing rates became a key efficiency metric the insurer tracked closely.",
+        "Not every transaction qualified for straight through processing — some still needed a human check.",
+        "STP reduced data entry errors that used to creep in during manual handoffs between systems."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Claims"
+      ],
+      "synonyms": [
+        "STP"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "straight through processing",
+        "stp"
+      ]
+    },
+    {
+      "id": "supplementary-coverage",
+      "term": "Supplementary Coverage",
+      "definition": "Additional coverage options added to a basic insurance policy to protect against risks not covered under the standard policy, letting a policyholder tailor coverage to their own needs.",
+      "examples": [
+        "Supplementary coverage for jewelry filled the gap the standard homeowners policy left.",
+        "The agent recommended supplementary coverage for water backup, since the base policy excluded it.",
+        "Supplementary coverage comes at an added premium on top of the base policy.",
+        "Reviewing the policy each year helped identify where supplementary coverage might be worth adding.",
+        "Supplementary coverage options vary widely from one insurer's base policy to another's."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "supplementary coverage"
+      ]
+    },
+    {
+      "id": "synthetic-data-in-insurance",
+      "term": "Synthetic Data in Insurance",
+      "definition": "Artificially generated data created through algorithms or simulations that mimics the statistical properties of real data, used in insurance for modeling and analysis when real data is limited or sensitive.",
+      "examples": [
+        "Synthetic data let the fraud team test its model without exposing any real customer records.",
+        "The insurer generated synthetic data to model a new product for which it had no actual claims history yet.",
+        "Synthetic data in insurance has to be validated carefully to make sure it reflects real-world patterns.",
+        "Using synthetic data sidestepped some of the privacy concerns tied to training on real claims data.",
+        "Synthetic data supplemented the small sample of real claims for a newly launched line of business."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "synthetic data",
+        "synthetic data in insurance"
+      ]
+    },
+    {
+      "id": "technology-errors-and-omissions-tech-eando-insurance",
+      "term": "Technology Errors and Omissions (Tech E&O) Insurance",
+      "definition": "Insurance covering technology companies and professionals against claims of negligence or inadequate work related to technology services or products, covering both liability and property loss exposures.",
+      "examples": [
+        "Tech E&O insurance covered the software vendor after a bug allegedly caused a client's financial loss.",
+        "The consulting firm couldn't sign the contract without proof of technology errors and omissions insurance.",
+        "Tech E&O insurance is written specifically around technology work, unlike general professional liability.",
+        "A missed deadline that caused a client financial harm was exactly the kind of claim Tech E&O insurance was meant for.",
+        "Underwriting Tech E&O insurance meant understanding the specific software or service the company provided."
+      ],
+      "categories": [
+        "Liability",
+        "Financial Lines & Surety"
+      ],
+      "synonyms": [
+        "Tech E&O"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "technology errors and omissions insurance",
+        "tech e&o insurance",
+        "tech e&o"
+      ]
+    },
+    {
+      "id": "transparency-in-insurance",
+      "term": "Transparency in Insurance",
+      "definition": "The principle of providing clear, accessible, and understandable information about policies, coverage, and the claims process, so policyholders can make informed decisions.",
+      "examples": [
+        "Transparency in insurance meant the policy plainly listed what wasn't covered, not just what was.",
+        "Digital engagement tools improved transparency in insurance by letting customers track a claim's status live.",
+        "Regulators pushed for greater transparency in insurance pricing after complaints about hidden fees.",
+        "Transparency in insurance built trust with customers who'd previously felt confused by their coverage.",
+        "The insurer's plain-language policy summary was part of a broader push for transparency in insurance."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "transparency in insurance"
+      ]
+    },
+    {
+      "id": "travel-insurance",
+      "term": "Travel Insurance",
+      "definition": "Insurance covering medical expenses, trip cancellation, lost luggage, and other losses incurred while traveling, purchasable for a single trip or on a multi-trip basis for frequent travelers.",
+      "examples": [
+        "Travel insurance reimbursed the cost of the canceled flight after the family emergency.",
+        "She bought travel insurance mainly for the medical coverage while traveling abroad.",
+        "Travel insurance covered the lost luggage, though it took a few weeks to process.",
+        "Frequent travelers often find an annual multi-trip travel insurance plan cheaper than buying per trip.",
+        "Travel insurance policies vary widely in what counts as a covered reason for trip cancellation."
+      ],
+      "categories": [
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "travel insurance"
+      ]
+    },
+    {
+      "id": "trust-layer-in-blockchain",
+      "term": "Trust Layer in Blockchain",
+      "definition": "The part of a blockchain system that ensures the integrity and security of transactions and data exchanges across the network, eliminating the need for a central authority through distributed consensus and a tamper-proof ledger.",
+      "examples": [
+        "The trust layer in blockchain made it possible for several insurers to share claims data without a central intermediary.",
+        "Smart contracts rely on the trust layer in blockchain to execute reliably without a third party.",
+        "The trust layer in blockchain gave all parties confidence the shared ledger hadn't been altered.",
+        "Explaining the trust layer in blockchain to non-technical stakeholders took some simplifying.",
+        "The trust layer in blockchain is what lets decentralized identity verification work in insurtech pilots."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Blockchain",
+          "id": "blockchain"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "trust layer in blockchain",
+        "trust layer"
+      ]
+    },
+    {
+      "id": "uninsurable-risk",
+      "term": "Uninsurable Risk",
+      "definition": "A risk that falls outside what an insurance company deems acceptable to cover, either because a loss is too likely, prohibited by law, or too large or difficult to quantify.",
+      "examples": [
+        "The underwriter declined the account, calling the exposure an uninsurable risk.",
+        "War is a classic example of an uninsurable risk excluded from most standard policies.",
+        "A risk that's already occurring, like an ongoing lawsuit, is generally treated as an uninsurable risk.",
+        "What counts as an uninsurable risk can shift over time as insurers develop new ways to price it.",
+        "The business had to self-insure the uninsurable risk since no carrier would take it on."
+      ],
+      "categories": [
+        "Risk",
+        "Underwriting & Actuarial"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "uninsurable risk"
+      ]
+    },
+    {
+      "id": "user-experience-ux-in-insurtech",
+      "term": "User Experience (UX) in Insurtech",
+      "definition": "The overall experience of using an insurtech platform or application, especially how easy and pleasant it is to use — a critical factor in engaging customers and simplifying digital insurance processes.",
+      "examples": [
+        "Poor UX in the claims app was the top complaint in customer feedback surveys.",
+        "The insurtech's UX in insurtech design let a first-time user buy a policy in under two minutes.",
+        "Improving user experience in insurtech directly reduced how many customers abandoned the signup flow.",
+        "UX research revealed customers didn't understand a key step in the online claims process.",
+        "Good UX in insurtech means making a complicated product feel simple, not making it simpler than it is."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "UX"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "user experience",
+        "ux"
+      ]
+    },
+    {
+      "id": "value-at-risk-var",
+      "term": "Value at Risk (VaR)",
+      "definition": "A statistical technique measuring the potential loss on a portfolio of financial assets over a given period at a certain confidence level. Insurers use VaR to estimate potential losses and set capital reserves.",
+      "examples": [
+        "The investment team calculated Value at Risk to gauge how much the portfolio could lose in a bad month.",
+        "A 99% VaR meant losses were expected to exceed that threshold only 1% of the time.",
+        "VaR informed how much capital the insurer set aside against its investment portfolio.",
+        "Value at Risk has real limitations for estimating extreme, rare events like a market crash.",
+        "The risk committee reviewed VaR figures alongside other capital adequacy metrics."
+      ],
+      "categories": [
+        "Financial / Accounting",
+        "Risk"
+      ],
+      "synonyms": [
+        "VaR"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "value at risk",
+        "var"
+      ]
+    },
+    {
+      "id": "vehicle-telematics",
+      "term": "Vehicle Telematics",
+      "definition": "Telecommunications and informatics embedded directly in a vehicle — GPS navigation, hands-free systems, wireless safety communications, driving assistance — used in insurance to assess driver behavior and support usage-based pricing.",
+      "examples": [
+        "Vehicle telematics built into the new car reported driving data automatically, with no separate app needed.",
+        "The manufacturer's vehicle telematics system fed data directly to the insurer with the owner's consent.",
+        "Vehicle telematics tends to capture more consistent data than a phone-based app does.",
+        "Vehicle telematics data helped reconstruct exactly what happened in the seconds before the crash.",
+        "Vehicle telematics adoption grew as more new cars shipped with the hardware built in."
+      ],
+      "categories": [
+        "Auto",
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Telematics",
+          "id": "telematics"
+        },
+        {
+          "term": "Mobile Telematics",
+          "id": "mobile-telematics"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "vehicle telematics"
+      ]
+    },
+    {
+      "id": "venture-capital-in-insurtech",
+      "term": "Venture Capital in Insurtech",
+      "definition": "Investment funds allocated to early-stage insurtech startups with high growth potential, funding the technology-driven innovation that's reshaping how insurance is priced, sold, and serviced.",
+      "examples": [
+        "Venture capital in insurtech funded the startup's first three years before it turned profitable.",
+        "A surge of venture capital in insurtech in one year was followed by a much quieter funding environment the next.",
+        "Investors providing venture capital in insurtech often looked for a clear path to partnering with an established insurer.",
+        "Venture capital in insurtech dried up for startups that couldn't show a credible underwriting model.",
+        "The venture capital in insurtech that the company raised went mostly toward building its claims technology."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "venture capital in insurtech"
+      ]
+    },
+    {
+      "id": "virtual-insurance-agent",
+      "term": "Virtual Insurance Agent",
+      "definition": "An AI-driven chatbot or virtual assistant designed to simulate a human insurance agent's advice and service, guiding customers through policy selection, answering questions, and assisting with claims around the clock.",
+      "examples": [
+        "The virtual insurance agent walked her through choosing between two coverage options.",
+        "A virtual insurance agent handled the initial claims intake before a human adjuster took over.",
+        "The virtual insurance agent was available at 2 a.m. when the real agent's office was closed.",
+        "Some customers still asked to be transferred from the virtual insurance agent to a person.",
+        "The virtual insurance agent's recommendations were based on the same underwriting rules a human agent would use."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Chatbots and Virtual Assistants",
+          "id": "chatbots-and-virtual-assistants"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "virtual insurance agent"
+      ]
+    },
+    {
+      "id": "vulnerability-assessment",
+      "term": "Vulnerability Assessment",
+      "definition": "The process of identifying, classifying, and prioritizing vulnerabilities in computer systems, applications, and networks. In cyber insurance, vulnerability assessments help underwriters understand a business's cyber exposure.",
+      "examples": [
+        "The vulnerability assessment found an unpatched server that had been exposed for months.",
+        "Cyber insurers increasingly require a vulnerability assessment before quoting larger accounts.",
+        "The vulnerability assessment ranked findings by severity so the IT team could prioritize fixes.",
+        "A clean vulnerability assessment supported a lower premium at renewal.",
+        "The vulnerability assessment became part of the insurer's standard cyber underwriting checklist."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Cyber Risk Assessment",
+          "id": "cyber-risk-assessment"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "vulnerability assessment"
+      ]
+    },
+    {
+      "id": "wearable-technology",
+      "term": "Wearable Technology",
+      "definition": "Electronic devices worn by individuals that collect and analyze personal data, including health and fitness information. In insurance, wearables are used to monitor policyholder health metrics, encourage healthy behavior, and personalize life and health premiums.",
+      "examples": [
+        "Wearable technology tracked her daily steps, which qualified her for a wellness discount.",
+        "The life insurer's wearable technology program rewarded consistent exercise with lower premiums.",
+        "Wearable technology raised questions about how health data collected for a discount program would be used.",
+        "Wearable technology data supplemented, rather than replaced, the standard health questionnaire.",
+        "Adoption of wearable technology programs was highest among younger, more health-conscious policyholders."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Health"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "wearable technology",
+        "wearables"
+      ]
+    },
+    {
+      "id": "weather-derivatives",
+      "term": "Weather Derivatives",
+      "definition": "Financial instruments used to hedge against losses tied to weather conditions, offered as an alternative or complement to traditional insurance for risks like drought, excessive rainfall, or temperature swings.",
+      "examples": [
+        "The farm cooperative used weather derivatives to hedge against a poor growing season.",
+        "Weather derivatives paid out based on a measured weather index, not an assessed loss.",
+        "A ski resort bought weather derivatives to offset revenue lost during a low-snowfall winter.",
+        "Weather derivatives settle faster than a traditional claim, since the trigger is just a weather reading.",
+        "Weather derivatives and parametric insurance share a similar trigger-based structure."
+      ],
+      "categories": [
+        "Financial Lines & Surety",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Parametric Insurance",
+          "id": "parametric-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "weather derivatives"
+      ]
+    },
+    {
+      "id": "web-aggregator-in-insurance",
+      "term": "Web Aggregator in Insurance",
+      "definition": "An online platform that gathers and presents insurance products and prices from multiple insurers, letting consumers compare coverage options in one place.",
+      "examples": [
+        "She used a web aggregator to compare auto quotes from five insurers at once.",
+        "The web aggregator earned a commission whenever a comparison led to a purchased policy.",
+        "Insurers had to decide whether listing on a web aggregator was worth the price competition it invited.",
+        "A web aggregator simplified shopping but didn't always show every coverage detail side by side.",
+        "Web aggregators pushed some insurers to compete more directly on price."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "web aggregator",
+        "web aggregator in insurance"
+      ]
+    },
+    {
+      "id": "write-off",
+      "term": "Write-Off",
+      "definition": "The recognition that an insured item, such as a vehicle or property, is a total loss and not worth repairing, because the repair cost exceeds the item's value or it's irreparably damaged.",
+      "examples": [
+        "The insurer declared the car a write-off once repair estimates came in above its market value.",
+        "A write-off pays out the item's value instead of funding repairs.",
+        "The homeowner disputed the write-off, arguing the house could still be salvaged.",
+        "Older vehicles are more likely to be a write-off after even moderate damage.",
+        "Once a car is a write-off, its salvage title follows it for the rest of its life."
+      ],
+      "categories": [
+        "Claims",
+        "General Insurance Concepts"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Total Loss",
+          "id": "total-loss"
+        }
+      ],
+      "difficulty": "Basic",
+      "lookup_keys": [
+        "write-off",
+        "writeoff"
+      ]
+    },
+    {
+      "id": "yearly-renewable-term-yrt",
+      "term": "Yearly Renewable Term (YRT)",
+      "definition": "A term life insurance policy renewed annually, allowing the insured to renew each year without proving insurability again, though premiums typically rise with age.",
+      "examples": [
+        "YRT let him keep renewing coverage each year without a new medical exam.",
+        "Yearly renewable term premiums climbed noticeably once he passed sixty.",
+        "YRT suits someone who needs short-term coverage with the flexibility to extend it.",
+        "The reinsurer priced the yearly renewable term treaty based on a standard mortality table.",
+        "Yearly renewable term is often used as a rider rather than as someone's primary life coverage."
+      ],
+      "categories": [
+        "Life"
+      ],
+      "synonyms": [
+        "YRT"
+      ],
+      "related": [
+        {
+          "term": "Renewable Term Insurance",
+          "id": "renewable-term-insurance"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "yearly renewable term",
+        "yrt"
+      ]
+    },
+    {
+      "id": "yield",
+      "term": "Yield",
+      "definition": "The earnings generated on an insurance company's investments over a given period, expressed as a percentage of the investment's cost, helping offset claims costs and support the insurer's overall financial health.",
+      "examples": [
+        "Bond yield improved the insurer's overall investment return for the year.",
+        "The portfolio's yield fell as older, higher-rate bonds matured and were replaced at lower rates.",
+        "A stable yield on the investment portfolio helped keep premiums more affordable.",
+        "The insurer's investment team was tasked with maximizing yield without taking on excessive risk.",
+        "Yield on invested premiums is a meaningful part of an insurer's overall profitability."
+      ],
+      "categories": [
+        "Financial / Accounting"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "investment yield",
+        "yield"
+      ]
+    },
+    {
+      "id": "zero-trust-architecture-in-cyber-insurance",
+      "term": "Zero Trust Architecture in Cyber Insurance",
+      "definition": "A cybersecurity principle assuming no user or device should be automatically trusted, requiring continuous verification. Adopting zero trust architecture can lower an insured's cyber risk and, in turn, its cyber insurance premium.",
+      "examples": [
+        "Adopting zero trust architecture helped the company qualify for a lower cyber insurance premium.",
+        "The cyber underwriter asked specifically whether the applicant had implemented zero trust architecture.",
+        "Zero trust architecture assumes a breach is possible and limits how far an attacker can move once inside.",
+        "Zero trust architecture in cyber insurance is increasingly treated as a baseline expectation, not a bonus.",
+        "Rolling out zero trust architecture across the company took over a year to complete."
+      ],
+      "categories": [
+        "Insurtech & Technology"
+      ],
+      "synonyms": [
+        "Zero Trust Architecture"
+      ],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "zero trust architecture",
+        "zero trust architecture in cyber insurance"
+      ]
+    },
+    {
+      "id": "zero-day-attack",
+      "term": "Zero-day Attack",
+      "definition": "A cyber-attack exploiting a software vulnerability on the same day it's discovered, before a patch exists. In cyber insurance, zero-day attacks represent a significant risk since businesses had no chance to defend against them in advance.",
+      "examples": [
+        "The zero-day attack exploited a flaw no one, including the software vendor, had known about.",
+        "Cyber insurers price for the possibility of a zero-day attack even though it's impossible to predict.",
+        "The zero-day attack was patched within days, but not before several companies were compromised.",
+        "A zero-day attack claim tested how quickly the insurer's incident response team could mobilize.",
+        "Zero-day attacks are a reminder that even well-patched systems aren't fully protected."
+      ],
+      "categories": [
+        "Insurtech & Technology",
+        "Risk"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "zero-day attack",
+        "zero day attack"
+      ]
+    },
+    {
+      "id": "zip-code-underwriting",
+      "term": "Zip Code Underwriting",
+      "definition": "The practice of setting insurance premiums and coverage options based on the geographic location of the insured, identified by zip code, factoring in crime rates, natural disaster risk, and other local conditions.",
+      "examples": [
+        "Zip code underwriting pushed her premium up when she moved to a higher-crime area.",
+        "Regulators scrutinized zip code underwriting for its potential to disproportionately affect certain communities.",
+        "Zip code underwriting is one input among several, not the only factor in the final rate.",
+        "The insurer's zip code underwriting model was updated after new flood maps were released.",
+        "Zip code underwriting can lead to noticeably different rates for otherwise similar applicants in different areas."
+      ],
+      "categories": [
+        "Underwriting & Actuarial",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "zip code underwriting"
+      ]
+    },
+    {
+      "id": "zoning-laws",
+      "term": "Zoning Laws",
+      "definition": "Local government regulations governing how land in a given area can be used, which insurers take into account when assessing property risk and the cost of rebuilding after a loss.",
+      "examples": [
+        "Zoning laws required the rebuilt structure to meet current code, adding cost the original policy hadn't anticipated.",
+        "The underwriter checked local zoning laws before quoting coverage for the mixed-use building.",
+        "Zoning laws can force a larger rebuild than the original structure if the property no longer conforms to current rules.",
+        "Ordinance or law coverage exists specifically to address gaps created by changing zoning laws.",
+        "Zoning laws varied enough between neighboring towns that the same claim would be handled differently."
+      ],
+      "categories": [
+        "Property",
+        "Regulatory & Legal"
+      ],
+      "synonyms": [],
+      "related": [
+        {
+          "term": "Guaranteed Replacement Cost",
+          "id": "guaranteed-replacement-cost"
+        }
+      ],
+      "difficulty": "Technical",
+      "lookup_keys": [
+        "zoning laws"
       ]
     }
   ]

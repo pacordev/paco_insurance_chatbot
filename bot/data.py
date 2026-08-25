@@ -13,13 +13,14 @@ from pathlib import Path
 
 DEFAULT_DATA_PATH = Path(__file__).resolve().parent / "insurance_terms.json"
 
-# A handful of definitions (33 of 1,175 at last count) run several times the
-# glossary's ~110-character median -- multi-sentence passages up to 800
-# characters. Answering with those in full every time reads noticeably
-# denser than a typical reply, so ask_definition shows a trimmed version
-# first for anything over this length, with the full text available on
-# request (bot/dispatcher.py).
-LONG_DEFINITION_THRESHOLD = 400
+# Every definition was expanded to 2-3 sentences in the 2026-08-24 enrichment
+# pass, pushing the glossary's median length from ~110 to ~480 characters. A
+# handful (29 of 1,339 at last count) still run notably longer than that new
+# baseline -- dense, multi-clause passages up to ~700 characters. Answering
+# with those in full every time reads noticeably denser than a typical reply,
+# so ask_definition shows a trimmed version first for anything over this
+# length, with the full text available on request (bot/dispatcher.py).
+LONG_DEFINITION_THRESHOLD = 600
 
 
 @dataclass(frozen=True)

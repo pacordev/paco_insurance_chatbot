@@ -63,10 +63,10 @@ class DispatcherTests(unittest.TestCase):
         self.assertIn("Reinsurance", reply)
 
     def test_long_definition_shows_short_version_then_full_on_request(self):
-        term = self.store.get("actuarial-report")
+        term = self.store.get("fraud")
         self.assertTrue(term.is_long_definition)  # confirms this test actually exercises the trimming
 
-        short_reply = self._say("what is an actuarial report")
+        short_reply = self._say("what is fraud")
         self.assertIn(term.short_definition, short_reply)
         self.assertNotIn(term.definition, short_reply)
         self.assertEqual(self.state.pending_full_definition_term_id, term.id)
@@ -79,12 +79,12 @@ class DispatcherTests(unittest.TestCase):
         for phrasing in ("yes", "give me the full definition", "tell me more", "sure"):
             with self.subTest(phrasing=phrasing):
                 self.setUp()
-                self._say("what is an actuarial report")
+                self._say("what is fraud")
                 full_reply = self._say(phrasing)
-                self.assertIn(self.store.get("actuarial-report").definition.rstrip("."), full_reply)
+                self.assertIn(self.store.get("fraud").definition.rstrip("."), full_reply)
 
     def test_ignoring_the_full_definition_prompt_falls_through_normally(self):
-        self._say("what is an actuarial report")
+        self._say("what is fraud")
         reply = self._say("what is a deductible")
         self.assertIn("Deductible", reply)
         self.assertIsNone(self.state.pending_full_definition_term_id)

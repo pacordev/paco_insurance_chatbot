@@ -6,9 +6,10 @@ This README describes the project as it stands today: why it exists, what's been
 
 **Try it:** [chat with the bot](https://insurance-chatbot-web.vercel.app/) · [architecture diagram](https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html)
 
-[![Screenshot of the chatbot's web UI answering "what is a deductible?"](my_bot.png)](https://insurance-chatbot-web.vercel.app/)
-
-[![Runtime architecture diagram: CLI/Dispatcher/EntityMatcher/TermStore in this repo, plus the downstream API and frontend repos](architecture_diagram.png)](https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html)
+<p>
+  <a href="https://insurance-chatbot-web.vercel.app/"><img src="my_bot.png" alt="Screenshot of the chatbot's web UI answering &quot;what is a deductible?&quot;" width="420"></a>
+  <a href="https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html"><img src="architecture_diagram.png" alt="Runtime architecture diagram: CLI/Dispatcher/EntityMatcher/TermStore in this repo, plus the downstream API and frontend repos" width="420"></a>
+</p>
 
 ---
 

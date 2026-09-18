@@ -4,11 +4,11 @@ A little chatbot that came to my mind to help coworkers, or people in general, w
 
 This README describes the project as it stands today: why it exists, what's been built, and how it's currently deployed. I'll keep it updated as things change.
 
-**Try it:** [chat with the bot](https://insurance-chatbot-web.vercel.app/) · [architecture diagram](https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html)
+**Try it:** <a href="https://insurance-chatbot-web.vercel.app/" target="_blank" rel="noopener noreferrer">chat with the bot</a> · <a href="https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html" target="_blank" rel="noopener noreferrer">architecture diagram</a>
 
 <p>
-  <a href="https://insurance-chatbot-web.vercel.app/"><img src="my_bot.png" alt="Screenshot of the chatbot's web UI answering &quot;what is a deductible?&quot;" width="420"></a>
-  <a href="https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html"><img src="architecture_diagram.png" alt="Runtime architecture diagram: CLI/Dispatcher/EntityMatcher/TermStore in this repo, plus the downstream API and frontend repos" width="420"></a>
+  <a href="https://insurance-chatbot-web.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="my_bot.png" alt="Screenshot of the chatbot's web UI answering &quot;what is a deductible?&quot;" width="420"></a>
+  <a href="https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html" target="_blank" rel="noopener noreferrer"><img src="architecture_diagram.png" alt="Runtime architecture diagram: CLI/Dispatcher/EntityMatcher/TermStore in this repo, plus the downstream API and frontend repos" width="420"></a>
 </p>
 
 ---

@@ -31,7 +31,7 @@ A live demo is available at [insurance-chatbot-web.vercel.app](https://insurance
 </p>
 
 <p align="center">
-  <a href="https://pacordev.github.io/paco_insurance_chatbot/ins_chatbot_architecture.html">View the full architecture diagram interactively</a>
+  <a href="https://pacordev.github.io/paco_insurance_chatbot/docs/ins_chatbot_architecture.html">View the full architecture diagram interactively</a>
 </p>
 
 Every incoming message travels through a fixed pipeline:

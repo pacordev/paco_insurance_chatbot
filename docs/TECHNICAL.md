@@ -103,6 +103,17 @@ python paco_chatbot.py
 
 It'll ask your name and whether you're new to insurance terminology first. After that, ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. If you said you're new, `list_terms`/`list_risks` will show you the Basic terms in a category before the Technical ones. Type `quit` to exit (you'll get a goodbye message too).
 
+## What's next
+
+**Usage logging, to find the gaps in the phrase list.** Right now the bot only understands wording someone wrote a pattern for, and I can't know what people actually type until I look. The idea: when a message ends up as `fallback`, or a "did you mean X or Y?" never gets answered, the API saves it. No names, no session details, just the text and a timestamp. Every so often I read through them, group the repeats, and add the common ones as new patterns or lookup phrases (using the same backup-validate-swap process as any dataset edit).
+
+A few things to keep straight:
+
+- The logging lives in the API repo, not here. This repo stays offline and dependency-light.
+- It only pays off once real people are using the bot. A handful of testers won't give enough to find patterns.
+- It stores what people type, so it needs to stay anonymous, in line with the no-PII rule above.
+- Starting simple is fine: a plain log file I download and read by hand. Clustering, or embeddings to match meaning instead of exact wording, can come later if reading by hand gets old.
+
 ## Known limitations (being upfront about these)
 
 - Categories and difficulty ratings are rule-based guesses, not reviewed by an actual insurance expert — good enough to build on, not something to present as authoritative without a spot-check. This applies doubly to the 137 payment-related terms: their categories and difficulty levels were machine-remapped from a different labeling scheme onto the existing one (e.g. a three-tier difficulty scale folded down into the existing two-tier one), which is an extra layer of approximation on top of the original guesswork.

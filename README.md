@@ -1,6 +1,6 @@
 # 💬 Insurance Knowledge Assistant
 
-A conversational assistant that teaches insurance terminology through natural, multi-turn conversation — built to demonstrate intent recognition, entity resolution, and fuzzy matching, hand-built and unit-tested rather than dropped in from an NLU framework or an LLM.
+A conversational assistant that teaches insurance terminology through natural, multi-turn conversation — built to demonstrate intent recognition, entity resolution, and fuzzy matching, hand-built and unit-tested rather than dropped in from an NLU framework. The core is fully rule-based; an optional local LLM can rewrite answers more naturally, but only on my own machine.
 
 ## 🎯 Business Problem
 
@@ -62,13 +62,24 @@ User → Web Frontend (Vercel) → FastAPI (Render) → Dispatcher.process_turn(
 - Randomized, name-personalized response templates
 - A decoupled core: the same `Dispatcher`/`TermStore` package powers the CLI, the API, and the web frontend with zero changes
 
+## 🤖 Optional: local LLM (Ollama)
+
+The deployed bot is rule-based and always will be unless I host a model somewhere. But on my laptop I can switch on a local LLM through [Ollama](https://ollama.com/). The rules still find the glossary term. The model just gets that entry and explains it in plainer words.
+
+- Off by default. Set `USE_OLLAMA=true` to turn it on.
+- Only answers from the glossary entry it's handed, never from its own memory.
+- If Ollama isn't running, is slow, or wanders off topic, the bot quietly uses the normal reply instead.
+- Quiz mode and the browse/list questions never use it.
+
+Setup and details are in [docs/TECHNICAL.md](docs/TECHNICAL.md#running-with-a-local-llm-ollama).
+
 ## 🧪 Testing
 
 68 hand-written regression tests across ~810 lines, covering the entity matcher, intent classifier, response templates, dataset integrity, and full multi-turn dispatcher flows, including quiz mode.
 
 ## 🛠️ Technology
 
-Python · spaCy · rapidfuzz · FastAPI · Vercel · Render
+Python · spaCy · rapidfuzz · FastAPI · Vercel · Render · Ollama (optional, local only)
 
 ---
 

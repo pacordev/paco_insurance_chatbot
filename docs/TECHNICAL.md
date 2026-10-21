@@ -37,6 +37,8 @@ Beyond the command line, this core is also reachable over HTTP now, and from an 
 - **[rapidfuzz](https://rapidfuzz.github.io/RapidFuzz/)** — typo-tolerant fuzzy matching, used only when the exact match comes up empty
 - **[JSON](https://www.json.org/)** (`insurance_terms.json`) — the entire knowledge base; no database yet, the dataset is small enough to load into memory once at startup
 - **[unittest](https://docs.python.org/3/library/unittest.html)** (Python standard library) — the regression test suite in `tests/`
+- **[Ollama](https://ollama.com/)** + **[httpx](https://www.python-httpx.org/)** — optional local LLM (`qwen2.5-coder:7b`) that rewrites glossary entries into friendlier answers; talked to over plain HTTP, off by default, never used in the deployed version
+- **[pytest](https://docs.pytest.org/)** — used for the newer tests (LLM layer); the older ones are still `unittest` and pytest runs both
 - **argparse-free CLI** — `paco_chatbot.py` is a plain `input()`/`print()` REPL, no CLI framework
 - **[FastAPI](https://fastapi.tiangolo.com/)** — the backend wrapping the existing `Dispatcher`/`TermStore` core; lives in a separate repo, deployed and live on Render
 - **[Render](https://render.com/)** — hosts that FastAPI backend as a persistent web service, built straight from the repo (no Dockerfile — just a `render.yaml` blueprint and a plain `pip install`); free-tier instance, so it spins down after inactivity and takes a bit to wake back up on the next request
@@ -58,15 +60,20 @@ ins_chatbot/
 │   ├── state.py                 # remembers context across a conversation (last term discussed, etc.)
 │   ├── intents.py               # defines what a user could be asking for
 │   ├── responses.py             # turns "this term + this intent" into an actual reply
-│   └── dispatcher.py            # ties everything above together into one real conversation turn
+│   ├── dispatcher.py            # ties everything above together into one real conversation turn
+│   ├── llm.py                   # optional: tiny Ollama client (local LLM), errors become LLMError
+│   └── rag.py                   # optional: builds the LLM prompt from glossary terms + checks the reply
 ├── tests/                      # growing hand-written test suite
 │   ├── test_intents.py          # regression tests for bot/intents.py
 │   ├── test_responses.py        # regression tests for bot/responses.py
 │   ├── test_dispatcher.py        # multi-turn regression tests for bot/dispatcher.py, including quiz mode
 │   ├── test_nlu.py               # regression tests for bot/nlu.py
-│   └── test_data.py               # dataset-wide integrity checks for bot/data.py
+│   ├── test_data.py               # dataset-wide integrity checks for bot/data.py
+│   ├── test_llm.py                # bot/llm.py with a faked HTTP layer (no Ollama needed)
+│   └── test_rag.py                # bot/rag.py: prompt contents and the drift check
 ├── docs/                       # this file, plus the interactive architecture diagram
 │   ├── TECHNICAL.md
+│   ├── OLLAMA_PROPOSAL.md       # why and how the local LLM layer was designed
 │   ├── ins_chatbot_architecture.html
 │   └── ins_chatbot_architecture.visual-check.json
 └── assets/                     # README images
@@ -90,6 +97,10 @@ ins_chatbot/
 
 **`bot/dispatcher.py`** — The conductor. Every incoming message flows through `Dispatcher.process_turn()`: recognize the intent, resolve the term (falling back to the last-discussed term for follow-ups, or asking "did you mean X or Y?" when the match is genuinely ambiguous), render a reply, update the conversation state for next time. Also resolves a line-of-business "domain" from free text (e.g. "life insurance" → the `Life` category) for `list_risks`/`list_terms`/quiz questions, since that's not something the term-focused entity matcher handles. Once a quiz starts, this is also what intercepts every message as an answer attempt instead of running normal intent recognition, until the user stops it.
 
+**`bot/llm.py`** — The only file that knows Ollama exists. `OllamaClient.generate()` sends one prompt and gets the whole reply back (no streaming), with a short connect timeout (a missing server fails fast) and a long read timeout (the first call has to load the model). Any problem, including an empty reply, turns into an `LLMError`. `is_available()` checks the server is up and has the model, so it can be run once at startup.
+
+**`bot/rag.py`** — Builds what the model sees: a strict system prompt ("answer only from the context, say you don't have the term if it's not there"), plus a context block pasted from the matched `Term` objects (definition, examples, related terms, category). Also has the drift check, `mentions_terms()`, which looks for the term (or a synonym) in the reply. Nothing here searches anything, the existing matcher already did the retrieval.
+
 **`paco_chatbot.py`** — A command-line REPL that asks your name and whether you're new to insurance terminology, shows a personalized welcome message, then talks to the real `Dispatcher` for the rest of the session.
 
 ## Getting started
@@ -102,6 +113,54 @@ python paco_chatbot.py
 ```
 
 It'll ask your name and whether you're new to insurance terminology first. After that, ask it something like `what's a premium?`, then follow up with `give me an example` or `how's that different from replacement cost?` without repeating the term name — that continuity is the whole point of the dispatcher. If you said you're new, `list_terms`/`list_risks` will show you the Basic terms in a category before the Technical ones. Type `quit` to exit (you'll get a goodbye message too).
+
+## Running with a local LLM (Ollama)
+
+This is optional, and **local only**. Ollama runs on my laptop. The deployed version (Render + Vercel) doesn't have it and can't reach it, so it keeps answering from templates exactly as before.
+
+**Setup** (once):
+
+```bash
+brew install ollama                 # or the desktop app
+ollama pull qwen2.5-coder:7b        # ~4.7 GB
+ollama list                         # check it shows up
+```
+
+**Run the CLI with it:**
+
+```bash
+USE_OLLAMA=true python paco_chatbot.py
+```
+
+**Run the API with it:** put `USE_OLLAMA=true` in the API's `.env` (see `.env.example`), and install this core into the API's venv, since the API pulls it from GitHub otherwise.
+
+| Variable | Default | What it does |
+|---|---|---|
+| `USE_OLLAMA` | `false` | Turns the LLM on. Anything but `true` means off |
+| `OLLAMA_HOST` | `http://localhost:11434` | Where the Ollama server is |
+| `OLLAMA_MODEL` | `qwen2.5-coder:7b` | Swapping models is just this variable (plus an `ollama pull`) |
+
+**What it touches.** Only `ask_definition`, `ask_example` and `compare_terms`, once a glossary term has been found. Quiz mode, `list_terms`, `list_risks`, categories, disambiguation and the "want the full definition?" follow-up all stay rule-based. A message with no recognizable term also stays on the templates, since there'd be nothing to ground the model on.
+
+**How a turn goes.** The matcher finds the term, `bot/rag.py` pastes its glossary entry into the prompt along with the user's question, name and newcomer flag, and Ollama writes the answer. The JSON glossary is still the only source of knowledge. Fix a term there and both kinds of reply pick it up.
+
+**When it falls back to the template reply** (the bot never breaks because of the LLM):
+- no LLM configured, or the flag is off
+- Ollama is down, times out, or returns nothing
+- the reply doesn't mention the term (both terms, for a compare), which is the cheap check for the model drifting off topic
+
+At startup, if the flag is on but Ollama isn't reachable, it just runs without the LLM and says so, instead of making every message wait for a timeout.
+
+**Testing.** `tests/test_llm.py`, `tests/test_rag.py` and the LLM cases in `tests/test_dispatcher.py` use a fake client, so none of them need Ollama running. There's also a check that `llm=None` gives the old template replies.
+
+**Rough numbers on my laptop.** First reply after a cold start was around 10 seconds while the model loaded, then about 3 to 6 seconds each.
+
+**Watch out for.**
+- `qwen2.5-coder` is tuned for code, so the tone can come out a bit technical. Tweaking the system prompt in `bot/rag.py` is the first thing to try.
+- Most definitions were rewritten with Claude and not checked against a real source (see Known limitations). The model repeats whatever is in the JSON, maybe with more confidence.
+- Not done yet: a "thinking" indicator in the web UI, which only matters if this ever goes online.
+
+For the design reasoning and the options left out (streaming, hosted model), see [OLLAMA_PROPOSAL.md](OLLAMA_PROPOSAL.md).
 
 ## What's next
 
@@ -121,6 +180,7 @@ A few things to keep straight:
 - **Comparing two terms when one of them is misspelled doesn't work as well as it should.** The entity matcher only reaches for its typo-tolerant fuzzy matching when it finds *zero* exact matches in the whole message — so if one of the two terms in "compare premiums and workres comp" matches exactly, the matcher never even attempts to fuzzy-match the misspelled second one, and the dispatcher ends up one term short. Correctly spelled comparisons, and comparisons that lean on the last-discussed term ("how's that different from Y"), both work fine.
 - **`insurance_terms.json` is a manually compiled and hand-edited dataset, not an official or verified source.** It started from scraped web content and has been reshaped and merged by hand many times over, which means it can contain inconsistencies, factual errors, or awkward phrasing that show up directly in the bot's responses, since nothing in the pipeline fact-checks the underlying content. Treat what the bot says as a starting point for learning the vocabulary, not an authoritative source — worth a proper review pass before this is trusted for anything beyond internal, informal learning.
 - **Every definition in the dataset is now substantially rewritten by Claude, not just sourced from the original scraped content.** Definitions were expanded from terse one-liners into fuller 2-3 sentence explanations across the entire dataset. The result reads much better, but it does mean the definitions themselves are one step further from the original source material than before — worth keeping in mind alongside the point above.
+- **The local LLM is a laptop-only extra.** The deployed site has no LLM, so what people get online is the template replies. Putting a model online would mean hosting Ollama somewhere with enough RAM, or using a hosted LLM API, and neither is planned.
 - The current intent/entity recognition is hand-written regex and lookup phrases, not a trained model — it can only recognize phrasing that's been explicitly taught to it. That's a real ceiling on the range of phrasing it understands, not something that improves on its own.
 - **Business-domain understanding** (what Underwriting does, how it differs from Rating, how the pieces of the policy lifecycle hand off to each other) is not part of the bot today — it only answers glossary questions, not "how is the business organized" questions.
 - There's no Spanish version of the dictionary yet; the bot currently only operates in English.

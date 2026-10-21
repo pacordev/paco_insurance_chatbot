@@ -75,7 +75,7 @@ Setup and details are in [docs/TECHNICAL.md](docs/TECHNICAL.md#running-with-a-lo
 
 ## 🧪 Testing
 
-68 hand-written regression tests across ~810 lines, covering the entity matcher, intent classifier, response templates, dataset integrity, and full multi-turn dispatcher flows, including quiz mode.
+85 hand-written regression tests across ~1,000 lines, covering the entity matcher, intent classifier, response templates, dataset integrity, full multi-turn dispatcher flows (including quiz mode), and the optional LLM layer, which is tested with a fake Ollama so none of it needs a model running.
 
 ## 🛠️ Technology
 

@@ -3,18 +3,37 @@ Dispatcher, so this is now an actual (if bare-bones) conversation, not just
 a term-matching smoke test.
 """
 
+import os
+
 from bot.data import TermStore
 from bot.dispatcher import Dispatcher
 from bot.intents import Intent
+from bot.llm import DEFAULT_HOST, DEFAULT_MODEL, OllamaClient
 from bot.responses import render, render_welcome
 from bot.state import ConversationState
+
+
+def _build_llm() -> OllamaClient | None:
+    """Only turn the LLM on if USE_OLLAMA=true AND the server is actually
+    reachable. Otherwise run exactly like before, templates only.
+    """
+    if os.getenv("USE_OLLAMA", "false").lower() != "true":
+        return None
+    client = OllamaClient(
+        host=os.getenv("OLLAMA_HOST", DEFAULT_HOST),
+        model=os.getenv("OLLAMA_MODEL", DEFAULT_MODEL),
+    )
+    if not client.is_available():
+        print("(Ollama isn't reachable, running without the LLM)")
+        return None
+    return client
 
 
 def main():
     # Load the glossary and build the matcher once, up front — this is the
     # slightly slower "startup" work that shouldn't happen per message.
     store = TermStore.load()
-    dispatcher = Dispatcher(store)
+    dispatcher = Dispatcher(store, llm=_build_llm())
 
     # Asking for the name up front, before the loop starts, is what lets
     # every later reply address the user personally instead of feeling like

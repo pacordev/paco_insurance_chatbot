@@ -323,3 +323,70 @@ class DispatcherTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --- LLM layer (pytest style, separate from the unittest class above) ---
+
+import pytest  # noqa: E402
+
+from bot.llm import LLMError  # noqa: E402
+
+
+class FakeLLM:
+    """Stands in for OllamaClient. Returns a canned reply or raises."""
+
+    def __init__(self, reply=None, error=None):
+        self.reply = reply
+        self.error = error
+        self.calls = []
+
+    def generate(self, system, prompt):
+        self.calls.append(prompt)
+        if self.error:
+            raise self.error
+        return self.reply
+
+
+@pytest.fixture(scope="module")
+def store():
+    return TermStore.load()
+
+
+def _ask(dispatcher, text="what is a deductible"):
+    reply, _ = dispatcher.process_turn(text, ConversationState(user_name="Paco"))
+    return reply
+
+
+def _is_template_reply(store, reply):
+    # template replies have a random intro line, so just check the
+    # glossary definition is in there instead of comparing whole strings
+    return store.get(store.resolve_surface_form("deductible")).definition[:60] in reply
+
+
+def test_no_llm_gives_template_reply(store):
+    # llm=None must behave exactly like the old dispatcher
+    assert _is_template_reply(store, _ask(Dispatcher(store, llm=None)))
+
+
+def test_llm_reply_used_when_it_mentions_the_term(store):
+    fake = FakeLLM(reply="A deductible is what you pay first.")
+    assert _ask(Dispatcher(store, llm=fake)) == "A deductible is what you pay first."
+    assert len(fake.calls) == 1
+
+
+def test_llm_failure_falls_back_to_template(store):
+    fake = FakeLLM(error=LLMError("down"))
+    assert _is_template_reply(store, _ask(Dispatcher(store, llm=fake)))
+
+
+def test_drifting_llm_reply_falls_back_to_template(store):
+    fake = FakeLLM(reply="Pizza is great.")
+    assert _is_template_reply(store, _ask(Dispatcher(store, llm=fake)))
+
+
+def test_quiz_and_lists_never_call_the_llm(store):
+    fake = FakeLLM(reply="deductible")
+    d = Dispatcher(store, llm=fake)
+    _ask(d, "list categories")
+    _ask(d, "quiz me")
+    assert fake.calls == []

@@ -13,7 +13,9 @@ import re
 
 from bot.data import Term, TermStore
 from bot.intents import Intent, recognize_intent
+from bot.llm import LLMError, OllamaClient
 from bot.nlu import EntityMatch, EntityMatcher
+from bot.rag import SYSTEM_PROMPT, build_prompt, mentions_terms
 from bot.responses import render, render_quiz_end, render_quiz_feedback, render_quiz_start
 from bot.state import ConversationState
 
@@ -95,11 +97,14 @@ _FULL_DEFINITION_PATTERNS = [
 class Dispatcher:
     """The bot's main "brain loop" for a single conversation turn."""
 
-    def __init__(self, store: TermStore):
+    def __init__(self, store: TermStore, llm: OllamaClient | None = None):
         # Everything needed to answer a question gets set up once here, so
         # process_turn() below can stay cheap and just reuse it per message.
         self.store = store
         self.matcher = EntityMatcher(store)
+        # Optional. None means "no LLM", and every reply comes from the
+        # templates exactly like before.
+        self.llm = llm
 
     def process_turn(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
         """Handle one user message and return (reply text, updated state)."""
@@ -157,18 +162,22 @@ class Dispatcher:
         # the fuzzy matcher can accidentally latch onto (it found real
         # candidate terms for that phrase in testing, unrelated to the
         # question being answered), which would otherwise silently win.
+        question = text
         if state.pending_disambiguation:
             chosen_id = self._resolve_pending_choice(text, state.pending_disambiguation)
             if chosen_id:
                 matches = [EntityMatch(chosen_id, text, exact=True, score=100.0)]
+                # "the first one" isn't a real question for the LLM, so
+                # leave it empty and let the template reply handle it.
+                question = ""
 
         if intent is Intent.COMPARE_TERMS:
-            return self._handle_compare(matches, state)
+            return self._handle_compare(matches, state, question)
 
-        return self._handle_single_term_intent(intent, matches, state)
+        return self._handle_single_term_intent(intent, matches, state, question)
 
     def _handle_single_term_intent(
-        self, intent: Intent, matches: list[EntityMatch], state: ConversationState
+        self, intent: Intent, matches: list[EntityMatch], state: ConversationState, text: str = ""
     ) -> tuple[str, ConversationState]:
         """Covers ASK_DEFINITION, ASK_EXAMPLE, and FALLBACK — anything that
         ultimately boils down to "figure out one term, then answer about it."
@@ -199,17 +208,22 @@ class Dispatcher:
         # manage to resolve a term, default to treating it as a definition
         # request, which is this bot's core, most common use case.
         effective_intent = Intent.ASK_DEFINITION if intent is Intent.FALLBACK else intent
-        reply = self._render(effective_intent, state, term=term)
+        # Try the LLM first (if there is one), template reply otherwise.
+        llm_reply = self._try_llm(text, [term], state)
+        reply = llm_reply or self._render(effective_intent, state, term=term)
         result = self._respond(reply, effective_intent, state, term_id=term.id)
         # If this reply showed the trimmed version of a long definition,
         # remember which term so a follow-up "yes"/"full definition" can
         # show the rest. _respond() above already cleared this for every
         # other path, so it only needs setting (not clearing) here.
-        if effective_intent is Intent.ASK_DEFINITION and term.is_long_definition:
+        # Skipped when the LLM answered, since it wasn't trimmed.
+        if not llm_reply and effective_intent is Intent.ASK_DEFINITION and term.is_long_definition:
             state.pending_full_definition_term_id = term.id
         return result
 
-    def _handle_compare(self, matches: list[EntityMatch], state: ConversationState) -> tuple[str, ConversationState]:
+    def _handle_compare(
+        self, matches: list[EntityMatch], state: ConversationState, text: str = ""
+    ) -> tuple[str, ConversationState]:
         term_ids = self._unique_term_ids(matches)
 
         # "How's that different from replacement cost?" only names one term
@@ -226,7 +240,9 @@ class Dispatcher:
 
         term_a = self.store.get(term_ids[0])
         term_b = self.store.get(term_ids[1])
-        reply = self._render(Intent.COMPARE_TERMS, state, term=term_a, other_term=term_b)
+        reply = self._try_llm(text, [term_a, term_b], state, require_all=True) or self._render(
+            Intent.COMPARE_TERMS, state, term=term_a, other_term=term_b
+        )
         return self._respond(reply, Intent.COMPARE_TERMS, state, term_id=term_b.id)
 
     def _handle_list_risks(self, text: str, state: ConversationState) -> tuple[str, ConversationState]:
@@ -404,6 +420,28 @@ class Dispatcher:
             if word in words and index < len(candidate_ids):
                 return candidate_ids[index]
         return None
+
+    def _try_llm(
+        self, question: str, terms: list[Term], state: ConversationState, require_all: bool = False
+    ) -> str | None:
+        """Ask the LLM to answer from the given glossary terms.
+
+        Returns None whenever the template reply should be used instead:
+        no LLM configured, no question text, Ollama failed, or the reply
+        drifted (didn't mention the term(s) it was supposed to talk about).
+        """
+        if self.llm is None or not question.strip():
+            return None
+        prompt = build_prompt(question, terms, state.user_name, state.is_newcomer)
+        try:
+            reply = self.llm.generate(SYSTEM_PROMPT, prompt)
+        except LLMError:
+            return None
+        # compare needs both terms in the answer, single term needs just its own
+        checks = [[t] for t in terms] if require_all else [terms]
+        if not all(mentions_terms(reply, group) for group in checks):
+            return None
+        return reply
 
     def _render(self, intent: Intent, state: ConversationState, term: Term | None = None, **kwargs) -> str:
         """Thin wrapper around responses.render() that always supplies the

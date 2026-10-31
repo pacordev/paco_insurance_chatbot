@@ -27,7 +27,7 @@ Pygments==2.21.0
 RapidFuzz==3.14.5
 requests==2.34.2
 rich==15.0.0
-setuptools==84.0.0
+setuptools==84.1.0
 shellingham==1.5.4
 smart_open==8.0.1
 spacy==3.8.13
